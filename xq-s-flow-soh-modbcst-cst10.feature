@@ -2,7 +2,7 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code:xq-s-flow-soh-modbcst-cst10
-# - Description: Validate FCP_ST fields and calculation for CST 30
+# - Description:
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
@@ -23,7 +23,7 @@ Feature:xq-s-flow-soh-modbcst-cst10
     #--------------------------------------------------------------------------------
     #modalidade 4 cts 10
     #--------------------------------------------------------------------------------
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-30
+    Scenario: Sales Order
         Given the user opens the "GESSOH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -39,8 +39,8 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SOH0_XQCODOPF"
         And the user writes "100" to the selected text field and hits tab key
-        And the user clicks the "Calc. memory On/Off" action button on the header drop down
-        And the user clicks the "Ok" opinion in the alert box
+        # And the user clicks the "Calc. memory On/Off" action button on the header drop down
+        # And the user clicks the "Ok" opinion in the alert box
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
 
@@ -77,15 +77,39 @@ Feature:xq-s-flow-soh-modbcst-cst10
             | 1   | "BMS001" | "12" | "3.69"  | "6101" | "4"       | "4"       | "0"     | "10"      |
             | 2   | "BMS001" | "29" | "12.96" | "6101" | "4"       | "4"       | "0"     | "10"      |
 
-    Scenario: Create
-        #Create
-        When the user clicks the "Create" main action button on the right panel
-        And the user waits 4 seconds
+    Scenario: Create document
 
-        And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 4 - Margin Value added (%)"
-        And the user clicks the "Close page" main action button on the right panel
+        When the user clicks the "Create" main action button on the right panel
+        # And the user waits 4 seconds
+        # And a log panel appears
+        # And the user selects the main log panel of the page
+        # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
+        # And the user clicks the "Close page" main action button on the right panel
+
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
+
+
+
+    Scenario Outline: Tax Detail - Check Calculated Values
+        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK2ALL4_ITMREF"
+        And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
+        When the user clicks on the icon contained in the selected cell
+        Then the "Tax determination" screen is displayed
+        #Check Values
+        And the user selects the text field with X3 field name: "XQDTIMP1_MODDETCALCST"
+        And the value of the selected text field is <MODDETCALCST>
+        Then the user clicks the Close page action icon on the header panel
+
+        Examples:
+            | ITMREF   | MODDETCALCST                 |
+            | "BMS001" | "4 - Margin Value added (%)" |
+            | "BMS001" | "4 - Margin Value added (%)" |
+
+
+    Scenario: SAVE
+
+        And the user clicks the "Save" main action button on the right panel
 
 
         #--------------------------------------------------------------------------------
@@ -138,19 +162,43 @@ Feature:xq-s-flow-soh-modbcst-cst10
             | 1   | "BMS001" | "12" | "3.69"  | "6101" | "5"       | "5"       | "0"     | "10"      |
             | 2   | "BMS001" | "29" | "12.96" | "6101" | "5"       | "5"       | "0"     | "10"      |
 
-    Scenario: Create
-        #Create
-        When the user clicks the "Create" main action button on the right panel
-        And the user waits 4 seconds
+    Scenario: Create document
 
-        And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 5 - Ruling (value)"
-        And the user clicks the "Close page" main action button on the right panel
+        When the user clicks the "Create" main action button on the right panel
+        # And the user waits 4 seconds
+        # And a log panel appears
+        # And the user selects the main log panel of the page
+        # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
+        # And the user clicks the "Close page" main action button on the right panel
+
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
+
+
+
+    Scenario Outline: Tax Detail - Check Calculated Values
+        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK2ALL4_ITMREF"
+        And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
+        When the user clicks on the icon contained in the selected cell
+        Then the "Tax determination" screen is displayed
+        #Check Values
+        And the user selects the text field with X3 field name: "XQDTIMP1_MODDETCALCST"
+        And the value of the selected text field is <MODDETCALCST>
+        Then the user clicks the Close page action icon on the header panel
+
+        Examples:
+            | ITMREF   | MODDETCALCST         |
+            | "BMS001" | "5 - Ruling (value)" |
+            | "BMS001" | "5 - Ruling (value)" |
+
+
+    Scenario: SAVE
+
+        And the user clicks the "Save" main action button on the right panel
 
 
         #--------------------------------------------------------------------------------
-        #modalidade 5 cts 10
+        #modalidade 6 cts 10
         #--------------------------------------------------------------------------------
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "SOH0_SALFCY"
@@ -199,15 +247,40 @@ Feature:xq-s-flow-soh-modbcst-cst10
             | 1   | "BMS001" | "12" | "3.69"  | "6101" | "6"       | "6"       | "0"     | "10"      |
             | 2   | "BMS001" | "29" | "12.96" | "6101" | "6"       | "6"       | "0"     | "10"      |
 
-    Scenario: Create
-        #Create
-        When the user clicks the "Create" main action button on the right panel
-        And the user waits 4 seconds
+    Scenario: Create document
 
-        And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
-        And the user clicks the "Close page" main action button on the right panel
+        When the user clicks the "Create" main action button on the right panel
+        # And the user waits 4 seconds
+        # And a log panel appears
+        # And the user selects the main log panel of the page
+        # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
+        # And the user clicks the "Close page" main action button on the right panel
+
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
+
+
+
+    Scenario Outline: Tax Detail - Check Calculated Values
+        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK2ALL4_ITMREF"
+        And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
+        When the user clicks on the icon contained in the selected cell
+        Then the "Tax determination" screen is displayed
+        #Check Values
+        And the user selects the text field with X3 field name: "XQDTIMP1_MODDETCALCST"
+        And the value of the selected text field is <MODDETCALCST>
+        Then the user clicks the Close page action icon on the header panel
+
+        Examples:
+            | ITMREF   | MODDETCALCST          |
+            | "BMS001" | "6 - Operation Value" |
+            | "BMS001" | "6 - Operation Value" |
+
+
+    Scenario: SAVE
+
+        And the user clicks the "Save" main action button on the right panel
+
 
     Scenario: Logout
 

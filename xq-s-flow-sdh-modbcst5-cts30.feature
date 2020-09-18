@@ -103,22 +103,48 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
             | 2   | "BMS001" | "BMS001" | "29" | "12.96" | "6101" | "5"       | "5"       | "0"     | "30"      | "PR80003" |
 
 
+
     Scenario: Create document
 
         When the user clicks the "Create" main action button on the right panel
-        And the user waits 4 seconds
-        And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 5 - Ruling (value)"
-        And the user clicks the "Close page" main action button on the right panel
-        Then the user clicks the "SEFAZ" action button on the header drop down
+        # And the user waits 4 seconds
+        # And a log panel appears
+        # And the user selects the main log panel of the page
+        # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
+        # And the user clicks the "Close page" main action button on the right panel
+
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
+
+
+
+    Scenario Outline: Tax Detail - Check Calculated Values
+        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
+        And the user selects cell with X3 field name: "WK4ALL1_XQDETIMPOSTO" of selected row
+        When the user clicks on the icon contained in the selected cell
+        Then the "Tax determination" screen is displayed
+        #Check Values
+        And the user selects the text field with X3 field name: "XQDTIMP1_MODDETCALCST"
+        And the value of the selected text field is <MODDETCALCST>
+        Then the user clicks the Close page action icon on the header panel
+
+        Examples:
+            | ITMREF   | MODDETCALCST         |
+            | "BMS001" | "5 - Ruling (value)" |
+            | "BMS001" | "5 - Ruling (value)" |
+
+
+    Scenario: SEFAZ
+
+        When the user clicks the "Save" main action button on the right panel
+        Given the user clicks the "SEFAZ" action button on the header drop down
         And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
-        And the user clicks the Close page action icon on the header panel
+
 
     Scenario: Logout
+
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-
