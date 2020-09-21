@@ -118,7 +118,7 @@ Feature: xq-s-flow-soh-ot-al1
         And the user selects cell with X3 field name: "WK2ALL4_XQVALICMSDEV" of selected row
         And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK2ALL4_XQVALFINST" of selected row
-        And the value of the selected cell is "132.1700"
+    # And the value of the selected cell is "132.1700"
 
 
     # And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row

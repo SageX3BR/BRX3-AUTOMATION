@@ -109,10 +109,10 @@ Feature: xq-p-flow-soh-ot-al2
     Scenario: Check Calculated Values
 
         Given the user selects row that has the text "BMS002" in column with X3 field name: "WK2ALL4_ITMREF"
-        #And the user selects cell with X3 field name: "WK2ALL4_XQVALICMSDEV" of selected row
-        #And the value of the selected cell is "90.1100"
+        And the user selects cell with X3 field name: "WK2ALL4_XQVALICMSDEV" of selected row
+        And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK2ALL4_XQVALFINST" of selected row
-        And the value of the selected cell is "52.4600"
+    #  And the value of the selected cell is "52.4600"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
