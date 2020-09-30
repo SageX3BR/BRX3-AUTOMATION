@@ -1,18 +1,18 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-pih-modbcst6-cst10
-# - Description: Validate FCP_ST fields and calculation for CST 10-30-70-90
-# - Jira: NA
+# - Test code:xq-p-flow-pih-modbcst4-cst30
+# - Description: MODBCST 4
+# - Jira: X3-202065 - [BR] [NF-e] [Purchase] Nota Técnica 2019.001 v1.40 - modBCST
 # - Legislation: BR addon
-# - Created by : Jonatas Hille
+# - Created by : Carla Cury
 # - Created date : 01/06/2020
-# - Updated by : Jonatas Hille
-# - Updated date : 01/06/2020
+# - Updated by : Carla Cury
+# - Updated date : 30/09/2020
 # - Status : Automated
 ###########################################################################
 
-Feature:xq-p-flow-pih-modbcst6-cst10
+Feature:xq-p-flow-pih-modbcst4-cst30
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -21,7 +21,7 @@ Feature:xq-p-flow-pih-modbcst6-cst10
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
     #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-10-30-70-90
+    #Create
     #--------------------------------------------------------------------------------
     Scenario: Creation PIH
         Given the user opens the "GESPIH" function

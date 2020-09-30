@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 01/06/2020
-# - Updated by : Jonatas Hille
-# - Updated date : 01/06/2020
+# - Updated by : Carla Cury
+# - Updated date : 30/09/2020
 # - Status : Automated
 ###########################################################################
 
@@ -113,6 +113,10 @@ Feature:xq-p-flow-pih-fcpst-10-30-70-90
         And the user clicks the "Ok" option in the alert box
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
+        # And a dialog box appears
+        # And the user clicks the "Ok" opinion in the alert box
+        # And a dialog box appears
+        # And the user clicks the "Ok" opinion in the alert box
 
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
