@@ -62,132 +62,108 @@ Feature:xq-flow-pih-oi
         When the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
 
-        And the user selects editable table row number: 1
-
+    #Lines
+    Scenario Outline: Add Lines
+        Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
-        And the user adds the text "BMS001" in selected cell
+        And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
-        And the user adds the text "36" in selected cell
+        And the user adds the text <QTYUOM> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_NETPRI"
-        And the user adds the text "106.23" in selected cell
+        And the user adds the text <NETPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQCFOP"
-        And the user adds the text "3101" in selected cell
+        And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQORIGEMICMS"
-        And the user adds the text "0" in selected cell
+        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTICMS"
-        And the user adds the text "00" in selected cell
+        And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQCENQ"
-        And the user adds the text "999" in selected cell
+        And the user adds the text <XQCENQ> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTIPI"
-        And the user adds the text "49" in selected cell
+        And the user adds the text <XQCSTIPI> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTPIS"
-        And the user adds the text "01" in selected cell
+        And the user adds the text <XQCSTPIS> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTCOF"
-        And the user adds the text "01" in selected cell and hits enter key
+        Then the user adds the text <XQCSTCOF> in selected cell and hits enter key
 
-        #Second product
-        When the user clicks the "Lines" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        And the user selects editable table row number: 1
+        Examples:
+            | LIN | ITMREF   | QTYUOM | NETPRI   | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
+            | 1   | "BMS001" | "36"   | "106.23" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 2   | "BMS002" | "51"   | "98.98"  | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
-        And the user selects the choice "Miscellaneous" of the selected cell
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
-        And the user adds the text "BMS002" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
-        And the user adds the text "51" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_NETPRI"
-        And the user adds the text "99.98" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCFOP"
-        And the user adds the text "3101" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQORIGEMICMS"
-        And the user adds the text "0" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTICMS"
-        And the user adds the text "00" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCENQ"
-        And the user adds the text "999" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTIPI"
-        And the user adds the text "49" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTPIS"
-        And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTCOF"
-        And the user adds the text "01" in selected cell and hits enter key
 
-        #Informing Importing declaration (DI Data)  ITEM 1
-        Then the user clicks the "more_vertical" button in the header
+
+
+    #Informing Importing declaration (DI Data)  ITEM 1
+    Scenario: Inform DI Data
+
+
+        Given the user clicks the "more_vertical" button in the header
         And the user clicks the "DI Data" secondary action button on the right panel
         And the "Import declaration" screen is displayed
-        And the user selects the text field with name: "Current displayed line"
-        And the user writes "1" to the selected text field and hits tab key
+
+
+
+    Scenario Outline: Tax Detail - Check Calculated Values
+        # Given the user selects the text field with name: "Current displayed line"
+        # When the user writes <CURLIG> to the selected text field and hits enter key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBDI"
-        And the user selects last fixed cell with X3 field name: "XQDI1_NUMDI"
-        And the user adds the text "1234567890" in selected cell
+        And the user selects the text field with X3 field name: "XQDI1_NUMDI"
+        And the value of the selected text field is <NUMDI>
         And the user selects last fixed cell with X3 field name: "XQDI1_DTDI"
         And the user enters todays date in the selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_CODEXP"
-        And the user adds the text "1234567890" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTAFRMM"
-        And the user adds the text "23.21" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTCREDPRE"
-        And the user adds the text "14.69" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTDESPIMP"
-        And the user adds the text "6.95" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTIOF"
-        And the user adds the text "7.39" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTDESADU"
-        And the user adds the text "17.32" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_LOCDESEMB"
-        And the user adds the text "Porto de Paranagua" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_UFDESEMB"
-        And the user adds the text "PR" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_DTDESEMB"
+        And the user selects the text field with X3 field name: "XQDI1_CODEXP"
+        And the value of the selected text field is <CODEXP>
+        And the user selects the text field with X3 field name: "XQDI1_RTAFRMM"
+        And the value of the selected text field is <RTAFRMM>
+        And the user selects the text field with X3 field name: "XQDI1_RTCREDPRE"
+        And the value of the selected text field is <RTCREDPRE>
+        And the user selects the text field with X3 field name: "XQDI1_RTDESPIMP"
+        And the value of the selected text field is <RTDESPIMP>
+        And the user selects the text field with X3 field name: "XQDI1_RTIOF"
+        And the value of the selected text field is <RTIOF>
+        And the user selects the text field with X3 field name: "XQDI1_RTDESADU"
+        And the value of the selected text field is <RTDESADU>
+        And the user selects the text field with X3 field name: "XQDI1_LOCDESEMB"
+        And the value of the selected text field is <LOCDESEMB>
+        And the user selects the text field with X3 field name: "XQDI1_UFDESEMB"
+        And the value of the selected text field is <UFDESEMB>
+        And the user selects the text field with X3 field name: "XQDI1_DTDESEMB"
         And the user enters todays date in the selected cell
-        And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBAD"
-        And the user selects last fixed cell with X3 field name: "XQDI1_NUMAD"
-        And the user adds the text "10" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_CODFAB"
-        And the user adds the text "123" in selected cell and hits enter key
-        #And the user clicks the "Save" main action button on the right panel
-        And the "Save" main action button on the right panel is enabled
-        And the user opens the "Save" section on the right panel
+        And the user clicks the "Save" main action button on the right panel
 
-        #Informing Importing declaration (DI Data)
-        #Second ITEM
-        And the user selects the text field with name: "Current displayed line"
-        And the user writes "2" to the selected text field and hits tab key
-        And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBDI"
-        And the user selects last fixed cell with X3 field name: "XQDI1_NUMDI"
-        And the user adds the text "1234567899" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_DTDI"
-        And the user enters todays date in the selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_CODEXP"
-        And the user adds the text "1234567899" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTAFRMM"
-        And the user adds the text "4.32" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTCREDPRE"
-        And the user adds the text "21.95" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTDESPIMP"
-        And the user adds the text "9.64" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTIOF"
-        And the user adds the text "7.25" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_RTDESADU"
-        And the user adds the text "12.36" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_LOCDESEMB"
-        And the user adds the text "Porto de Santos" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_UFDESEMB"
-        And the user adds the text "SP" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_DTDESEMB"
-        And the user enters todays date in the selected cell
-        And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBAD"
-        And the user selects last fixed cell with X3 field name: "XQDI1_NUMAD"
-        And the user adds the text "20" in selected cell
-        And the user selects last fixed cell with X3 field name: "XQDI1_CODFAB"
-        And the user adds the text "456" in selected cell and hits enter key
-        And the user clicks the "Save" secondary action button on the right panel
-        And the user clicks the Close page action icon on the header panel
+        Examples:
+            | NUMDI        | CODEXP       | RTAFRMM | RTCREDPRE | RTDESPIMP | RTIOF  | RTDESADU | LOCDESEMB            | UFDESEMB |
+            | "1234567890" | "1234567890" | "23.21" | "14.69"   | "6.95"    | "7.39" | "17.32"  | "Porto de Paranagua" | "PR"     |
+            | "1234567890" | "1234567890" | "4.32"  | "21.95"   | "9.64"    | "7.25" | "12.36"  | "Porto de Santos"    | "SP"     |
 
+    # Examples:
+    #           | CURLIG | NUMDI        | CODEXP       | RTAFRMM | RTCREDPRE | RTDESPIMP | RTIOF  | RTDESADU | LOCDESEMB            | UFDESEMB |
+    #          | "1"    | "1234567890" | "1234567890" | "23.21" | "14.69"   | "6.95"    | "7.39" | "17.32"  | "Porto de Paranagua" | "PR"     |
+    #         | "2"    | "1234567890" | "1234567890" | "4.32"  | "21.95"   | "9.64"    | "7.25" | "12.36"  | "Porto de Santos"    | "SP"     |
+
+
+    #Informing Importing declaration (DI Data)  ITEM 1
+    Scenario: Inform DI Data
+
+        Given the user clicks the "Additions" tab selected by title
+        And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBAD"
+
+    Scenario Outline: Tax Detail - Check Calculated Values
+        Given the user selects the text field with X3 field name: "XQDI1_NUMAD"
+        And the value of the selected text field is <NUMAD>
+        And the user selects last fixed cell with X3 field name: "XQDI1_CODFAB"
+        And the value of the selected text field is <CODFAB>
+
+        Examples:
+            | NUMAD | CODFAB |
+            | "10"  | "123"  |
+            | "20"  | "456"  |
+
+
+    Scenario: Save Invoice
         #Saving the invoice
         When the user clicks the "Control" tab selected by title
         And the user selects the text field with name: "Calculated - tax"
