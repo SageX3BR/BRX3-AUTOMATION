@@ -79,6 +79,7 @@ Feature: xq-s-flow-gessdh
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
+        And the user hits enter
 
         And the user waits (3) seconds
         # And an alert box appears
@@ -99,9 +100,10 @@ Feature: xq-s-flow-gessdh
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
         And the user clicks the Close page action icon on the header panel
-        And the user clicks the "Validation" main action button on the right panel
-        And the selected log panel includes the message "X3 validation Delivery"
-        And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Validation" button in the header
+        And a dialog box appears
+        And the user clicks the "Ok" opinion in the alert box
+
     #--------------------------------------------------------------------------------
     #Creation of the receipt
     #--------------------------------------------------------------------------------
@@ -124,14 +126,15 @@ Feature: xq-s-flow-gessdh
         And the user writes "BRSDH" to the selected text field and hits tab key
         And the user selects the text field with name: "Ship-to"
         And the user writes "PT006" to the selected text field and hits tab key
+        And the user clicks the Close page action icon on the header panel
         And the user selects the text field with name: "Fiscal operation"
-        And the user writes "121" to the selected text field and hits tab key
-        And the user clicks the "General Data" tab selected by title
+        And the user writes "121" to the selected text field
+        #And the user clicks the "General Data" tab selected by title
         And the user selects the text field with X3 field name: "XQSDH0_UFEMBARQUE"
         And the user writes "PR" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSDH0_LOCEMBARQUE"
         And the user writes "Paranaguá" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_LOCEMBARQUE"
+        And the user selects the text field with X3 field name: "XQSDH0_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
         And the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK4ALL2_VACBPR"
@@ -182,9 +185,9 @@ Feature: xq-s-flow-gessdh
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
         And the user clicks the Close page action icon on the header panel
-        And the user clicks the "Validation" main action button on the right panel
-        And the selected log panel includes the message "X3 validation Delivery"
-        And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Validation" button in the header
+        And a dialog box appears
+        And the user clicks the "Ok" opinion in the alert box
 
     Scenario: Logout
 
