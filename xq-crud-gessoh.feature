@@ -8,8 +8,8 @@
 # - Created by : Edivaldo Monteiro
 # - Created date : 19/03/2020
 # - Updated by : Carla Cury
-# - Updated date : 24/09/2020
-# - Status : in progress
+# - Updated date : 29/12/2020
+# - Status : completed
 ###########################################################################
 
 #Global parameter intialization

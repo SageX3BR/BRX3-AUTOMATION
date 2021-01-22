@@ -61,7 +61,7 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR004" to the selected text field and hits tab key
         # And an alert box with the text containing "This reference already exists for this customer" appears
-        # And the user clicks the "ok" opinion in the alert box
+        And the user clicks the "ok" opinion in the alert box
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "107" to the selected text field and hits tab key

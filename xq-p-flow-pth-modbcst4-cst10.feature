@@ -84,7 +84,7 @@ Feature:xq-p-flow-pth-modbcst5-cst10
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
         And the user clicks the "Close page" main action button on the right panel
-        Then the user stores the value of the selected text field with the key: "CHAVENFEPTH"
+        Then the user stores the value of the selected text field with the key: "DOCPTH"
 
 
 

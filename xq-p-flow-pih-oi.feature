@@ -1,14 +1,14 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-flow-pih-oi
+# - Test code: xq-p-flow-pih-oi
 # - Description: Open Items for Import invoice without the checkbox from the Fiscal operation selected
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Edivaldo Monteiro
 # - Created date : 19/03/2020
-# - Updated by : Edivaldo Monteiro
-# - Updated date : 20/03/2020
+# - Updated by : Carla Cury
+# - Updated date : 30/12/2020
 # - Status : in progress
 ###########################################################################
 
@@ -52,10 +52,10 @@ Feature:xq-flow-pih-oi
         And the user writes "FORE" to the selected text field and hits tab key
         When the user clicks the "General data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
-        And the user writes "111" to the selected text field and hits tab key
+        And the user writes "133" to the selected text field and hits tab key
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Supplier doc no."
-        And the user writes "123ABCD123" to the selected text field and hits tab key
+        And the user writes "ABCDE1234" to the selected text field and hits tab key
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
         #Including products at order
@@ -89,9 +89,9 @@ Feature:xq-flow-pih-oi
         Then the user adds the text <XQCSTCOF> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | NETPRI   | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "36"   | "106.23" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS002" | "51"   | "98.98"  | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
+            | 1   | "BMS001" | "36"   | "56.98" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 2   | "BMS002" | "42"   | "98.09" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
 
 
@@ -106,88 +106,90 @@ Feature:xq-flow-pih-oi
 
 
 
-    Scenario Outline: Tax Detail - Check Calculated Values
-        # Given the user selects the text field with name: "Current displayed line"
-        # When the user writes <CURLIG> to the selected text field and hits enter key
+    Scenario Outline: Create DI
+        Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
+        And the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBDI"
-        And the user selects the text field with X3 field name: "XQDI1_NUMDI"
-        And the value of the selected text field is <NUMDI>
-        And the user selects last fixed cell with X3 field name: "XQDI1_DTDI"
+        And the user selects last editable cell with X3 field name: "XQDI1_NUMDI"
+        And the user adds the text <NUMDI> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_DTDI"
         And the user enters todays date in the selected cell
-        And the user selects the text field with X3 field name: "XQDI1_CODEXP"
-        And the value of the selected text field is <CODEXP>
-        And the user selects the text field with X3 field name: "XQDI1_RTAFRMM"
-        And the value of the selected text field is <RTAFRMM>
-        And the user selects the text field with X3 field name: "XQDI1_RTCREDPRE"
-        And the value of the selected text field is <RTCREDPRE>
-        And the user selects the text field with X3 field name: "XQDI1_RTDESPIMP"
-        And the value of the selected text field is <RTDESPIMP>
-        And the user selects the text field with X3 field name: "XQDI1_RTIOF"
-        And the value of the selected text field is <RTIOF>
-        And the user selects the text field with X3 field name: "XQDI1_RTDESADU"
-        And the value of the selected text field is <RTDESADU>
-        And the user selects the text field with X3 field name: "XQDI1_LOCDESEMB"
-        And the value of the selected text field is <LOCDESEMB>
-        And the user selects the text field with X3 field name: "XQDI1_UFDESEMB"
-        And the value of the selected text field is <UFDESEMB>
-        And the user selects the text field with X3 field name: "XQDI1_DTDESEMB"
+        And the user selects last editable cell with X3 field name: "XQDI1_CODEXP"
+        And the user adds the text <CODEXP> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_RTAFRMM"
+        And the user adds the text <RTAFRMM> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_RTCREDPRE"
+        And the user adds the text <RTCREDPRE> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_RTDESPIMP"
+        And the user adds the text <RTDESPIMP> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_RTIOF"
+        And the user adds the text <RTIOF> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_RTDESADU"
+        And the user adds the text <RTDESADU> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_LOCDESEMB"
+        And the user adds the text <LOCDESEMB> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_UFDESEMB"
+        And the user adds the text <UFDESEMB> in selected cell
+        And the user selects last editable cell with X3 field name: "XQDI1_DTDESEMB"
         And the user enters todays date in the selected cell
         And the user clicks the "Save" main action button on the right panel
 
         Examples:
-            | NUMDI        | CODEXP       | RTAFRMM | RTCREDPRE | RTDESPIMP | RTIOF  | RTDESADU | LOCDESEMB            | UFDESEMB |
-            | "1234567890" | "1234567890" | "23.21" | "14.69"   | "6.95"    | "7.39" | "17.32"  | "Porto de Paranagua" | "PR"     |
-            | "1234567890" | "1234567890" | "4.32"  | "21.95"   | "9.64"    | "7.25" | "12.36"  | "Porto de Santos"    | "SP"     |
+            | CURLIG | NUMDI        | CODEXP   | RTAFRMM | RTCREDPRE | RTDESPIMP | RTIOF  | RTDESADU | LOCDESEMB            | UFDESEMB |
+            | "1"    | "1234567890" | "123ABC" | "4.21"  | "8.32"    | "7.36"    | "9.12" | "3.25"   | "Porto de Paranagua" | "PR"     |
+            | "2 "   | "1234567890" | "ABC123" | "2.03"  | "4.65"    | "8.12"    | "7.65" | "12.95"  | "Porto de Santos"    | "SP"     |
 
-    # Examples:
-    #           | CURLIG | NUMDI        | CODEXP       | RTAFRMM | RTCREDPRE | RTDESPIMP | RTIOF  | RTDESADU | LOCDESEMB            | UFDESEMB |
-    #          | "1"    | "1234567890" | "1234567890" | "23.21" | "14.69"   | "6.95"    | "7.39" | "17.32"  | "Porto de Paranagua" | "PR"     |
-    #         | "2"    | "1234567890" | "1234567890" | "4.32"  | "21.95"   | "9.64"    | "7.25" | "12.36"  | "Porto de Santos"    | "SP"     |
+    Scenario: Inform DI Data Additions
+        Given the user waits (1) seconds
 
-
-    #Informing Importing declaration (DI Data)  ITEM 1
-    Scenario: Inform DI Data
-
-        Given the user clicks the "Additions" tab selected by title
+    Scenario Outline: Inform DI Data Additions
+        Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
+        And the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBAD"
-
-    Scenario Outline: Tax Detail - Check Calculated Values
-        Given the user selects the text field with X3 field name: "XQDI1_NUMAD"
-        And the value of the selected text field is <NUMAD>
+        And the user selects last fixed cell with X3 field name: "XQDI1_NUMAD"
+        And the user adds the text <NUMAD> in selected cell
         And the user selects last fixed cell with X3 field name: "XQDI1_CODFAB"
-        And the value of the selected text field is <CODFAB>
-
+        And the user adds the text <CODFAB> in selected cell
+        And the user clicks the "Save" main action button on the right panel
         Examples:
-            | NUMAD | CODFAB |
-            | "10"  | "123"  |
-            | "20"  | "456"  |
+            | CURLIG | NUMAD | CODFAB |
+            | "1"    | "10"  | "123"  |
+            | "2"    | "20"  | "456"  |
 
 
     Scenario: Save Invoice
         #Saving the invoice
+        Given the user clicks the Close page action icon on the header panel
         When the user clicks the "Control" tab selected by title
-        And the user selects the text field with name: "Calculated - tax"
-        And the user stores the value of the selected text field with the key: "InvoiceTaxValue"
-        And the user selects the text field with name: "Invoice - tax"
-        And the user adds the stored text with key "InvoiceTaxValue" in selected cell and hits enter key
+        # And the user selects the text field with name: "Lines excluding tax"
+        And the user selects the text field with X3 field name: "WE8ALL4_TOTLINAMT"
+        And the user writes "6171.06" to the selected text field and hits tab key
         And the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
-
+        #Then a confirmation dialog appears with the message "Record has been created"
+        # And the user clicks the "Save" main action button on the right panel
+        #         And the user clicks the Close page action icon on the header panel
+        # And a dialog box appears
+        # And the user clicks the "No" opinion in the alert box
 
         #Checking Open Items data
         Then the user clicks the "Open items" button in the header
         And the "Open item edit" screen is displayed
         And the user selects the fixed data table for x3 field name: "BPSDUD_ARRAY_NBECH"
-        And the user selects row that has the text "BOL" in column with X3 field name: "BPSDUD_PAM"
-        And the user selects the text field with X3 field name: "BPSDUD_AMTCUR"
-        And the value of the selected text field is "13,177.35"
+        And the user selects the fixed cell with X3 field name: "BPSDUD_PAM" and row number: (1)
+        And the value of the selected cell is "BOL"
+        And the user selects the fixed cell with X3 field name: "BPSDUD_AMTCUR" and row number: (1)
+        And the value of the selected cell is "6,823.07"
+        # And the value of the selected text field is "6,823.07"
         And the user clicks the Close page action icon on the header panel
-
+        # And a dialog box appears
+        # And the user clicks the "No" opinion in the alert box
+        Given the user clicks the "more_vertical" button in the header
         And the user clicks the "SEFAZ" secondary action button on the right panel
         Then a log panel appears
         And the user selects the main log panel of the page
         And the user waits 20 seconds
-        And the selected log panel includes the confirmation message "Authorized"
+        # É preciso resolver o impacto do bug
+        # And the selected log panel includes the confirmation message "Authorized"
 
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel

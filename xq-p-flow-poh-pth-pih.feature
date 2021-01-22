@@ -26,6 +26,7 @@ Feature:xq-p-flow-poh-pth-pih
 
     Scenario: 2.0. Create purchase order
         Given the user opens the "GESPOH" function
+        And the user waits (3) seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -54,6 +55,17 @@ Feature:xq-p-flow-poh-pth-pih
             | LIN | ITMREF   | QTYUOM | XQCFOP |
             | 1   | "BMS001" | "1"    | "2101" |
             | 2   | "BMS002" | "2"    | "2101" |
+            | 3   | "BMS001" | "1"    | "2101" |
+            | 4   | "BMS002" | "2"    | "2101" |
+            | 5   | "BMS001" | "1"    | "2101" |
+            | 6   | "BMS002" | "2"    | "2101" |
+            | 7   | "BMS001" | "1"    | "2101" |
+            | 8   | "BMS002" | "2"    | "2101" |
+            | 9   | "BMS001" | "1"    | "2101" |
+            | 10  | "BMS002" | "2"    | "2101" |
+            | 11  | "BMS001" | "1"    | "2101" |
+            | 12  | "BMS002" | "2"    | "2101" |
+
 
     #Create order and store order number
     Scenario: 2.1. Create and Store Doc Number

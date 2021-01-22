@@ -70,21 +70,22 @@ Feature:xq-p-flow-pth-modbcst5-cst10
 
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "10"   | "78.50" | "2101" | "4"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
-            | 2   | "BMS001" | "10"   | "85.60" | "2101" | "4"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
+            | 1   | "BMS001" | "10"   | "78.50" | "2101" | "5"       | "0"          | "10"      | "999"  | "49"     | "01"     | "01"     |
+            | 2   | "BMS001" | "10"   | "85.60" | "2101" | "5"       | "0"          | "10"      | "999"  | "49"     | "01"     | "01"     |
 
     Scenario: Create/Sefas/Validation
         #Create and Send to Sefaz
         When the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
-        And the user stores the value of the selected text field with the key: "DOCPTH"
+        #   And the user clicks the "Create" main action button on the right panel
+        #And a confirmation dialog appears with the message "Record has been created"
+        # And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
+        # And the user stores the value of the selected text field with the key: "DOCPTH"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        # And the selected log panel includes the message "NF-e: Authorized"
         And the user clicks the "Close page" main action button on the right panel
-        Then the user stores the value of the selected text field with the key: "CHAVENFEPTH"
+        Then the user stores the value of the selected text field with the key: "DOCPTH"
 
 
 
@@ -101,9 +102,9 @@ Feature:xq-p-flow-pth-modbcst5-cst10
 
 
         Examples:
-            | CURLIG | MDBCICMSST                   |
-            | "1"    | "4 - Margin Value added (%)" |
-            | "2"    | "4 - Margin Value added (%)" |
+            | CURLIG | MDBCICMSST           |
+            | "1"    | "5 - Ruling (value)" |
+            | "2"    | "5 - Ruling (value)" |
 
     Scenario: Logout
         And the user clicks the "Close page" main action button on the right panel

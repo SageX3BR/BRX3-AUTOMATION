@@ -64,35 +64,14 @@ Feature:xq-p-flow-poh-modbcst-cst10
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ |
             | 1   | "BMS001" | "10"   | "78.50" | "2101" | "6"       | "0"          | "10"      | "999"  |
-            | 2   | "BMS001" | "10"   | "85.60" | "2101" | "6"       | "0"          | "10"      | "999"  |
+
+
 
     Scenario: Create
         #Create and Send to Sefaz
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-        # And the user clicks the "Auto. tax calc." action button on the header drop down
-        # And the user clicks the "View log" action button on the header drop down
-        # And the user waits 4 seconds
-        # And a log panel appears
-        # And the user selects the main log panel of the page
-        # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
-        # And the user clicks the "Close page" main action button on the right panel
 
-        #Tax Detail - Check Values
-        And the user clicks the "Tax detail" action button on the header drop down
-        Then the "Tax detail" screen is displayed
-
-    Scenario Outline: Tax Detail - Check Calculated Values
-        Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
-        When the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_MDBCICMSST"
-        And the value of the selected text field is <MDBCICMSST>
-
-
-        Examples:
-            | CURLIG | MDBCICMSST            |
-            | "1"    | "6 - Operation Value" |
-            | "2"    | "6 - Operation Value" |
 
 
     #Logout
