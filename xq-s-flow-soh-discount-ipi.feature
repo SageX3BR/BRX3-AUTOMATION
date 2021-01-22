@@ -252,10 +252,6 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
         And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user hits tab
-        And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
-        And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_DISCRGVAL1"
         And the user adds the text <DISCRGVAL1> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_DISCRGVAL2"
@@ -265,9 +261,9 @@ Feature:xq-s-flow-soh-modbcst-cst10
 
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQVARCFOP | XQVARCFOP | DISCRGVAL1 | DISCRGVAL2 |
-            | 1   | "BMS001" | "1" | "100"  | "6101" | "7"       | "7"       | ""         | ""         |
-            | 2   | "BMS001" | "1" | "100"  | "6101" | "7"       | "7"       | ""         | ""         |
+            | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQVARCFOP | DISCRGVAL1 | DISCRGVAL2 |
+            | 1   | "BMS001" | "1" | "100"  | "6101" | "6"       | ""         | ""         |
+            | 2   | "BMS001" | "1" | "100"  | "6101" | "6"       | ""         | ""         |
 
 
     Scenario: Invoice Elements

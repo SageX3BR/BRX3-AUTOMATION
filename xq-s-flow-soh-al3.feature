@@ -92,9 +92,9 @@ Feature: xq-s-flow-soh-al3
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        And the user waits (2) seconds
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
+        #And the user waits (2) seconds
+        #And an alert box appears
+        #And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |

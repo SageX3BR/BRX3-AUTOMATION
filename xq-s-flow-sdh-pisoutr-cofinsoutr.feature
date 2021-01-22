@@ -68,7 +68,7 @@ Feature: xq-s-flow-sdh-pisOutr-cofinsOutr
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell and hits enter key

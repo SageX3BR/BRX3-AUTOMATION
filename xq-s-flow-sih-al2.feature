@@ -90,6 +90,8 @@ Feature: xq-s-flow-sih-al2
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
@@ -101,9 +103,9 @@ Feature: xq-s-flow-sih-al2
         # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "6"  | "29.69" | "6101" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "24" | "19.65" | "6101" | "0"     | "10"      | "999"  |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "6"  | "29.69" | "6101" | ""        | "0"     | "10"      | "999"  |
+            | 2   | "BMS002" | "24" | "19.65" | "6101" | ""        | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 

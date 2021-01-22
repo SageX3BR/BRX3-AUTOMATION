@@ -94,8 +94,8 @@ Feature: xq-s-flow-gessdh-ipi
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQVARCFOP | DISCRGVAL1 | DISCRGVAL2 |
-            | 1   | "BMS001" | "1" | "100"  | "6101" | "7"       | ""         | "2"        |
-            | 2   | "BMS001" | "1" | "100"  | "6101" | "7"       | ""         | "2"        |
+            | 1   | "BMS001" | "1" | "100"  | "6101" | "6"       | ""         | "2"        |
+            | 2   | "BMS001" | "1" | "100"  | "6101" | "6"       | ""         | "2"        |
 
     Scenario: Invoice Elements
 
@@ -103,7 +103,7 @@ Feature: xq-s-flow-gessdh-ipi
         Then the user selects the fixed data table for x3 field name: "WK4ALL2_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WK4ALL2_INVDTAAMT" and row number: (2)
         And the user adds the text "1" in selected cell and hits enter key
-        And the user selects the fixed cell with X3 field name: "WK4ALL2_INVDTAAMT" and row number: (9)
+        And the user selects the fixed cell with X3 field name: "WK4ALL2_INVDTAAMT" and row number: (6)
         And the user adds the text "0.5" in selected cell and hits enter key
 
     Scenario: Create document

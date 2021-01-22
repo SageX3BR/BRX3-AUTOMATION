@@ -67,28 +67,22 @@ Feature: xq-s-flow-sdh-modbcst4-cts10
         And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user waits 2 seconds
-        And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
-        And the user waits 2 seconds
         And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
-        And the user waits 1 seconds
-        And the user adds the text <XQVARCFOP> in selected cell
-        And the user waits 1 seconds
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
+        And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user waits 1 seconds
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
-        And the user waits 1 seconds
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell and hits enter key
-        And the user waits 1 seconds
+        And the user adds the text <XQCSTICMS> in selected cell
+        And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
-            | 1   | "BMS001" | "BMS001" | "12" | "3.69"  | "6101" | "4"       | "4"       | "0"     | "10"      |
-            | 2   | "BMS001" | "BMS001" | "29" | "12.96" | "6101" | "4"       | "4"       | "0"     | "10"      |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
+            | 1   | "BMS001" | "12" | "3.69"  | "6101" | "4"       | "0"     | "10"      |
+            | 2   | "BMS001" | "29" | "12.96" | "6101" | "4"       | "0"     | "10"      |
 
 
 

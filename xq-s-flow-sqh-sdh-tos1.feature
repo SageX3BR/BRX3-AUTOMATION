@@ -96,9 +96,9 @@ Feature: xq-s-flow-sqh-sdh-tos1
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK1ALL2_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        And the user waits (3) seconds
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
+        #And the user waits (3) seconds
+        #And an alert box appears
+        #And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -120,8 +120,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
-        Then the "Sales Order ALL : Full entry" screen is displayed
-        And the user waits (3) seconds
+        Then the "Sales order ALL : Full entry" screen is displayed
 
     #--------------------------------------------------------------------------------
     #Creation of the Delivery
@@ -129,13 +128,12 @@ Feature: xq-s-flow-sqh-sdh-tos1
 
     Scenario: Create Delivery
 
-        And the user clicks the "Delivey" action button on the header drop down
+        And the user clicks the "Delivery" action button on the header drop down
         And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Delivery ALL : Full entry" screen is displayed
-        And the user waits (3) seconds
 
 
     Scenario: Check the data

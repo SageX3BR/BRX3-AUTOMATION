@@ -137,23 +137,23 @@ Feature: xq-s-flow-sqh-soh-tosp
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SQHDocumentNo" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        Then an alert box with the text containing "Replace data from the General Data tab?" appears
-        And the user clicks the "Yes" opinion in the alert box
-        Then an alert box with the text containing "Replace data from the Shipping data tab?" appears
-        And the user clicks the "Yes" opinion in the alert box
+        #Then an alert box with the text containing "Replace data from the General Data tab?" appears
+        #And the user clicks the "Yes" opinion in the alert box
+        #Then an alert box with the text containing "Replace data from the Shipping data tab?" appears
+        #And the user clicks the "Yes" opinion in the alert box
         #Create receipt and store receipt number
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SOH0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHDocumentNo"
-        And the user clicks the Close page action icon on the header panel
+    #And the user clicks the Close page action icon on the header panel
 
 
-    Scenario: Check the data
-        And the user selects the text field with X3 field name: "SOH0_BPCORD"
-        And the value of the selected text field is "BR001"
-        And the user selects the text field with X3 field name: "SOH0_BPCINV"
-        And the value of the selected text field is "BR150"
+    #Scenario: Check the data
+    #And the user selects the text field with X3 field name: "SOH0_BPCORD"
+    #And the value of the selected text field is "BR001"
+    #And the user selects the text field with X3 field name: "SOH0_BPCINV"
+    #And the value of the selected text field is "BR150"
 
     Scenario: Logout
 

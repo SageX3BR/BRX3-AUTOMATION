@@ -73,9 +73,10 @@ Feature: xq-s-flow-sih-cfop-sug6
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
-        And the user adds the text <GROPRI> in selected cell and hits enter key
+        And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell and hits enter key
+        And the user adds the text <XQCFOP> in selected cell
+        And the user hits enter
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP |
