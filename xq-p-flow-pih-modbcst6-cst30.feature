@@ -82,8 +82,8 @@ Feature:xq-p-flow-pih-modbcst6-cst30
 
         Examples:
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "5"    | "17.58" | "2101" | "4"       | "0"          | "30"      | "999"  | "01"     | "01"     | "01"     |
-            | 2   | "BMS001" | "7"    | "19.85" | "2101" | "4"       | "0"          | "30"      | "999"  | "01"     | "01"     | "01"     |
+            | 1   | "BMS001" | "5"    | "17.58" | "2101" | "4"       | "0"          | "30"      | "999"  | "00"     | "01"     | "01"     |
+            | 2   | "BMS001" | "7"    | "19.85" | "2101" | "4"       | "0"          | "30"      | "999"  | "00"     | "01"     | "01"     |
 
     Scenario: Create/Sefas/Validation
         #Control Tab
