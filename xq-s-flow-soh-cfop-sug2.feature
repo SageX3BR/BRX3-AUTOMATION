@@ -73,15 +73,19 @@ Feature: xq-s-flow-soh-cfop-sug1
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell and hits tab key
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
+        #And an alert box appears
+        #And the user clicks the "Yes" opinion in the alert box
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "6" | "24.98" | "5101" |
-            | 2   | "BMS001" | "8" | "26.48" | " "    |
+            | 2   | "BMS001" | "8" | "26.48" | ""     |
+
+
 
     Scenario: Check error mensage
-        And the user adds the text "" in selected cell and hits tab key
+        And an alert box appears
+        And the user clicks the "Yes" opinion in the alert box
+        #And the user adds the text "" in selected cell and hits tab key
         And an alert box with the text "Mandatory field" appears
         And the user clicks the "Ok" opinion in the alert box
 

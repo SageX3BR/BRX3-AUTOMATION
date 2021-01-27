@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Edivaldo Monteiro
 # - Created date : 19/03/2020
-# - Updated by : Carla Cury
-# - Updated date : 29/12/2020
+# - Updated by : Daniela Anile
+# - Updated date : 26/01/2021
 # - Status : completed
 ###########################################################################
 

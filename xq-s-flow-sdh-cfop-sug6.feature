@@ -1,15 +1,15 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sdh-cfop-sug5
+# - Test code: xq-s-flow-sdh-cfop-sug6
 # - Description: SDH CFOP Suggestion5
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated by : Daniela Anile
+# - Updated date : 26/01/2021
+# - Status : Automated
 ###########################################################################
 
 #Global parameter intialization
@@ -27,7 +27,7 @@
 #
 # ###########################################################################
 
-Feature: xq-s-flow-sdh-cfop-sug5
+Feature: xq-s-flow-sdh-cfop-sug6
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario

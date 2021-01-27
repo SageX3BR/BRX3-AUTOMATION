@@ -9,7 +9,7 @@
 # - Created date : 10/07/2020
 # - Updated by : Carla Cury
 # - Updated date : 10/07/2020
-# - Status : Completed
+# - Status : Automated
 ###########################################################################
 
 #Global parameter intialization

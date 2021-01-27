@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-gessih
+# - Test code: xq-s-flow-gessih-discount-IPI
 # - Description: GESSIH
 # - Jira: NA
 # - Legislation: BR addon
@@ -28,7 +28,7 @@
 #
 # ###########################################################################
 
-Feature: xq-s-flow-gessih
+Feature: xq-s-flow-gessih-discount-IPI
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario

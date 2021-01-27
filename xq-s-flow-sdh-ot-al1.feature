@@ -61,14 +61,14 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR004" to the selected text field and hits tab key
         # And an alert box with the text containing "This reference already exists for this customer" appears
-        And the user clicks the "ok" opinion in the alert box
+        #And the user clicks the "ok" opinion in the alert box
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "107" to the selected text field and hits tab key
         #Filling my industrialize
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Bill-to customer"
-        And the user writes "br005" to the selected text field and hits tab key
+        And the user writes "br005" to the selected text field
         And the user selects the text field with name: "Pay-by"
         And the user writes "Br005" to the selected text field and hits tab key
         And the user selects the text field with name: "Group customer"

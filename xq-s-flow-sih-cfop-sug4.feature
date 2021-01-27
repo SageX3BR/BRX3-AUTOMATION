@@ -1,15 +1,15 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sih-cfop-sug3
-# - Description: SDH CFOP Suggestion3
+# - Test code: xq-s-flow-sih-cfop-sug4
+# - Description: SDH CFOP Suggestion4
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated by : Daniela Anile
+# - Updated date : 25/01/2021
+# - Status : Automated
 ###########################################################################
 
 #Global parameter intialization
@@ -27,7 +27,7 @@
 #
 # ###########################################################################
 
-Feature: xq-s-flow-sih-cfop-sug3
+Feature: xq-s-flow-sih-cfop-sug4
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -75,8 +75,8 @@ Feature: xq-s-flow-sih-cfop-sug3
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell and hits enter key
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
+        #And an alert box appears
+        #And the user clicks the "Yes" opinion in the alert box
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "6" | "24.98" | "5102" |
