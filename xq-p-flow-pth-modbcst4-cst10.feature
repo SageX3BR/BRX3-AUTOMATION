@@ -60,18 +60,12 @@ Feature:xq-p-flow-pth-modbcst5-cst10
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCENQ"
-        And the user adds the text <XQCENQ> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTPIS"
-        And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCOF"
-        Then the user adds the text <XQCSTCOF> in selected cell and hits enter key
+        And the user adds the text <XQCENQ> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "10"   | "78.50" | "2101" | "4"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
-            | 2   | "BMS001" | "10"   | "85.60" | "2101" | "4"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
+            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "10"   | "78.50" | "2101" | "4"       | "0"          | "10"      | "999"  |
+            | 2   | "BMS001" | "10"   | "85.60" | "2101" | "4"       | "0"          | "10"      | "999"  |
 
     Scenario: Create/Sefas/Validation
         #Create and Send to Sefaz
@@ -88,7 +82,7 @@ Feature:xq-p-flow-pth-modbcst5-cst10
 
 
 
-    Scenario Outline: Tax Detail - Check Calculated Values
+    Scenario: Tax Detail - Check Calculated Values
         #Tax Detail - Check Values
         And the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
@@ -106,7 +100,7 @@ Feature:xq-p-flow-pth-modbcst5-cst10
             | "2"    | "4 - Margin Value added (%)" |
 
     Scenario: Logout
-        And the user clicks the "Close page" main action button on the right panel
-        Then the user clicks the Close page action icon on the header panel
+        #And the user clicks the "Close page" main action button on the right panel
+        Given the user clicks the Close page action icon on the header panel
         #Logout
         Then the user logs-out from the system

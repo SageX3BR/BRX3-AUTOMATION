@@ -70,8 +70,8 @@ Feature:xq-p-flow-pth-modbcst5-cst10
 
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "10"   | "78.50" | "2101" | "5"       | "0"          | "10"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS001" | "10"   | "85.60" | "2101" | "5"       | "0"          | "10"      | "999"  | "49"     | "01"     | "01"     |
+            | 1   | "BMS001" | "10"   | "78.50" | "2101" | "5"       | "0"          | "10"      | "999"  | "00"     | "01"     | "01"     |
+            | 2   | "BMS001" | "10"   | "85.60" | "2101" | "5"       | "0"          | "10"      | "999"  | "00"     | "01"     | "01"     |
 
     Scenario: Create/Sefas/Validation
         #Create and Send to Sefaz
@@ -89,7 +89,7 @@ Feature:xq-p-flow-pth-modbcst5-cst10
 
 
 
-    Scenario Outline: Tax Detail - Check Calculated Values
+    Scenario: Tax Detail - Check Calculated Values
         #Tax Detail - Check Values
         And the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
@@ -107,7 +107,7 @@ Feature:xq-p-flow-pth-modbcst5-cst10
             | "2"    | "5 - Ruling (value)" |
 
     Scenario: Logout
-        And the user clicks the "Close page" main action button on the right panel
-        Then the user clicks the Close page action icon on the header panel
+        #And the user clicks the "Close page" main action button on the right panel
+        Given the user clicks the Close page action icon on the header panel
         #Logout
         Then the user logs-out from the system
