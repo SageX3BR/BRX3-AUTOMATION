@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-poh-FCPST
+# - Test code:xq-p-flow-poh-fcpst-10-30-70-90
 # - Description: Validate FCP_ST fields and calculation for CST 10-30-70-90
 # - Jira: NA
 # - Legislation: BR addon
@@ -12,7 +12,7 @@
 # - Status : Automated
 ###########################################################################
 
-Feature:xq-p-flow-poh-fcpst
+Feature:xq-p-flow-poh-fcpst-10-30-70-90
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario

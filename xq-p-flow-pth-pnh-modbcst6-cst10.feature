@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-pth-FCPST
+# - Test code:xq-p-flow-pth-pnh-modbcst6-cst10
 # - Description: Validate FCP_ST fields and calculation for CST 10-30-70-90
 # - Jira: NA
 # - Legislation: BR addon
@@ -12,7 +12,7 @@
 # - Status : Automated
 ###########################################################################
 
-Feature:xq-p-flow-pth-fcpst
+Feature:xq-p-flow-pth-pnh-modbcst6-cst10
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -88,7 +88,7 @@ Feature:xq-p-flow-pth-fcpst
 
 
 
-    Scenario Outline: Tax Detail - Check Calculated Values
+    Scenario: Tax Detail - Check Calculated Values
         #Tax Detail - Check Values
         And the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed

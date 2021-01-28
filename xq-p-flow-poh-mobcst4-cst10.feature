@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-poh-modbcst-cst10
+# - Test code:xq-p-flow-poh-mobcst4-cst10
 # - Description: [BR] [NF-e] [Purchase] Nota Técnica 2019.001 v1.40 - modBCST
 # - Jira: X3-203742
 # - Legislation: BR addon
@@ -12,7 +12,7 @@
 # - Status : Automated
 ###########################################################################
 
-Feature:xq-p-flow-poh-modbcst-cst10
+Feature:xq-p-flow-poh-mobcst4-cst10
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
