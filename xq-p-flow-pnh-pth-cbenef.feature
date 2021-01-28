@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Fausto Neto
 # - Created date : 24/07/2020
-# - Updated by : Fausto Neto
-# - Updated date : 12/08/2020
+# - Updated by : Carla Cury
+# - Updated date : 28/01/2021
 # - Status : WIP
 ###########################################################################
 # Notes
