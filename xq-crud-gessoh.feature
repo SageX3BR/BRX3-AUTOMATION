@@ -48,10 +48,9 @@ Feature: xq-crud-gessoh
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Reference"
         And the user writes "CRUD Test15" to the selected text field and hits tab key
-
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR001" to the selected text field and hits tab key
-        # And the user clicks the "Ok" opinion in the alert box
+        And the user clicks the "Ok" opinion in the alert box
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
         When the user clicks the "Management" tab selected by title

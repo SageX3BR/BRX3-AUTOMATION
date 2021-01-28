@@ -28,7 +28,7 @@
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-sdh-ot-al1 2
+Feature: xq-s-flow-sdh-ot-al1
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -148,8 +148,8 @@ Feature: xq-s-flow-sdh-ot-al1 2
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with name: "Bill-to customer"
-        And the user writes "BR005" to the selected text field and hits tab key
+        #And the user selects the text field with name: "Bill-to customer"
+        #And the user writes "BR005" to the selected text field and hits tab key
 
         # BPCORD=br004
         # brcinv=br005

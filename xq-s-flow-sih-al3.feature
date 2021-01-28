@@ -116,7 +116,7 @@ Feature: xq-s-flow-sih-al3
 
     Scenario: Check Calculated Values
 
-        Given the user clicks the "Tax Summary" tab selected by title
+        Given the user clicks the "NF-e Summary" tab selected by title
         # And the user selects cell with X3 field name: "WK5ALL4_XQVALICMSDEV" of selected row
         # And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK5ALL4_TOTVALFINST" of selected row

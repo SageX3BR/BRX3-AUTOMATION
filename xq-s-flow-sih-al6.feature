@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
+# - Updated by : Daniela Anile
+# - Updated date : 28/01/2021
 # - Status : in progress
 ###########################################################################
 
@@ -28,7 +28,7 @@
 #
 # ###########################################################################
 
-Feature: xq-s-flow-sih-al3
+Feature: xq-s-flow-sih-al6
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -56,19 +56,16 @@ Feature: xq-s-flow-sih-al3
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "BR003" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
-        #alert
-        And the user writes "100" to the selected text field and hits tab key
-        #Filling my industrialize
+        And the user writes "100" to the selected text field
+
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Sold-to"
-        And the user writes "br005" to the selected text field and hits tab key
-        And the user clicks the "Delivery" tab selected by title
-        And the user selects the text field with name: "Shipment site"
-        And the user writes "BR011" to the selected text field and hits tab key
+        And the user writes "BR005" to the selected text field and hits tab key
+        #And the user clicks the "Delivery" tab selected by title
+        #And the user selects the text field with name: "Shipment site"
+        #And the user writes "BR011" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-
-    #Filling Lines
 
     Scenario Outline: Add Lines
 
@@ -93,21 +90,21 @@ Feature: xq-s-flow-sih-al3
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "16" | "18.24" | "6101" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "17" | "9.63"  | "6101" | "0"     | "10"      | "999"  |
+            | 1   | "BMS001" | "16" | "18.24" | "5101" | "0"     | "10"      | "999"  |
+            | 2   | "BMS002" | "17" | "9.63"  | "5101" | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        Given the user clicks the "Lines" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
+    #Given the user clicks the "Lines" tab selected by title
+    #And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
 
 
     Scenario: Check Calculated Values
 
-        Given the user clicks the "Tax Summary" tab selected by title
+        Given the user clicks the "NF-e Summary" tab selected by title
         # And the user selects cell with X3 field name: "WK5ALL4_XQVALICMSDEV" of selected row
         # And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK5ALL4_TOTVALFINST" of selected row
