@@ -108,7 +108,7 @@ Feature: xq-s-flow-sdh-ot-al2
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
             | 1   | "BMS001" | "26" | "31.25" | "6118" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "17" | "16.98" | "6118" | "0"     | "10"      | "999"  |
+    #| 2   | "BMS002" | "17" | "16.98" | "6118" | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 
@@ -139,7 +139,7 @@ Feature: xq-s-flow-sdh-ot-al2
         Examples:
             | ITMREF   | XQCFOP |
             | "BMS001" | "5118" |
-            | "BMS002" | "5118" |
+    #| "BMS002" | "5118" |
 
     # Scenario: Alterar CFOP
     #     Given the user selects row that has the text "BMS001" in column with X3 field name: "WK5ALL5_ITMREF"

@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
+# - Updated by : Daniela Anile
+# - Updated date : 28/01/2021
 # - Status : in progress
 ###########################################################################
 
@@ -119,8 +119,7 @@ Feature: xq-s-flow-gessih
         And the user selects the main log panel of the page
         And the selected log panel includes the message "X3 validation Invoice/Credit"
         And the user clicks the Close page action icon on the header panel
-    #And the selected log panel includes the message "X3 validation Invoice/Credit"
-    #And the user clicks the Close page action icon on the header panel
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: 3. Create a Invoice
 
@@ -153,24 +152,26 @@ Feature: xq-s-flow-gessih
     Scenario: Process Id
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
         And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
-        And the user adds the text "1" in selected cell and hits tab key
-    #Filling my industrialize
+        And the user adds the text "1" in selected cell and hits enter key
+        And the user hits enter
 
     Scenario: Fill Management
-        # When the user clicks the "Management" tab selected by title
+        When the user clicks the "Management" tab selected by title
         # And the user selects the text field with name: "Sold-to"
         # And the user writes "br003" to the selected text field and hits tab key
         # And the user selects the text field with name: "Pay-by"
         # And the user writes "Br003" to the selected text field and hits tab key
         # And the user selects the text field with name: "Group customer"
         # And the user writes "BR003" to the selected text field and hits tab key
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-    #Filling Lines
+        #Given the user clicks the "Management" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WK5ALL1_VACBPR"
+        And the user adds the text "BRL" in selected cell and hits tab key
 
     Scenario Outline: Add Lines
 
-        Given the user selects editable table row number: <LIN>
+        Given the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
+        And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
