@@ -142,7 +142,7 @@ Feature:xq-p-flow-pth-pnh-modbcst6-cst10
         #Picking the receipt number
         When the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR006" of the picking list panel
+        And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR011" of the picking list panel
         Then the user checks the selected picking list panel item
 
         And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
@@ -192,13 +192,6 @@ Feature:xq-p-flow-pth-pnh-modbcst6-cst10
 
     Scenario: Resume - Check Calculated Values / Transmit to Sefaz and Validation
         Given the user clicks the Close page action icon on the header panel
-        # When the user clicks the "Legal data" action button on the header drop down
-        # Then the "Purchasing Legal data" screen is displayed
-        # When the user selects the text field with X3 field name: "XQPLD2_TOTBASEFCPST"
-        # And the value of the selected text field is "8,837.5900"
-        # And the user selects the text field with X3 field name: "XQPLD2_TOTICMSFCPST"
-        # And the value of the selected text field is "176.7600"
-        Then the user clicks the Close page action icon on the header panel
         #Sefaz
         When the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears
