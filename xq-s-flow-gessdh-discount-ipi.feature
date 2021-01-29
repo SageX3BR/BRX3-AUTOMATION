@@ -8,27 +8,12 @@
 # - Created by : Carla Cury
 # - Created date : 19/06/2020
 # - Updated by : Carla Cury
-# - Updated date : 19/06/2020
+# - Updated date : 29/01/2021
 # - Status : in progress
 ###########################################################################
-#Global parameter intialization
-###########################################################################
-# Notes
-# -------------------------------------------------------------------------
-# For the purpose of this test:
-# - Parameter  : No specific parameter is required
-# SCENARIO 1: Perform a triangular operation where the Supplier (A) makes a sale to the customer (B) who will industrialize the product in an Industrializer (C). Aiming at an interstadual operation with state MT.
-#
-# PREREQUISITES:
-# CLIENTS WITH ADDRESS REGISTERED IN DIVERGENT STATES.
-# REGISTER NEW VTAX WITH TAXES RESETED TO GESSDH WITH USED CFOP.
-# ###########################################################################
-#As a user I want to Create , Modify , Delete a Sales order.
-#
-# ###########################################################################
-#As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-gessdh-ipi
+
+Feature: xq-s-flow-gessdh-discount-ipi
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -57,7 +42,7 @@ Feature: xq-s-flow-gessdh-ipi
         And the user selects the text field with name: "Type"
         And the user writes "BRSDH" to the selected text field and hits tab key
         And the user selects the text field with name: "Ship-to"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR002" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "121" to the selected text field and hits tab key
@@ -128,15 +113,15 @@ Feature: xq-s-flow-gessdh-ipi
 
         Examples:
             | ITMREF   | IPIBCALC  |
-            | "BMS001" | "96.7700" |
-            | "BMS001" | "96.7700" |
+            | "BMS001" | "97.0200" |
+            | "BMS001" | "97.0200" |
 
 
     Scenario: Check Calculated Values
 
         Given the user clicks the "Tax Summary" tab selected by title
         And the user selects the text field with X3 field name: "XQSDH1_TOTBASEIPI"
-        And the value of the selected text field is "193.5400"
+        And the value of the selected text field is "194.0400"
 
 
     # And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row

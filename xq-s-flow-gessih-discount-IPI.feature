@@ -2,30 +2,16 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: xq-s-flow-gessih-discount-IPI
-# - Description: GESSIH
-# - Jira: NA
+# - Description: Delivery with discount in the Line and Invoicing Elements
+# - Jira: X3-203943
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
 # - Updated by : Carla Cury
-# - Updated date : 10/07/2020
+# - Updated date : 29/01/2021
 # - Status : in progress
 ###########################################################################
 
-#Global parameter intialization
-###########################################################################
-# Notes
-# -------------------------------------------------------------------------
-# For the purpose of this test:
-# - Parameter  : No specific parameter is required
-# SCENARIO 1: Creation Sales Invoice with Average load and the same client - First product
-#
-# PREREQUISITES:
-# CLIENTS WITH ADDRESS REGISTERED IN STATES WITH RULES OF THE AVERAGE LOAD OP1.
-# https://confluence.sage.com/display/XWOLOLO/Update+on+tax+calculation+engine+in+order+to+make+the+specific+calculation+rule+to+ICMS-ST+to+Triangular+Operation+Sales
-# ###########################################################################
-#
-#
 # ###########################################################################
 
 Feature: xq-s-flow-gessih-discount-IPI
@@ -54,7 +40,7 @@ Feature: xq-s-flow-gessih-discount-IPI
         # And the user selects the text field with name: "Type"
         # And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR002" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
 
@@ -104,8 +90,8 @@ Feature: xq-s-flow-gessih-discount-IPI
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQVARCFOP | DISCRGVAL1 | DISCRGVAL2 | XQOICMS |
-            | 1   | "BMS001" | "1" | "100"  | "6101" | "7"       | ""         | ""         | "0"     |
-            | 2   | "BMS001" | "1" | "100"  | "6101" | "7"       | ""         | ""         | "0"     |
+            | 1   | "BMS001" | "1" | "100"  | "6101" | "6"       | "2"        | ""         | "0"     |
+            | 2   | "BMS001" | "1" | "100"  | "6101" | "6"       | ""         | "2"        | "0"     |
 
     Scenario: Create document
 
@@ -117,12 +103,12 @@ Feature: xq-s-flow-gessih-discount-IPI
 
     Scenario: Invoice Elements
 
-        Given the user clicks the "Management" tab selected by title
+        Given the user clicks the "Invoicing" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL2_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (2)
         And the user adds the text "1" in selected cell and hits enter key
-        And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (9)
-        And the user adds the text "0.5" in selected cell and hits enter key
+    # And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (9)
+    # And the user adds the text "0.5" in selected cell and hits enter key
 
     Scenario: Create document
 
@@ -146,15 +132,15 @@ Feature: xq-s-flow-gessih-discount-IPI
 
         Examples:
             | ITMREF   | IPIBCALC  |
-            | "BMS001" | "98.7500" |
-            | "BMS001" | "98.7500" |
+            | "BMS001" | "97.0200" |
+            | "BMS001" | "97.0200" |
 
 
     Scenario: Check Calculated Values
 
         Given the user clicks the "NF-e Summary" tab selected by title
         And the user selects the text field with X3 field name: "XQSIH1_TOTBASEIPI"
-        And the value of the selected text field is "197.5000"
+        And the value of the selected text field is "194.0400"
 
 
 

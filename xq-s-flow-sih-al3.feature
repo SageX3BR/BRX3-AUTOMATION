@@ -8,8 +8,8 @@
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
 # - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated date : 29/01/2021
+# - Status : completed
 ###########################################################################
 
 #Global parameter intialization
@@ -117,17 +117,8 @@ Feature: xq-s-flow-sih-al3
     Scenario: Check Calculated Values
 
         Given the user clicks the "NF-e Summary" tab selected by title
-        # And the user selects cell with X3 field name: "WK5ALL4_XQVALICMSDEV" of selected row
-        # And the value of the selected cell is "90.1100"
-        And the user selects cell with X3 field name: "WK5ALL4_TOTVALFINST" of selected row
-        And the value of the selected cell is "121.5000"
-
-
-    # And the user selects cell with X3 field name: "WK5ALL4_XQDETIMPOSTO" of selected row
-    # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-    # And the value of the selected text field is "132.1700"
-    # And the user clicks the Close page action icon on the header panel
-    #Tax Det.
+        And the user selects the text field with X3 field name: "XQSIH1_TOTVALFINST"
+        And the value of the selected text field is "121.5000"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

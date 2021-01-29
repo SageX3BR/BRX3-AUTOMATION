@@ -8,8 +8,8 @@
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
 # - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated date : 29/01/2021
+# - Status : completed
 ###########################################################################
 
 #Global parameter intialization
@@ -69,7 +69,7 @@ Feature: xq-s-flow-sdh-al2
         And the user selects the text field with name: "Group customer"
         And the user writes "BR003" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
+        Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Add Lines
 
@@ -114,10 +114,11 @@ Feature: xq-s-flow-sdh-al2
 
         Examples:
             | ITMREF   | XQVALFINST |
-            | "BMS001" | "110.9000" |
+            | "BMS002" | "110.9000" |
 
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Yes" opinion in the alert box
         And the user logs-out from the system
 

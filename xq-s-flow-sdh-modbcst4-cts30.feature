@@ -8,8 +8,8 @@
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
 # - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : COMPLET
+# - Updated date : 29/01/21
+# - Status : COMPLETED
 ###########################################################################
 
 #Global parameter intialization
@@ -33,12 +33,11 @@ Feature:
 
 
     #--------------------------------------------------------------------------------
-    #Creation of the delivery for CST 10 modbc 6
+    #Creation of the delivery for CST 30 modbc 4
     #--------------------------------------------------------------------------------
     Scenario: 2. Create a Delivery
 
         Given the user opens the "GESSDH" function
-        And the user waits 2 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -55,8 +54,6 @@ Feature:
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
         And the user writes "125" to the selected text field and hits tab key
-        # And the user clicks the "Calc. memory On/Off" action button on the header drop down
-        # And the user clicks the "Ok" opinion in the alert box
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
@@ -67,32 +64,25 @@ Feature:
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user waits 2 seconds
-        And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
-        And the user waits 2 seconds
         And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
-        And the user waits 1 seconds
-        And the user adds the text <XQVARCFOP> in selected cell
-        And the user waits 1 seconds
+        And the user selects last editable cell with X3 field name: "WK4ALL1_GROPRI"
+        And the user adds the text <GROPRI> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
+        And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user waits 1 seconds
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
-        And the user waits 1 seconds
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCODBF"
         And the user adds the text <XQCODBF> in selected cell and hits enter key
-        And the user waits 2 seconds
-        And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF   |
-            | 1   | "BMS001" | "BMS001" | "12" | "3.69"  | "6101" | "4"       | "4"       | "0"     | "30"      | "PR80003" |
-            | 2   | "BMS001" | "BMS001" | "29" | "12.96" | "6101" | "4"       | "4"       | "0"     | "30"      | "PR80003" |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF   |
+            | 1   | "BMS001" | "12" | "3.69"  | "6101" | "4"       | "0"     | "30"      | "PR80003" |
+            | 2   | "BMS001" | "29" | "12.96" | "6101" | "4"       | "0"     | "30"      | "PR80003" |
 
 
     Scenario: Create document
@@ -128,11 +118,11 @@ Feature:
     Scenario: SEFAZ
 
         When the user clicks the "Save" main action button on the right panel
-        Given the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
-        Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+    # Given the user clicks the "SEFAZ" action button on the header drop down
+    # And the user waits 10 seconds
+    # Then a log panel appears
+    # And the user selects the main log panel of the page
+    # And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
 
 
     Scenario: Logout

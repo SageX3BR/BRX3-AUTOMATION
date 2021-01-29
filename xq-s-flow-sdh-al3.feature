@@ -8,8 +8,8 @@
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
 # - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated date : 29/01/2021
+# - Status : completed
 ###########################################################################
 
 #Global parameter intialization
@@ -69,24 +69,24 @@ Feature: xq-s-flow-sdh-al3
         And the user selects the text field with name: "Group customer"
         And the user writes "BR003" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK2ALL1_ARRAY_NBLIG"
+        Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Add Lines
 
         Given the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WK2ALL1_ITMREF"
+        And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL1_QTY"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL1_GROPRI"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_GROPRI"
         And the user adds the text <GROPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL1_XQCFOP"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL1_XQOICMS"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL1_XQCSTICMS"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL1_XQCENQ"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
 
         Examples:
@@ -101,19 +101,13 @@ Feature: xq-s-flow-sdh-al3
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
-    Scenario Outline: Tax Detail - Check Calculated Values
-        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
-        And the user selects cell with X3 field name: "WK4ALL1_XQDETIMPOSTO" of selected row
-        When the user clicks on the icon contained in the selected cell
-        Then the "Tax determination" screen is displayed
-        #Check Values
-        And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-        And the value of the selected text field is <XQVALFINST>
-        Then the user clicks the Close page action icon on the header panel
+    Scenario: Check Calculated Values
 
-        Examples:
-            | ITMREF   | XQVALFINST |
-            | "BMS001" | "267.8000" |
+        Given the user clicks the "Tax Summary" tab selected by title
+        And the user selects the text field with X3 field name: "XQSDH1_TOTVALFINST"
+        And the value of the selected text field is "267.8000"
+
+
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

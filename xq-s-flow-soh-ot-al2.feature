@@ -1,14 +1,14 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-p-flow-soh-it-al2
+# - Test code: xq-p-flow-soh-ot-al2
 # - Description: Operation Triangular SOH Average Load OP2
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 02/06/2020
 # - Updated by : Carla Cury
-# - Updated date : 02/06/2020
+# - Updated date : 29/01/2021
 # - Status : in progress
 ###########################################################################
 
@@ -110,9 +110,9 @@ Feature: xq-p-flow-soh-ot-al2
 
         Given the user selects row that has the text "BMS002" in column with X3 field name: "WK2ALL4_ITMREF"
         And the user selects cell with X3 field name: "WK2ALL4_XQVALICMSDEV" of selected row
-        And the value of the selected cell is "90.1100"
-        And the user selects cell with X3 field name: "WK2ALL4_XQVALFINST" of selected row
-    #  And the value of the selected cell is "52.4600"
+        And the value of the selected cell is "52.4600"
+    #35.7700
+
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
