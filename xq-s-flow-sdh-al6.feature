@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
+# - Updated by : Daniela Anile
+# - Updated date : 29/01/2021
 # - Status : in progress
 ###########################################################################
 
@@ -103,15 +103,11 @@ Feature: xq-s-flow-sdh-al6
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
-
-
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
-        And the user selects the text field with X3 field name: "WK4ALL11_TOTVALFINST"
+        And the user selects the text field with X3 field name: "XQSDH1_TOTVALFINST"
         And the value of the selected text field is "234.3600"
-
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-

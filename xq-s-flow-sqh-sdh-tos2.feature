@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sdh-ot-al3
+# - Test code: xq-s-flow-sdh-tos2
 # - Description: CRUD verification of delivey function gessdh
 # - Jira: NA
 # - Legislation: BR addon

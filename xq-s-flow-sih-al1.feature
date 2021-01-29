@@ -7,9 +7,9 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated by : Daniela Anile
+# - Updated date : 29/01/2021
+# - Status : Automated
 ###########################################################################
 
 #Global parameter intialization
@@ -120,9 +120,6 @@ Feature: xq-s-flow-sih-al1
         And the user selects cell with X3 field name: "WK5ALL4_XQVALFINST" of selected row
         And the value of the selected cell is "33.3100"
     #atualmente apresenta 20.8400, verificar a regra.
-
-
-
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

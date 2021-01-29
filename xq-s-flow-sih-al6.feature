@@ -97,25 +97,11 @@ Feature: xq-s-flow-sih-al6
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-    #Given the user clicks the "Lines" tab selected by title
-    #And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-
-
 
     Scenario: Check Calculated Values
-
         Given the user clicks the "NF-e Summary" tab selected by title
-        # And the user selects cell with X3 field name: "WK5ALL4_XQVALICMSDEV" of selected row
-        # And the value of the selected cell is "90.1100"
-        And the user selects cell with X3 field name: "WK5ALL4_TOTVALFINST" of selected row
-        And the value of the selected cell is "85.1800"
-
-
-    # And the user selects cell with X3 field name: "WK5ALL4_XQDETIMPOSTO" of selected row
-    # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-    # And the value of the selected text field is "132.1700"
-    # And the user clicks the Close page action icon on the header panel
-    #Tax Det.
+        And the user selects the text field with X3 field name: "XQSIH1_TOTVALFINST"
+        And the value of the selected text field is "85.1800"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

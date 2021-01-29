@@ -251,15 +251,12 @@ Feature: xq-s-flow-sdh-ot-al1
             | "BMS001" | "6118" |
             | "BMS002" | "6118" |
 
-
-
     Scenario: Create document
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
-
 
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"

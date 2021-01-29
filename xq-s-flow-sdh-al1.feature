@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
+# - Updated by : Daniela Anile
+# - Updated date : 29/01/2021
 # - Status : Automated
 ###########################################################################
 
@@ -113,7 +113,7 @@ Feature: xq-s-flow-sdh-al1
         #Check Values
         And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
         And the value of the selected text field is <XQVALFINST>
-        Then the user clicks the Close page action icon on the header panel
+        #Then the user clicks the Close page action icon on the header panel
 
         Examples:
             | ITMREF   | XQVALFINST |

@@ -134,7 +134,7 @@ Feature: xq-s-flow-sdh-ot-al2
     Scenario Outline: Alter Lines
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK5ALL4_ITMREF"
         And the user selects cell with X3 field name: "WK5ALL4_XQCFOP" of selected row
-        And the user adds the text <XQCFOP> in selected cell
+        And the user adds the text <XQCFOP> in selected cell and hits enter key
 
         Examples:
             | ITMREF   | XQCFOP |

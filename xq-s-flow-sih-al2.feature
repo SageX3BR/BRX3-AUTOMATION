@@ -7,9 +7,9 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated by : Daniela Anile
+# - Updated date : 29/01/2021
+# - Status : Automated
 ###########################################################################
 
 #Global parameter intialization
@@ -114,8 +114,6 @@ Feature: xq-s-flow-sih-al2
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-
-
     Scenario: Check Calculated Values
 
         Given the user selects row that has the text "BMS002" in column with X3 field name: "WK5ALL4_ITMREF"
@@ -123,7 +121,6 @@ Feature: xq-s-flow-sih-al2
         # And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK5ALL4_XQVALFINST" of selected row
         And the value of the selected cell is "88.1900"
-
 
     # And the user selects cell with X3 field name: "WK5ALL4_XQDETIMPOSTO" of selected row
     # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"

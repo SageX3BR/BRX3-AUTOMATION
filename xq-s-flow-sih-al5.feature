@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
+# - Updated by : Daniela Anile
+# - Updated date : 29/01/2021
 # - Status : in progress
 ###########################################################################
 
@@ -56,23 +56,25 @@ Feature: xq-s-flow-sih-al5
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "BR003" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
-        #alert
         And the user writes "100" to the selected text field and hits tab key
-        #Filling my industrialize
-        When the user clicks the "Management" tab selected by title
-        And the user selects the text field with name: "Sold-to"
-        And the user writes "br005" to the selected text field and hits tab key
-        And the user clicks the "Delivery" tab selected by title
-        And the user selects the text field with name: "Shipment site"
-        And the user writes "BR011" to the selected text field and hits tab key
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    #Filling Lines
+    Scenario: Process Id
+        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
+        And the user adds the text "1" in selected cell and hits tab key
+
+    Scenario: Management
+        Given the user clicks the "Management" tab selected by title
+        And the user selects the text field with name: "Sold-to"
+        And the user writes "BR005" to the selected text field and hits tab key
+    #And the user clicks the "Delivery" tab selected by title
+    #And the user selects the text field with name: "Shipment site"
+    #And the user writes "BR011" to the selected text field and hits tab key
 
     Scenario Outline: Add Lines
-
-        Given the user selects editable table row number: <LIN>
+        Given the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
+        And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
@@ -93,8 +95,8 @@ Feature: xq-s-flow-sih-al5
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "16" | "18.24" | "6101" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "17" | "9.63"  | "6101" | "0"     | "10"      | "999"  |
+            | 1   | "BMS001" | "16" | "18.24" | "5101" | "0"     | "10"      | "999"  |
+            | 2   | "BMS002" | "17" | "9.63"  | "5101" | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 
