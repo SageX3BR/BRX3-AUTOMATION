@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-crud-gessoh
+# - Test code: xq-s-crud-gessoh
 # - Description: CRUD verification of sales order function gessoh
 # - Jira: NA
 # - Legislation: BR addon
@@ -21,7 +21,7 @@
 #
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
-Feature: xq-crud-gessoh
+Feature: xq-s-crud-gessoh
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
