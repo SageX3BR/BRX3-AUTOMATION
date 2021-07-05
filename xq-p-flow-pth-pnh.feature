@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Daniela Anile
 # - Created date : 10/02/2021
-# - Updated by : Daniela Anile
-# - Updated date : 10/02/2021
+# - Updated by : Carla Cury
+# - Updated date : 05/07/2021
 # - Status : In progress
 ###########################################################################
 
@@ -51,7 +51,8 @@ Feature: xq-p-flow-pth-pnh
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell
+        And the user adds the text <XQCFOP> in selected cell and hits enter key
+        And the user clicks the "OK" button in the header
 
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI | XQCFOP |
@@ -84,14 +85,14 @@ Feature: xq-p-flow-pth-pnh
         And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
-        And the user writes "131" to the selected text field
+        And the user writes "131" to the selected text field and hits tab key
 
     Scenario: Picking
         Given the user clicks the "Selection criteria" action button on the header drop down
         And the "Preloading Criteria" screen is displayed
         And the user selects the text field with X3 field name: "PCRITRCP_WNUMRCP"
-        And the user writes the stored text with key "DOCPTH" in the selected text field and hits tab key
-        And the user clicks the "OK" main action button on the right panel
+        And the user writes the stored text with key "DOCPTH" in the selected text field and hits enter key
+        And the user clicks the "OK" button in the header
         When the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR011" of the picking list panel
