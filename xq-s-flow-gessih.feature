@@ -148,32 +148,29 @@ Feature: xq-s-flow-gessih
         And the user clicks the "Invoicing" tab selected by title
         And the user selects the text field with X3 field name: "WK5ALL2_CUR"
         And the user writes "BRL" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WK5ALL1_VACBPR"
+        And the user writes "BRL" to the selected text field and hits tab key
+
 
     Scenario: Process Id
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
         And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits enter key
-        And the user hits enter
+    #And the user hits enter
+
 
     Scenario: Fill Management
-        When the user clicks the "Management" tab selected by title
-        # And the user selects the text field with name: "Sold-to"
-        # And the user writes "br003" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Pay-by"
-        # And the user writes "Br003" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Group customer"
-        # And the user writes "BR003" to the selected text field and hits tab key
-        #Given the user clicks the "Management" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WK5ALL1_VACBPR"
-        And the user adds the text "BRL" in selected cell and hits tab key
-
-    Scenario Outline: Add Lines
 
         Given the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-        And the user selects editable table row number: <LIN>
+    #Filling Lines
+
+    Scenario Outline: Add Lines
+
+        Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCFOP"

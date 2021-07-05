@@ -86,11 +86,7 @@ Feature: xq-s-flow-sq-so-sd-si
         And the user selects last editable cell with X3 field name: "WK1ALL2_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK1ALL2_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell
-
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQOICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
-
+        And the user adds the text <XQCFOP> in selected cell and hits enter key
         #And the user waits (3) seconds
         #And an alert box appears
         #And the user clicks the "Yes" opinion in the alert box
