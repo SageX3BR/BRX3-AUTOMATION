@@ -117,7 +117,7 @@ Feature: xq-s-flow-sdh-al1
 
         Examples:
             | ITMREF   | XQVALFINST |
-            | "BMS001" | "156.9000" |
+            | "BMS001" | "156.90"   |
 
 
     Scenario: Logout
