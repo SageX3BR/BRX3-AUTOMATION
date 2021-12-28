@@ -1,15 +1,15 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sdh-al6
-# - Description: GESSDH Average Load OP6
+# - Test code: xq-s-flow-sdh-al5
+# - Description: GESSDH Average Load OP5
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
 # - Updated by : Daniela Anile
 # - Updated date : 29/01/2021
-# - Status : in progress
+# - Status : Automated
 ###########################################################################
 
 #Global parameter intialization
@@ -18,17 +18,17 @@
 # -------------------------------------------------------------------------
 # For the purpose of this test:
 # - Parameter  : No specific parameter is required
-# SCENARIO 1: Creation Deliveries with Average load and the same client - Sumary
+# SCENARIO 1: Creation Deliveries with Average load and the same client - Second product
 #
 # PREREQUISITES:
-# CLIENTS WITH ADDRESS REGISTERED IN STATES WITH RULES OF THE AVERAGE LOAD OP6.
+# CLIENTS WITH ADDRESS REGISTERED IN STATES WITH RULES OF THE AVERAGE LOAD OP5.
 # https://confluence.sage.com/display/XWOLOLO/Update+on+tax+calculation+engine+in+order+to+make+the+specific+calculation+rule+to+ICMS-ST+to+Triangular+Operation+Sales
 # ###########################################################################
 #
 #
 # ###########################################################################
 
-Feature: xq-s-flow-sdh-al6
+Feature: xq-s-flow-sdh-al5
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -103,11 +103,24 @@ Feature: xq-s-flow-sdh-al6
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
-    Scenario: Resume - Check Calculated Values
-        Given the user clicks the "Tax Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSDH1_TOTVALFINST"
-        And the value of the selected text field is "234.3600"
+
+    Scenario Outline: Tax Detail - Check Calculated Values
+        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
+        And the user selects cell with X3 field name: "WK4ALL1_XQDETIMPOSTO" of selected row
+        When the user clicks on the icon contained in the selected cell
+        Then the "Tax determination" screen is displayed
+        #Check Values
+        And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
+        And the value of the selected text field is <XQVALFINST>
+        Then the user clicks the Close page action icon on the header panel
+
+        Examples:
+            | ITMREF   | XQVALFINST |
+            | "BMS002" | "73.87"    |
+
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Yes" opinion in the alert box
         And the user logs-out from the system
+

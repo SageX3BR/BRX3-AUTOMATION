@@ -1,8 +1,8 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-s-flow-sdh-fcpst-70
-# - Description: Validate FCP_ST fields and calculation for CST 70
+# - Test code:xq-s-flow-sdh-fcpst-30
+# - Description: Validate FCP_ST fields and calculation for CST 30
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
@@ -12,7 +12,7 @@
 # - Status : Automated
 ###########################################################################
 
-Feature:xq-s-flow-sdh-fcpst-70
+Feature:xq-s-flow-sdh-fcpst-30
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -21,9 +21,9 @@ Feature:xq-s-flow-sdh-fcpst-70
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
     #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-70
+    #Validate FCP_ST fields and calculation - ICMS CST-30
     #--------------------------------------------------------------------------------
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-70
+    Scenario: 2. FCP_ST fields and calculation - ICMS CST-30
         Given the user opens the "GESSDH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -61,8 +61,8 @@ Feature:xq-s-flow-sdh-fcpst-70
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCSTICMS |
-            | 1   | "BMS001" | "14" | "98.54" | "70"      |
-            | 2   | "BMS002" | "16" | "98.52" | "70"      |
+            | 1   | "BMS001" | "14" | "98.54" | "30"      |
+            | 2   | "BMS002" | "16" | "98.52" | "30"      |
 
     Scenario: Create
         #Create
@@ -97,10 +97,9 @@ Feature:xq-s-flow-sdh-fcpst-70
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
         When the user selects the text field with X3 field name: "XQSDH1_TOTBASEFCPST"
-        And the value of the selected text field is "4,495.8500"
+        And the value of the selected text field is "4,495.85"
         And the user selects the text field with X3 field name: "XQSDH1_TOTICMSFCPST"
-        And the value of the selected text field is "89.9200"
-        And the user clicks the "Cancel" main action button on the right panel
+        And the value of the selected text field is "89.92"
         And the user clicks the "Validation" button in the header
         And the user clicks the "Ok" opinion in the alert box
         Then the user clicks the "Invoice" button in the header

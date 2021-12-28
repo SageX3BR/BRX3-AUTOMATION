@@ -72,7 +72,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         Then the user selects the fixed data table for x3 field name: "WK1ALL2_ARRAY_NBLIG"
     #Filling Lines
 
-    Scenario Outline: Add Lines
+    Scenario Outline: 3.Add Lines
 
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK1ALL2_ITMREF"
@@ -100,12 +100,12 @@ Feature: xq-s-flow-sqh-sdh-tos2
             | 1   | "BMS001" | "3" | "21.25" | "6118" | "1"       | "0"     | "00"      | "999"  |
             | 2   | "BMS002" | "3" | "35,32" | "6118" | "1"       | "0"     | "00"      | "999"  |
 
-    Scenario: Create document
+    Scenario: 4.Create document
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: Create Order
+    Scenario: 5.Create Order
 
         And the user clicks the "Order" action button on the header drop down
         And the user waits 10 seconds
@@ -118,7 +118,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
     #Creation of the invoice
     #--------------------------------------------------------------------------------
 
-    Scenario: Create Invoice
+    Scenario: 6.Create Invoice
 
         And the user clicks the "Invoice" action button on the header drop down
         And the user waits 10 seconds
@@ -126,31 +126,10 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-        And the user waits (3) seconds
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-    # Scenario Outline: Alter Lines
-    #     Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK5ALL4_ITMREF"
-    #     And the user selects cell with X3 field name: "WK5ALL4_XQCFOP" of selected row
-    #     And the user adds the text <XQCFOP> in selected cell
-    #     And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
-    #     And the user adds the text <XQVARCFOP> in selected cell
-    #     And the user selects last editable cell with X3 field name: "WK5ALL4_XQOICMS"
-    #     And the user adds the text <XQOICMS> in selected cell
-    #     And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
-    #     And the user adds the text <XQCSTICMS> in selected cell
-    #     Examples:
-    #| ITMREF |XQCFOP|XQVARCFOP|XQOICMS|XQCSTICMS|
-    #|"BMS001"|"6118"|   "1"   |  "0"  |   "00"  |
-    #|"BMS002"|"6118"|   "1"   |  "0"  |   "00"  |
 
-    #Create order and store order number
+    Scenario: 7.Create and Store Doc Number
 
-    Scenario: 2.1. Create and Store Doc Number
-
-        Given the user clicks the "Save" main action button on the right panel
-        #When a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SIH0_NUM"
+        Given the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
@@ -166,6 +145,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "X3 validation Invoice/Credit memo"
+        And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
     #--------------------------------------------------------------------------------
     #Creation of the receipt

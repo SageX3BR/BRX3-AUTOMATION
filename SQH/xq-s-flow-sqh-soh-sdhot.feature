@@ -119,9 +119,9 @@ Feature: xq-s-flow-sqh-soh-sdhot
         And the user selects the text field with name: "Bill-to customer"
         And the value of the selected text field is "BR004"
         And the user selects the text field with name: "Pay-by"
-        And the value of the selected text field is "Br004"
+        And the value of the selected text field is "BR001"
         And the user selects the text field with name: "Group customer"
-        And the value of the selected text field is "BR004"
+        And the value of the selected text field is "BR001"
 
 
     #--------------------------------------------------------------------------------

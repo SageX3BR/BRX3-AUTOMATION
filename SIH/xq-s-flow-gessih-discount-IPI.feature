@@ -112,7 +112,7 @@ Feature: xq-s-flow-gessih-discount-IPI
 
     Scenario: Create document
 
-        And the user clicks the "Create" main action button on the right panel
+        And the user clicks the "Save" main action button on the right panel
         #Then a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
@@ -131,16 +131,16 @@ Feature: xq-s-flow-gessih-discount-IPI
         Then the user clicks the Close page action icon on the header panel
 
         Examples:
-            | ITMREF   | IPIBCALC  |
-            | "BMS001" | "97.0200" |
-            | "BMS001" | "97.0200" |
+            | ITMREF   | IPIBCALC |
+            | "BMS001" | "97.02"  |
+            | "BMS001" | "97.02"  |
 
 
     Scenario: Check Calculated Values
 
         Given the user clicks the "NF-e Summary" tab selected by title
         And the user selects the text field with X3 field name: "XQSIH1_TOTBASEIPI"
-        And the value of the selected text field is "194.0400"
+        And the value of the selected text field is "194.04"
 
 
 

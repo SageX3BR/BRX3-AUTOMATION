@@ -1,15 +1,15 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sdh-al4
-# - Description: GESSDH Average Load OP4
+# - Test code: xq-s-flow-sdh-al2
+# - Description: GESSDH Average Load OP1
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Daniela Anile
+# - Updated by : Carla Cury
 # - Updated date : 29/01/2021
-# - Status : Automated
+# - Status : completed
 ###########################################################################
 
 #Global parameter intialization
@@ -21,14 +21,14 @@
 # SCENARIO 1: Creation Deliveries with Average load and the same client - First product
 #
 # PREREQUISITES:
-# CLIENTS WITH ADDRESS REGISTERED IN STATES WITH RULES OF THE AVERAGE LOAD OP4.
+# CLIENTS WITH ADDRESS REGISTERED IN STATES WITH RULES OF THE AVERAGE LOAD OP1.
 # https://confluence.sage.com/display/XWOLOLO/Update+on+tax+calculation+engine+in+order+to+make+the+specific+calculation+rule+to+ICMS-ST+to+Triangular+Operation+Sales
 # ###########################################################################
 #
 #
 # ###########################################################################
 
-Feature: xq-s-flow-sdh-al4
+Feature: xq-s-flow-sdh-al2
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -56,7 +56,7 @@ Feature: xq-s-flow-sdh-al4
         And the user selects the text field with name: "Type"
         And the user writes "BRSDH" to the selected text field and hits tab key
         And the user selects the text field with name: "Ship-to"
-        And the user writes "BR005" to the selected text field and hits tab key
+        And the user writes "BR003" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "100" to the selected text field and hits tab key
@@ -71,9 +71,8 @@ Feature: xq-s-flow-sdh-al4
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
-    #Filling Lines
-
     Scenario Outline: Add Lines
+
 
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
@@ -93,20 +92,15 @@ Feature: xq-s-flow-sdh-al4
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "9"  | "95.36" | "5101" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "16" | "24.69" | "5101" | "0"     | "10"      | "999"  |
+            | 1   | "BMS001" | "23" | "36.48" | "6101" | "0"     | "10"      | "999"  |
+            | 2   | "BMS002" | "14" | "42.36" | "6101" | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: Check Calculated Values
-
-
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
-
 
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
@@ -116,11 +110,12 @@ Feature: xq-s-flow-sdh-al4
         #Check Values
         And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
         And the value of the selected text field is <XQVALFINST>
-        And the user clicks the Close page action icon on the header panel
+        Then the user clicks the Close page action icon on the header panel
 
         Examples:
             | ITMREF   | XQVALFINST |
-            | "BMS001" | "160.4900" |
+            | "BMS002" | "110.90"   |
+
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

@@ -1,8 +1,8 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-s-flow-sdh-fcpst-900
-# - Description: Validate FCP_ST fields and calculation for CST 900
+# - Test code:xq-s-flow-sdh-fcpst-10
+# - Description: Validate FCP_ST fields and calculation for CST 10
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
@@ -12,7 +12,7 @@
 # - Status : Automated
 ###########################################################################
 
-Feature:xq-s-flow-sdh-fcpst-900
+Feature:xq-s-flow-sdh-fcpst-10
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -21,9 +21,9 @@ Feature:xq-s-flow-sdh-fcpst-900
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
     #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-900
+    #Validate FCP_ST fields and calculation - ICMS CST-10
     #--------------------------------------------------------------------------------
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-900
+    Scenario: 2. FCP_ST fields and calculation - ICMS CST-10
         Given the user opens the "GESSDH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -32,15 +32,15 @@ Feature:xq-s-flow-sdh-fcpst-900
         #Header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "SDH0_STOFCY"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR050" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SDH0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SDH0_SALFCY"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR050" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SDH0_BPCORD"
         And the user writes "BR150" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
-        And the user writes "48" to the selected text field and hits tab key
+        And the user writes "49" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
@@ -57,14 +57,12 @@ Feature:xq-s-flow-sdh-fcpst-900
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
         And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCENQ"
-        And the user adds the text <XQCENQ> in selected cell
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "14" | "98.54" | "900"     | "301"  |
-            | 2   | "BMS002" | "16" | "98.52" | "900"     | "301"  |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCSTICMS |
+            | 1   | "BMS001" | "14" | "98.54" | "10"      |
+            | 2   | "BMS002" | "16" | "98.52" | "10"      |
 
     Scenario: Create
         #Create
@@ -92,17 +90,17 @@ Feature:xq-s-flow-sdh-fcpst-900
 
     #     Examples:
     #         | ITMREF   | BCFCPST      | VLICMSFCPST | ALIQFCPST |
-    #         | "BMS001" | "1,993.3800" | "39.8700"   | "2.0000"  |
-    #         | "BMS002" | "2,277.6900" | "45.5500"   | "2.0000"  |
+    #         | "BMS001" | "2,098.2900" | "41.9700"   | "2.0000"  |
+    #         | "BMS002" | "2,397.5600" | "47.9500"   | "2.0000"  |
 
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
         When the user selects the text field with X3 field name: "XQSDH1_TOTBASEFCPST"
-        And the value of the selected text field is "4,271.0700"
+        And the value of the selected text field is "4,495.85"
         And the user selects the text field with X3 field name: "XQSDH1_TOTICMSFCPST"
-        And the value of the selected text field is "85.4200"
-        And the user clicks the "Cancel" main action button on the right panel
+        And the value of the selected text field is "89.92"
+        #And the user clicks the "Cancel" main action button on the right panel
         And the user clicks the "Validation" button in the header
         And the user clicks the "Ok" opinion in the alert box
         Then the user clicks the "Invoice" button in the header
