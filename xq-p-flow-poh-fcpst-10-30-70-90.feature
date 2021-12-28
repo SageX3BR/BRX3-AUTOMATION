@@ -96,23 +96,23 @@ Feature:xq-p-flow-poh-fcpst-10-30-70-90
         And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
-            | CURLIG | BFCPST       | ALQFCPST | VLFCPST   |
-            | "1"    | "1,099.0000" | "2.0000" | "21.9800" |
-            | "2"    | "1,198.4000" | "2.0000" | "23.9700" |
-            | "3"    | "1,402.8000" | "2.0000" | "28.0600" |
-            | "4"    | "1,890.0000" | "2.0000" | "37.8000" |
-            | "5"    | "701.4000"   | "2.0000" | "14.0300" |
-            | "6"    | "945.0000"   | "2.0000" | "18.9000" |
-            | "7"    | "766.4100"   | "2.0000" | "15.3300" |
-            | "8"    | "834.5800"   | "2.0000" | "16.6900" |
+            | CURLIG | BFCPST     | ALQFCPST | VLFCPST |
+            | "1"    | "1,099.00" | "2.00"   | "21.98" |
+            | "2"    | "1,198.40" | "2.00"   | "23.97" |
+            | "3"    | "1,402.80" | "2.00"   | "28.06" |
+            | "4"    | "1,890.00" | "2.00"   | "37.80" |
+            | "5"    | "701.40"   | "2.00"   | "14.03" |
+            | "6"    | "945.00"   | "2.00"   | "18.90" |
+            | "7"    | "766.41"   | "2.00"   | "15.33" |
+            | "8"    | "834.58"   | "2.00"   | "16.69" |
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         When the user selects the text field with X3 field name: "XQPOH2_TOTBASEFCPST"
-        And the value of the selected text field is "8,837.5900"
+        And the value of the selected text field is "8,837.59"
         And the user selects the text field with X3 field name: "XQPOH2_TOTICMSFCPST"
-        And the value of the selected text field is "176.7600"
+        And the value of the selected text field is "176.76"
 
         And the user clicks the Close page action icon on the header panel
         #Logout

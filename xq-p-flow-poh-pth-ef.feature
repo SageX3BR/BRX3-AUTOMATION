@@ -120,11 +120,11 @@ Feature: xq-p-flow-poh-pth-ef
     Scenario: 9. Check Values Invoice Elements
         Given the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPTH2_TTDESC"
-        And the value of the selected text field is "30.1500"
+        And the value of the selected text field is "30.15"
         Then the user selects the text field with X3 field name: "XQPTH2_TTFRETE"
-        And the value of the selected text field is "1.9600"
+        And the value of the selected text field is "1.96"
         Then the user selects the text field with X3 field name: "XQPTH2_TTSEGURO"
-        And the value of the selected text field is "4.5500"
+        And the value of the selected text field is "4.55"
         And the user clicks the Close page action icon on the header panel
 
     #--------------------------------------------------------------------------------
@@ -268,11 +268,11 @@ Feature: xq-p-flow-poh-pth-ef
     Scenario: 20. Check Values Invoice Elements
         Given the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPTH2_TTDESC"
-        And the value of the selected text field is "7.5200"
+        And the value of the selected text field is "7.52"
         Then the user selects the text field with X3 field name: "XQPTH2_TTFRETE"
-        And the value of the selected text field is "3.0300"
+        And the value of the selected text field is "3.03"
         Then the user selects the text field with X3 field name: "XQPTH2_TTSEGURO"
-        And the value of the selected text field is "1.7400"
+        And the value of the selected text field is "1.74"
         And the user clicks the Close page action icon on the header panel
 
     #--------------------------------------------------------------------------------
@@ -415,11 +415,11 @@ Feature: xq-p-flow-poh-pth-ef
     Scenario: 31. Check Values Invoice Elements
         Given the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPTH2_TTDESC"
-        And the value of the selected text field is "5.3700"
+        And the value of the selected text field is "5.37"
         Then the user selects the text field with X3 field name: "XQPTH2_TTFRETE"
-        And the value of the selected text field is "2.0300"
+        And the value of the selected text field is "2.03"
         Then the user selects the text field with X3 field name: "XQPTH2_TTSEGURO"
-        And the value of the selected text field is "1.0900"
+        And the value of the selected text field is "1.09"
         And the user clicks the Close page action icon on the header panel
 
     Scenario: 32. Logout

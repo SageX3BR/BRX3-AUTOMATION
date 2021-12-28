@@ -172,7 +172,7 @@ Feature: xq-p-flow-poh-pih-imp-ii
     Scenario: 9. Resume
         Given the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPIH2_TTNFE"
-        And the value of the selected text field is "1,933.3500"
+        And the value of the selected text field is "1,933.35"
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: 35. Logout
