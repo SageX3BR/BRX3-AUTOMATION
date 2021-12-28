@@ -105,7 +105,7 @@ Feature: xq-s-flow-sdh-al3
 
         Given the user clicks the "Tax Summary" tab selected by title
         And the user selects the text field with X3 field name: "XQSDH1_TOTVALFINST"
-        And the value of the selected text field is "267.8000"
+        And the value of the selected text field is "267.80"
 
 
 

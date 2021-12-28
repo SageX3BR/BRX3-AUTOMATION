@@ -106,7 +106,7 @@ Feature: xq-s-flow-sdh-al6
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
         And the user selects the text field with X3 field name: "XQSDH1_TOTVALFINST"
-        And the value of the selected text field is "234.3600"
+        And the value of the selected text field is "234.36"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

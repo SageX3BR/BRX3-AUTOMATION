@@ -120,7 +120,7 @@ Feature: xq-s-flow-sdh-al4
 
         Examples:
             | ITMREF   | XQVALFINST |
-            | "BMS001" | "160.4900" |
+            | "BMS001" | "160.49"   |
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
