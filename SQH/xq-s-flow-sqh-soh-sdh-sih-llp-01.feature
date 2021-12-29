@@ -63,7 +63,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK1ALL2_ARRAY_NBLIG"
 
-    Scenario Outline: 3. Add Lines
+    Scenario Outline: Add Lines
 
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK1ALL2_ITMREF"
@@ -79,7 +79,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
             | 2   | "BMS002" | "2" | "6101" |
 
 
-    Scenario: 4. Create document
+    Scenario: 3. Create document
 
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
@@ -91,7 +91,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
     #Creation of the sales order FOR PICKING
     #--------------------------------------------------------------------------------
 
-    Scenario: 5. Create a Sales order
+    Scenario: 4. Create a Sales order
 
         #Openning the function
         Given the user opens the "GESSOH" function
@@ -115,12 +115,11 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
         And the user checks the selected picking list panel item
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
+        And the user hits enter
 
+    Scenario: 5. Create document
 
-    Scenario: 6. Create document
-
-        Given the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
+        Given a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SOH0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOH_NUM"
         Then the user clicks the Close page action icon on the header panel
@@ -129,7 +128,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
     # #Creation of the Delivery
     # #--------------------------------------------------------------------------------
 
-    Scenario: 7. Create a Delivery
+    Scenario: 6. Create a Delivery
 
         Given the user opens the "GESSDH" function
         And the user selects the data table in the popup
@@ -158,9 +157,9 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
 
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
+        And the user hits enter
 
-
-    Scenario: 8. Create document
+    Scenario: 7. Create document
 
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
@@ -175,7 +174,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
     #--------------------------------------------------------------------------------
     #Creation of the sales invoice PICKING
     #--------------------------------------------------------------------------------
-    Scenario: 9. Create a Invoice
+    Scenario: 8. Create a Invoice
 
         Given the user opens the "GESSIH" function
         And the user selects the data table in the popup
@@ -191,7 +190,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "BR001" to the selected text field and hits tab key
 
-    Scenario: 10. Left List
+    Scenario: 9. Left List
 
         Given the user selects the data table of left panel
         When the user clicks the "Delivery selection" link on the left panel
@@ -200,12 +199,12 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
         And the user selects cell that matches exact with the stored text with the key: "SDH_NUM" and column header: "Delivery"
         And the user clicks on the selected cell
 
-    Scenario: 11. Process Id
+    Scenario: 10. Process Id
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
         And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
 
-    Scenario: 12. Create document
+    Scenario: 11. Create document
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
@@ -222,7 +221,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
         And the selected log panel includes the message "X3 validation Invoice/Credit"
         And the user clicks the Close page action icon on the header panel
 
-    Scenario: 13. Logout
+    Scenario: 12. Logout
 
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

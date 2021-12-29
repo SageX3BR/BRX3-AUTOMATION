@@ -138,7 +138,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
         And the user clicks the Close page action icon on the header panel
-    Scenario: 2.3. Create and Store Doc Number
+    Scenario: 8. Create and Store Doc Number
 
         Given the user clicks the "Post" action button on the header drop down
         And the user waits 2 seconds
@@ -153,7 +153,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
     #Creation of the delivery
     #--------------------------------------------------------------------------------
 
-    Scenario: 3. Create delivery
+    Scenario: 9. Create delivery
 
         Given the user opens the "GESSDH" function
         And the user selects the data table in the popup

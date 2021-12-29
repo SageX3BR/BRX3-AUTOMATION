@@ -83,7 +83,7 @@ Feature: xq-s-crud-gessoh
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 4.Update the field QTY
+    Scenario: 3.Update the field QTY
         #And the user waits 5 seconds
         And the user selects the text field with name: "Reference"
         And the user writes "CRUD Test55" to the selected text field and hits tab key
@@ -92,7 +92,7 @@ Feature: xq-s-crud-gessoh
         And the user clicks the "Save" main action button on the right panel
 
 
-    Scenario: 5.Deallocate stock and delete a sales order and close
+    Scenario: 4.Deallocate stock and delete a sales order and close
         #And the user waits 5 second
         And the user clicks the "Allocation" action button on the header drop down
         And the "Order allocations" screen is displayed
