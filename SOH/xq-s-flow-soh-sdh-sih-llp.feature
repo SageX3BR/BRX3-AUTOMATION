@@ -179,7 +179,7 @@ Feature: xq-s-flow-so-sd-si-llp
 
     Scenario: Create document
 
-        And the user clicks the "Create" main action button on the right panel
+        Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
