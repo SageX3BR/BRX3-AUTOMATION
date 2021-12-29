@@ -114,17 +114,8 @@ Feature: xq-s-flow-soh-al4
     Scenario: Check Calculated Values
 
         Given the user selects row that has the text "BMS001" in column with X3 field name: "WK2ALL4_ITMREF"
-        # And the user selects cell with X3 field name: "WK2ALL4_XQVALICMSDEV" of selected row
-        # And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK2ALL4_XQVALFINST" of selected row
-        And the value of the selected cell is "73.5100"
-
-
-    # And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
-    # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-    # And the value of the selected text field is "132.1700"
-    # And the user clicks the Close page action icon on the header panel
-    #Tax Det.
+        And the value of the selected cell is "73.51"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

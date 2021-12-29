@@ -85,17 +85,17 @@ Feature:xq-s-flow-soh-fcpst-10
         Then the user clicks the Close page action icon on the header panel
 
         Examples:
-            | ITMREF   | BCFCPST      | VLICMSFCPST | ALIQFCPST |
-            | "BMS001" | "2,098.2900" | "41.9700"   | "2.0000"  |
-            | "BMS002" | "2,397.5600" | "47.9500"   | "2.0000"  |
+            | ITMREF   | BCFCPST    | VLICMSFCPST | ALIQFCPST |
+            | "BMS001" | "2,098.29" | "41.9700"   | "2.0000"  |
+            | "BMS002" | "2,397.56" | "47.9500"   | "2.0000"  |
 
 
     Scenario: Resume - Check Calculated Values
         #Given the user clicks the "Tax Summary" tab selected by title
         Given the user selects the text field with X3 field name: "XQSOH1_TOTBASEFCPST"
-        And the value of the selected text field is "4,495.8500"
+        And the value of the selected text field is "4,495.85"
         And the user selects the text field with X3 field name: "XQSOH1_TOTICMSFCPST"
-        And the value of the selected text field is "89.9200"
+        And the value of the selected text field is "89.92"
         And the user clicks the "Cancel" main action button on the right panel
         And the user clicks the "Delivery" button in the header
 

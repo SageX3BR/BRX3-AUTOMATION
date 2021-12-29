@@ -110,7 +110,7 @@ Feature: xq-p-flow-soh-ot-al2
 
         Given the user selects row that has the text "BMS002" in column with X3 field name: "WK2ALL4_ITMREF"
         And the user selects cell with X3 field name: "WK2ALL4_XQVALICMSDEV" of selected row
-        And the value of the selected cell is "52.4600"
+        And the value of the selected cell is "52.46"
     #35.7700
 
 

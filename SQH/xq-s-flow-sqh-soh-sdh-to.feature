@@ -26,7 +26,7 @@
 #As a user I want to Create , Modify , Delete a Sales order.
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
-Feature: xq-s-flow-sqh-soh-sdhot
+Feature: xq-s-flow-sqh-soh-sdh-to
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
     #--------------------------------------------------------------------------------
@@ -89,9 +89,6 @@ Feature: xq-s-flow-sqh-soh-sdhot
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK1ALL2_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -106,7 +103,6 @@ Feature: xq-s-flow-sqh-soh-sdhot
     Scenario: Create Order
 
         And the user clicks the "Order" action button on the header drop down
-        And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -130,7 +126,7 @@ Feature: xq-s-flow-sqh-soh-sdhot
 
     Scenario: Create Delivery
 
-        And the user clicks the "Delivey" action button on the header drop down
+        And the user clicks the "Delivery" action button on the header drop down
         And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -144,6 +140,14 @@ Feature: xq-s-flow-sqh-soh-sdhot
         Given the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "SDH0_BPCINV"
         And the value of the selected text field is "BR004"
+
+    Scenario: SEFAZ
+        Given the user clicks the "SEFAZ" action button on the header drop down
+        And the user waits 10 seconds
+        Then a log panel appears
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the user clicks the Close page action icon on the header panel
 
 
     Scenario: Logout

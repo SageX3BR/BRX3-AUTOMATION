@@ -117,17 +117,6 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user selects the text field with X3 field name: "SOH0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHDocumentNo"
 
-    #   Scenario: Create Invoice
-
-    #         And the user clicks the "Invoice" action button on the header drop down
-    #         And the user waits 10 seconds
-    #         And the user selects the data table in the popup
-    #         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
-    #         And the user clicks on the selected cell
-    #         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-    #         And the user waits (3) seconds
-    #         And the user selects the text field with X3 field name: "SIH0_NUM"
-    #         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
     #--------------------------------------------------------------------------------
     #Creation of the invoice
     #--------------------------------------------------------------------------------
@@ -148,8 +137,6 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "BR005" to the selected text field and hits tab key
-        #And the user selects the text field with name: "Bill-to customer"
-        #And the user writes "BR005" to the selected text field and hits tab key
 
         # BPCORD=br004
         # brcinv=br005
@@ -168,10 +155,6 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SOHDocumentNo" and with the text containing "BR004" of the picking list panel
         And the user checks the selected picking list panel item
-        # Then an alert box with the text containing "Replace data from the General Data tab?" appears
-        # And the user clicks the "Yes" opinion in the alert box
-        # Then an alert box with the text containing "Replace data from the Shipping data tab?" appears
-        # And the user clicks the "Yes" opinion in the alert box
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
@@ -223,23 +206,11 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Sales site"
         And the user writes "BR011" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Ship-to"
-        # And the user writes "BR001" to the selected text field and hits tab key
-        #Filter with the order created above
-        # Then the user clicks the "Selection criteria" action button on the header drop down
-        # And the "Preloading Criteria" screen is displayed
-        # And the user selects the text field with X3 field name: "PCRITORD_WSIHNUM"
-        # And the user writes the stored text with key "SIHDocumentNo" in the selected text field and hits tab key
-        # And the user clicks the "OK" main action button on the right panel
         #Picking the order / All items
         And the user clicks the "Invoices" link on the left panel
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SIHDocumentNo" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-    # Then an alert box with the text containing "Replace data from the General Data tab?" appears
-    # And the user clicks the "Yes" opinion in the alert box
-    # Then an alert box with the text containing "Replace data from the Shipping data tab?" appears
-    # And the user clicks the "Yes" opinion in the alert box
 
     Scenario Outline: Alter Lines
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
@@ -276,14 +247,3 @@ Feature: xq-s-flow-sdh-ot-al1
 
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-
-
-# Scenario: Resume - Check Calculated Values
-#     Given the user clicks the "Tax Summary" tab selected by title
-#     When the user selects the text field with X3 field name: "XQSOH1_TOTBASEFCPST"
-#     And the value of the selected text field is "4,495.8500"
-#     And the user selects the text field with X3 field name: "XQSOH1_TOTICMSFCPST"
-#     And the value of the selected text field is "89.9200"
-#     And the user clicks the "Cancel" main action button on the right panel
-#     And the user clicks the "Delivery" button in the header
-#imposto 143.000

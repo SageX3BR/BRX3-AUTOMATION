@@ -54,8 +54,6 @@ Feature: xq-s-flow-soh-al2
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
         And the user writes "BRSON" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Reference"
-        # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR003" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
@@ -67,8 +65,6 @@ Feature: xq-s-flow-soh-al2
         And the user writes "Br003" to the selected text field and hits tab key
         And the user selects the text field with name: "Group customer"
         And the user writes "BR003" to the selected text field and hits tab key
-        #  And the user selects the text field with name: "Delivery address"
-        #  And the user writes "MT" to the selected text field and hits tab key
         And the user selects the text field with name: "Shipment site"
         And the user writes "BR011" to the selected text field and hits tab key
 
@@ -101,30 +97,17 @@ Feature: xq-s-flow-soh-al2
             | 1   | "BMS001" | "12" | "3.69"  | "6101" | "0"     | "10"      | "999"  |
             | 2   | "BMS002" | "23" | "12.96" | "6101" | "0"     | "10"      | "999"  |
 
-
-
     Scenario: Create document
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
 
-
-
     Scenario: Check Calculated Values
 
         Given the user selects row that has the text "BMS002" in column with X3 field name: "WK2ALL4_ITMREF"
-        # And the user selects cell with X3 field name: "WK2ALL4_XQVALICMSDEV" of selected row
-        # And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK2ALL4_XQVALFINST" of selected row
-        And the value of the selected cell is "55.7400"
-
-
-    # And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
-    # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-    # And the value of the selected text field is "132.1700"
-    # And the user clicks the Close page action icon on the header panel
-    #Tax Det.
+        And the value of the selected cell is "55.74"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

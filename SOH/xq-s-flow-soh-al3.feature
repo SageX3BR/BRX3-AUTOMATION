@@ -113,17 +113,8 @@ Feature: xq-s-flow-soh-al3
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
-        # When the user selects the text field with X3 field name: "XQSOH1_TOTBSICMSOP"
-        # And the value of the selected text field is "1,049.0000"
         And the user selects the text field with X3 field name: "XQSOH1_TOTVALFINST"
-        And the value of the selected text field is "64.0200"
-
-
-    # And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
-    # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-    # And the value of the selected text field is "132.1700"
-    # And the user clicks the Close page action icon on the header panel
-    #Tax Det.
+        And the value of the selected text field is "64.02"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

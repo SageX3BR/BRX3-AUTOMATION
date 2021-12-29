@@ -56,43 +56,37 @@ Feature: xq-s-crud-gessoh
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Shipment site"
         And the user writes "BR011" to the selected text field and hits tab key
-        #Including products at sales order
-        When the user clicks the "Lines" tab selected by title
-        When the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
-        And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
-        And the user adds the text "BMS001" in selected cell
+        And the user clicks the "Lines" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
 
-        And the user selects the data table of section: "Lines"
-        And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
-        And the user adds the text "1" in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user adds the text "10" in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user adds the text "6101" in selected cell and hits tab key
-        #Second product
-        When the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
+    Scenario Outline: Lines
+        Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
-        And the user adds the text "BMS001" in selected cell
-        And the user selects the data table of section: "Lines"
+        And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
-        And the user adds the text "1" in selected cell
+        And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user adds the text "10" in selected cell
+        And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user adds the text "6101" in selected cell and hits tab key
+        And the user adds the text <XQCFOP> in selected cell and hits enter key
+        Examples:
+            | LIN | ITMREF   | QTY | GROPRI | XQCFOP |
+            | 1   | "BMS001" | "1" | "10"   | "6101" |
+            | 2   | "BMS002" | "1" | "10"   | "6101" |
+
+    Scenario: Create document
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 4.Update the field QTY
+    Scenario: 3.Update the field QTY
         #And the user waits 5 seconds
         And the user selects the text field with name: "Reference"
         And the user writes "CRUD Test55" to the selected text field and hits tab key
-        #And the user clicks the "Ok" opinion in the alert box
-        And the user clicks the "Save" main action button on the right panel
+        And the user hits enter
         And the user clicks the "Save" main action button on the right panel
 
 
-    Scenario: 5.Deallocate stock and delete a sales order and close
+    Scenario: 4.Deallocate stock and delete a sales order and close
         #And the user waits 5 second
         And the user clicks the "Allocation" action button on the header drop down
         And the "Order allocations" screen is displayed

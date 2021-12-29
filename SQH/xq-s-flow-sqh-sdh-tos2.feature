@@ -53,7 +53,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Quote type"
         And the user writes "SQD" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
+        #And the user selects the text field with name: "Reference"
         # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Customer"
         And the user writes "BR001" to the selected text field and hits tab key
@@ -113,7 +113,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales order ALL : Full entry" screen is displayed
-        And the user waits (3) seconds
+        And the user waits (1) seconds
     #--------------------------------------------------------------------------------
     #Creation of the invoice
     #--------------------------------------------------------------------------------
@@ -138,7 +138,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
         And the user clicks the Close page action icon on the header panel
-    Scenario: 2.3. Create and Store Doc Number
+    Scenario: 8. Create and Store Doc Number
 
         Given the user clicks the "Post" action button on the header drop down
         And the user waits 2 seconds
@@ -147,11 +147,13 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the selected log panel includes the message "X3 validation Invoice/Credit memo"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
+        And the user clicks the Close page action icon on the header panel
+
     #--------------------------------------------------------------------------------
-    #Creation of the receipt
+    #Creation of the delivery
     #--------------------------------------------------------------------------------
 
-    Scenario: 3. Create delivery
+    Scenario: 9. Create delivery
 
         Given the user opens the "GESSDH" function
         And the user selects the data table in the popup
@@ -168,7 +170,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user writes "BR001" to the selected text field and hits tab key
         #Filter with the order created above
         Then the user clicks the "Selection criteria" action button on the header drop down
-        And the "Preloading Criteria" screen is displayed
+        And the "Delivery preloading filter" screen is displayed
         And the user selects the text field with X3 field name: "PCRITORD_WSIHNUM"
         And the user writes the stored text with key "SIHDocumentNo" in the selected text field and hits tab key
         And the user clicks the "OK" main action button on the right panel
