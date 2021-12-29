@@ -106,6 +106,7 @@ Feature:xq-p-flow-poh-fcpst-10-30-70-90
             | "7"    | "766.41"   | "2.00"   | "15.33" |
             | "8"    | "834.58"   | "2.00"   | "16.69" |
 
+
     Scenario: Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title

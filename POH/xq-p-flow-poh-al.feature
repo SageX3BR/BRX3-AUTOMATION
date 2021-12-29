@@ -94,7 +94,7 @@ Feature: xq-p-flow-poh-al
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPOH2_TTICMSST"
-        And the value of the selected text field is "231.3700"
+        And the value of the selected text field is "231.37"
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: 8. Logout

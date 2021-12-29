@@ -129,7 +129,7 @@ Feature: xq-p-flow-poh-pih-ef
         Given the user clicks the "Control" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 1
-        Then the value of the selected cell is "-26.0631"
+        Then the value of the selected cell is "-26.06"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 2
         Then the value of the selected cell is "6.3200"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 5
