@@ -149,33 +149,27 @@ Feature: xq-s-flow-sqh-sih-tos
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-        And the user waits (3) seconds
+        And the user waits (1) seconds
 
     Scenario: Check the data
-        And the user selects the text field with X3 field name: "SDH0_BPCORD"
-        And the value of the selected text field is "BR001"
-        And the user clicks the "Management" tab selected by title
-        And the user selects the text field with X3 field name: "SDH0_BPCINV"
+        When the user selects the text field with X3 field name: "SIH0_BPCINV"
         And the value of the selected text field is "BR150"
+        And the user clicks the "Management" tab selected by title
+        And the user selects the text field with X3 field name: "WK5ALL1_BPCORD"
+        And the value of the selected text field is "BR001"
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
 
     #Create order and store order number
 
-    Scenario: 2.1. Create and Store Doc Number
+    Scenario: Send to SEFAZ
 
-        Given the user clicks the "Save" main action button on the right panel
-        #When a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SIH0_NUM"
-        And the user stores the value of the selected text field with the key: "SIHDocumentNo"
-        #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
         And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
-    #And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
 
