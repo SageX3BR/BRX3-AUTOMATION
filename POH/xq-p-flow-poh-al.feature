@@ -86,9 +86,9 @@ Feature: xq-p-flow-poh-al
         And the value of the selected text field is <VLICMSST>
 
         Examples:
-            | CURLIG | VLICMSST   |
-            | "1"    | "139.6500" |
-            | "2"    | "91.7200"  |
+            | CURLIG | VLICMSST |
+            | "1"    | "139.65" |
+            | "2"    | "91.72"  |
 
     Scenario: 7. Resume
         Given the user clicks the Close page action icon on the header panel

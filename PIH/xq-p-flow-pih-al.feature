@@ -104,14 +104,14 @@ Feature: xq-p-flow-pih-al
         And the value of the selected text field is <VLICMSST>
 
         Examples:
-            | CURLIG | VLICMSST   |
-            | "1"    | "160.7900" |
-            | "2"    | "91.6000"  |
+            | CURLIG | VLICMSST |
+            | "1"    | "160.79" |
+            | "2"    | "91.60"  |
 
     Scenario: 9. Resume
         Given the user clicks the Close page action icon on the header panel
         And the user selects the text field with X3 field name: "XQPIH2_TTICMSST"
-        And the value of the selected text field is "252.3900"
+        And the value of the selected text field is "252.39"
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: 9. Logout
