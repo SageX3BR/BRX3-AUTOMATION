@@ -116,16 +116,8 @@ Feature: xq-s-flow-soh-ot-al1
 
         Given the user selects row that has the text "BMS001" in column with X3 field name: "WK2ALL4_ITMREF"
         And the user selects cell with X3 field name: "WK2ALL4_XQVALICMSDEV" of selected row
-        And the value of the selected cell is "90.1100"
+        And the value of the selected cell is "90.11"
         And the user selects cell with X3 field name: "WK2ALL4_XQVALFINST" of selected row
-    # And the value of the selected cell is "132.1700"
-
-
-    # And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
-    # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-    # And the value of the selected text field is "132.1700"
-    # And the user clicks the Close page action icon on the header panel
-    #Tax Det.
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

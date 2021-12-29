@@ -67,37 +67,12 @@ Feature:xq-s-flow-soh-fcpst-70
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
 
-    #     #Tax Detail - Check Values
-    #     Given the user clicks the "Lines" tab selected by title
-    #     When the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
-    # Scenario Outline: Tax Detail - Check Calculated Values
-    #     Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK2ALL4_ITMREF"
-    #     And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
-    #     When the user clicks on "1" action button of the selected cell
-    #     #And the user clicks on the link in the cell that has the text "204" in cell with header: "Tax Det."
-    #     #And the user clicks on the selected cell
-    #     Then the "Tax determination" screen is displayed
-    #     #Check Values
-    #     When the user selects the text field with X3 field name: "XQDTIMP1 _BCFCPST"
-    #     And the value of the selected text field is <BCFCPST>
-    #     And the user selects the text field with X3 field name: "XQDTIMP1 _VLICMSFCPST"
-    #     And the value of the selected text field is <VLICMSFCPST>
-    #     And the user selects the text field with X3 field name: "XQDTIMP1 _ALIQFCPST"
-    #     And the value of the selected text field is <ALIQFCPST>
-    #     Then the user clicks the Close page action icon on the header panel
-
-    #     Examples:
-    #         | ITMREF   | BCFCPST      | VLICMSFCPST | ALIQFCPST |
-    #         | "BMS001" | "2,098.2900" | "41.9700"   | "2.0000"  |
-    #         | "BMS002" | "2,397.5600" | "47.9500"   | "2.0000"  |
-
-
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
         When the user selects the text field with X3 field name: "XQSOH1_TOTBASEFCPST"
-        And the value of the selected text field is "4,495.8500"
+        And the value of the selected text field is "4,495.85"
         And the user selects the text field with X3 field name: "XQSOH1_TOTICMSFCPST"
-        And the value of the selected text field is "89.9200"
+        And the value of the selected text field is "89.92"
         And the user clicks the "Cancel" main action button on the right panel
         And the user clicks the "Delivery" button in the header
 
