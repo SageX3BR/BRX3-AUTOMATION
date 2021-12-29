@@ -85,9 +85,9 @@ Feature:xq-s-flow-soh-fcpst-10
         Then the user clicks the Close page action icon on the header panel
 
         Examples:
-            | ITMREF   | BCFCPST      | VLICMSFCPST | ALIQFCPST |
-            | "BMS001" | "2,098.2900" | "41.9700"   | "2.0000"  |
-            | "BMS002" | "2,397.5600" | "47.9500"   | "2.0000"  |
+            | ITMREF   | BCFCPST    | VLICMSFCPST | ALIQFCPST |
+            | "BMS001" | "2,098.29" | "41.9700"   | "2.0000"  |
+            | "BMS002" | "2,397.56" | "47.9500"   | "2.0000"  |
 
 
     Scenario: Resume - Check Calculated Values

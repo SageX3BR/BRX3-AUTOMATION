@@ -299,15 +299,11 @@ Feature: xq-s-flow-so-sd-si-llp
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "102" to the selected text field and hits tab key
-    # And an alert box with the text containing "delivery" appears
-    # Then the user clicks the "Yes" opinion in the alert box
-    #Filling Lines
-
+        And the user hits enter
 
     Scenario: Create document
 
         Given the user clicks the "Create" main action button on the right panel
-        And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM"

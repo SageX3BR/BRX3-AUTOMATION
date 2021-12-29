@@ -105,7 +105,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
             | 1   | "BMS001" | "3" | "142.94" | "6101" | "1"       | "0"     | "00"      | "999"  |
             | 2   | "BMS002" | "5" | "162.32" | "6101" | "1"       | "0"     | "00"      | "999"  |
 
-    Scenario: Create document
+    Scenario: 3. Create document
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
@@ -113,7 +113,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
     #Creation of the Order
     #--------------------------------------------------------------------------------
 
-    Scenario: Create Order
+    Scenario: 4. Create Order
 
         And the user clicks the "Order" action button on the header drop down
         And the user waits 10 seconds
@@ -126,7 +126,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
     #Creation of the Delivery
     #--------------------------------------------------------------------------------
 
-    Scenario: Create Delivery
+    Scenario: 5. Create Delivery
 
         And the user clicks the "Delivery" action button on the header drop down
         And the user waits 10 seconds
@@ -136,7 +136,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
         Then the "Delivery ALL : Full entry" screen is displayed
 
 
-    Scenario: Check the data
+    Scenario: 6. Check the data
         And the user selects the text field with X3 field name: "SDH0_BPCORD"
         And the value of the selected text field is "BR001"
         And the user selects the text field with X3 field name: "SDH0_BPCINV"
