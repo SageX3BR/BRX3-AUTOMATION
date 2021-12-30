@@ -86,8 +86,8 @@ Feature:xq-s-flow-soh-fcpst-10
 
         Examples:
             | ITMREF   | BCFCPST    | VLICMSFCPST | ALIQFCPST |
-            | "BMS001" | "2,098.29" | "41.9700"   | "2.0000"  |
-            | "BMS002" | "2,397.56" | "47.9500"   | "2.0000"  |
+            | "BMS001" | "2,098.29" | "41.97"     | "2.0000"  |
+            | "BMS002" | "2,397.56" | "47.95"     | "2.0000"  |
 
 
     Scenario: Resume - Check Calculated Values
