@@ -28,7 +28,7 @@
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-soh-sih
+Feature: xq-s-flow-soh-sih-01
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario

@@ -53,8 +53,6 @@ Feature: xq-s-flow-soh-cfop-sug1
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
         And the user writes "BRSOI" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Reference"
-        # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
@@ -81,17 +79,6 @@ Feature: xq-s-flow-soh-cfop-sug1
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  |
             | 1   | "BMS001" | "6" | "24.98" |
-
-
-
-    # Scenario: Create document
-    #     And the user clicks the "Create" main action button on the right panel
-    #     Then a confirmation dialog appears with the message "Record has been created"
-    #     Given the user clicks the "Lines" tab selected by title
-    #     And the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
-
-
-
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

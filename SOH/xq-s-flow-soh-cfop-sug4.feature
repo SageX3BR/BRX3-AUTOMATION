@@ -60,7 +60,7 @@ Feature: xq-s-flow-soh-cfop-sug4
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
 
     #Lines
-    Scenario Outline: Add Lines
+    Scenario Outline: Add Lines With CFOP
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -70,12 +70,22 @@ Feature: xq-s-flow-soh-cfop-sug4
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell and hits enter key
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "6" | "24.98" | "5102" |
-            | 2   | "BMS002" | "8" | "26.48" | ""     |
+
+    Scenario Outline: Add Lines Without CFOP
+        Given the user selects editable table row number: <LIN>
+        And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
+        And the user adds the text <ITMREF> in selected cell
+        And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
+        And the user adds the text <QTY> in selected cell
+        And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
+        And the user adds the text <GROPRI> in selected cell
+        And the user hits enter
+        Examples:
+            | LIN | ITMREF   | QTY | GROPRI  |
+            | 2   | "BMS002" | "8" | "26.48" |
 
 
     Scenario: Check the CFOP
