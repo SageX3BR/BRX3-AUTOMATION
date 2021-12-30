@@ -92,24 +92,17 @@ Feature: xq-s-flow-soh-al4
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        And the user waits (2) seconds
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
             | 1   | "BMS001" | "26" | "15.12" | "5101" | "0"     | "10"      | "999"  |
             | 2   | "BMS002" | "18" | "23.48" | "5101" | "0"     | "10"      | "999"  |
 
-
-
     Scenario: Create document
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
-
-
 
     Scenario: Check Calculated Values
 

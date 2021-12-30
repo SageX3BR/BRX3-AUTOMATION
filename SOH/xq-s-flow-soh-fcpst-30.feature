@@ -73,7 +73,6 @@ Feature:xq-s-flow-soh-fcpst-30
         And the value of the selected text field is "4,495.85"
         And the user selects the text field with X3 field name: "XQSOH1_TOTICMSFCPST"
         And the value of the selected text field is "89.92"
-        And the user clicks the "Cancel" main action button on the right panel
         And the user clicks the "Delivery" button in the header
 
     Scenario: Create Delivery

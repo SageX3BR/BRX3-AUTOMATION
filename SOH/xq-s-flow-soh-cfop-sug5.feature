@@ -68,8 +68,6 @@ Feature: xq-s-flow-soh-cfop-sug5
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
         And the user adds the text <GROPRI> in selected cell and hits enter key
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  |
             | 1   | "BMS001" | "6" | "24.98" |

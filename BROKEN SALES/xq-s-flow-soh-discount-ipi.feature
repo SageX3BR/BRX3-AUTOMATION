@@ -12,7 +12,7 @@
 # - Status : Automated
 ###########################################################################
 
-Feature:xq-s-flow-soh-modbcst-cst10
+Feature:xq-s-flow-soh-discount-ipi
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario

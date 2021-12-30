@@ -27,7 +27,7 @@
 #
 # ###########################################################################
 
-Feature: xq-s-flow-soh-cfop-sug1
+Feature: xq-s-flow-soh-cfop-sug2
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -53,8 +53,6 @@ Feature: xq-s-flow-soh-cfop-sug1
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
         And the user writes "BRSOI" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Reference"
-        # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
@@ -72,24 +70,16 @@ Feature: xq-s-flow-soh-cfop-sug1
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell and hits tab key
-        #And an alert box appears
-        #And the user clicks the "Yes" opinion in the alert box
+        And the user adds the text <XQCFOP> in selected cell
+        And the user hits enter
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "6" | "24.98" | "5101" |
             | 2   | "BMS001" | "8" | "26.48" | ""     |
 
-
-
     Scenario: Check error mensage
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
-        #And the user adds the text "" in selected cell and hits tab key
         And an alert box with the text "Mandatory field" appears
         And the user clicks the "Ok" opinion in the alert box
-
-
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

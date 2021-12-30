@@ -70,13 +70,22 @@ Feature: xq-s-flow-soh-cfop-sug6
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell and hits enter key
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "6" | "24.98" | "5113" |
-            | 2   | "BMS002" | "8" | "26.48" | ""     |
 
+    Scenario Outline: Add Lines
+        Given the user selects editable table row number: <LIN>
+        And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
+        And the user adds the text <ITMREF> in selected cell
+        And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
+        And the user adds the text <QTY> in selected cell
+        And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
+        And the user adds the text <GROPRI> in selected cell
+        And the user hits enter
+        Examples:
+            | LIN | ITMREF   | QTY | GROPRI  |
+            | 2   | "BMS002" | "8" | "26.48" |
 
     Scenario: Check the CFOP
         Given the user clicks the "Lines" tab selected by title
@@ -84,8 +93,6 @@ Feature: xq-s-flow-soh-cfop-sug6
         And the user selects row that has the text "BMS002" in column with X3 field name: "WK2ALL4_ITMREF"
         And the user selects cell with X3 field name: "WK2ALL4_XQCFOP" of selected row
         And the value of the selected cell is "5113"
-
-
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
