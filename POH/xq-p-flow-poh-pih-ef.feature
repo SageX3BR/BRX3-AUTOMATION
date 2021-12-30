@@ -131,9 +131,9 @@ Feature: xq-p-flow-poh-pih-ef
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 1
         Then the value of the selected cell is "-26.06"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 2
-        Then the value of the selected cell is "6.3200"
+        Then the value of the selected cell is "6.32"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 5
-        And the value of the selected cell is "3.1200"
+        And the value of the selected cell is "3.12"
         Then the user clicks the "Close page" main action button on the right panel
 
     #--------------------------------------------------------------------------------

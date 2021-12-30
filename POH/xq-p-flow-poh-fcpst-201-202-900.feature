@@ -95,12 +95,12 @@ Feature:xq-p-flow-poh-fcpst-201-202-900
         And the value of the selected text field is <VLFCPST>
         Examples:
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
-            | "1"    | "175.00" | "2.00"   | "3.50"  |
-            | "2"    | "193.90" | "2.00"   | "3.88"  |
-            | "3"    | "262.50" | "2.00"   | "5.25"  |
-            | "4"    | "290.85" | "2.00"   | "5.82"  |
-            | "5"    | "571.10" | "2.00"   | "11.42" |
-            | "6"    | "874.08" | "2.00"   | "17.48" |
+            | "1"    | "175.00" | "2.0000" | "3.50"  |
+            | "2"    | "193.90" | "2.0000" | "3.88"  |
+            | "3"    | "262.50" | "2.0000" | "5.25"  |
+            | "4"    | "290.85" | "2.0000" | "5.82"  |
+            | "5"    | "571.10" | "2.0000" | "11.42" |
+            | "6"    | "874.08" | "2.0000" | "17.48" |
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel

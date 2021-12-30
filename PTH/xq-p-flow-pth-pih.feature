@@ -125,7 +125,7 @@ Feature: xq-p-flow-pth-pih
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
         And the user clicks the "Close page" main action button on the right panel
-        And the user clicks the "Close page" main action button on the right panel
+
 
     Scenario: 13. Logout
         And the user logs-out from the system
