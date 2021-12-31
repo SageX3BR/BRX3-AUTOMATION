@@ -2,34 +2,26 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code:xq-s-flow-sdh-cfop-sug2
-# - Description: SDH CFOP Suggestion2
+# - Description: Validar obrigatoriedade do CFOP na segunda Linha - SDH
 # - Jira: NA
-# - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 22/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 22/07/2020
-# - Status : Automated
+# - Updated by : Jonatas Hille
+# - Updated date : 31/12/2021
+# - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
 Feature:xq-s-flow-sdh-cfop-sug2
 
-    #--------------------------------------------------------------------------------
-    #X3 Login Scenario
-    #--------------------------------------------------------------------------------
-    Scenario: 1.Login scenario
+    Scenario: 1.Login
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-10
-    #--------------------------------------------------------------------------------
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-10
+    Scenario: 2. Create Delivery
         Given the user opens the "GESSDH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Delivery ALL : Full entry" screen is displayed
-        #Header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "SDH0_STOFCY"
         And the user writes "BR013" to the selected text field and hits tab key
@@ -44,7 +36,6 @@ Feature:xq-s-flow-sdh-cfop-sug2
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
-    #Lines
     Scenario Outline: Add Lines
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
@@ -62,14 +53,11 @@ Feature:xq-s-flow-sdh-cfop-sug2
             | 1   | "BMS001" | "6" | "24.98" | "5101" |
             | 2   | "BMS001" | "8" | "26.48" | " "    |
 
-    Scenario: Check error mensage
+    Scenario: 3. Check error mensage - Verify Mandatory Field
         And an alert box with the text "Mandatory field" appears
         And the user clicks the "Ok" opinion in the alert box
 
-
-
-
-    Scenario: Logout
+    Scenario: 4. Logout
         And the user clicks the Close page action icon on the header panel
         And an alert box with the text "Continue and cancel the creation?" appears
         And the user clicks the "Yes" opinion in the alert box
