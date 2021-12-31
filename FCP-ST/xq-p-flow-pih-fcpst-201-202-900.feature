@@ -2,14 +2,14 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code:xq-p-flow-pih-FCPST
-# - Description: Validate FCP_ST fields and calculation for CST 201-202-900
+# - Description: Validate FCP_ST fields and calculation for CST 201-202-900 - PIH
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 01/06/2020
-# - Updated by : Carla Cury
-# - Updated date : 30/09/2020
-# - Status : Automated
+# - Updated by : Jonatas Hille
+# - Updated date : 31/12/2021
+# - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
 Feature:xq-p-flow-pih-fcpst-201-202-900
@@ -27,7 +27,6 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
         #Header
-        #When the user selects the text field with name: "Entry number"
         When the user selects the text field with X3 field name: "WE8ALL0_NUM"
         And the user stores the value of the selected text field with the key: "DOCSUP"
         And the user clicks the "New" main action button on the right panel
@@ -50,7 +49,6 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
 
-    #Lines
     Scenario Outline: Add Lines
         And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
@@ -87,7 +85,7 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
             | 5   | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
             | 6   | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
 
-    Scenario: Create/Sefas/Validation
+    Scenario: 3. Create/Sefas/Validation
         #Control Tab
         Given the user clicks the "Control" tab selected by title
         When the user selects the text field with X3 field name: "WE8ALL4_CLCLINAMT"
@@ -108,8 +106,6 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
         And the user clicks the "Ok" option in the alert box
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
-
-
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
@@ -124,22 +120,22 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
         And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
-            | CURLIG | BFCPST     | ALQFCPST | VLFCPST  |
-            | "1"    | "221.5100" | "2.0000" | "4.4300" |
-            | "2"    | "222.3200" | "2.0000" | "4.4500" |
-            | "3"    | "221.5100" | "2.0000" | "4.4300" |
-            | "4"    | "222.3200" | "2.0000" | "4.4500" |
-            | "5"    | "210.4300" | "2.0000" | "4.2100" |
-            | "6"    | "211.2000" | "2.0000" | "4.2200" |
+            | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
+            | "1"    | "221.51" | "2.0000" | "4.43"  |
+            | "2"    | "222.32" | "2.0000" | "4.45"  |
+            | "3"    | "221.51" | "2.0000" | "4.43"  |
+            | "4"    | "222.32" | "2.0000" | "4.45"  |
+            | "5"    | "210.43" | "2.0000" | "4.21"  |
+            | "6"    | "211.20" | "2.0000" | "4.22"  |
 
-    Scenario: Resume - Check Calculated Values
+    Scenario: 4. Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         When the user selects the text field with X3 field name: "XQPIH2_TOTBASEFCPST"
-        And the value of the selected text field is "1,309.2900"
+        And the value of the selected text field is "1,309.29"
         And the user selects the text field with X3 field name: "XQPIH2_TOTICMSFCPST"
-        And the value of the selected text field is "26.1900"
+        And the value of the selected text field is "26.19"
 
+    Scenario: 5. Logout
         And the user clicks the Close page action icon on the header panel
-        #Logout
         Then the user logs-out from the system

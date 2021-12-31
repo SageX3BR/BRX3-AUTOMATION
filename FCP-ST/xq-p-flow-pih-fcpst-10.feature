@@ -2,17 +2,16 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code:xq-p-flow-pih-FCPST
-# - Description: Validate FCP_ST fields and calculation for CST 10-30-70-90
+# - Description: Validate FCP_ST fields and calculation for CST 10-PIH
 # - Jira: NA
-# - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 01/06/2020
 # - Updated by : Jonatas Hille
 # - Updated date : 31/12/2021
-# - Status : []Automated []Work In Progress [X]Broken
+# - Status : []Automated [X]Work In Progress []Broken
 ###########################################################################
 
-Feature:xq-p-flow-pih-fcpst-10-30-70-90
+Feature:xq-p-flow-pih-fcpst-10
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -20,17 +19,12 @@ Feature:xq-p-flow-pih-fcpst-10-30-70-90
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-10-30-70-90
-    #--------------------------------------------------------------------------------
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-10-30-70-90
+    Scenario: 2. Create PIH
         Given the user opens the "GESPIH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
-        #Header
-        #When the user selects the text field with name: "Entry number"
         When the user selects the text field with X3 field name: "WE8ALL0_NUM"
         And the user stores the value of the selected text field with the key: "DOCSUP"
         And the user clicks the "New" main action button on the right panel
@@ -53,7 +47,6 @@ Feature:xq-p-flow-pih-fcpst-10-30-70-90
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
 
-    #Lines
     Scenario Outline: Add Lines
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
@@ -85,12 +78,6 @@ Feature:xq-p-flow-pih-fcpst-10-30-70-90
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
             | 1   | "BMS001" | "5"    | "17.58" | "1102" | "1"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
             | 2   | "BMS002" | "7"    | "19.85" | "1102" | "1"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
-            | 3   | "BMS001" | "10"   | "17.58" | "1102" | "1"       | "0"          | "30"      | "999"  | "01"     | "01"     | "01"     |
-            | 4   | "BMS002" | "12"   | "19.85" | "1102" | "1"       | "0"          | "30"      | "999"  | "01"     | "01"     | "01"     |
-            | 5   | "BMS001" | "12"   | "17.58" | "1102" | "1"       | "0"          | "70"      | "999"  | "01"     | "01"     | "01"     |
-            | 6   | "BMS002" | "15"   | "19.85" | "1102" | "1"       | "0"          | "70"      | "999"  | "01"     | "01"     | "01"     |
-            | 7   | "BMS001" | "15"   | "17.58" | "1102" | "1"       | "0"          | "90"      | "999"  | "01"     | "01"     | "01"     |
-            | 8   | "BMS002" | "12"   | "19.85" | "1102" | "1"       | "0"          | "90"      | "999"  | "01"     | "01"     | "01"     |
 
     Scenario: Create/Sefas/Validation
         #Control Tab

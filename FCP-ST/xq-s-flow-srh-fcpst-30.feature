@@ -72,9 +72,9 @@ Feature:xq-s-flow-srh-fcpst-30
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
         When the user selects the text field with X3 field name: "XQSDH1_TOTBASEFCPST"
-        And the value of the selected text field is "4,495.8500"
+        And the value of the selected text field is "4,495.85"
         And the user selects the text field with X3 field name: "XQSDH1_TOTICMSFCPST"
-        And the value of the selected text field is "89.9200"
+        And the value of the selected text field is "89.92"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
@@ -172,9 +172,9 @@ Feature:xq-s-flow-srh-fcpst-30
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title
         When the user selects the text field with X3 field name: "XQSRH2_TOTBASEFCPST"
-        And the value of the selected text field is "4,495.8500"
+        And the value of the selected text field is "4,495.85"
         And the user selects the text field with X3 field name: "XQSRH2_TOTICMSFCPST"
-        And the value of the selected text field is "89.9200"
+        And the value of the selected text field is "89.92"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
