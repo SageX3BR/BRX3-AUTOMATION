@@ -14,9 +14,6 @@
 
 Feature:xq-p-flow-pih-fcpst-201-202-900
 
-    #--------------------------------------------------------------------------------
-    #X3 Login Scenario
-    #--------------------------------------------------------------------------------
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 

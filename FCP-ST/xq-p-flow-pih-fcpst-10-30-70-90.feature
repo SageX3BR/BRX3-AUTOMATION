@@ -113,11 +113,6 @@ Feature:xq-p-flow-pih-fcpst-10-30-70-90
         And the user clicks the "Ok" option in the alert box
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
-        # And a dialog box appears
-        # And the user clicks the "Ok" opinion in the alert box
-        # And a dialog box appears
-        # And the user clicks the "Ok" opinion in the alert box
-
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
