@@ -4,19 +4,15 @@
 # - Test code:xq-p-flow-pnh-CFOP-suggestion
 # - Description: CFOP Suggestion scenarios for PNH
 # - Jira: NA
-# - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 26/05/2020
 # - Updated by : Jonatas Hille
-# - Updated date : 26/05/2020
-# - Status : automated
+# - Updated date : 31/12/2021
+# - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
 Feature:xq-p-flow-pnh-CFOP-suggestion
 
-    #--------------------------------------------------------------------------------
-    #X3 Login Scenario
-    #--------------------------------------------------------------------------------
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
@@ -29,7 +25,6 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase return ALL : Full entry" screen is displayed
-        #Filling the Invoice header information
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
         And the user writes "BR013" to the selected text field and hits tab key
@@ -116,7 +111,6 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
     #CFOP suggestion by the function "CFOP Suggestion" - Second item
     #--------------------------------------------------------------------------------
     Scenario: 4. CFOP suggestion by function
-        #Filling the Invoice header information
         Given the user clicks the "Cancel" main action button on the right panel
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"

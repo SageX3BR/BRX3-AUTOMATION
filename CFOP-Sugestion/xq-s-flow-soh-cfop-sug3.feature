@@ -2,7 +2,7 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: xq-s-flow-soh-cfop-sug3
-# - Description: Sugerir CFOP na primeira linha - SIH
+# - Description: Sugerir CFOP na primeira linha - SOH
 # - Jira: NA
 # - Created by : Carla Cury
 # - Created date : 10/07/2020

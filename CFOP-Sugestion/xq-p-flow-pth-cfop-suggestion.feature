@@ -2,24 +2,20 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code:xq-p-flow-pth-CFOP-suggestion
-# - Description: CFOP Suggestion scenarios for pth
+# - Description: CFOP Suggestion scenarios for PTH
 # - Jira: NA
-# - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 19/05/2020
 # - Updated by : Jonatas Hille
-# - Updated date : 19/05/2020
-# - Status : Automated
+# - Updated date : 31/12/2021
+# - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
 Feature:xq-p-flow-pth-CFOP-suggestion
 
-    #--------------------------------------------------------------------------------
-    #X3 Login Scenario
-    #--------------------------------------------------------------------------------
-    Scenario: 1.Login scenario
+    Scenario: 1.Login
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
-    #--------------------------------------
+
     #--------------------------------------------------------------------------------
     #CFOP Field Validation First and Second item (Mandatory with 4 Digits)
     #--------------------------------------------------------------------------------
@@ -29,14 +25,11 @@ Feature:xq-p-flow-pth-CFOP-suggestion
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase receipt ALL : Full entry" screen is displayed
-        #Header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR005" to the selected text field and hits tab key
-        #General Tab
-        #When the user clicks the "General data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
         Then the user writes "53" to the selected text field and hits tab key
 
@@ -66,14 +59,12 @@ Feature:xq-p-flow-pth-CFOP-suggestion
     #CFOP suggestion checking
     #--------------------------------------------------------------------------------
     Scenario: 3. CFOP suggestion checking
-        #Header
         Given the user clicks the "Cancel" main action button on the right panel
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR014" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR005" to the selected text field and hits tab key
-        #General Tab
         And the user selects the text field with name: "Fiscal operation"
         Then the user writes "54" to the selected text field and hits tab key
 
@@ -100,15 +91,12 @@ Feature:xq-p-flow-pth-CFOP-suggestion
     #CFOP suggestion by the function "CFOP Suggestion" - Second item
     #--------------------------------------------------------------------------------
     Scenario: 4. CFOP suggestion by function
-        #Filling the Invoice header information
         Given the user clicks the "Cancel" main action button on the right panel
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR005" to the selected text field and hits tab key
-
-        #And the user clicks the "General data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
         Then the user writes "55" to the selected text field and hits tab key
 
