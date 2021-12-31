@@ -55,7 +55,8 @@ Feature:xq-s-flow-sdh-cfop-sug2
         And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell and hits tab key
+        And the user adds the text <XQCFOP> in selected cell
+        And the user hits enter
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "6" | "24.98" | "5101" |
