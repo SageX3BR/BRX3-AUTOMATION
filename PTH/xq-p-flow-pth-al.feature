@@ -94,15 +94,15 @@ Feature: xq-p-flow-pth-al
         And the value of the selected text field is <VLICMSST>
 
         Examples:
-            | CURLIG | VLICMSST   |
-            | "1"    | "141.7200" |
-            | "2"    | "71.0200"  |
+            | CURLIG | VLICMSST |
+            | "1"    | "141.72" |
+            | "2"    | "71.02"  |
 
     Scenario: 8. Resume
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPTH2_TTICMSST"
-        And the value of the selected text field is "212.7400"
+        And the value of the selected text field is "212.74"
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: 9. Logout
