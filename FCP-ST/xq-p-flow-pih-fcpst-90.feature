@@ -1,8 +1,8 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-pih-FCPST-10
-# - Description: Validate FCP_ST fields and calculation for CST 10
+# - Test code:xq-p-flow-pih-FCPST-90
+# - Description: Validate FCP_ST fields and calculation for CST 90
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
@@ -12,12 +12,12 @@
 # - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
-Feature:xq-p-flow-pih-fcpst-10
+Feature:xq-p-flow-pih-fcpst-90
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    Scenario: 2. Create PIH - ICMS CST-10
+    Scenario: 2. Create PIH - ICMS CST-90
         Given the user opens the "GESPIH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -72,8 +72,8 @@ Feature:xq-p-flow-pih-fcpst-10
 
         Examples:
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "5"    | "17.58" | "1102" | "1"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
-            | 2   | "BMS002" | "7"    | "19.85" | "1102" | "1"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
+            | 1   | "BMS001" | "15"   | "17.58" | "1102" | "1"       | "0"          | "90"      | "999"  | "01"     | "01"     | "01"     |
+            | 2   | "BMS002" | "12"   | "19.85" | "1102" | "1"       | "0"          | "90"      | "999"  | "01"     | "01"     | "01"     |
 
     Scenario: 3. Create/Sefas/Validation
         Given the user clicks the "Control" tab selected by title
@@ -110,16 +110,16 @@ Feature:xq-p-flow-pih-fcpst-10
         And the value of the selected text field is <VLFCPST>
         Examples:
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
-            | "1"    | "123.06" | "2.0000" | "2.46"  |
-            | "2"    | "194.53" | "2.0000" | "3.89"  |
+            | "1"    | "350.72" | "2.0000" | "7.01"  |
+            | "2"    | "316.81" | "2.0000" | "6.34"  |
 
     Scenario: 4. Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         When the user selects the text field with X3 field name: "XQPIH2_TOTBASEFCPST"
-        And the value of the selected text field is "317.59"
+        And the value of the selected text field is "667.53"
         And the user selects the text field with X3 field name: "XQPIH2_TOTICMSFCPST"
-        And the value of the selected text field is "6.35"
+        And the value of the selected text field is "13.35"
 
     Scenario: 5. Logout
         And the user clicks the Close page action icon on the header panel

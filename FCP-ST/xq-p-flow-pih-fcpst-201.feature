@@ -2,7 +2,7 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code:xq-p-flow-pih-FCPST
-# - Description: Validate FCP_ST fields and calculation for CST 201-202-900 - PIH
+# - Description: Validate FCP_ST fields and calculation for CST 201 - PIH
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
@@ -12,15 +12,12 @@
 # - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
-Feature:xq-p-flow-pih-fcpst-201-202-900
+Feature:xq-p-flow-pih-fcpst-201
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-201-202-900
-    #--------------------------------------------------------------------------------
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-201-202-900
+    Scenario: 2. Create PIH - ICMS CST-201
         Given the user opens the "GESPIH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -80,10 +77,6 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
             | 1   | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "0"          | "201"     | "301"  | "02"     | "01"     | "01"     |
             | 2   | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "0"          | "201"     | "301"  | "02"     | "01"     | "01"     |
-            | 3   | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "0"          | "202"     | "301"  | "02"     | "01"     | "01"     |
-            | 4   | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "0"          | "202"     | "301"  | "02"     | "01"     | "01"     |
-            | 5   | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
-            | 6   | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
 
     Scenario: 3. Create/Sefas/Validation
         #Control Tab
@@ -120,31 +113,17 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
         And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
-<<<<<<< HEAD:PIH/xq-p-flow-pih-fcpst-201-202-900.feature
-            | CURLIG | BFCPST     | ALQFCPST | VLFCPST |
-            | "1"    | "221.5100" | "2.0000" | "4.43"  |
-            | "2"    | "222.3200" | "2.0000" | "4.45"  |
-            | "3"    | "221.5100" | "2.0000" | "4.43"  |
-            | "4"    | "222.3200" | "2.0000" | "4.45"  |
-            | "5"    | "210.4300" | "2.0000" | "4.21"  |
-            | "6"    | "211.2000" | "2.0000" | "4.22"  |
-=======
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
             | "1"    | "221.51" | "2.0000" | "4.43"  |
             | "2"    | "222.32" | "2.0000" | "4.45"  |
-            | "3"    | "221.51" | "2.0000" | "4.43"  |
-            | "4"    | "222.32" | "2.0000" | "4.45"  |
-            | "5"    | "210.43" | "2.0000" | "4.21"  |
-            | "6"    | "211.20" | "2.0000" | "4.22"  |
->>>>>>> origin:FCP-ST/xq-p-flow-pih-fcpst-201-202-900.feature
 
     Scenario: 4. Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         When the user selects the text field with X3 field name: "XQPIH2_TOTBASEFCPST"
-        And the value of the selected text field is "1,309.29"
+        And the value of the selected text field is "443.83"
         And the user selects the text field with X3 field name: "XQPIH2_TOTICMSFCPST"
-        And the value of the selected text field is "26.19"
+        And the value of the selected text field is "8.88"
 
     Scenario: 5. Logout
         And the user clicks the Close page action icon on the header panel
