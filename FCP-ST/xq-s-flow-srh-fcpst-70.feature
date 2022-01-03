@@ -165,9 +165,9 @@ Feature:xq-s-flow-srh-fcpst-70
         Then the user selects table row that is below the currently selected row
 
         Examples:
-            | BCFCPST      | VLICMSFCPST | ALIQFCPST |
-            | "2,098.2900" | "41.9700"   | "2.0000"  |
-            | "2,397.5600" | "47.9500"   | "2.0000"  |
+            | BCFCPST    | VLICMSFCPST | ALIQFCPST |
+            | "2,098.29" | "41.97"     | "2.0000"  |
+            | "2,397.56" | "47.95"     | "2.0000"  |
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title
