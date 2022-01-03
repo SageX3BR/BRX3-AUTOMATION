@@ -166,8 +166,8 @@ Feature:xq-s-flow-srh-fcpst-30
 
         Examples:
             | BCFCPST    | VLICMSFCPST | ALIQFCPST |
-            | "2,098.29" | "41.97"     | "2.0000"  |
-            | "2,397.56" | "47.95"     | "2.0000"  |
+            | "2,098.29" | "41.97"     | "2.00"    |
+            | "2,397.56" | "47.95"     | "2.00"    |
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title
