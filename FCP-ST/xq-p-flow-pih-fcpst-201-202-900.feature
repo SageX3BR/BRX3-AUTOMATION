@@ -120,6 +120,15 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
         And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
+<<<<<<< HEAD:PIH/xq-p-flow-pih-fcpst-201-202-900.feature
+            | CURLIG | BFCPST     | ALQFCPST | VLFCPST |
+            | "1"    | "221.5100" | "2.0000" | "4.43"  |
+            | "2"    | "222.3200" | "2.0000" | "4.45"  |
+            | "3"    | "221.5100" | "2.0000" | "4.43"  |
+            | "4"    | "222.3200" | "2.0000" | "4.45"  |
+            | "5"    | "210.4300" | "2.0000" | "4.21"  |
+            | "6"    | "211.2000" | "2.0000" | "4.22"  |
+=======
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
             | "1"    | "221.51" | "2.0000" | "4.43"  |
             | "2"    | "222.32" | "2.0000" | "4.45"  |
@@ -127,6 +136,7 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
             | "4"    | "222.32" | "2.0000" | "4.45"  |
             | "5"    | "210.43" | "2.0000" | "4.21"  |
             | "6"    | "211.20" | "2.0000" | "4.22"  |
+>>>>>>> origin:FCP-ST/xq-p-flow-pih-fcpst-201-202-900.feature
 
     Scenario: 4. Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel

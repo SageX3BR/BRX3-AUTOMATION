@@ -103,7 +103,7 @@ Feature: xq-p-flow-pih-oi-all
         And the "Open item edit" screen is displayed
         And the user selects the fixed data table for x3 field name: "BPSDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPSDUD_AMTCUR" and row number: 1
-        And the value of the selected cell is "605.4600"
+        And the value of the selected cell is "605.46"
         Then the user clicks the Close page action icon on the header panel
 
     # #--------------------------------------------------------------------------------
