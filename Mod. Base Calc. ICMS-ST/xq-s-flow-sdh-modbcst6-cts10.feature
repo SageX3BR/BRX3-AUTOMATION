@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sdh-modbcst5-cts30
+# - Test code: xq-s-flow-sdh-modbcst6-cts10
 # - Description: MODBCST 5
 # - Jira: X3-202065 - [BR] [NF-e] [Sales] Nota Técnica 2019.001 v1.40 - modBCST
 # - Legislation: BR addon
@@ -23,7 +23,7 @@
 #
 # ###########################################################################
 
-Feature: xq-s-flow-sdh-modbcst5-cts30
+Feature: xq-s-flow-sdh-modbcst6-cts10
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -33,7 +33,7 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
 
 
     #--------------------------------------------------------------------------------
-    #Creation of the delivery for CST 10 modbc 5
+    #Creation of the delivery for CST 10 modbc 6
     #--------------------------------------------------------------------------------
     Scenario: 2. Create a Delivery
 
@@ -71,19 +71,16 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
-        And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCODBF"
-        And the user adds the text <XQCODBF> in selected cell and hits enter key
+        And the user adds the text <XQCSTICMS> in selected cell and hits enter key
+
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF   |
-            | 1   | "BMS001" | "12" | "3.69"  | "6101" | "5"       | "0"     | "30"      | "PR80003" |
-            | 2   | "BMS001" | "29" | "12.96" | "6101" | "5"       | "0"     | "30"      | "PR80003" |
+            | LIN | ITMREF   | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS |
+            | 1   | "BMS001" | "BMS001" | "12" | "3.69"  | "6949" | "0"     | "10"      |
+            | 2   | "BMS001" | "BMS001" | "29" | "12.96" | "6949" | "0"     | "10"      |
 
 
     Scenario: Create document
@@ -99,15 +96,15 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
         And the user selects cell with X3 field name: "WK4ALL1_XQDETIMPOSTO" of selected row
         When the user clicks on the icon contained in the selected cell
         Then the "Tax determination" screen is displayed
-        #Check MODBCST
+        #Check Values
         And the user selects the text field with X3 field name: "XQDTIMP1_MODDETCALCST"
         And the value of the selected text field is <MODDETCALCST>
         Then the user clicks the Close page action icon on the header panel
 
         Examples:
-            | ITMREF   | MODDETCALCST         |
-            | "BMS001" | "5 - Ruling (value)" |
-            | "BMS001" | "5 - Ruling (value)" |
+            | ITMREF   | MODDETCALCST          |
+            | "BMS001" | "6 - Operation Value" |
+            | "BMS001" | "6 - Operation Value" |
 
 
     Scenario: SEFAZ
@@ -118,7 +115,6 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
     # Then a log panel appears
     # And the user selects the main log panel of the page
     # And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
-
 
     Scenario: Logout
 

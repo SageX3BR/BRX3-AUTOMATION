@@ -1,18 +1,18 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-pih-modbcst4-cst30
-# - Description: MODBCST 4
-# - Jira: X3-202065 - [BR] [NF-e] [Purchase] Nota Técnica 2019.001 v1.40 - modBCST
+# - Test code:xq-p-flow-pih-modbcst6-cst30
+# - Description: Validate FCP_ST fields and calculation for CST 10-30-70-90
+# - Jira: NA
 # - Legislation: BR addon
-# - Created by : Carla Cury
+# - Created by : Jonatas Hille
 # - Created date : 01/06/2020
-# - Updated by : Carla Cury
-# - Updated date : 30/09/2020
+# - Updated by : Jonatas Hille
+# - Updated date : 01/06/2020
 # - Status : Automated
 ###########################################################################
 
-Feature:xq-p-flow-pih-modbcst4-cst30
+Feature:xq-p-flow-pih-modbcst6-cst30
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -20,8 +20,7 @@ Feature:xq-p-flow-pih-modbcst4-cst30
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    #--------------------------------------------------------------------------------
-    #Create
+
     #--------------------------------------------------------------------------------
     Scenario: Creation PIH
         Given the user opens the "GESPIH" function
@@ -30,9 +29,16 @@ Feature:xq-p-flow-pih-modbcst4-cst30
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
         #Header
-        #When the user selects the text field with name: "Entry number"
-        When the user selects the text field with X3 field name: "WE8ALL0_NUM"
+        #Criar string baseada em datetime$+4 char de um Uuid
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "ctrans(num$(datetime$),"-:TZ","")+ left$(num$(getUuid),5)" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
         And the user stores the value of the selected text field with the key: "DOCSUP"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         And the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
         And the user writes "BR011" to the selected text field and hits tab key

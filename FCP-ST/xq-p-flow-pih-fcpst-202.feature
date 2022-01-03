@@ -24,8 +24,16 @@ Feature:xq-p-flow-pih-fcpst-202
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
         #Header
-        When the user selects the text field with X3 field name: "WE8ALL0_NUM"
+        #Criar string baseada em datetime$+4 char de um Uuid
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "ctrans(num$(datetime$),"-:TZ","")+ left$(num$(getUuid),5)" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
         And the user stores the value of the selected text field with the key: "DOCSUP"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         And the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
         And the user writes "BR001" to the selected text field and hits tab key
