@@ -24,12 +24,12 @@ Feature:xq-p-flow-pih-fcpst-900
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
         #Header
-        #Criar string baseada em datetime$+4 char de um Uuid
+        #Criar string baseada em datetime$ + 5 Random
         When the user opens the header drop down
         And the user clicks the "Calculator" secondary action button on the right panel
         And the "Calculator" screen is displayed
         And the user selects the text field with name: "Calculation:"
-        And the user writes "ctrans(num$(datetime$),"-:TZ","")+ left$(num$(getUuid),5)" to the selected text field and hits enter key
+        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
         And the user selects the text field with name: "Result"
         And the user stores the value of the selected text field with the key: "DOCSUP"
         Then the user clicks the Close page action icon on the header panel
