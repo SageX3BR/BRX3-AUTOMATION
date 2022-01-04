@@ -71,25 +71,22 @@ Feature: xq-s-flow-sdh-modbcst6-cts10
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell and hits enter key
 
-
         Examples:
-            | LIN | ITMREF   | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS |
-            | 1   | "BMS001" | "BMS001" | "12" | "3.69"  | "6949" | "0"     | "10"      |
-            | 2   | "BMS001" | "BMS001" | "29" | "12.96" | "6949" | "0"     | "10"      |
-
+            | LIN | ITMREF   | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
+            | 1   | "BMS001" | "BMS001" | "12" | "3.69"  | "6103" | "6"       | "6"       | "0"     | "10"      |
+            | 2   | "BMS001" | "BMS001" | "29" | "12.96" | "6103" | "6"       | "6"       | "0"     | "10"      |
 
     Scenario: Create document
-
         When the user clicks the "Create" main action button on the right panel
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
-
-
 
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
@@ -106,17 +103,14 @@ Feature: xq-s-flow-sdh-modbcst6-cts10
             | "BMS001" | "6 - Operation Value" |
             | "BMS001" | "6 - Operation Value" |
 
-
     Scenario: SEFAZ
-
         When the user clicks the "Save" main action button on the right panel
-    # Given the user clicks the "SEFAZ" action button on the header drop down
-    # And the user waits 10 seconds
-    # Then a log panel appears
-    # And the user selects the main log panel of the page
-    # And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        Given the user clicks the "SEFAZ" action button on the header drop down
+        And the user waits 10 seconds
+        Then a log panel appears
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
 
     Scenario: Logout
-
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
