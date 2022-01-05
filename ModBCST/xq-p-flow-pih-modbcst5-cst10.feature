@@ -106,9 +106,6 @@ Feature:xq-p-flow-pih-modbcst5-cst10
         When the user clicks the "Post" button in the header
         And an alert box with the text "The document will be validated! You will no longer be able to Modify or Delete it. Continue?" appears
         And the user clicks the "Ok" option in the alert box
-        And a dialog box appears
-        And the user clicks the "Ok" opinion in the alert box
-
 
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
@@ -128,12 +125,6 @@ Feature:xq-p-flow-pih-modbcst5-cst10
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
-        # And the user clicks the "Resume" tab selected by title
-        # When the user selects the text field with X3 field name: "XQPIH2_TOTBASEFCPST"
-        # And the value of the selected text field is "2,276.9100"
-        # And the user selects the text field with X3 field name: "XQPIH2_TOTICMSFCPST"
-        # And the value of the selected text field is "45.5400"
-
         And the user clicks the Close page action icon on the header panel
         #Logout
         Then the user logs-out from the system
