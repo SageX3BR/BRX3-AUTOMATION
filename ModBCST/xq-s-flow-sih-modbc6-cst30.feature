@@ -87,33 +87,19 @@ Feature: xq-s-flow-sih-modbc6-cst30
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODBF"
-        And the user adds the text <XQCODBF> in selected cell
-
         And the user hits enter key in the selected cell
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF   |
-            | 1   | "BMS001" | "12" | "3.69"  | "6101" | "6"       | "6"       | "0"     | "30"      | "PR80003" |
-            | 2   | "BMS001" | "29" | "12.96" | "6101" | "6"       | "6"       | "0"     | "30"      | "PR80003" |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
+            | 1   | "BMS001" | "12" | "3.69"  | "6101" | "6"       | "6"       | "0"     | "30"      |
+            | 2   | "BMS001" | "29" | "12.96" | "6101" | "6"       | "6"       | "0"     | "30"      |
 
 
     Scenario: Create document
 
         When the user clicks the "Create" main action button on the right panel
-        # And the user waits 4 seconds
-        # And a log panel appears
-        # And the user selects the main log panel of the page
-        # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
-        # And the user clicks the "Close page" main action button on the right panel
-
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-
-
 
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK5ALL4_ITMREF"

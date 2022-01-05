@@ -113,7 +113,8 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales order ALL : Full entry" screen is displayed
-        And the user waits (1) seconds
+        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user stores the value of the selected text field with the key: "SOH_NUM"
     #--------------------------------------------------------------------------------
     #Creation of the invoice
     #--------------------------------------------------------------------------------
@@ -168,47 +169,39 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Ship-to"
         And the user writes "BR001" to the selected text field and hits tab key
-        #Filter with the order created above
-        Then the user clicks the "Selection criteria" action button on the header drop down
-        And the "Delivery preloading filter" screen is displayed
-        And the user selects the text field with X3 field name: "PCRITORD_WSIHNUM"
-        And the user writes the stored text with key "SIHDocumentNo" in the selected text field and hits tab key
-        And the user clicks the "OK" main action button on the right panel
-        #Picking the order / All items
-        And the user clicks the "Invoices" link on the left panel
-        And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "SIHDocumentNo" and with the text containing "BR001" of the picking list panel
-        And the user checks the selected picking list panel item
-        Then an alert box with the text containing "Replace data from the General Data tab?" appears
-        And the user clicks the "Yes" opinion in the alert box
-        Then an alert box with the text containing "Replace data from the Shipping data tab?" appears
-        And the user clicks the "Yes" opinion in the alert box
+        And the user selects the text field with name: "Bill-to customer"
+        And the user writes "BR150" to the selected text field and hits tab key
+        And the user selects the text field with name: "Fiscal operation"
+        And the user writes "134" to the selected text field and hits tab key
+        When the user clicks the "Management" tab selected by title
+        And the user selects the text field with name: "Pay-by"
+        And the user writes "BR150" to the selected text field and hits tab key
+        And the user selects the text field with name: "Group customer"
+        And the user writes "BR150" to the selected text field and hits tab key
+        #Picking the Invoice / All items
+        When the user clicks the "Invoices" link on the left panel
+        And the user selects the data table of left panel
+        And the user selects search cell with header: "Invoice"
+        And the user adds the stored text with key "SIHDocumentNo" in selected cell and hits enter key
+        And the user selects cell that matches exact with the stored text with the key: "SIHDocumentNo" and column header: "Invoice"
+        And the user clicks on the selected cell
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Alter Lines
 
-        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
+        Given the user selects editable table row number: <LIN>
         And the user selects cell with X3 field name: "WK4ALL1_XQCFOP" of selected row
-        And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
-        And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
-        And the user adds the text <XQOICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
+        And the user adds the text <XQCFOP> in selected cell and hits enter key
 
         Examples:
-            | ITMREF   | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
-            | "BMS001" | "6923" | "1"       | "0"     | "00"      |
-            | "BMS002" | "6923" | "1"       | "0"     | "00"      |
+            | LIN | XQCFOP |
+            | 1   | "6923" |
+            | 2   | "6923" |
 
     Scenario: 2.1. Create and Store Doc Number
 
-        Given the user clicks the "Save" main action button on the right panel
-        #When a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SDH0_NUM"
-        And the user stores the value of the selected text field with the key: "SDHDocumentNo"
+        Given the user clicks the "Create" main action button on the right panel
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
         And the user waits 10 seconds
@@ -216,6 +209,9 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
         And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Validation" button in the header
+        And a dialog box appears
+        And the user clicks the "Ok" opinion in the alert box
 
     Scenario: Logout
 
