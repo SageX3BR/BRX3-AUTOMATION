@@ -106,6 +106,8 @@ Feature:xq-p-flow-pih-modbcst5-cst10
         When the user clicks the "Post" button in the header
         And an alert box with the text "The document will be validated! You will no longer be able to Modify or Delete it. Continue?" appears
         And the user clicks the "Ok" option in the alert box
+        And a dialog box appears
+        And the user clicks the "Ok" opinion in the alert box
 
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
