@@ -58,8 +58,6 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
-    #Filling Lines
-
     Scenario Outline: Add Lines
 
         Given the user selects editable table row number: <LIN>
@@ -76,23 +74,17 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCODBF"
-        And the user adds the text <XQCODBF> in selected cell and hits enter key
+        And the user adds the text <XQCSTICMS> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF   |
-            | 1   | "BMS001" | "12" | "3.69"  | "6101" | "5"       | "0"     | "30"      | "PR80003" |
-            | 2   | "BMS001" | "29" | "12.96" | "6101" | "5"       | "0"     | "30"      | "PR80003" |
-
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
+            | 1   | "BMS001" | "12" | "3.69"  | "6103" | "5"       | "0"     | "30"      |
+            | 2   | "BMS001" | "29" | "12.96" | "6103" | "5"       | "0"     | "30"      |
 
     Scenario: Create document
-
         When the user clicks the "Create" main action button on the right panel
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
-
-
 
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
@@ -111,14 +103,12 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
 
 
     Scenario: SEFAZ
-
         When the user clicks the "Save" main action button on the right panel
-    # Given the user clicks the "SEFAZ" action button on the header drop down
-    # And the user waits 10 seconds
-    # Then a log panel appears
-    # And the user selects the main log panel of the page
-    # And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
-
+        Given the user clicks the "SEFAZ" action button on the header drop down
+        And the user waits 10 seconds
+        Then a log panel appears
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
 
     Scenario: Logout
 

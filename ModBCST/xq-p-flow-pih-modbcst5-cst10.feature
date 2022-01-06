@@ -30,9 +30,16 @@ Feature:xq-p-flow-pih-modbcst5-cst10
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
         #Header
-        #When the user selects the text field with name: "Entry number"
-        When the user selects the text field with X3 field name: "WE8ALL0_NUM"
+        #Criar string baseada em datetime$ + 5 Random
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
         And the user stores the value of the selected text field with the key: "DOCSUP"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         And the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
         And the user writes "BR011" to the selected text field and hits tab key
@@ -102,7 +109,6 @@ Feature:xq-p-flow-pih-modbcst5-cst10
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
 
-
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
@@ -121,12 +127,6 @@ Feature:xq-p-flow-pih-modbcst5-cst10
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
-        # And the user clicks the "Resume" tab selected by title
-        # When the user selects the text field with X3 field name: "XQPIH2_TOTBASEFCPST"
-        # And the value of the selected text field is "2,276.9100"
-        # And the user selects the text field with X3 field name: "XQPIH2_TOTICMSFCPST"
-        # And the value of the selected text field is "45.5400"
-
         And the user clicks the Close page action icon on the header panel
         #Logout
         Then the user logs-out from the system

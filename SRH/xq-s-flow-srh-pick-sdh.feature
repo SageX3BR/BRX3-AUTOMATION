@@ -178,10 +178,6 @@ Feature:  xq-s-flow-srh-pick-sdh
 
         Then the user clicks the Close page action icon on the header panel
 
-        #Logout
-        Then the user logs-out from the system
-
-
     Scenario: Logout
         # And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

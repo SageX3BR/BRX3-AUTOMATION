@@ -45,7 +45,6 @@ Feature: xq-s-flow-sih-ot-al1
 
         #Openning the function
         Given the user opens the "GESSOH" function
-        #And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -57,11 +56,8 @@ Feature: xq-s-flow-sih-ot-al1
         And the user selects the text field with name: "Type"
         And the user writes "BRSOI" to the selected text field and hits tab key
         And the user selects the text field with name: "Reference"
-        # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR004" to the selected text field and hits tab key
-        # And an alert box with the text containing "This reference already exists for this customer" appears
-        # And the user clicks the "ok" opinion in the alert box
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "107" to the selected text field and hits tab key
@@ -80,9 +76,6 @@ Feature: xq-s-flow-sih-ot-al1
         And the user writes "BR011" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
-    # And an alert box with the text containing "delivery" appears
-    # Then the user clicks the "Yes" opinion in the alert box
-    #Filling Lines
 
     Scenario Outline: Add Lines
 
@@ -159,12 +152,3 @@ Feature: xq-s-flow-sih-ot-al1
         And the user clicks the Close page action icon on the header panel
         And the user clicks the "Post" main action button on the right panel
         And the selected log panel includes the message "X3 validation Invoice/Credit"
-# "FieldAction": "XQDETIMPOSTO",
-# "FieldType": "Icon",
-# "TestType": "set",
-# "Value": "1"
-# BMS001
-# "FieldAction": "VALFINST",
-# "FieldType": "Field",
-# "TestType": "check",
-# "Value": "10.1400"

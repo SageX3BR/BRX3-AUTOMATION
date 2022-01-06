@@ -51,13 +51,10 @@ Feature: xq-s-flow-gessih
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Sales site"
         And the user writes "BR011" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Type"
-        # And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
-
 
     Scenario: Process Id
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
@@ -66,13 +63,6 @@ Feature: xq-s-flow-gessih
     #Filling my industrialize
 
     Scenario: Fill Management
-        # When the user clicks the "Management" tab selected by title
-        # And the user selects the text field with name: "Sold-to"
-        # And the user writes "br003" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Pay-by"
-        # And the user writes "Br003" to the selected text field and hits tab key
-        # And the user selects the text field with name: "Group customer"
-        # And the user writes "BR003" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
     #Filling Lines
@@ -88,11 +78,6 @@ Feature: xq-s-flow-gessih
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
         And the user adds the text <XQVARCFOP> in selected cell
-        #And the user selects last editable cell with X3 field name: "WK5ALL4_XQOICMS"
-        #And the user adds the text <XQOICMS> in selected cell
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
         And the user hits enter
 
         Examples:
@@ -177,9 +162,6 @@ Feature: xq-s-flow-gessih
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
         And the user hits enter
 
         Examples:
@@ -191,12 +173,6 @@ Feature: xq-s-flow-gessih
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-
-
-        Given the user clicks the "Save" main action button on the right panel
-        #When a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SIH0_NUM"
-        And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
         And the user waits 10 seconds

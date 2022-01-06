@@ -60,16 +60,6 @@ Feature: xq-s-flow-sih-oi
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    # Scenario: Fill Management
-    #     When the user clicks the "Management" tab selected by title
-    #     And the user selects the text field with name: "Sold-to"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-    #     And the user selects the text field with name: "Pay-by"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-    #     And the user selects the text field with name: "Group customer"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-
-
     Scenario Outline: Add Lines
         #Lines
         Given the user selects editable table row number: <LIN>
@@ -87,9 +77,6 @@ Feature: xq-s-flow-sih-oi
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -103,7 +90,7 @@ Feature: xq-s-flow-sih-oi
         And the user clicks the "Open items" action button on the header drop down
         And the user selects the fixed data table for x3 field name: "BPCDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPCDUD_AMTCUR" and row number: (1)
-        And the value of the selected cell is "1,424.7000"
+        And the value of the selected cell is "1,424.70"
         Given the user clicks the "OK" action button on the header drop down
 
     Scenario: Logout

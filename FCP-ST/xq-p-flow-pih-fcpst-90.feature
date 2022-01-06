@@ -1,8 +1,8 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-pih-FCPST
-# - Description: Validate FCP_ST fields and calculation for CST 201-202-900 - PIH
+# - Test code:xq-p-flow-pih-FCPST-90
+# - Description: Validate FCP_ST fields and calculation for CST 90
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
@@ -12,37 +12,39 @@
 # - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
-Feature:xq-p-flow-pih-fcpst-201-202-900
+Feature:xq-p-flow-pih-fcpst-90
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-201-202-900
-    #--------------------------------------------------------------------------------
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-201-202-900
+    Scenario: 2. Create PIH - ICMS CST-90
         Given the user opens the "GESPIH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
-        #Header
-        When the user selects the text field with X3 field name: "WE8ALL0_NUM"
+        #Criar string baseada em datetime$ + 5 Random
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
         And the user stores the value of the selected text field with the key: "DOCSUP"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         And the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR050" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice type"
         And the user writes "BRNFF" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR006" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE8ALL0_BPRSAC"
         Then the user writes "FORN" to the selected text field and hits tab key
-        #General Tab
         When the user clicks the "General data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
-        And the user writes "1" to the selected text field and hits tab key
-        #Management Tab
+        And the user writes "51" to the selected text field and hits tab key
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WE8ALL1_BPRVCR"
         And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
@@ -50,7 +52,7 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
         Then the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
 
     Scenario Outline: Add Lines
-        And the user selects editable table row number: <LIN>
+        Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
@@ -78,15 +80,10 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
 
         Examples:
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "0"          | "201"     | "301"  | "02"     | "01"     | "01"     |
-            | 2   | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "0"          | "201"     | "301"  | "02"     | "01"     | "01"     |
-            | 3   | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "0"          | "202"     | "301"  | "02"     | "01"     | "01"     |
-            | 4   | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "0"          | "202"     | "301"  | "02"     | "01"     | "01"     |
-            | 5   | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
-            | 6   | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
+            | 1   | "BMS001" | "15"   | "17.58" | "1102" | "1"       | "0"          | "90"      | "999"  | "01"     | "01"     | "01"     |
+            | 2   | "BMS002" | "12"   | "19.85" | "1102" | "1"       | "0"          | "90"      | "999"  | "01"     | "01"     | "01"     |
 
     Scenario: 3. Create/Sefas/Validation
-        #Control Tab
         Given the user clicks the "Control" tab selected by title
         When the user selects the text field with X3 field name: "WE8ALL4_CLCLINAMT"
         And the user stores the value of the selected text field with the key: "CALCVALUE"
@@ -120,31 +117,17 @@ Feature:xq-p-flow-pih-fcpst-201-202-900
         And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
-<<<<<<< HEAD:PIH/xq-p-flow-pih-fcpst-201-202-900.feature
-            | CURLIG | BFCPST     | ALQFCPST | VLFCPST |
-            | "1"    | "221.5100" | "2.0000" | "4.43"  |
-            | "2"    | "222.3200" | "2.0000" | "4.45"  |
-            | "3"    | "221.5100" | "2.0000" | "4.43"  |
-            | "4"    | "222.3200" | "2.0000" | "4.45"  |
-            | "5"    | "210.4300" | "2.0000" | "4.21"  |
-            | "6"    | "211.2000" | "2.0000" | "4.22"  |
-=======
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
-            | "1"    | "221.51" | "2.0000" | "4.43"  |
-            | "2"    | "222.32" | "2.0000" | "4.45"  |
-            | "3"    | "221.51" | "2.0000" | "4.43"  |
-            | "4"    | "222.32" | "2.0000" | "4.45"  |
-            | "5"    | "210.43" | "2.0000" | "4.21"  |
-            | "6"    | "211.20" | "2.0000" | "4.22"  |
->>>>>>> origin:FCP-ST/xq-p-flow-pih-fcpst-201-202-900.feature
+            | "1"    | "350.72" | "2.0000" | "7.01"  |
+            | "2"    | "316.81" | "2.0000" | "6.34"  |
 
     Scenario: 4. Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         When the user selects the text field with X3 field name: "XQPIH2_TOTBASEFCPST"
-        And the value of the selected text field is "1,309.29"
+        And the value of the selected text field is "667.53"
         And the user selects the text field with X3 field name: "XQPIH2_TOTICMSFCPST"
-        And the value of the selected text field is "26.19"
+        And the value of the selected text field is "13.35"
 
     Scenario: 5. Logout
         And the user clicks the Close page action icon on the header panel

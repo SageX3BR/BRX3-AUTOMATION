@@ -67,9 +67,6 @@ Feature: xq-s-flow-sih-al5
         Given the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR005" to the selected text field and hits tab key
-    #And the user clicks the "Delivery" tab selected by title
-    #And the user selects the text field with name: "Shipment site"
-    #And the user writes "BR011" to the selected text field and hits tab key
 
     Scenario Outline: Add Lines
         Given the user clicks the "Lines" tab selected by title
@@ -89,9 +86,6 @@ Feature: xq-s-flow-sih-al5
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -110,17 +104,8 @@ Feature: xq-s-flow-sih-al5
     Scenario: Check Calculated Values
 
         Given the user selects row that has the text "BMS002" in column with X3 field name: "WK5ALL4_ITMREF"
-        # And the user selects cell with X3 field name: "WK5ALL4_XQVALICMSDEV" of selected row
-        # And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK5ALL4_XQVALFINST" of selected row
-        And the value of the selected cell is "30.6100"
-
-
-    # And the user selects cell with X3 field name: "WK5ALL4_XQDETIMPOSTO" of selected row
-    # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-    # And the value of the selected text field is "132.1700"
-    # And the user clicks the Close page action icon on the header panel
-    #Tax Det.
+        And the value of the selected cell is "30.61"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

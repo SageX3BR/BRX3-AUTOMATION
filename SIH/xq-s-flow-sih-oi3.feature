@@ -53,28 +53,13 @@ Feature: xq-s-flow-sih-oi3
         # And the user clicks the "OK" action button on the header drop down
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "200" to the selected text field and hits tab key
-    # #IMPORTAÇÃO
-    # And the user selects the text field with X3 field name: "XQSIH0_UFEMBARQUE"
-    # And the user writes "SP" to the selected text field and hits tab key
-    # And the user selects the text field with X3 field name: "XQSIH0_LOCEMBARQUE"
-    # And the user writes "Porto de Santos" to the selected text field and hits tab key
-    # And the user selects the text field with X3 field name: "XQSIH0_DESLOCDESP"
-    # And the user writes "Santos" to the selected text field and hits tab key
 
     Scenario: Process Id
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
         And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
-
-
-        # Scenario: Fill Management
-        #     When the user clicks the "Management" tab selected by title
-        #     And the user selects the text field with X3 field name: "WK5ALL1_VACBPR"
-        #     And the user writes "BRL" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-
-
 
     Scenario Outline: Add Lines
         #Lines
@@ -107,7 +92,7 @@ Feature: xq-s-flow-sih-oi3
         And the user clicks the "Open items" action button on the header drop down
         And the user selects the fixed data table for x3 field name: "BPCDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPCDUD_AMTCUR" and row number: (1)
-        And the value of the selected cell is "80.0004"
+        And the value of the selected cell is "80.00"
         Given the user clicks the "OK" action button on the header drop down
 
     Scenario: Logout

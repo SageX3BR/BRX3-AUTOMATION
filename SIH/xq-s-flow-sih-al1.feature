@@ -58,7 +58,6 @@ Feature: xq-s-flow-sih-al1
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
 
-
     Scenario: Process Id
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
         And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
@@ -94,9 +93,6 @@ Feature: xq-s-flow-sih-al1
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -110,16 +106,11 @@ Feature: xq-s-flow-sih-al1
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-
-
     Scenario: Check Calculated Values
 
         Given the user selects row that has the text "BMS001" in column with X3 field name: "WK5ALL4_ITMREF"
-        # And the user selects cell with X3 field name: "WK5ALL4_XQVALICMSDEV" of selected row
-        # And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK5ALL4_XQVALFINST" of selected row
-        And the value of the selected cell is "33.3100"
-    #atualmente apresenta 20.8400, verificar a regra.
+        And the value of the selected cell is "33.31"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

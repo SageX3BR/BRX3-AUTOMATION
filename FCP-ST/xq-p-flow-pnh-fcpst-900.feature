@@ -1,29 +1,23 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-pnh-fcpst-201-202-900
-# - Description: Validate FCP_ST fields and calculation for CST 201-202-900
+# - Test code:xq-p-flow-pnh-fcpst-900
+# - Description: Validate FCP_ST fields and calculation for CST 900 - PNH
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 01/06/2020
 # - Updated by : Jonatas Hille
-# - Updated date : 01/06/2020
-# - Status : Automated
+# - Updated date : 03/01/2022
+# - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
-Feature:xq-p-flow-pnh-fcpst-201-202-900
+Feature:xq-p-flow-pnh-fcpst-900
 
-    #--------------------------------------------------------------------------------
-    #X3 Login Scenario
-    #--------------------------------------------------------------------------------
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-201-202-900 - PTH First
-    #--------------------------------------------------------------------------------
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-201-202-900
+    Scenario: 2. Create PTH - ICMS CST-900
         Given the user opens the "GESPTH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -42,7 +36,6 @@ Feature:xq-p-flow-pnh-fcpst-201-202-900
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
 
-    #Lines
     Scenario Outline: Add Lines
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
@@ -70,14 +63,10 @@ Feature:xq-p-flow-pnh-fcpst-201-202-900
 
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI   | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "10"   | "78.50"  | "1102" | "1"       | "0"          | "201"     | "301"  | "02"     | "01"     | "01"     |
-            | 2   | "BMS002" | "10"   | "85.60"  | "1102" | "1"       | "0"          | "201"     | "301"  | "02"     | "01"     | "01"     |
-            | 3   | "BMS001" | "10"   | "100.20" | "1102" | "1"       | "0"          | "202"     | "301"  | "02"     | "01"     | "01"     |
-            | 4   | "BMS002" | "10"   | "135.00" | "1102" | "1"       | "0"          | "202"     | "301"  | "02"     | "01"     | "01"     |
-            | 5   | "BMS001" | "5"    | "100.20" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
-            | 6   | "BMS002" | "5"    | "135.00" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
+            | 1   | "BMS001" | "5"    | "100.20" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
+            | 2   | "BMS002" | "5"    | "135.00" | "1102" | "1"       | "0"          | "900"     | "301"  | "02"     | "01"     | "01"     |
 
-    Scenario: Create/Sefas/Validation
+    Scenario: 3. Create/Sefas/Validation
         #Create and Send to Sefaz
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
@@ -89,7 +78,6 @@ Feature:xq-p-flow-pnh-fcpst-201-202-900
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
         And the user clicks the "Close page" main action button on the right panel
         Then the user stores the value of the selected text field with the key: "CHAVENFEPTH"
-
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
@@ -104,28 +92,24 @@ Feature:xq-p-flow-pnh-fcpst-201-202-900
         And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
-            | CURLIG | BFCPST       | ALQFCPST | VLFCPST   |
-            | "1"    | "1,099.0000" | "2.0000" | "21.9800" |
-            | "2"    | "1,198.4000" | "2.0000" | "23.9700" |
-            | "3"    | "1,402.8000" | "2.0000" | "28.0600" |
-            | "4"    | "1,890.0000" | "2.0000" | "37.8000" |
-            | "5"    | "666.3300"   | "2.0000" | "13.3300" |
-            | "6"    | "897.7500"   | "2.0000" | "17.9600" |
+            | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
+            | "1"    | "666.33" | "2.0000" | "13.33" |
+            | "2"    | "897.75" | "2.0000" | "17.96" |
 
-    Scenario: Resume - Check Calculated Values
+    Scenario: 4. Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         When the user selects the text field with X3 field name: "XQPTH2_TOTBASEFCPST"
-        And the value of the selected text field is "7,154.2800"
+        And the value of the selected text field is "1,564.08"
         And the user selects the text field with X3 field name: "XQPTH2_TOTICMSFCPST"
-        And the value of the selected text field is "143.1000"
+        And the value of the selected text field is "31.29"
         Then the user clicks the Close page action icon on the header panel
 
     #-------------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-201-202-900 - PNH After PTH Created
+    #Validate FCP_ST fields and calculation - ICMS CST-900 - PNH After PTH Created
     #-------------------------------------------------------------------------------------
 
-    Scenario: Creating Purchase Return PNH
+    Scenario: 5. Creating Purchase Return PNH
         Given the user opens the "GESPNH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -151,7 +135,6 @@ Feature:xq-p-flow-pnh-fcpst-201-202-900
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR006" of the picking list panel
         Then the user checks the selected picking list panel item
-
         And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Lines
@@ -174,18 +157,12 @@ Feature:xq-p-flow-pnh-fcpst-201-202-900
         And the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
             | LIN    | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
-            | "1000" | "5202" | "1"       | "0"          | "201"     | "52"     | "50"     | "50"     | "301"  |
-            | "2000" | "5202" | "1"       | "0"          | "201"     | "52"     | "50"     | "50"     | "301"  |
-            | "3000" | "5202" | "1"       | "0"          | "202"     | "52"     | "50"     | "50"     | "301"  |
-            | "4000" | "5202" | "1"       | "0"          | "202"     | "52"     | "50"     | "50"     | "301"  |
-            | "5000" | "5202" | "1"       | "0"          | "900"     | "52"     | "50"     | "50"     | "301"  |
-            | "6000" | "5202" | "1"       | "0"          | "900"     | "52"     | "50"     | "50"     | "301"  |
+            | "1000" | "5202" | "1"       | "0"          | "900"     | "52"     | "50"     | "50"     | "301"  |
+            | "2000" | "5202" | "1"       | "0"          | "900"     | "52"     | "50"     | "50"     | "301"  |
 
-    #Create return
-    Scenario: Create return
+    Scenario: 6. Create return
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
@@ -200,22 +177,18 @@ Feature:xq-p-flow-pnh-fcpst-201-202-900
         And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
-            | CURLIG | BFCPST       | ALQFCPST | VLFCPST   |
-            | "1"    | "1,099.0000" | "2.0000" | "21.9800" |
-            | "2"    | "1,198.4000" | "2.0000" | "23.9700" |
-            | "3"    | "1,402.8000" | "2.0000" | "28.0600" |
-            | "4"    | "1,890.0000" | "2.0000" | "37.8000" |
-            | "5"    | "666.3300"   | "2.0000" | "13.3300" |
-            | "6"    | "897.7500"   | "2.0000" | "17.9600" |
+            | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
+            | "1"    | "666.33" | "2.0000" | "13.33" |
+            | "2"    | "897.75" | "2.0000" | "17.96" |
 
-    Scenario: Resume - Check Calculated Values / Transmit to Sefaz and Validation
+    Scenario: 7. Resume - Check Calculated Values / Transmit to Sefaz and Validation
         Given the user clicks the Close page action icon on the header panel
         When the user clicks the "Legal data" action button on the header drop down
         Then the "Purchasing Legal data" screen is displayed
         When the user selects the text field with X3 field name: "XQPLD2_TOTBASEFCPST"
-        And the value of the selected text field is "7,154.2800"
+        And the value of the selected text field is "1,564.08"
         And the user selects the text field with X3 field name: "XQPLD2_TOTICMSFCPST"
-        And the value of the selected text field is "143.1000"
+        And the value of the selected text field is "31.29"
         Then the user clicks the Close page action icon on the header panel
         #Sefaz
         When the user clicks the "Transmit SEFAZ" action button on the header drop down
@@ -230,6 +203,7 @@ Feature:xq-p-flow-pnh-fcpst-201-202-900
         And the user selects the main log panel of the page
         And the selected log panel includes the message "Return Validation End"
         And the user clicks the "Close page" main action button on the right panel
+
+    Scenario: 8. Logout
         Then the user clicks the Close page action icon on the header panel
-        #Logout
         Then the user logs-out from the system

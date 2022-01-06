@@ -1,14 +1,14 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sdh-modbcst6-cts10
-# - Description: MODBCST 5
+# - Test code:
+# - Description: MODBCST 4
 # - Jira: X3-202065 - [BR] [NF-e] [Sales] Nota Técnica 2019.001 v1.40 - modBCST
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
 # - Updated by : Carla Cury
-# - Updated date : 29/01/2021
+# - Updated date : 29/01/21
 # - Status : COMPLETED
 ###########################################################################
 
@@ -23,7 +23,7 @@
 #
 # ###########################################################################
 
-Feature: xq-s-flow-sdh-modbcst6-cts10
+Feature: xq-s-flow-sdh-modbcst4-cts30
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -33,12 +33,11 @@ Feature: xq-s-flow-sdh-modbcst6-cts10
 
 
     #--------------------------------------------------------------------------------
-    #Creation of the delivery for CST 10 modbc 6
+    #Creation of the delivery for CST 30 modbc 4
     #--------------------------------------------------------------------------------
     Scenario: 2. Create a Delivery
 
         Given the user opens the "GESSDH" function
-        And the user waits 2 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -58,8 +57,6 @@ Feature: xq-s-flow-sdh-modbcst6-cts10
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
-    #Filling Lines
-
     Scenario Outline: Add Lines
 
         Given the user selects editable table row number: <LIN>
@@ -78,20 +75,16 @@ Feature: xq-s-flow-sdh-modbcst6-cts10
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell and hits enter key
 
-
         Examples:
-            | LIN | ITMREF   | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
-            | 1   | "BMS001" | "BMS001" | "12" | "3.69"  | "6101" | "6"       | "6"       | "0"     | "10"      |
-            | 2   | "BMS001" | "BMS001" | "29" | "12.96" | "6101" | "6"       | "6"       | "0"     | "10"      |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
+            | 1   | "BMS001" | "12" | "3.69"  | "6103" | "4"       | "0"     | "30"      |
+            | 2   | "BMS001" | "29" | "12.96" | "6103" | "4"       | "0"     | "30"      |
 
 
     Scenario: Create document
-
         When the user clicks the "Create" main action button on the right panel
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
-
-
 
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK4ALL1_ITMREF"
@@ -104,21 +97,18 @@ Feature: xq-s-flow-sdh-modbcst6-cts10
         Then the user clicks the Close page action icon on the header panel
 
         Examples:
-            | ITMREF   | MODDETCALCST          |
-            | "BMS001" | "6 - Operation Value" |
-            | "BMS001" | "6 - Operation Value" |
-
+            | ITMREF   | MODDETCALCST                 |
+            | "BMS001" | "4 - Margin Value added (%)" |
+            | "BMS001" | "4 - Margin Value added (%)" |
 
     Scenario: SEFAZ
-
         When the user clicks the "Save" main action button on the right panel
-    # Given the user clicks the "SEFAZ" action button on the header drop down
-    # And the user waits 10 seconds
-    # Then a log panel appears
-    # And the user selects the main log panel of the page
-    # And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        Given the user clicks the "SEFAZ" action button on the header drop down
+        And the user waits 10 seconds
+        Then a log panel appears
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
 
     Scenario: Logout
-
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
