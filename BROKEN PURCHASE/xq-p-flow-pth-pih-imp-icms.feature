@@ -128,7 +128,7 @@ Feature: xq-p-flow-pth-pih-imp-icms
         And the user clicks the "OK" button in the header
         And the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "PTHDocumentNo" and with the text containing "BR001" of the picking list panel
+        And the user selects the item with the stored text with key "PTHDocumentNo" and with the text containing "BR011" of the picking list panel
         And the user checks the selected picking list panel item
         And an alert box with the text containing "Replace data from the 'General data' tab?" appears
         And the user clicks the "Yes" opinion in the alert box
