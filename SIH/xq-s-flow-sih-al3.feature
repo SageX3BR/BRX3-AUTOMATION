@@ -118,7 +118,7 @@ Feature: xq-s-flow-sih-al3
 
         Given the user clicks the "NF-e Summary" tab selected by title
         And the user selects the text field with X3 field name: "XQSIH1_TOTVALFINST"
-        And the value of the selected text field is "121.5000"
+        And the value of the selected text field is "121.50"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

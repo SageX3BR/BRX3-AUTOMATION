@@ -92,9 +92,6 @@ Feature: xq-s-flow-sih-al4
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -108,22 +105,11 @@ Feature: xq-s-flow-sih-al4
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-
-
     Scenario: Check Calculated Values
 
         Given the user selects row that has the text "BMS001" in column with X3 field name: "WK5ALL4_ITMREF"
-        # And the user selects cell with X3 field name: "WK5ALL4_XQVALICMSDEV" of selected row
-        # And the value of the selected cell is "90.1100"
         And the user selects cell with X3 field name: "WK5ALL4_XQVALFINST" of selected row
-        And the value of the selected cell is "54.5700"
-
-
-    # And the user selects cell with X3 field name: "WK5ALL4_XQDETIMPOSTO" of selected row
-    # And the user selects the text field with X3 field name: "XQDTIMP1_VALFINST"
-    # And the value of the selected text field is "132.1700"
-    # And the user clicks the Close page action icon on the header panel
-    #Tax Det.
+        And the value of the selected cell is "54.57"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

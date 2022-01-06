@@ -60,16 +60,6 @@ Feature: xq-s-flow-sih-oi-all5
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    # Scenario: Fill Management
-    #     When the user clicks the "Management" tab selected by title
-    #     And the user selects the text field with name: "Sold-to"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-    #     And the user selects the text field with name: "Pay-by"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-    #     And the user selects the text field with name: "Group customer"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-
-
     Scenario Outline: Add Lines
         #Lines
         Given the user selects editable table row number: <LIN>

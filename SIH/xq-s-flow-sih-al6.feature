@@ -61,9 +61,6 @@ Feature: xq-s-flow-sih-al6
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR005" to the selected text field and hits tab key
-        #And the user clicks the "Delivery" tab selected by title
-        #And the user selects the text field with name: "Shipment site"
-        #And the user writes "BR011" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
@@ -84,9 +81,6 @@ Feature: xq-s-flow-sih-al6
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -101,7 +95,7 @@ Feature: xq-s-flow-sih-al6
     Scenario: Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title
         And the user selects the text field with X3 field name: "XQSIH1_TOTVALFINST"
-        And the value of the selected text field is "85.1800"
+        And the value of the selected text field is "85.18"
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

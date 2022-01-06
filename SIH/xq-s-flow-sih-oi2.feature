@@ -102,33 +102,12 @@ Feature: xq-s-flow-sih-oi2
             | 1   | "BMS001" | "8"  | "25.98" | "7101" | "0"     | "00"      | "999"  |
             | 2   | "BMS002" | "16" | "32.54" | "7101" | "0"     | "00"      | "999"  |
 
-
-    # Scenario: Recalculate
-
-    #     And the user waits (3) seconds
-    #     And an alert box appears
-    #     And the user clicks the "Yes" opinion in the alert box
-
-
-    # Scenario: Invoicing
-    #     And the user clicks the "Invoicing" tab selected by title
-    #     And the user selects the fixed data table for x3 field name: "WK5ALL2_ARRAY_NBFAC"
-    #     #SHO/Insurance
-    #     And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (1)
-    #     And the user adds the text "4.36" in selected cell and hits enter key
-    #     #SHO/Discounts %
-    #     And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (2)
-    #     And the user adds the text "5.26" in selected cell and hits enter key
-    #     #SHO-Freight
-    #     And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (3)
-    #     And the user adds the text "21.36" in selected cell and hits enter key
-
     Scenario: Open Items
         When the user clicks the "Create" main action button on the right panel
         And the user clicks the "Open items" action button on the header drop down
         And the user selects the fixed data table for x3 field name: "BPCDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPCDUD_AMTCUR" and row number: (1)
-        And the value of the selected cell is "801.3200"
+        And the value of the selected cell is "801.32"
         Given the user clicks the "OK" action button on the header drop down
 
     Scenario: Logout
