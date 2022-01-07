@@ -56,12 +56,8 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
         And the user writes "BRSOI" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
-        # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR004" to the selected text field and hits tab key
-        # And an alert box with the text containing "This reference already exists for this customer" appears
-        #And the user clicks the "ok" opinion in the alert box
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "107" to the selected text field and hits tab key
@@ -70,9 +66,9 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "br005" to the selected text field
         And the user selects the text field with name: "Pay-by"
-        And the user writes "Br005" to the selected text field and hits tab key
+        And the user writes "Br004" to the selected text field and hits tab key
         And the user selects the text field with name: "Group customer"
-        And the user writes "BR005" to the selected text field and hits tab key
+        And the user writes "BR004" to the selected text field and hits tab key
         And the user selects the text field with name: "Delivery address"
         And the user writes "PR" to the selected text field and hits tab key
         And the user clicks the "Delivery" tab selected by title
@@ -80,40 +76,43 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user writes "BR011" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
-    # And an alert box with the text containing "delivery" appears
-    # Then the user clicks the "Yes" opinion in the alert box
-    #Filling Lines
 
     Scenario Outline: Add Lines
 
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
+        And the user adds the text <ITMREF> in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
-        And the user adds the text <QTY> in selected cell
+        And the user adds the text <QTY> in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user adds the text <GROPRI> in selected cell
+        And the user adds the text <GROPRI> in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_XQOICMS"
-        And the user adds the text <XQOICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCENQ"
-        Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        And the user waits (3) seconds
+        And the user adds the text <XQCFOP> in selected cell and hits enter key
         And an alert box appears
         And the user clicks the "Yes" opinion in the alert box
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "26" | "31.25" | "6118" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "17" | "16.98" | "6118" | "0"     | "10"      | "999"  |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP |
+            | 1   | "BMS001" | "26" | "31.25" | "6118" |
+            | 2   | "BMS002" | "17" | "16.98" | "6118" |
 
     Scenario: Create document
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
+        #Workaround para resolver um bug de não aparecer na left list da fatura encomendas tipo encomendas>>fatura
+        #Criar, editar, apertar 'yes' na caixa de diálogo
+        When the user clicks the "Management" tab selected by title
+        And the user selects the text field with name: "Pay-by"
+        And the user writes "Br005" to the selected text field and hits tab key
+        And the user selects the text field with name: "Pay-by"
+        And the user writes "Br004" to the selected text field and hits tab key
+        When the user clicks the "Save" main action button on the right panel
+        Then the "Header modification" screen is displayed
+        And the user clicks the "Yes" button in the header
+        Then a confirmation dialog appears with the message "Record has been modified"
+        #Fim do workaround
+
         And the user selects the text field with X3 field name: "SOH0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHDocumentNo"
 
@@ -153,7 +152,7 @@ Feature: xq-s-flow-sdh-ot-al1
         #Picking the order / All items
         And the user clicks the "Order selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "SOHDocumentNo" and with the text containing "BR004" of the picking list panel
+        And the user selects the item with the stored text with key "SOHDocumentNo" and with the text containing "BR005" of the picking list panel
         And the user checks the selected picking list panel item
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"

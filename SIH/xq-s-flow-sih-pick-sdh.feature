@@ -380,12 +380,11 @@ Feature:  xq-s-flow-sih-pick-sdh
     Scenario: Process Id
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
         And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
-        And the user adds the text "1" in selected cell and hits tab key
+        And the user adds the text "1" in selected cell and hits enter key
 
     Scenario: Create document
 
         Given the user clicks the "Save" main action button on the right panel
-        And the user clicks the "Save" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been modified"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
