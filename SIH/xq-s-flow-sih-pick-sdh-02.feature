@@ -98,7 +98,7 @@ Feature:  xq-s-flow-sih-pick-sdh-02
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
-        And the user stores the value of the selected text field with the key: "SDH_NUM"
+        And the user stores the value of the selected text field with the key: "SDH_NUM03"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
@@ -129,8 +129,8 @@ Feature:  xq-s-flow-sih-pick-sdh-02
         Given the user selects the data table of left panel
         When the user clicks the "Delivery selection" link on the left panel
         Then the user selects search cell with header: "Delivery"
-        And the user adds the stored text with key "SDH_NUM" in selected cell and hits enter key
-        And the user selects cell that matches exact with the stored text with the key: "SDH_NUM" and column header: "Delivery"
+        And the user adds the stored text with key "SDH_NUM03" in selected cell and hits enter key
+        And the user selects cell that matches exact with the stored text with the key: "SDH_NUM03" and column header: "Delivery"
         And the user clicks on the selected cell
         And an alert box appears
         And the user clicks the "Yes" opinion in the alert box

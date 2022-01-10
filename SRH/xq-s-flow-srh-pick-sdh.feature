@@ -87,7 +87,7 @@ Feature:  xq-s-flow-srh-pick-sdh
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
-        And the user stores the value of the selected text field with the key: "SDH_NUM"
+        And the user stores the value of the selected text field with the key: "SDH_NUM10"
         Then the user clicks the "SEFAZ" action button on the header drop down
         And the user waits 10 seconds
         Then a log panel appears
@@ -119,12 +119,12 @@ Feature:  xq-s-flow-srh-pick-sdh
         And the user writes "BR001" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
-        And the user writes the stored text with key "SDH_NUM" in the selected text field and hits tab key
+        And the user writes the stored text with key "SDH_NUM10" in the selected text field and hits tab key
         And the user clicks the "OK" main action button on the right panel
         #Picking the order / All items
         And the user clicks the "Delivery selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "SDH_NUM" and with the text containing "BR001" of the picking list panel
+        And the user selects the item with the stored text with key "SDH_NUM10" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
         And the user selects the text field with X3 field name: "XQSRH1_CODOPF"
         And the user writes "140" to the selected text field and hits tab key

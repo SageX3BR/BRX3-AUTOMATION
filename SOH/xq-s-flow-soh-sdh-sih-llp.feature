@@ -28,7 +28,7 @@
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-so-sd-si-llp
+Feature: xq-s-flow-soh-sdh-sih-llp
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -137,7 +137,7 @@ Feature: xq-s-flow-so-sd-si-llp
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
-        And the user stores the value of the selected text field with the key: "SDH_NUM"
+        And the user stores the value of the selected text field with the key: "SDH_NUM01"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
@@ -168,8 +168,8 @@ Feature: xq-s-flow-so-sd-si-llp
         Given the user selects the data table of left panel
         When the user clicks the "Delivery selection" link on the left panel
         Then the user selects search cell with header: "Delivery"
-        And the user adds the stored text with key "SDH_NUM" in selected cell and hits enter key
-        And the user selects cell that matches exact with the stored text with the key: "SDH_NUM" and column header: "Delivery"
+        And the user adds the stored text with key "SDH_NUM01" in selected cell and hits enter key
+        And the user selects cell that matches exact with the stored text with the key: "SDH_NUM01" and column header: "Delivery"
         And the user clicks on the selected cell
 
     Scenario: Process Id
@@ -306,7 +306,7 @@ Feature: xq-s-flow-so-sd-si-llp
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
-        And the user stores the value of the selected text field with the key: "SDH_NUM"
+        And the user stores the value of the selected text field with the key: "SDH_NUM01"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
@@ -343,8 +343,8 @@ Feature: xq-s-flow-so-sd-si-llp
         Given the user selects the data table of left panel
         When the user clicks the "Delivery selection" link on the left panel
         Then the user selects search cell with header: "Delivery"
-        And the user adds the stored text with key "SDH_NUM" in selected cell and hits enter key
-        And the user selects cell that matches exact with the stored text with the key: "SDH_NUM" and column header: "Delivery"
+        And the user adds the stored text with key "SDH_NUM01" in selected cell and hits enter key
+        And the user selects cell that matches exact with the stored text with the key: "SDH_NUM01" and column header: "Delivery"
         And the user clicks on the selected cell
         And an alert box appears
         And the user clicks the "Yes" opinion in the alert box
