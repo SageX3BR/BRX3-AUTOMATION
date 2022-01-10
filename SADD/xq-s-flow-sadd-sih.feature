@@ -90,7 +90,7 @@ Feature:xq-s-flow-sadd-sih
 
     Scenario: Create Additional Invoice
         Given the user opens the "GESXQSADD" function
-        Then the "Additional sales invoice" screen is displayed
+        Then the "Additional Invoice" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSADDI0_CPY"
