@@ -25,7 +25,7 @@ Feature:xq-p-flow-poh-services
     #--------------------------------------------------------------------------------
     Scenario: 2. Create Order Purchase
         Given the user opens the "GESPOH" function
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell

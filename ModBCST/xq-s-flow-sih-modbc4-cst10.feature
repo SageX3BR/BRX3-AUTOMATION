@@ -38,7 +38,7 @@ Feature: xq-s-flow-sih-modbc4-cst10
     Scenario: 2. Create a Invoice
 
         Given the user opens the "GESSIH" function
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
@@ -95,7 +95,7 @@ Feature: xq-s-flow-sih-modbc4-cst10
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter key in the selected cell
-        # And the user waits (3) seconds
+        # #And the user waits (3) seconds
         # And an alert box appears
         # And the user clicks the "Yes" opinion in the alert box
 
@@ -108,7 +108,7 @@ Feature: xq-s-flow-sih-modbc4-cst10
     Scenario: Create document
 
         When the user clicks the "Create" main action button on the right panel
-        # And the user waits 4 seconds
+        # #And the user waits 4 seconds
         # And a log panel appears
         # And the user selects the main log panel of the page
         # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
@@ -139,7 +139,7 @@ Feature: xq-s-flow-sih-modbc4-cst10
 
         When the user clicks the "Save" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

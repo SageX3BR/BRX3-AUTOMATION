@@ -45,7 +45,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
 
         #Openning the function
         Given the user opens the "GESSQH" function
-        #And the user waits 10 seconds
+        ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -96,7 +96,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK1ALL2_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        #And the user waits (3) seconds
+        ##And the user waits (3) seconds
         #And an alert box appears
         #And the user clicks the "Yes" opinion in the alert box
 
@@ -116,7 +116,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
     Scenario: 4. Create Order
 
         And the user clicks the "Order" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -129,7 +129,7 @@ Feature: xq-s-flow-sqh-sdh-tos1
     Scenario: 5. Create Delivery
 
         And the user clicks the "Delivery" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell

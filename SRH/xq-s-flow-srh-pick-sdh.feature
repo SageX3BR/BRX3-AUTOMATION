@@ -73,7 +73,7 @@ Feature:  xq-s-flow-srh-pick-sdh
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user hits enter
 
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         # And an alert box appears
         # And the user clicks the "Yes" opinion in the alert box
 
@@ -89,7 +89,7 @@ Feature:  xq-s-flow-srh-pick-sdh
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM10"
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

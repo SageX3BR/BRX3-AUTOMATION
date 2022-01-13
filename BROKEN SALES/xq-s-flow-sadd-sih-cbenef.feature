@@ -112,7 +112,7 @@ Feature:xq-s-flow-sadd-sih-cBenef
     Scenario Outline: Tax detail lines
         Given the user selects the text field with X3 field name: "XQSTD0_LIN"
         And the user writes <LIN> to the selected text field and hits tab key
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user selects the text field with X3 field name: "XQSTD1_XQCODBF"
         #Checking if the cBenef was suggested from the source document
         And the value of the selected text field is <XQCODBF>
@@ -124,7 +124,7 @@ Feature:xq-s-flow-sadd-sih-cBenef
         And the user writes <CSTPIS> to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSTD1_CSTCOF"
         And the user writes <CSTCOF> to the selected text field and hits tab key
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user clicks the "OK" action button on the header drop down
 
         Examples:

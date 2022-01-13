@@ -43,7 +43,7 @@ Feature:xq-s-flow-sdh-cfop-sug2
         And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell

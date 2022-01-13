@@ -45,7 +45,7 @@ Feature: xq-s-flow-sdh-ot-al1
 
         #Openning the function
         Given the user opens the "GESSOH" function
-        #And the user waits 10 seconds
+        ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -124,7 +124,7 @@ Feature: xq-s-flow-sdh-ot-al1
 
         #Openning the function
         Given the user opens the "GESSIH" function
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
@@ -141,7 +141,7 @@ Feature: xq-s-flow-sdh-ot-al1
         # brcinv=br005
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "107" to the selected text field and hits tab key
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
 
         #Filter with the order created above
         Then the user clicks the "Selection criteria" action button on the header drop down
@@ -179,7 +179,7 @@ Feature: xq-s-flow-sdh-ot-al1
         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

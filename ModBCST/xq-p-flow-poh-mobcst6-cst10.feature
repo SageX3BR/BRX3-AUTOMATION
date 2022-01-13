@@ -25,7 +25,7 @@ Feature:xq-p-flow-poh-mobcst6-cst10
     #--------------------------------------------------------------------------------
     Scenario: 2. Create Order Purchase
         Given the user opens the "GESPOH" function
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -72,7 +72,7 @@ Feature:xq-p-flow-poh-mobcst6-cst10
         And a confirmation dialog appears with the message "Record has been created"
         # And the user clicks the "Auto. tax calc." action button on the header drop down
         # And the user clicks the "View log" action button on the header drop down
-        # And the user waits 4 seconds
+        # #And the user waits 4 seconds
         # And a log panel appears
         # And the user selects the main log panel of the page
         # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"

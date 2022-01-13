@@ -42,7 +42,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
 
         #Openning the function
         Given the user opens the "GESSQH" function
-        #And the user waits 10 seconds
+        ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -91,7 +91,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK1ALL2_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # And the user waits (3) seconds
+        # #And the user waits (3) seconds
         # And an alert box appears
         # And the user clicks the "Yes" opinion in the alert box
 
@@ -108,7 +108,6 @@ Feature: xq-s-flow-sqh-sdh-tos2
     Scenario: 5.Create Order
 
         And the user clicks the "Order" action button on the header drop down
-        And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -122,7 +121,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
     Scenario: 6.Create Invoice
 
         And the user clicks the "Invoice" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
@@ -134,7 +133,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
@@ -142,7 +141,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
     Scenario: 8. Create and Store Doc Number
 
         Given the user clicks the "Post" action button on the header drop down
-        And the user waits 2 seconds
+        # #And the user waits 2 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "X3 validation Invoice/Credit memo"
@@ -204,7 +203,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         Given the user clicks the "Create" main action button on the right panel
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

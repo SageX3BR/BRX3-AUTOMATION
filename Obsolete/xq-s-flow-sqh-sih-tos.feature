@@ -46,7 +46,7 @@ Feature: xq-s-flow-sqh-sih-tos
 
         #Openning the function
         Given the user opens the "GESSQH" function
-        #And the user waits 10 seconds
+        ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -113,22 +113,22 @@ Feature: xq-s-flow-sqh-sih-tos
     Scenario: Create Order
 
         And the user clicks the "Order" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
     #Then the "Sales Order ALL : Full entry" screen is displayed
-    #And the user waits (3) seconds
+    ##And the user waits (3) seconds
 
     Scenario: Create Delivery
 
         And the user clicks the "Delivery" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Delivery ALL : Full entry" screen is displayed
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         And the user clicks the "Validation" action button on the header drop down
         #Then a log panel appears
         #And the user selects the main log panel of the page
@@ -144,12 +144,12 @@ Feature: xq-s-flow-sqh-sih-tos
     Scenario: Create Invoice
 
         And the user clicks the "Invoice" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-        And the user waits (1) seconds
+    # #And the user waits (1) seconds
 
     Scenario: Check the data
         When the user selects the text field with X3 field name: "SIH0_BPCINV"
@@ -166,7 +166,7 @@ Feature: xq-s-flow-sqh-sih-tos
     Scenario: Send to SEFAZ
 
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

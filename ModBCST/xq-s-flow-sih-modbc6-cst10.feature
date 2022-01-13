@@ -136,7 +136,7 @@ Feature: xq-s-flow-sih-modbcst6-cts10
 
         When the user clicks the "Save" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        #And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

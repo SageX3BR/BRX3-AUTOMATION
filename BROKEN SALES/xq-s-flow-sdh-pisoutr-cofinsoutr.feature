@@ -34,7 +34,7 @@ Feature: xq-s-flow-sdh-pisOutr-cofinsOutr
     Scenario: 2. Create a Delivery
 
         Given the user opens the "GESSDH" function
-        And the user waits 2 seconds
+        # #And the user waits 2 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell

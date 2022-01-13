@@ -52,10 +52,10 @@ Feature:xq-s-flow-srh-fcpst-70
         And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter
 
@@ -166,8 +166,8 @@ Feature:xq-s-flow-srh-fcpst-70
 
         Examples:
             | BCFCPST    | VLICMSFCPST | ALIQFCPST |
-            | "2,098.29" | "41.97"     | "2.00"  |
-            | "2,397.56" | "47.95"     | "2.00"  |
+            | "2,098.29" | "41.97"     | "2.00"    |
+            | "2,397.56" | "47.95"     | "2.00"    |
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title

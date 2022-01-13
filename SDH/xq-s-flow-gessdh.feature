@@ -81,7 +81,7 @@ Feature: xq-s-flow-gessdh
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user hits enter
 
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         # And an alert box appears
         # And the user clicks the "Yes" opinion in the alert box
 
@@ -95,7 +95,7 @@ Feature: xq-s-flow-gessdh
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
@@ -166,7 +166,7 @@ Feature: xq-s-flow-gessdh
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         # And an alert box appears
         # And the user clicks the "Yes" opinion in the alert box
 
@@ -180,7 +180,7 @@ Feature: xq-s-flow-gessdh
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

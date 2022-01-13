@@ -45,7 +45,7 @@ Feature: xq-s-flow-soh-ot
 
         #Openning the function
         Given the user opens the "GESSOH" function
-        #And the user waits 10 seconds
+        ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -101,7 +101,7 @@ Feature: xq-s-flow-soh-ot
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         # And an alert box appears
         # And the user clicks the "Yes" opinion in the alert box
 

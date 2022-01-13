@@ -38,7 +38,7 @@ Feature: xq-s-flow-sdh-modbcst4-cts10
     Scenario: 2. Create a Delivery
 
         Given the user opens the "GESSDH" function
-        And the user waits 2 seconds
+        # #And the user waits 2 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -62,7 +62,7 @@ Feature: xq-s-flow-sdh-modbcst4-cts10
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user waits 2 seconds
+        # #And the user waits 2 seconds
         And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
@@ -103,7 +103,7 @@ Feature: xq-s-flow-sdh-modbcst4-cts10
     Scenario: SEFAZ
         When the user clicks the "Save" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

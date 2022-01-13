@@ -50,10 +50,10 @@ Feature:xq-s-flow-soh-fcpst-90
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter
 

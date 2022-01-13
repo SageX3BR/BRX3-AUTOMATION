@@ -86,7 +86,7 @@ Feature:  xq-s-flow-sih-pick-sdh-02
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
 
         Examples:
             | LIN | ITMREF   | QTY | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -141,7 +141,7 @@ Feature:  xq-s-flow-sih-pick-sdh-02
         Then a confirmation dialog appears with the message "Record has been created"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

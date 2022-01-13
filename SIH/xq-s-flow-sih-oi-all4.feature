@@ -91,7 +91,7 @@ Feature: xq-s-flow-sih-oi-all4
         And the user adds the text <XQEXISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_VACITM1"
         And the user adds the text <VACITM1> in selected cell and hits enter key
-        And the user waits (1) seconds
+        # #And the user waits (1) seconds
         And an alert box appears
         And the user clicks the "Yes" opinion in the alert box
 

@@ -58,7 +58,7 @@ Feature:xq-p-flow-pnh-pth-cbenef
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
-        And the user waits 2 seconds
+        # #And the user waits 2 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell

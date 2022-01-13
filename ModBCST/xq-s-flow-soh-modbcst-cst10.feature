@@ -52,22 +52,22 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user hits tab
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter
 
@@ -80,7 +80,7 @@ Feature:xq-s-flow-soh-modbcst-cst10
     Scenario: Create document
 
         When the user clicks the "Create" main action button on the right panel
-        # And the user waits 4 seconds
+        # #And the user waits 4 seconds
         # And a log panel appears
         # And the user selects the main log panel of the page
         # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
@@ -137,22 +137,22 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user hits tab
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter
 
@@ -165,7 +165,7 @@ Feature:xq-s-flow-soh-modbcst-cst10
     Scenario: Create document
 
         When the user clicks the "Create" main action button on the right panel
-        # And the user waits 4 seconds
+        # #And the user waits 4 seconds
         # And a log panel appears
         # And the user selects the main log panel of the page
         # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"
@@ -222,22 +222,22 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user hits tab
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter
 
@@ -250,7 +250,7 @@ Feature:xq-s-flow-soh-modbcst-cst10
     Scenario: Create document
 
         When the user clicks the "Create" main action button on the right panel
-        # And the user waits 4 seconds
+        # #And the user waits 4 seconds
         # And a log panel appears
         # And the user selects the main log panel of the page
         # And the selected log panel includes the message "Modalidade de Base Cálculo de ICMS ST definida pelo usuário: 6 - Operation Value"

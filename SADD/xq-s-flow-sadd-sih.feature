@@ -51,19 +51,19 @@ Feature:xq-s-flow-sadd-sih
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQOICMS"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCENQ> in selected cell
         And the user hits enter
 

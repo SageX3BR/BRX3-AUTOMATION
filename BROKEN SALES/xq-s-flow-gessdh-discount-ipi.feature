@@ -73,7 +73,7 @@ Feature: xq-s-flow-gessdh-discount-ipi
 
 
 
-        # And the user waits (3) seconds
+        # #And the user waits (3) seconds
         # And an alert box appears
         # And the user clicks the "Yes" opinion in the alert box
 
@@ -126,7 +126,7 @@ Feature: xq-s-flow-gessdh-discount-ipi
     Scenario: SEFAZ
         Given the user clicks the "Save" main action button on the right panel
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

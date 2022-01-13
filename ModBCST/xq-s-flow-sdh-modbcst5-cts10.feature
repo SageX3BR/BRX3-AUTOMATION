@@ -38,7 +38,7 @@ Feature: xq-s-flow-sdh-modbcst5-cts10
     Scenario: 2. Create a Delivery
 
         Given the user opens the "GESSDH" function
-        And the user waits 2 seconds
+        # #And the user waits 2 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -107,7 +107,7 @@ Feature: xq-s-flow-sdh-modbcst5-cts10
     Scenario: SEFAZ
         When the user clicks the "Save" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

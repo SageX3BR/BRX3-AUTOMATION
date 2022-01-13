@@ -94,7 +94,7 @@ Feature: xq-s-flow-sih-oi5
 
     Scenario: Recalculate
 
-        And the user waits (3) seconds
+        # #And the user waits (3) seconds
         And an alert box appears
         And the user clicks the "Yes" opinion in the alert box
 

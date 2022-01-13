@@ -50,7 +50,7 @@ Feature:xq-p-flow-pth-pisoutr-cofinsoutr
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
 
-        #Lines
+    Scenario Outline: 4. Lines PTH
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell

@@ -52,22 +52,22 @@ Feature:xq-s-flow-soh-discount-ipi
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user hits tab
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_DISCRGVAL1"
         And the user adds the text <DISCRGVAL1> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_DISCRGVAL2"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <DISCRGVAL2> in selected cell
         And the user hits enter
 
@@ -147,22 +147,22 @@ Feature:xq-s-flow-soh-discount-ipi
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user hits tab
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_DISCRGVAL1"
         And the user adds the text <DISCRGVAL1> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_DISCRGVAL2"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <DISCRGVAL2> in selected cell
         And the user hits enter
 
@@ -180,10 +180,10 @@ Feature:xq-s-flow-soh-discount-ipi
         Given the user clicks the "Invoicing" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL3_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WK2ALL3_INVDTAAMT" and row number: (2)
-        And the user waits (2) seconds
+        # #And the user waits (2) seconds
         And the user adds the text "1" in selected cell and hits enter key
         And the user selects the fixed cell with X3 field name: "WK2ALL3_INVDTAAMT" and row number: (9)
-        And the user waits (2) seconds
+        # #And the user waits (2) seconds
         And the user adds the text "0.5" in selected cell and hits enter key
 
     Scenario: Create document
@@ -244,18 +244,18 @@ Feature:xq-s-flow-soh-discount-ipi
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_DISCRGVAL1"
         And the user adds the text <DISCRGVAL1> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_DISCRGVAL2"
-        And the user waits 1 seconds
+        # #And the user waits 1 seconds
         And the user adds the text <DISCRGVAL2> in selected cell
         And the user hits enter
 
@@ -271,10 +271,10 @@ Feature:xq-s-flow-soh-discount-ipi
         Given the user clicks the "Invoicing" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL3_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WK2ALL3_INVDTAAMT" and row number: (2)
-        And the user waits (2) seconds
+        # #And the user waits (2) seconds
         And the user adds the text "4" in selected cell and hits enter key
         And the user selects the fixed cell with X3 field name: "WK2ALL3_INVDTAAMT" and row number: (9)
-        And the user waits (2) seconds
+        # #And the user waits (2) seconds
         And the user adds the text "10" in selected cell and hits enter key
 
     Scenario: Create document

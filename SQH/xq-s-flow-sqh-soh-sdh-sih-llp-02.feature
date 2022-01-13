@@ -44,7 +44,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
 
         #Openning the function
         Given the user opens the "GESSQH" function
-        #And the user waits 10 seconds
+        ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -98,45 +98,50 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
 
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SQH0_SQHNUM"
-        And the user stores the value of the selected text field with the key: "SQH_NUM"
-        Then the user clicks the Close page action icon on the header panel
+        # And the user selects the text field with X3 field name: "SQH0_SQHNUM"
+        # And the user stores the value of the selected text field with the key: "SQH_NUM"
+        # Then the user clicks the Close page action icon on the header panel
 
         #--------------------------------------------------------------------------------
         #Creation of the document EXPORT
         #--------------------------------------------------------------------------------
 
         #Openning the function
-        Given the user opens the "GESSOH" function
+        Given the user clicks the "Order" action button on the header drop down
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
+        And an alert box with the text containing "Replace data of the Exports block?" appears
+        And the user clicks the "Yes" opinion in the alert box
         Then the "Sales order ALL : Full entry" screen is displayed
         #Filling the sales order header
-        When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with name: "Sales site"
-        And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with name: "Type"
-        And the user writes "BRSON" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
-        And the user selects the text field with name: "Sold-to"
-        And the user writes "PT006" to the selected text field and hits tab key
-        And the user clicks the Close page action icon on the header panel
-        #SELECT QUOTE
-        And the user clicks the "Quote selection" link on the left panel
-        And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "SQH_NUM" and with the text containing "PT006" of the picking list panel
-        And the user checks the selected picking list panel item
+        #     When the user clicks the "New" main action button on the right panel
+        #     And the user selects the text field with name: "Sales site"
+        #     And the user writes "BR011" to the selected text field and hits tab key
+        #     And the user selects the text field with name: "Type"
+        #     And the user writes "BRSON" to the selected text field and hits tab key
+        #     And the user selects the text field with name: "Reference"
+        #     And the user selects the text field with name: "Sold-to"
+        #     And the user writes "PT006" to the selected text field and hits tab key
+        #     And the user clicks the Close page action icon on the header panel
+        #     #SELECT QUOTE
+        #     And the user clicks the "Quote selection" link on the left panel
+        #     And the user selects the main picking list panel of the screen
+        #     And the user selects the item with the stored text with key "SQH_NUM" and with the text containing "PT006" of the picking list panel
+        #     And the user checks the selected picking list panel item
 
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
+        #     And an alert box appears
+        #     And the user clicks the "Yes" opinion in the alert box
 
-    Scenario: 5. Create document
+        # Scenario: 5. Create document
 
-        Given the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
+        #     Given the user clicks the "Create" main action button on the right panel
+        #     And a confirmation dialog appears with the message "Record has been created"
+        #     And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        #     And the user stores the value of the selected text field with the key: "SOH_NUM"
         And the user selects the text field with X3 field name: "SOH0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOH_NUM"
+        Then the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
 
     # #--------------------------------------------------------------------------------
@@ -228,7 +233,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         Then a confirmation dialog appears with the message "Record has been created"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

@@ -101,7 +101,7 @@ Feature: xq-s-flow-sih-ot-al2
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        And the user waits (3) seconds
+        # And the user waits (3) seconds
         And an alert box appears
         And the user clicks the "Yes" opinion in the alert box
 
@@ -121,12 +121,12 @@ Feature: xq-s-flow-sih-ot-al2
     Scenario: Create Invoice
 
         And the user clicks the "Invoice" action button on the header drop down
-        And the user waits 10 seconds
+        # #And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-        And the user waits (3) seconds
+        # And the user waits (3) seconds
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
@@ -153,7 +153,7 @@ Feature: xq-s-flow-sih-ot-al2
         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        And the user waits 10 seconds
+        #And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"

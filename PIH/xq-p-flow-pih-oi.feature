@@ -140,7 +140,7 @@ Feature:xq-flow-pih-oi
             | "2 "   | "1234567890" | "ABC123" | "2.03"  | "4.65"    | "8.12"    | "7.65" | "12.95"  | "Porto de Santos"    | "SP"     |
 
     Scenario: Inform DI Data Additions
-        Given the user waits (1) seconds
+    # Given the user waits (1) seconds
 
     Scenario Outline: Inform DI Data Additions
         Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
@@ -187,7 +187,7 @@ Feature:xq-flow-pih-oi
         And the user clicks the "SEFAZ" secondary action button on the right panel
         Then a log panel appears
         And the user selects the main log panel of the page
-        And the user waits 20 seconds
+        # #And the user waits 20 seconds
         # É preciso resolver o impacto do bug
         # And the selected log panel includes the confirmation message "Authorized"
 
