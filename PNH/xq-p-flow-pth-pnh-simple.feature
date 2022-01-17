@@ -1,36 +1,23 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:xq-p-flow-pnh-pth-cbenef
-# - Description: Validate Purchase Return invoice SEFAZ authorization with cBenef code in the products
-# - Jira: X3-203798
+# - Test code:xq-p-flow-pth-pnh-simple
+# - Description: PNH creation and transmission by picking a PTH
+# - Jira:
 # - Legislation: BR addon
-# - Created by : Fausto Neto
-# - Created date : 24/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 28/01/2021
-# - Status : WIP
+# - Created by :
+# - Created date :
+# - Updated by :
+# - Updated date :
+# - Status :
 ###########################################################################
-# Notes
-# -------------------------------------------------------------------------
-# Prerequisites:
-#   - Site: site address must be in Paraná state
-#   - GESXQSTICM: cBenef code PR800000, for the CST 41 and CFOPs 5201 & 6201
-#   - GESITF - BMS001: cBenef code PR810011, for the CST 40 and CFOPs 5201 & 6201
-#   - GESITF - BMS002: cBenef code PR810011, for the CST 40 and CFOPs 5201 & 6201
-#
-# ###########################################################################
-Feature:xq-p-flow-pnh-pth-cbenef
 
-    #--------------------------------------------------------------------------------
+Feature:xq-p-flow-pth-pnh-simple
+
     # X3 Login Scenario
-    #--------------------------------------------------------------------------------
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
-
-    #--------------------------------------------------------------------------------
     # PTH Creation First
-    #--------------------------------------------------------------------------------
     Scenario: 2. Creation with cBenef field informed
         Given the user opens the "GESPTH" function
         When the user selects the data table in the popup
@@ -49,7 +36,6 @@ Feature:xq-p-flow-pnh-pth-cbenef
         And the user writes "113" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
-
     #Lines
     Scenario Outline: Add Lines
         Given the user selects editable table row number: <LIN>
@@ -58,23 +44,15 @@ Feature:xq-p-flow-pnh-pth-cbenef
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
-        # #And the user waits 2 seconds
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQORIGEMICMS"
         And the user adds the text <XQORIGEMICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
         Then the user hits enter
-
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS |
             | 1   | "BMS001" | "28"   | "15.23" | "2101" | "0"          | "40"      |
-            | 2   | "BMS002" | "32"   | "23.15" | "2101" | "0"          | "40"      |
-            | 3   | "BMS001" | "28"   | "15.23" | "2101" | "0"          | "41"      |
-            | 4   | "BMS002" | "32"   | "23.15" | "2101" | "0"          | "41"      |
-
     Scenario: Create/Sefas/Validation
         #Create and Send to Sefaz
         When the user clicks the "Create" main action button on the right panel
@@ -87,11 +65,7 @@ Feature:xq-p-flow-pnh-pth-cbenef
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
         And the user clicks the "Close page" main action button on the right panel
         Then the user clicks the Close page action icon on the header panel
-
-    #-------------------------------------------------------------------------------------
-    #Validate FCP fields and calculation - PNH After PTH Created
-    #-------------------------------------------------------------------------------------
-
+    #PNH Creation
     Scenario: Creating Purchase Return PNH
         Given the user opens the "GESPNH" function
         And the user selects the data table in the popup
@@ -118,9 +92,8 @@ Feature:xq-p-flow-pnh-pth-cbenef
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR001" of the picking list panel
         Then the user checks the selected picking list panel item
-
         And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
-
+    #Lines
     Scenario Outline: Lines
         Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALL1_PTDLIN"
         And the user selects cell with X3 field name: "WE7ALL1_XQCFOP" of selected row
@@ -129,9 +102,6 @@ Feature:xq-p-flow-pnh-pth-cbenef
         And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTICMS" of selected row
         And the user adds the text <XQCSTICMS> in selected cell and hits tab key
-        #Checking if the cBenef was suggested from the GESXQSTICM & GESITF
-        And the user selects cell with X3 field name: "WE7ALL1_XQCODBF" of selected row
-        And the value of the selected cell contains <XQCODBF>
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTIPI" of selected row
         And the user adds the text <XQCSTIPI> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTPIS" of selected row
@@ -141,17 +111,12 @@ Feature:xq-p-flow-pnh-pth-cbenef
         And the user selects cell with X3 field name: "WE7ALL1_XQCENQ" of selected row
         And the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
-            | LIN    | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCODBF    | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
-            | "1000" | "6201" | "0"          | "40"      | "PR810011" | "50"     | "01"     | "01"     | "999"  |
-            | "2000" | "6201" | "0"          | "40"      | "PR810001" | "50"     | "01"     | "01"     | "999"  |
-            | "3000" | "6201" | "0"          | "41"      | "PR800000" | "50"     | "01"     | "01"     | "999"  |
-            | "4000" | "6201" | "0"          | "41"      | "PR800000" | "50"     | "01"     | "01"     | "999"  |
-
-
+            | LIN    | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
+            | "1000" | "6201" | "0"          | "00"      | "50"     | "01"     | "01"     | "999"  |
     Scenario: Create / Transmit to Sefaz and Validation
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
-        #Sefaz
+        #SEFAZ
         And the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
