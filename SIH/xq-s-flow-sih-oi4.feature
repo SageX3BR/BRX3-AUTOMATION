@@ -92,8 +92,8 @@ Feature: xq-s-flow-sih-oi4
         And the user selects last editable cell with X3 field name: "WK5ALL4_VACITM1"
         And the user adds the text <VACITM1> in selected cell and hits enter key
         # #And the user waits (1) seconds
-        And an alert box appears
-        And the user clicks the "No" opinion in the alert box
+        #And an alert box appears
+        #sAnd the user clicks the "No" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQSTISS | XQEXISS | VACITM1 |
