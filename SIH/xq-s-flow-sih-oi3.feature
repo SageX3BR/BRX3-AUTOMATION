@@ -77,8 +77,8 @@ Feature: xq-s-flow-sih-oi3
         And the user selects last editable cell with X3 field name: "WK5ALL4_VACITM1"
         And the user adds the text <VACITM1> in selected cell and hits enter key
         # #And the user waits (1) seconds
-        And an alert box appears
-        And the user clicks the "Yes" opinion in the alert box
+        #And an alert box appears
+        #And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQSTISS | XQEXISS | VACITM1 |
@@ -92,7 +92,7 @@ Feature: xq-s-flow-sih-oi3
         And the user clicks the "Open items" action button on the header drop down
         And the user selects the fixed data table for x3 field name: "BPCDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPCDUD_AMTCUR" and row number: (1)
-        And the value of the selected cell is "80.00"
+        And the value of the selected cell is "91.47"
         Given the user clicks the "OK" action button on the header drop down
 
     Scenario: Logout
