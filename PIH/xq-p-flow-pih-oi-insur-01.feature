@@ -1,18 +1,18 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-p-flow-pih-al
-# - Description: National Purchase Invoice with Average load
+# - Test code: xq-p-flow-pih-oi-insur
+# - Description: Open Items for invoice with insurance
 # - Jira: NA
 # - Legislation: BRA
 # - Created by : Daniela Anile
-# - Created date : 08/02/2021
+# - Created date : 05/02/2021
 # - Updated by : Daniela Anile
-# - Updated date : 08/02/2021
+# - Updated date : 05/02/2021
 # - Status : Automated
 ###########################################################################
 
-Feature: xq-p-flow-pih-al
+Feature: xq-p-flow-pih-oi-insur-01
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -20,9 +20,9 @@ Feature: xq-p-flow-pih-al
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    # #--------------------------------------------------------------------------------
-    # #Check values of produts and summary
-    # #--------------------------------------------------------------------------------
+    #--------------------------------------------------------------------------------
+    #National Invoice
+    #--------------------------------------------------------------------------------
     Scenario: 2. Header
         Given the user opens the "GESPIH" function
         When the user selects the data table in the popup
@@ -41,23 +41,23 @@ Feature: xq-p-flow-pih-al
         #Fim da criação da String
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
-        And the user writes "BR012" to the selected text field and hits tab key
+        And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice type"
         And the user writes "BRNFF" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE8ALL0_BPRSAC"
-        Then the user writes "FORN" to the selected text field and hits tab key
+        And the user writes "BR001" to the selected text field and hits tab key
 
     Scenario: 3. General data
         Given the user clicks the "General data" tab selected by title
         When the user selects the text field with name: "Fiscal operation"
-        And the user writes "52" to the selected text field and hits tab key
+        And the user writes "110" to the selected text field and hits tab key
 
     Scenario: 4. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
         And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
+        And the user selects the text field with name: "Payment term"
+        And the user writes "BR_AVISTA" to the selected text field and hits tab key
 
     Scenario Outline: 5. Lines
         Given the user clicks the "Lines" tab selected by title
@@ -88,38 +88,27 @@ Feature: xq-p-flow-pih-al
 
         Examples:
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "29"   | "29.65" | "1101" | "0"          | "10"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS002" | "14"   | "34.99" | "1101" | "0"          | "10"      | "999"  | "49"     | "01"     | "01"     |
+            | 1   | "BMS001" | "26"   | "45.69" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 2   | "BMS002" | "21"   | "18.32" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
-    Scenario: 6. Creation
+    Scenario: 6. Control
+        Given the user clicks the "Control" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 5
+        Then the user adds the text "25.25" in selected cell and hits enter key
+
+    Scenario: 7. Creation
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 7. Tax Detail
-        Given the user clicks the "Tax detail" action button on the header drop down
-        Then the "Tax detail" screen is displayed
-
-    Scenario Outline: 8. Tax Detail
-        Given the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPTD0_CURLIG"
-        And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
-        And the value of the selected text field is <VLICMSST>
-        And the user selects the text field with X3 field name: "XQPTD0_CURLIG"
-        And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
-        And the value of the selected text field is <VLICMSST>
-
-        Examples:
-            | CURLIG | VLICMSST |
-            | "1"    | "160.79" |
-            | "2"    | "91.60"  |
-
-    Scenario: 9. Resume
-        Given the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "XQPIH2_TTICMSST"
-        And the value of the selected text field is "252.39"
+    Scenario: 8. Open Items
+        Given the user clicks the "Open items" button in the header
+        And the "Open item edit" screen is displayed
+        And the user selects the fixed data table for x3 field name: "BPSDUD_ARRAY_NBECH"
+        And the user selects the fixed cell with X3 field name: "BPSDUD_AMTCUR" and row number: 1
+        And the value of the selected cell is "1,757.70"
+        Then the user clicks the Close page action icon on the header panel
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: 9. Logout
+    Scenario: 28. Logout
         And the user logs-out from the system

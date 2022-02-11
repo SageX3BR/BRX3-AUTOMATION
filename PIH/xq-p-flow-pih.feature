@@ -29,6 +29,16 @@ Feature: xq-p-flow-pih
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
+        #Criar string baseada em datetime$ + 5 Random
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
+        And the user stores the value of the selected text field with the key: "DOCSUP"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
         And the user writes "BR011" to the selected text field and hits tab key
@@ -45,10 +55,7 @@ Feature: xq-p-flow-pih
     Scenario: 4. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
-        And the user writes "MANAG1234" to the selected text field and hits tab key
-        And an alert box appears
-        And an alert box with the text containing "Reference entered on invoice" appears
-        And the user clicks the "Ok" opinion in the alert box
+        And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
 
     Scenario Outline: 5. Add Lines
         When the user clicks the "Lines" tab selected by title

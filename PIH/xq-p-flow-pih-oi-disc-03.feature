@@ -1,8 +1,8 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-p-flow-pih-oi-insur
-# - Description: Open Items for invoice with insurance
+# - Test code: xq-p-flow-pih-oi-disc
+# - Description: Open Items for invoice with discount
 # - Jira: NA
 # - Legislation: BRA
 # - Created by : Daniela Anile
@@ -12,7 +12,7 @@
 # - Status : Automated
 ###########################################################################
 
-Feature: xq-p-flow-pih-oi-insur
+Feature: xq-p-flow-pih-oi-disc-03
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -29,6 +29,16 @@ Feature: xq-p-flow-pih-oi-insur
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
+        #Criar string baseada em datetime$ + 5 Random
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
+        And the user stores the value of the selected text field with the key: "DOCSUP"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
         And the user writes "BR011" to the selected text field and hits tab key
@@ -45,10 +55,7 @@ Feature: xq-p-flow-pih-oi-insur
     Scenario: 4. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
-        And the user writes "MANAG1234" to the selected text field and hits tab key
-        And an alert box appears
-        And an alert box with the text containing "Reference entered on invoice" appears
-        And the user clicks the "Ok" opinion in the alert box
+        And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
         And the user selects the text field with name: "Payment term"
         And the user writes "BR_AVISTA" to the selected text field and hits tab key
 
@@ -81,14 +88,14 @@ Feature: xq-p-flow-pih-oi-insur
 
         Examples:
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "26"   | "45.69" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS002" | "21"   | "18.32" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 1   | "BMS001" | "24"   | "21.36" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 2   | "BMS002" | "19"   | "25.48" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
     Scenario: 6. Control
         Given the user clicks the "Control" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
-        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 5
-        Then the user adds the text "25.25" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 1
+        Then the user adds the text "21.36" in selected cell and hits enter key
 
     Scenario: 7. Creation
         Given the user clicks the "Create" main action button on the right panel
@@ -99,7 +106,7 @@ Feature: xq-p-flow-pih-oi-insur
         And the "Open item edit" screen is displayed
         And the user selects the fixed data table for x3 field name: "BPSDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPSDUD_AMTCUR" and row number: 1
-        And the value of the selected cell is "1,757.70"
+        And the value of the selected cell is "1,075.07"
         Then the user clicks the Close page action icon on the header panel
 
     # #--------------------------------------------------------------------------------
@@ -124,10 +131,7 @@ Feature: xq-p-flow-pih-oi-insur
     Scenario: 11. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
-        And the user writes "MANAG1234" to the selected text field and hits tab key
-        And an alert box appears
-        And an alert box with the text containing "Reference entered on invoice" appears
-        And the user clicks the "Ok" opinion in the alert box
+        And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
 
     Scenario Outline: 12. Lines
         Given the user clicks the "Lines" tab selected by title
@@ -158,8 +162,8 @@ Feature: xq-p-flow-pih-oi-insur
 
         Examples:
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "25"   | "48,63" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS002" | "36"   | "74,31" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 1   | "BMS001" | "23"   | "15.36" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 2   | "BMS002" | "14"   | "25.34" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
     Scenario: 13. DI Data
         Given the user clicks the "DI Data" action button on the header drop down
@@ -207,8 +211,8 @@ Feature: xq-p-flow-pih-oi-insur
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Control" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
-        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 5
-        Then the user adds the text "102.99" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 1
+        Then the user adds the text "23.69" in selected cell and hits enter key
 
     Scenario: 17. Creation
         Given the user clicks the "Create" main action button on the right panel
@@ -219,7 +223,7 @@ Feature: xq-p-flow-pih-oi-insur
         And the "Open item edit" screen is displayed
         And the user selects the fixed data table for x3 field name: "BPSDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPSDUD_AMTCUR" and row number: 1
-        And the value of the selected cell is "430,059.36"
+        And the value of the selected cell is "758.69"
         Then the user clicks the Close page action icon on the header panel
 
     #--------------------------------------------------------------------------------
@@ -262,10 +266,7 @@ Feature: xq-p-flow-pih-oi-insur
     Scenario: 21. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
-        And the user writes "MANAG1234" to the selected text field and hits tab key
-        And an alert box appears
-        And an alert box with the text containing "Reference entered on invoice" appears
-        And the user clicks the "Ok" opinion in the alert box
+        And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
 
     Scenario Outline: 22. Lines
         Given the user clicks the "Lines" tab selected by title
@@ -296,8 +297,8 @@ Feature: xq-p-flow-pih-oi-insur
 
         Examples:
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "25"   | "48,63" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS002" | "36"   | "74,31" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 1   | "BMS001" | "23"   | "15.36" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 2   | "BMS002" | "14"   | "25.34" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
     Scenario: 23. DI Data
         Given the user clicks the "DI Data" action button on the header drop down
@@ -322,8 +323,8 @@ Feature: xq-p-flow-pih-oi-insur
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Control" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
-        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 5
-        Then the user adds the text "102.99" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 1
+        Then the user adds the text "23.69" in selected cell and hits enter key
 
     Scenario: 26. Creation
         Given the user clicks the "Create" main action button on the right panel
@@ -334,7 +335,7 @@ Feature: xq-p-flow-pih-oi-insur
         And the "Open item edit" screen is displayed
         And the user selects the fixed data table for x3 field name: "BPSDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPSDUD_AMTCUR" and row number: 1
-        And the value of the selected cell is "430,059.36"
+        And the value of the selected cell is "758.69"
         And the user clicks the Close page action icon on the header panel
         Then the user clicks the "Close page" main action button on the right panel
 

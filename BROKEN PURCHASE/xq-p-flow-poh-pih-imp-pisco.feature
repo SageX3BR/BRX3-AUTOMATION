@@ -24,7 +24,7 @@ Feature: xq-p-flow-poh-pih-imp-pisco
     #--------------------------------------------------------------------------------
     #National
     #--------------------------------------------------------------------------------
-    Scenario: 11. Header POH
+    Scenario: 2. Header POH
         Given the user opens the "GESPOH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -38,7 +38,7 @@ Feature: xq-p-flow-poh-pih-imp-pisco
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "126" to the selected text field and hits tab key
 
-    Scenario Outline: 12. Lines POH
+    Scenario Outline: 3. Lines POH
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
         And the user selects editable table row number: <LIN>
@@ -68,19 +68,29 @@ Feature: xq-p-flow-poh-pih-imp-pisco
             | 1   | "BMS001" | "23"   | "65.32" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
             | 2   | "BMS002" | "34"   | "35.95" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
-    Scenario: 14. Create and Store Doc Number POH
+    Scenario: 4. Create and Store Doc Number POH
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "POH0_POHNUM"
         And the user stores the value of the selected text field with the key: "PoDocumentNo"
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: 15. Header PIH
+    Scenario: 5. Header PIH
         Given the user opens the "GESPIH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
+        #Criar string baseada em datetime$ + 5 Random
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
+        And the user stores the value of the selected text field with the key: "DOCSUP"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
         And the user writes "BR011" to the selected text field and hits tab key
@@ -89,7 +99,7 @@ Feature: xq-p-flow-poh-pih-imp-pisco
         And the user selects the text field with name: "Supplier"
         And the user writes "PT006" to the selected text field and hits tab key
 
-    Scenario: 16. Picking
+    Scenario: 6. Picking
         Given the user clicks the "Selection criteria" action button on the header drop down
         And the "Enter selection criteria" screen is displayed
         And the user selects the text field with X3 field name: "PCRITINV_WNUMCDE"
@@ -104,19 +114,16 @@ Feature: xq-p-flow-poh-pih-imp-pisco
         And an alert box with the text containing "Replace data in "data transport" tab?" appears
         And the user clicks the "Yes" opinion in the alert box
 
-    Scenario: 17. Management
+    Scenario: 7. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
-        And the user writes "MANAG1234" to the selected text field and hits tab key
-        And an alert box appears
-        And an alert box with the text containing "Reference entered on invoice" appears
-        And the user clicks the "Ok" opinion in the alert box
+        And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
 
-    Scenario: 18. DI Data
+    Scenario: 8. DI Data
         Given the user clicks the "DI Data" action button on the header drop down
         Then the "Import declaration" screen is displayed
 
-    Scenario Outline: 19. Import Declaration
+    Scenario Outline: 9. Import Declaration
         Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBDI"
@@ -149,7 +156,7 @@ Feature: xq-p-flow-poh-pih-imp-pisco
             | "1"    | "1234567890" | "123ABC" | "1.69"  | "5.32"    | "4.95"    | "2.36" | "4.98"   | "Porto de Paranagua" | "PR"     |
             | "2"    | "1234567890" | "ABC123" | "4.96"  | "3.62"    | "1.48"    | "7.51" | "4.85"   | "Porto de Paranagua" | "PR"     |
 
-    Scenario Outline: 20. Inform DI Data Additions
+    Scenario Outline: 10. Inform DI Data Additions
         Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBAD"
@@ -164,16 +171,16 @@ Feature: xq-p-flow-poh-pih-imp-pisco
             | "1"    | "10"  | "123"  |
             | "2"    | "20"  | "456"  |
 
-    Scenario: 21. Creation
+    Scenario: 11. Creation
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 9. Resume
+    Scenario: 12. Resume
         Given the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPIH2_TTNFE"
         And the value of the selected text field is "3,112.61"
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: 35. Logout
+    Scenario: 13. Logout
         And the user logs-out from the system

@@ -40,6 +40,16 @@ Feature:xq-flow-pih-oi
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
+        #Criar string baseada em datetime$ + 5 Random
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
+        And the user stores the value of the selected text field with the key: "DOCSUP"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         #Filling the Invoice header information
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Invoicing site"
@@ -55,9 +65,7 @@ Feature:xq-flow-pih-oi
         And the user writes "133" to the selected text field and hits tab key
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Supplier doc no."
-        And the user writes "ABCDE1234" to the selected text field and hits tab key
-        And a dialog box appears
-        And the user clicks the "Ok" opinion in the alert box
+        And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
         #Including products at order
         When the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"

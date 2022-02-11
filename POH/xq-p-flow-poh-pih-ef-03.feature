@@ -1,19 +1,18 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-p-flow-poh-pih-imp-pisac
-# - Description: Import receipt create via picking a order with
-# Add PIS/COFINS to acess. exp. in the NF-e Summary
+# - Test code: xq-p-flow-poh-pih-ef
+# - Description: Invoice Elements - Purchasing Picking POH PTH
 # - Jira: NA
 # - Legislation: BRA
 # - Created by : Daniela Anile
-# - Created date : 10/02/2021
+# - Created date : 04/02/2021
 # - Updated by : Daniela Anile
-# - Updated date : 10/02/2021
-# - Status : Automated
+# - Updated date : 04/02/2021
+# - Status : In progress
 ###########################################################################
 
-Feature: xq-p-flow-poh-pih-imp-pisac
+Feature: xq-p-flow-poh-pih-ef
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -22,9 +21,9 @@ Feature: xq-p-flow-poh-pih-imp-pisac
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
     #--------------------------------------------------------------------------------
-    #National
+    #National Unique DI
     #--------------------------------------------------------------------------------
-    Scenario: 2. Header POH
+    Scenario: 23. Header POH
         Given the user opens the "GESPOH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -36,9 +35,9 @@ Feature: xq-p-flow-poh-pih-imp-pisac
         And the user selects the text field with name: "Supplier"
         And the user writes "PT006" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
-        And the user writes "119" to the selected text field and hits tab key
+        And the user writes "111" to the selected text field and hits tab key
 
-    Scenario Outline: 3. Lines POH
+    Scenario Outline: 24. Lines POH
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
         And the user selects editable table row number: <LIN>
@@ -65,17 +64,27 @@ Feature: xq-p-flow-poh-pih-imp-pisac
 
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "32"   | "36.31" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS002" | "29"   | "42.65" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 1   | "BMS001" | "19"   | "29.61" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | 2   | "BMS002" | "6"    | "11.69" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
-    Scenario: 4. Create and Store Doc Number POH
+    Scenario: 25. Invoice Elements
+        Given the user clicks the "Total" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WE3ALL3_ARRAY_NBFAC"
+        And the user selects the fixed cell with X3 field name: "WE3ALL3_INVDTAAMT" and row number: (1)
+        And the user adds the text "15.55" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE3ALL3_INVDTAAMT" and row number: (2)
+        And the user adds the text "3.65" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE3ALL3_INVDTAAMT" and row number: (4)
+        And the user adds the text "4.87" in selected cell and hits enter key
+
+    Scenario: 26. Create and Store Doc Number POH
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "POH0_POHNUM"
         And the user stores the value of the selected text field with the key: "PoDocumentNo"
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: 5. Header PIH
+    Scenario: 27. Header PIH
         Given the user opens the "GESPIH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -99,7 +108,7 @@ Feature: xq-p-flow-poh-pih-imp-pisac
         And the user selects the text field with name: "Supplier"
         And the user writes "PT006" to the selected text field and hits tab key
 
-    Scenario: 6. Picking
+    Scenario: 28. Picking
         Given the user clicks the "Selection criteria" action button on the header drop down
         And the "Enter selection criteria" screen is displayed
         And the user selects the text field with X3 field name: "PCRITINV_WNUMCDE"
@@ -114,49 +123,40 @@ Feature: xq-p-flow-poh-pih-imp-pisac
         And an alert box with the text containing "Replace data in "data transport" tab?" appears
         And the user clicks the "Yes" opinion in the alert box
 
-    Scenario: 7. Management
+    Scenario: 29. General data
+        Given the user clicks the "General data" tab selected by title
+        When the user selects the text field with name: "Fiscal operation"
+        And the user writes "111" to the selected text field and hits tab key
+        And the user selects the drop down list with name: "Unique DI"
+        And the user clicks on "Yes" option of the selected drop down list
+        And the user selects the text field with name: "DI Number"
+        And the user writes "1234567890" to the selected text field and hits tab key
+        And the user selects the date field with name: "Registry date"
+        And the user writes today to the selected date field
+        And the user selects the text field with name: "Export code"
+        And the user writes "123ABC" to the selected text field and hits tab key
+        And the user selects the drop down list with name: "International transport mode"
+        And the user clicks on "Own means" option of the selected drop down list
+        And the user selects the drop down list with name: "Import type"
+        And the user clicks on "Importation by own means" option of the selected drop down list
+        And the user selects the text field with name: "Custom clearance"
+        And the user writes "Curitiba" to the selected text field and hits tab key
+        And the user selects the text field with name: "EU"
+        And the user writes "PR" to the selected text field and hits tab key
+        And the user selects the date field with name: "Clearance date"
+        And the user writes today to the selected date field
+        And the user hits tab
+
+    Scenario: 30. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
         And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
 
-    Scenario: 8. DI Data
+    Scenario: 31. DI Data
         Given the user clicks the "DI Data" action button on the header drop down
         Then the "Import declaration" screen is displayed
 
-    Scenario Outline: 9. Import Declaration
-        Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
-        And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBDI"
-        And the user selects last editable cell with X3 field name: "XQDI1_NUMDI"
-        And the user adds the text <NUMDI> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_DTDI"
-        And the user enters todays date in the selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_CODEXP"
-        And the user adds the text <CODEXP> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_RTAFRMM"
-        And the user adds the text <RTAFRMM> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_RTCREDPRE"
-        And the user adds the text <RTCREDPRE> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_RTDESPIMP"
-        And the user adds the text <RTDESPIMP> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_RTIOF"
-        And the user adds the text <RTIOF> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_RTDESADU"
-        And the user adds the text <RTDESADU> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_LOCDESEMB"
-        And the user adds the text <LOCDESEMB> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_UFDESEMB"
-        And the user adds the text <UFDESEMB> in selected cell
-        And the user selects last editable cell with X3 field name: "XQDI1_DTDESEMB"
-        And the user enters todays date in the selected cell
-        And the user clicks the "Save" main action button on the right panel
-
-        Examples:
-            | CURLIG | NUMDI        | CODEXP   | RTAFRMM | RTCREDPRE | RTDESPIMP | RTIOF  | RTDESADU | LOCDESEMB            | UFDESEMB |
-            | "1"    | "1234567890" | "123ABC" | "0.36"  | "1.45"    | "2.95"    | "3.84" | "7.62"   | "Porto de Paranagua" | "PR"     |
-            | "2"    | "1234567890" | "ABC123" | "1.47"  | "2.17"    | "0.48"    | "5.21" | "4.62"   | "Porto de Paranagua" | "PR"     |
-
-    Scenario Outline: 10. Inform DI Data Additions
+    Scenario Outline: 32. Inform DI Data Additions
         Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBAD"
@@ -171,16 +171,21 @@ Feature: xq-p-flow-poh-pih-imp-pisac
             | "1"    | "10"  | "123"  |
             | "2"    | "20"  | "456"  |
 
-    Scenario: 11. Creation
+    Scenario: 33. Creation
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 12. Resume
-        Given the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPIH2_TTDESPACES"
-        And the value of the selected text field is "87.56"
-        Then the user clicks the Close page action icon on the header panel
+    Scenario: 34. Check Values Invoice Elements
+        Given the user clicks the "Control" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 1
+        Then the value of the selected cell is "-98.39"
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 2
+        Then the value of the selected cell is "3.65"
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 5
+        And the value of the selected cell is "4.87"
+        Then the user clicks the "Close page" main action button on the right panel
 
-    Scenario: 13. Logout
+    Scenario: 35. Logout
         And the user logs-out from the system
