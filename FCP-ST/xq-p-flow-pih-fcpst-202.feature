@@ -31,7 +31,7 @@ Feature:xq-p-flow-pih-fcpst-202
         And the user selects the text field with name: "Calculation:"
         And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
         And the user selects the text field with name: "Result"
-        And the user stores the value of the selected text field with the key: "DOCSUP"
+        And the user stores the value of the selected text field with the key: "DOCSUP015"
         Then the user clicks the Close page action icon on the header panel
         #Fim da criação da String
         And the user clicks the "New" main action button on the right panel
@@ -50,7 +50,7 @@ Feature:xq-p-flow-pih-fcpst-202
         #Management Tab
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WE8ALL1_BPRVCR"
-        And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
+        And the user writes the stored text with key "DOCSUP015" in the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
 

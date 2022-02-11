@@ -97,7 +97,7 @@ Feature: xq-p-flow-poh-pih-ef-02
         And the user selects the text field with name: "Calculation:"
         And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
         And the user selects the text field with name: "Result"
-        And the user stores the value of the selected text field with the key: "DOCSUP"
+        And the user stores the value of the selected text field with the key: "DOCSUP043"
         Then the user clicks the Close page action icon on the header panel
         #Fim da criação da String
         When the user clicks the "New" main action button on the right panel
@@ -126,7 +126,7 @@ Feature: xq-p-flow-poh-pih-ef-02
     Scenario: 17. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
-        And the user writes the stored text with key "DOCSUP" in the selected text field and hits tab key
+        And the user writes the stored text with key "DOCSUP043" in the selected text field and hits tab key
 
     Scenario: 18. DI Data
         Given the user clicks the "DI Data" action button on the header drop down
