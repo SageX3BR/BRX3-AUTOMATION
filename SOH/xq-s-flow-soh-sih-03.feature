@@ -58,7 +58,7 @@ Feature: xq-s-flow-soh-sih-03
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
         And the user writes "BRSOI" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
+        #And the user selects the text field with name: "Reference"
         And the user selects the text field with name: "Sold-to"
         And the user writes "PT006" to the selected text field and hits tab key
         And the user clicks the Close page action icon on the header panel

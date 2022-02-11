@@ -42,6 +42,16 @@ Feature: xq-crud-gessoh
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales order ALL : Full entry" screen is displayed
+        #Criar string baseada em datetime$ + 5 Random
+        When the user opens the header drop down
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
+        And the user selects the text field with name: "Result"
+        And the user stores the value of the selected text field with the key: "DOCREF"
+        Then the user clicks the Close page action icon on the header panel
+        #Fim da criação da String
         #Filling the sales order header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Sales site"
@@ -77,14 +87,6 @@ Feature: xq-crud-gessoh
     Scenario: Create document
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: 4.Update the field QTY
-        #And the user waits 5 seconds
-        And the user selects the text field with name: "Reference"
-        And the user writes "CRUD Test55" to the selected text field and hits tab key
-        And the user hits enter
-        And the user clicks the "Save" main action button on the right panel
-
 
     Scenario: 5.Deallocate stock and delete a sales order and close
         #And the user waits 5 second

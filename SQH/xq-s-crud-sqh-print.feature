@@ -53,7 +53,7 @@ Feature: xq-s-crud-sqh-print
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Quote type"
         And the user writes "SQH" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
+        #And the user selects the text field with name: "Reference"
         # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Customer"
         And the user writes "BR001" to the selected text field and hits tab key

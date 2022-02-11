@@ -55,7 +55,6 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Quote type"
         And the user writes "SQN" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
         And the user selects the text field with name: "Customer"
         And the user writes "PT006" to the selected text field and hits tab key
         And the user clicks the Close page action icon on the header panel
@@ -114,31 +113,6 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         And an alert box with the text containing "Replace data of the Exports block?" appears
         And the user clicks the "Yes" opinion in the alert box
         Then the "Sales order ALL : Full entry" screen is displayed
-        #Filling the sales order header
-        #     When the user clicks the "New" main action button on the right panel
-        #     And the user selects the text field with name: "Sales site"
-        #     And the user writes "BR011" to the selected text field and hits tab key
-        #     And the user selects the text field with name: "Type"
-        #     And the user writes "BRSON" to the selected text field and hits tab key
-        #     And the user selects the text field with name: "Reference"
-        #     And the user selects the text field with name: "Sold-to"
-        #     And the user writes "PT006" to the selected text field and hits tab key
-        #     And the user clicks the Close page action icon on the header panel
-        #     #SELECT QUOTE
-        #     And the user clicks the "Quote selection" link on the left panel
-        #     And the user selects the main picking list panel of the screen
-        #     And the user selects the item with the stored text with key "SQH_NUM" and with the text containing "PT006" of the picking list panel
-        #     And the user checks the selected picking list panel item
-
-        #     And an alert box appears
-        #     And the user clicks the "Yes" opinion in the alert box
-
-        # Scenario: 5. Create document
-
-        #     Given the user clicks the "Create" main action button on the right panel
-        #     And a confirmation dialog appears with the message "Record has been created"
-        #     And the user selects the text field with X3 field name: "SOH0_SOHNUM"
-        #     And the user stores the value of the selected text field with the key: "SOH_NUM"
         And the user selects the text field with X3 field name: "SOH0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOH_NUM"
         Then the user clicks the Close page action icon on the header panel

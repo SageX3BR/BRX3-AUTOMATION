@@ -57,7 +57,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-01
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Quote type"
         And the user writes "SQN" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
+        #And the user selects the text field with name: "Reference"
         And the user selects the text field with name: "Customer"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
@@ -107,7 +107,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-01
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
         And the user writes "BRSON" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
+        #And the user selects the text field with name: "Reference"
         # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR001" to the selected text field and hits tab key
