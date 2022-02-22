@@ -84,9 +84,8 @@ Feature: xq-p-flow-pih-oi-tax-02
         And the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
         And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
+        And the user waits 1 seconds
         And the user selects the choice "Miscellaneous" of the selected cell
-        And the user selects the choice "Miscellaneous" of the selected cell
-        And the user hits tab
         And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
