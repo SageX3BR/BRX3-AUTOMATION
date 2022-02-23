@@ -66,8 +66,9 @@ Feature: xq-p-flow-pth-al
         And the user adds the text <XQCSTPIS> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCOF"
         And the user adds the text <XQCSTCOF> in selected cell and hits enter key
-        And the "Enter receipts ALL : Full entry" screen is displayed
-        Then the user clicks the "Save" main action button on the right panel
+        #Retirado a gestão de stock
+        #And the "Enter receipts ALL : Full entry" screen is displayed
+        #Then the user clicks the "Save" main action button on the right panel
 
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |

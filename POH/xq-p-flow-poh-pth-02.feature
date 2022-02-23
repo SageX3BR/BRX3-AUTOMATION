@@ -1,18 +1,18 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-p-flow-pih
-# - Description: CRUD verification of purchase invoice
+# - Test code: xq-p-flow-poh-pth
+# - Description: Purchasing Picking POH PTH
 # - Jira: NA
 # - Legislation: BRA
 # - Created by : Daniela Anile
 # - Created date : 02/02/2021
 # - Updated by : Daniela Anile
-# - Updated date : 02/02/2021
+# - Updated date : 03/02/2021
 # - Status : Automated
 ###########################################################################
 
-Feature: xq-p-flow-pih-imp01
+Feature: xq-p-flow-poh-pth-02
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -21,70 +21,77 @@ Feature: xq-p-flow-pih-imp01
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
     #--------------------------------------------------------------------------------
-    #Foreign Invoice
+    #Foreign
     #--------------------------------------------------------------------------------
-    Scenario: 2. Header
-        Given the user opens the "GESPIH" function
+    Scenario: 2. Header POH
+        Given the user opens the "GESPOH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
-        Then the "Purchase invoice ALL : Full entry" screen is displayed
-        #Criar string baseada em datetime$ + 5 Random
-        When the user opens the header drop down
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "val(ctrans(num$(datetime$),"-:TZ","")+ num$(int(rnd(99999))))" to the selected text field and hits enter key
-        And the user selects the text field with name: "Result"
-        And the user stores the value of the selected text field with the key: "DOCSUP023"
-        Then the user clicks the Close page action icon on the header panel
-        #Fim da criação da String
-        When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with name: "Invoicing site"
+        And the "Purchase order ALL : Full entry" screen is displayed
+        And the user clicks the "New" main action button on the right panel
+        And the user selects the text field with name: "Order site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with name: "Invoice type"
-        And the user writes "BRNFF" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "PT006" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE8ALL0_BPRSAC"
-        Then the user writes "FORN" to the selected text field and hits tab key
-
-    Scenario: 3. General data
-        Given the user clicks the "General data" tab selected by title
-        When the user selects the text field with name: "Fiscal operation"
+        And the user selects the text field with name: "Fiscal operation"
         And the user writes "111" to the selected text field and hits tab key
 
-    Scenario: 4. Management
-        Given the user clicks the "Management" tab selected by title
-        When the user selects the text field with name: "Supplier doc no."
-        And the user writes the stored text with key "DOCSUP023" in the selected text field and hits tab key
-
-    Scenario Outline: 5. Add Lines
-        When the user clicks the "Lines" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        Given the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
-        And the user waits 1 seconds
-        And the user selects the choice "Miscellaneous" of the selected cell
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
+    Scenario Outline: 3. Lines POH
+        Given the user clicks the "Lines" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
+        And the user selects editable table row number: <LIN>
+        When the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
+        And the user selects last editable cell with X3 field name: "WE3ALL2_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_NETPRI"
-        And the user adds the text <NETPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell and hits enter key
+        And the user selects last editable cell with X3 field name: "WE3ALL2_XQCFOP"
+        Then the user adds the text <XQCFOP> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | NETPRI | XQCFOP |
-            | 1   | "BMS001" | "1"    | "100"  | "3101" |
-            | 2   | "BMS002" | "2"    | "200"  | "3101" |
+            | LIN | ITMREF   | QTYUOM | XQCFOP |
+            | 1   | "BMS001" | "1"    | "3949" |
+            | 2   | "BMS002" | "2"    | "3949" |
 
-    Scenario: 6. DI Data
+    Scenario: 4. Create and Store Doc Number POH
+        Given the user clicks the "Create" main action button on the right panel
+        When a confirmation dialog appears with the message "Record has been created"
+        And the user selects the text field with X3 field name: "POH0_POHNUM"
+        And the user stores the value of the selected text field with the key: "PoDocumentNo2"
+        Then the user clicks the Close page action icon on the header panel
+
+    Scenario: 5. Header PTH
+        Given the user opens the "GESPTH" function
+        When the user selects the data table in the popup
+        And the user selects cell with text: "ALL     Full entry" and column header: ""
+        And the user clicks on the selected cell
+        Then the "Purchase receipt ALL : Full entry" screen is displayed
+        When the user clicks the "New" main action button on the right panel
+        And the user selects the text field with name: "Receiving site"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the text field with name: "Supplier"
+        And the user writes "PT006" to the selected text field and hits tab key
+
+    Scenario: 6. Picking
+        Given the user clicks the "Selection criteria" action button on the header drop down
+        And the "Preloading Criteria" screen is displayed
+        And the user selects the text field with X3 field name: "PCRITORD_WPOHNUM"
+        And the user writes the stored text with key "PoDocumentNo2" in the selected text field and hits tab key
+        And the user clicks the "OK" button in the header
+        And the user clicks the "Order selection" link on the left panel
+        And the user selects the main picking list panel of the screen
+        And the user selects the item with the stored text with key "PoDocumentNo2" and with the text containing "PT006" of the picking list panel
+        And the user checks the selected picking list panel item
+        And an alert box with the text containing "Replace data from the General Data tab?" appears
+        And the user clicks the "Yes" opinion in the alert box
+        And an alert box with the text containing "Replace data from the Shipping data tab?" appears
+        And the user clicks the "Yes" opinion in the alert box
+
+    Scenario: 7. DI Data
         Given the user clicks the "DI Data" action button on the header drop down
         Then the "Import declaration" screen is displayed
 
-    Scenario Outline: 7. Import Declaration
+    Scenario Outline: 8. Import Declaration
         Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBDI"
@@ -107,7 +114,7 @@ Feature: xq-p-flow-pih-imp01
             | "1"    | "1234567890" | "123ABC" | "Porto de Paranagua" | "PR"     |
             | "2"    | "1234567890" | "ABC123" | "Porto de Paranagua" | "PR"     |
 
-    Scenario Outline: 8. Inform DI Data Additions
+    Scenario Outline: 9. Inform DI Data Additions
         Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBAD"
@@ -122,17 +129,10 @@ Feature: xq-p-flow-pih-imp01
             | "1"    | "10"  | "123"  |
             | "2"    | "20"  | "456"  |
 
-    Scenario: 9. Control
-        Given the user clicks the Close page action icon on the header panel
-        And the user clicks the "Control" tab selected by title
-        When the user selects the text field with X3 field name: "WE8ALL4_CLCLINAMT"
-        And the user stores the value of the selected text field with the key: "CALCVALUE"
-        And the user selects the text field with X3 field name: "WE8ALL4_TOTLINAMT"
-        Then the user writes the stored text with key "CALCVALUE" in the selected text field and hits tab key
-
     Scenario: 10. Creation
-        Given the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
+        Given the user clicks the Close page action icon on the header panel
+        Then the user clicks the "Create" main action button on the right panel
+        And a confirmation dialog appears with the message "Record has been created"
 
     Scenario: 11. Transmission
         Given the user clicks the "SEFAZ" action button on the header drop down

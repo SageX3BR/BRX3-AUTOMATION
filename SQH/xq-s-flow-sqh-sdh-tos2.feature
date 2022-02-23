@@ -84,21 +84,15 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects last editable cell with X3 field name: "WK1ALL2_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK1ALL2_XQVARCFOP"
-        And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQOICMS"
-        And the user adds the text <XQOICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQCENQ"
-        Then the user adds the text <XQCENQ> in selected cell and hits enter key
+        And the user adds the text <XQVARCFOP> in selected cell and hits enter key
         # #And the user waits (3) seconds
         # And an alert box appears
         # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "3" | "21.25" | "6118" | "1"       | "0"     | "00"      | "999"  |
-            | 2   | "BMS002" | "3" | "35,32" | "6118" | "1"       | "0"     | "00"      | "999"  |
+            | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQVARCFOP |
+            | 1   | "BMS001" | "3" | "21.25" | "6118" | "1"       |
+            | 2   | "BMS002" | "3" | "35,32" | "6118" | "1"       |
 
     Scenario: 4.Create document
 
