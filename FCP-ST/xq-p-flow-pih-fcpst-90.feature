@@ -54,8 +54,9 @@ Feature:xq-p-flow-pih-fcpst-90
     Scenario Outline: Add Lines
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
-        And the user waits 1 seconds
         And the user selects the choice "Miscellaneous" of the selected cell
+        And the user hits tab key in the selected cell
+        And the choice selected of the selected cell is "Miscellaneous"
         And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
