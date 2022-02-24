@@ -40,8 +40,8 @@ Feature:xq-s-flow-sih-xqamend
         And the user adds the text <XQCENQ> in selected cell
         And the user hits enter
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "12" | "10.54" | "6101" | "0"     | "00"      | "999"  |
+            | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "1" | "1000" | "6101" | "0"     | "00"      | "999"  |
 
     Scenario: Create
         When the user clicks the "Create" main action button on the right panel
@@ -58,6 +58,7 @@ Feature:xq-s-flow-sih-xqamend
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the Close page action icon on the header panel
+
 
     Scenario: XQAMEND information
         Given the user opens the "GESXQAMEND" function
@@ -88,5 +89,36 @@ Feature:xq-s-flow-sih-xqamend
         And the user clicks the "Close page" main action button on the right panel
         Then the user clicks the Close page action icon on the header panel
 
+    Scenario: GESPAY creation
+        Given the user opens the "GESPAY" function
+        And the user selects the data table in the popup
+        And the user selects cell with text: "RDDI    BRA     Customer - Direct Debit" and column header: ""
+        And the user clicks on the selected cell
+        Then the "Customer - Direct Debit" screen is displayed
+        Then the user clicks the "New" main action button on the right panel
+        And the user selects the text field with X3 field name: "WMP1RDDIBRA_FCY"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WMP1RDDIBRA_BPR"
+        And the user writes "BR001" to the selected text field and hits tab key
+        And the user hits tab
+        And the user selects the text field with X3 field name: "WMP1RDDIBRA_BAN"
+        And the user writes "BR341" to the selected text field and hits tab key
+
+    Scenario: Left List
+        Given the user clicks the "Open items" link on the left panel
+        When the user selects the data table of left panel
+        Then the user selects search cell with header: "Number"
+        And the user adds the stored text with key "SIHNUM" in selected cell and hits enter key
+        And the user selects cell with column header: "Number" and row number: 1
+        And the user clicks on the selected cell
+
+        Then the user clicks the "Create" main action button on the right panel
+        And an alert box with the text containing "Unbalanced payment" appears
+        And the user clicks the "OK" opinion in the alert box
+        And a confirmation dialog appears with the message "Record has been created"
+        When the user clicks the "POST" main action button on the right panel
+
     Scenario: Logout
         And the user logs-out from the system
+
+
