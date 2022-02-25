@@ -1,4 +1,4 @@
-Feature:xq-s-flow-sih-xqamend
+Feature:xq-s-flow-sih-xqamend-gespay
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
