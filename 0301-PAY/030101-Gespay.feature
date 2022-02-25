@@ -51,7 +51,8 @@ Feature:xq-s-flow-sih-xqamend-gespay
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
         And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
@@ -59,35 +60,9 @@ Feature:xq-s-flow-sih-xqamend-gespay
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the Close page action icon on the header panel
 
-
-    Scenario: XQAMEND information
-        Given the user opens the "GESXQAMEND" function
-        Then the "Invoice amendment" screen is displayed
-        When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQAMEND0_CPY"
-        And the user writes "BR10" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQAMEND0_FCY"
-        And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the drop down list with X3 field name: "XQAMEND0_DOCTYP"
-        When the user clicks on "Sales Invoice (SIH)" option of the selected drop down list
-        Then the value of the selected drop down list is "Sales Invoice (SIH)"
-        And the user selects the text field with X3 field name: "XQAMEND0_DOCNUM"
-        And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQAMEND1_AMENDTEXT"
-        And the user writes "TESTE DE CARTA DE CORREÇÃO AUTOMATIZADO" to the selected text area
-
-    Scenario: XQAMEND Creation
-        When the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: XQAMENDSEFAZ Transmission
-        Given the user clicks the "SEFAZ Communication" button in the header
-        And an alert box with the text containing "Warning! This request cannot be reverted! Confirm the invoice amendment of the invoice:" appears
-        And the user clicks the "Yes" opinion in the alert box
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "Evento registrado e vinculado a NF-e"
-        And the user clicks the "Close page" main action button on the right panel
-        Then the user clicks the Close page action icon on the header panel
+    Scenario: Accounting Task Temporization
+        #MAccounting task run every 60s, minimum time to wait until the previous document is posted in accounting
+        And the user waits 70 seconds
 
     Scenario: GESPAY creation
         Given the user opens the "GESPAY" function

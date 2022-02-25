@@ -57,13 +57,11 @@ Feature:xq-p-flow-pih-modbcst4-cst10
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WE8ALL1_BPRVCR"
         And the user writes the stored text with key "DOCSUP017" in the selected text field and hits tab key
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
 
-    #Lines
     Scenario Outline: Add Lines
-        Given the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
+        Given the user selects the data table of section: "Lines"
+        And the user selects editable table row number: <LIN>
+        And the user selects last fixed cell with header: "Source"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
         And the choice selected of the selected cell is "Miscellaneous"
@@ -102,7 +100,8 @@ Feature:xq-p-flow-pih-modbcst4-cst10
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         Then the user clicks the "Close page" main action button on the right panel
         #Post Invoice
         When the user clicks the "Post" button in the header

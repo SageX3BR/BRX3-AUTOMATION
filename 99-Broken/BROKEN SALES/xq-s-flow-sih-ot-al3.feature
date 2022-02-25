@@ -1,14 +1,14 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sqh-sih-tos1
-# - Description: Triangular Operation Supplier
+# - Test code: xq-s-flow-sih-ot-al3
+# - Description: Operação Triangular
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
-# - Created date : 06/07/2020
+# - Created date : 30/06/2020
 # - Updated by : Carla Cury
-# - Updated date : 06/07/2020
+# - Updated date : 30/06/2020
 # - Status : in progress
 ###########################################################################
 #Global parameter intialization
@@ -28,51 +28,58 @@
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-sqh-sih-tos1
+Feature: xq-s-flow-sih-ot-al3
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
     #--------------------------------------------------------------------------------
 
-
     Scenario: 1.Login scenario
 
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
     #--------------------------------------------------------------------------------
-    #Creation of the sales quote
+    #Creation of the sales order
     #--------------------------------------------------------------------------------
 
-    Scenario: 2. Create a Sales quote
+    Scenario: 2. Create a Sales order
 
         #Openning the function
-        Given the user opens the "GESSQH" function
+        Given the user opens the "GESSOH" function
+        ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
-        Then the "Sales quote ALL : Full entry" screen is displayed
-        #Filling the sales quote header
+        Then the "Sales order ALL : Full entry" screen is displayed
+        #Filling the sales order header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Sales site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with name: "Quote type"
-        And the user writes "SQN" to the selected text field and hits tab key
+        And the user selects the text field with name: "Type"
+        And the user writes "BRSOI" to the selected text field and hits tab key
         And the user selects the text field with name: "Reference"
         # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
-        And the user selects the text field with name: "Customer"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user selects the text field with name: "Sold-to"
+        And the user writes "BR004" to the selected text field and hits tab key
         # And an alert box with the text containing "This reference already exists for this customer" appears
         # And the user clicks the "ok" opinion in the alert box
         And the user selects the text field with name: "Fiscal operation"
         #alert
-        And the user writes "100" to the selected text field and hits tab key
+        And the user writes "107" to the selected text field and hits tab key
         #Filling my industrialize
         When the user clicks the "Management" tab selected by title
-        And the user selects the text field with X3 field name: "WK1ALL1_XQCLIFAT"
-        And the user writes "BR150" to the selected text field and hits tab key
+        And the user selects the text field with name: "Bill-to customer"
+        And the user writes "br005" to the selected text field and hits tab key
+        And the user selects the text field with name: "Pay-by"
+        And the user writes "Br005" to the selected text field and hits tab key
+        And the user selects the text field with name: "Group customer"
+        And the user writes "BR005" to the selected text field and hits tab key
+        And the user selects the text field with name: "Delivery address"
+        And the user writes "PR" to the selected text field and hits tab key
+        And the user clicks the "Delivery" tab selected by title
         And the user selects the text field with name: "Shipment site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK1ALL2_ARRAY_NBLIG"
+        Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
     # And an alert box with the text containing "delivery" appears
     # Then the user clicks the "Yes" opinion in the alert box
     #Filling Lines
@@ -80,97 +87,102 @@ Feature: xq-s-flow-sqh-sih-tos1
     Scenario Outline: Add Lines
 
         Given the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WK1ALL2_ITMREF"
+        And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_QTY"
+        And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
         And the user adds the text <QTY> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_GROPRI"
+        And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
         And the user adds the text <GROPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQCFOP"
+        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQVARCFOP"
-        And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQOICMS"
+        And the user selects last editable cell with X3 field name: "WK2ALL4_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQCSTICMS"
+        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK1ALL2_XQCENQ"
+        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
+        # #And the user waits (3) seconds
+        And an alert box appears
+        And the user clicks the "Yes" opinion in the alert box
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "3" | "265,35" | "6101" | "3"       | "0"     | "00"      | "999"  |
-            | 2   | "BMS002" | "5" | "325.68" | "6101" | "3"       | "0"     | "00"      | "999"  |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "19" | "29.65" | "6118" | "0"     | "10"      | "999"  |
+            | 2   | "BMS002" | "29" | "25.62" | "6118" | "0"     | "10"      | "999"  |
 
-    Scenario: 3. Create document
+    Scenario: Create document
 
         And the user clicks the "Create" main action button on the right panel
-    # Then a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: 4. Create Order
-
-        And the user clicks the "Order" action button on the header drop down
-        And the user selects the data table in the popup
-        And the user selects cell with text: "ALL     Full entry" and column header: ""
-        And the user clicks on the selected cell
-        Then the "Sales order ALL : Full entry" screen is displayed
-
-        When the user clicks the "Management" tab selected by title
-        And the user selects the text field with name: "Pay-by"
-        And the user writes "BR150" to the selected text field and hits tab key
-        And the user selects the text field with name: "Group customer"
-        And the user writes "BR150" to the selected text field and hits tab key
-        Then the user clicks the "Save" main action button on the right panel
-
-    Scenario: 5. Create Delivery
-
-        And the user clicks the "Delivery" action button on the header drop down
-        And the user selects the data table in the popup
-        And the user selects cell with text: "ALL     Full entry" and column header: ""
-        And the user clicks on the selected cell
-        Then the "Delivery ALL : Full entry" screen is displayed
-        And the user clicks the "Validation" button in the header
-        And a dialog box appears
-        And the user clicks the "Ok" opinion in the alert box
-
-
+        Then a confirmation dialog appears with the message "Record has been created"
     #--------------------------------------------------------------------------------
     #Creation of the invoice
     #--------------------------------------------------------------------------------
 
-    Scenario: 6. Create Invoice
+    Scenario: Create Invoice
 
         And the user clicks the "Invoice" action button on the header drop down
+        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
+        # #And the user waits (3) seconds
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    Scenario: 7. Check the data
-        And the user selects the text field with X3 field name: "SIH0_BPCINV"
-        And the value of the selected text field is "BR150"
-        And the user clicks the "Management" tab selected by title
-        And the user selects the text field with X3 field name: "WK5ALL1_BPCORD"
-        And the value of the selected text field is "BR001"
-        And the user selects the text field with X3 field name: "WK5ALL1_BPRPAY"
-        And the value of the selected text field is "BR150"
-        And the user selects the text field with X3 field name: "WK5ALL1_BPCGRU"
-        And the value of the selected text field is "BR150"
 
-    Scenario: 8. Send to Sefaz
+    Scenario Outline: Alter Lines
+        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK5ALL4_ITMREF"
+        And the user selects cell with X3 field name: "WK5ALL4_XQCFOP" of selected row
+        And the user adds the text <XQCFOP> in selected cell
 
+        Examples:
+            | ITMREF   | XQCFOP |
+            | "BMS001" | "5118" |
+            | "BMS002" | "5118" |
+
+
+
+    #Create order and store order number
+
+    Scenario: 2.1. Create and Store Doc Number
+
+        Given the user clicks the "Save" main action button on the right panel
+        #When a confirmation dialog appears with the message "Record has been created"
+        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        #And the user waits 10 seconds
+        ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the "Post" main action button on the right panel
-        Then a log panel appears
-        And the user selects the main log panel of the page
+        And the selected log panel includes the message "X3 validation Invoice/Credit"
 
-    Scenario: 9. Logout
 
-        And the user clicks the Close page action icon on the header panel
-        And the user logs-out from the system
+
+# "Grid": false,
+# "GridName": "",
+# "MaskCode": "XQSIH1",
+# "Name": "GESSIH_6_XQSIH1",
+# "Steps": [
+# 	{
+# 		"FieldAction": "TAB_",
+# 		"FieldType": "",
+# 		"TestType": "set",
+# 		"Value": "NF-e Summary"
+# 	},
+# 	{
+# 		"FieldAction": "TOTVALFINST",
+# 		"FieldType": "Field",
+# 		"TestType": "check",
+# 		"Value": "23.5100"
+# 	},
+# 	{
+# 		"FieldAction": "ACT_END",
+# 		"FieldType": "",
+# 		"TestType": "set",
+# 		"Value": "Close"

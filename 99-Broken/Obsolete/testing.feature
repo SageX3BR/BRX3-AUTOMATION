@@ -43,10 +43,9 @@ Feature:error_checkcellvalue_menulist
         Then the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
 
     Scenario Outline: 4. Lines
-        Given the user clicks the "Lines" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
+        Given the user selects the data table of section: "Lines"
         And the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
+        And the user selects last fixed cell with header: "Source"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
         And the choice selected of the selected cell is "Miscellaneous"
