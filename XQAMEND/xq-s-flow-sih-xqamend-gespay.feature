@@ -102,7 +102,7 @@ Feature:xq-s-flow-sih-xqamend-gespay
         And the user writes "BR001" to the selected text field and hits tab key
         And the user hits tab
         And the user selects the text field with X3 field name: "WMP1RDDIBRA_BAN"
-        And the user writes "BR341" to the selected text field and hits tab key
+        And the user writes "BR999" to the selected text field and hits tab key
 
     Scenario: Left List
         Given the user clicks the "Open items" link on the left panel
@@ -113,12 +113,14 @@ Feature:xq-s-flow-sih-xqamend-gespay
         And the user clicks on the selected cell
 
         Then the user clicks the "Create" main action button on the right panel
-        And an alert box with the text containing "Unbalanced payment" appears
-        And the user clicks the "OK" opinion in the alert box
+        And the "Unbalanced payment" screen is displayed
+        And the user clicks the "OK" button in the header
         And a confirmation dialog appears with the message "Record has been created"
-        When the user clicks the "POST" main action button on the right panel
+        And the user clicks the "Post" button in the header
+        And the "Posting" screen is displayed
+        And the user clicks the "OK" button in the header
+        And the user clicks the "Close page" main action button on the right panel
+        Then the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
         And the user logs-out from the system
-
-
