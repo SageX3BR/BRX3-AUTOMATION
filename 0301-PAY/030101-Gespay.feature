@@ -62,7 +62,7 @@ Feature:xq-s-flow-sih-xqamend-gespay
 
     Scenario: Accounting Task Temporization
         #MAccounting task run every 60s, minimum time to wait until the previous document is posted in accounting
-        And the user waits 70 seconds
+        And the user waits 80 seconds
 
     Scenario: GESPAY creation
         Given the user opens the "GESPAY" function
