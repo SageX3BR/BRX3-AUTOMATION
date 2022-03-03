@@ -62,7 +62,8 @@ Feature:xq-p-flow-pth-pnh-simple
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
         Then the user clicks the Close page action icon on the header panel
     #PNH Creation
@@ -120,7 +121,8 @@ Feature:xq-p-flow-pth-pnh-simple
         And the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         Then the user clicks the "Close page" main action button on the right panel
         #Validation
         When the user clicks the "Validation" button in the header

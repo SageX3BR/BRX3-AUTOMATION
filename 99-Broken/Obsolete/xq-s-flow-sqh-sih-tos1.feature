@@ -1,14 +1,14 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sqh-sih-tos
-# - Description: Triangular Operation Supplier2
+# - Test code: xq-s-flow-sqh-sih-tos1
+# - Description: Triangular Operation Supplier
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
-# - Created date : 19/06/2020
+# - Created date : 06/07/2020
 # - Updated by : Carla Cury
-# - Updated date : 19/06/2020
+# - Updated date : 06/07/2020
 # - Status : in progress
 ###########################################################################
 #Global parameter intialization
@@ -28,7 +28,7 @@
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-sqh-sih-tos
+Feature: xq-s-flow-sqh-sih-tos1
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -46,7 +46,6 @@ Feature: xq-s-flow-sqh-sih-tos
 
         #Openning the function
         Given the user opens the "GESSQH" function
-        ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -97,81 +96,82 @@ Feature: xq-s-flow-sqh-sih-tos
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK1ALL2_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        #And an alert box appears
-        #And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
             | 1   | "BMS001" | "3" | "265,35" | "6101" | "3"       | "0"     | "00"      | "999"  |
             | 2   | "BMS002" | "5" | "325.68" | "6101" | "3"       | "0"     | "00"      | "999"  |
 
-    Scenario: Create document
+    Scenario: 3. Create document
 
         And the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
+    # Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: Create Order
+    Scenario: 4. Create Order
 
         And the user clicks the "Order" action button on the header drop down
-        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
-    #Then the "Sales Order ALL : Full entry" screen is displayed
-    ##And the user waits (3) seconds
+        Then the "Sales order ALL : Full entry" screen is displayed
 
-    Scenario: Create Delivery
+        When the user clicks the "Management" tab selected by title
+        And the user selects the text field with name: "Pay-by"
+        And the user writes "BR150" to the selected text field and hits tab key
+        And the user selects the text field with name: "Group customer"
+        And the user writes "BR150" to the selected text field and hits tab key
+        Then the user clicks the "Save" main action button on the right panel
+
+    Scenario: 5. Create Delivery
 
         And the user clicks the "Delivery" action button on the header drop down
-        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Delivery ALL : Full entry" screen is displayed
-        # #And the user waits (3) seconds
-        And the user clicks the "Validation" action button on the header drop down
-        #Then a log panel appears
-        #And the user selects the main log panel of the page
-        #And the selected log panel includes the message "Delivery Validated"
-        #And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
+
 
     #--------------------------------------------------------------------------------
     #Creation of the invoice
     #--------------------------------------------------------------------------------
 
-    Scenario: Create Invoice
+    Scenario: 6. Create Invoice
 
         And the user clicks the "Invoice" action button on the header drop down
-        # ##And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-    # #And the user waits (1) seconds
 
-    Scenario: Check the data
-        When the user selects the text field with X3 field name: "SIH0_BPCINV"
+    Scenario: 7. Check the data
+        And the user selects the text field with X3 field name: "SIH0_BPCINV"
         And the value of the selected text field is "BR150"
         And the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK5ALL1_BPCORD"
         And the value of the selected text field is "BR001"
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
+        And the user selects the text field with X3 field name: "WK5ALL1_BPRPAY"
+        And the value of the selected text field is "BR150"
+        And the user selects the text field with X3 field name: "WK5ALL1_BPCGRU"
+        And the value of the selected text field is "BR150"
 
+    Scenario: 8. Send to Sefaz
 
-    #Create order and store order number
-
-    Scenario: Send to SEFAZ
-
+        #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        ##And the user waits 10 seconds
+        #And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
+        And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Post" main action button on the right panel
+        Then a log panel appears
+        And the user selects the main log panel of the page
 
-    Scenario: Logout
+    Scenario: 9. Logout
 
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

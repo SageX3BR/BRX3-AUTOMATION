@@ -1,14 +1,14 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sih-ot-al3
-# - Description: Operação Triangular
+# - Test code: xq-s-flow-sdh-ot-al3
+# - Description: CRUD verification of delivey function gessdh
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
-# - Created date : 30/06/2020
+# - Created date : 19/06/2020
 # - Updated by : Carla Cury
-# - Updated date : 30/06/2020
+# - Updated date : 19/06/2020
 # - Status : in progress
 ###########################################################################
 #Global parameter intialization
@@ -28,7 +28,7 @@
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-sih-ot-al3
+Feature: xq-s-flow-sdh-ot-al3
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -107,8 +107,8 @@ Feature: xq-s-flow-sih-ot-al3
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "19" | "29.65" | "6118" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "29" | "25.62" | "6118" | "0"     | "10"      | "999"  |
+            | 1   | "BMS001" | "26" | "31.25" | "6118" | "0"     | "10"      | "999"  |
+            | 2   | "BMS002" | "17" | "16.98" | "6118" | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 
@@ -141,6 +141,13 @@ Feature: xq-s-flow-sih-ot-al3
             | "BMS001" | "5118" |
             | "BMS002" | "5118" |
 
+    # Scenario: Alterar CFOP
+    #     Given the user selects row that has the text "BMS001" in column with X3 field name: "WK5ALL5_ITMREF"
+    #     And the user selects cell with X3 field name: "WK2ALL5_XQCFOP" of selected row
+    #     And the user adds the text "5118" in selected cell
+    #     And the user selects row that has the text "BMS002" in column with X3 field name: "WK5ALL5_ITMREF"
+    #     And the user selects cell with X3 field name: "WK2ALL5_XQCFOP" of selected row
+    #     Then the user adds the text "5118" in selected cell
 
 
     #Create order and store order number
@@ -153,35 +160,57 @@ Feature: xq-s-flow-sih-ot-al3
         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        ##And the user waits 10 seconds
+        # ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the Close page action icon on the header panel
-        And the user clicks the "Post" main action button on the right panel
-        And the selected log panel includes the message "X3 validation Invoice/Credit"
+    #--------------------------------------------------------------------------------
+    #Creation of the receipt
+    #--------------------------------------------------------------------------------
 
+    Scenario: 3. Create delivery
 
+        Given the user opens the "GESSDH" function
+        And the user selects the data table in the popup
+        And the user selects cell with text: "ALL     Full entry" and column header: ""
+        And the user clicks on the selected cell
+        Then the "Delivery ALL : Full entry" screen is displayed
+        #Filling the Invoice header information
+        When the user clicks the "New" main action button on the right panel
+        And the user selects the text field with name: "Shipment site"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the text field with name: "Sales site"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the text field with name: "Ship-to"
+        And the user writes "BR001" to the selected text field and hits tab key
+        #Filter with the order created above
+        Then the user clicks the "Selection criteria" action button on the header drop down
+        And the "Preloading Criteria" screen is displayed
+        And the user selects the text field with X3 field name: "PCRITORD_WSIHNUM"
+        And the user writes the stored text with key "SIHDocumentNo" in the selected text field and hits tab key
+        And the user clicks the "OK" main action button on the right panel
+        #Picking the order / All items
+        And the user clicks the "Invoices" link on the left panel
+        And the user selects the main picking list panel of the screen
+        And the user selects the item with the stored text with key "SIHDocumentNo" and with the text containing "BR001" of the picking list panel
+        And the user checks the selected picking list panel item
+        Then an alert box with the text containing "Replace data from the General Data tab?" appears
+        And the user clicks the "Yes" opinion in the alert box
+        Then an alert box with the text containing "Replace data from the Shipping data tab?" appears
+        And the user clicks the "Yes" opinion in the alert box
 
-# "Grid": false,
-# "GridName": "",
-# "MaskCode": "XQSIH1",
-# "Name": "GESSIH_6_XQSIH1",
-# "Steps": [
-# 	{
-# 		"FieldAction": "TAB_",
-# 		"FieldType": "",
-# 		"TestType": "set",
-# 		"Value": "NF-e Summary"
-# 	},
-# 	{
-# 		"FieldAction": "TOTVALFINST",
-# 		"FieldType": "Field",
-# 		"TestType": "check",
-# 		"Value": "23.5100"
-# 	},
-# 	{
-# 		"FieldAction": "ACT_END",
-# 		"FieldType": "",
-# 		"TestType": "set",
-# 		"Value": "Close"
+    Scenario: Logout
+
+        And the user clicks the Close page action icon on the header panel
+        And the user logs-out from the system
+# Scenario: Resume - Check Calculated Values
+#     Given the user clicks the "Tax Summary" tab selected by title
+#     When the user selects the text field with X3 field name: "XQSOH1_TOTBASEFCPST"
+#     And the value of the selected text field is "4,495.8500"
+#     And the user selects the text field with X3 field name: "XQSOH1_TOTICMSFCPST"
+#     And the value of the selected text field is "89.9200"
+#     And the user clicks the "Cancel" main action button on the right panel
+#     And the user clicks the "Delivery" button in the header
+#imposto 143.000

@@ -72,8 +72,9 @@ Feature:xq-flow-pih-oi
 
     #Lines
     Scenario Outline: Add Lines
-        Given the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
+        Given the user selects the data table of section: "Lines"
+        And the user selects editable table row number: <LIN>
+        And the user selects last fixed cell with header: "Source"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
         And the choice selected of the selected cell is "Miscellaneous"

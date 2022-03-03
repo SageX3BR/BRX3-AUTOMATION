@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-s-flow-sdh-ot-al3
+# - Test code: xq-s-flow-sdh-ot-al2
 # - Description: CRUD verification of delivey function gessdh
 # - Jira: NA
 # - Legislation: BR addon
@@ -28,7 +28,7 @@
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-sdh-ot-al3
+Feature: xq-s-flow-sdh-ot-al2
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -108,7 +108,7 @@ Feature: xq-s-flow-sdh-ot-al3
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
             | 1   | "BMS001" | "26" | "31.25" | "6118" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "17" | "16.98" | "6118" | "0"     | "10"      | "999"  |
+    #| 2   | "BMS002" | "17" | "16.98" | "6118" | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 
@@ -134,12 +134,12 @@ Feature: xq-s-flow-sdh-ot-al3
     Scenario Outline: Alter Lines
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK5ALL4_ITMREF"
         And the user selects cell with X3 field name: "WK5ALL4_XQCFOP" of selected row
-        And the user adds the text <XQCFOP> in selected cell
+        And the user adds the text <XQCFOP> in selected cell and hits enter key
 
         Examples:
             | ITMREF   | XQCFOP |
             | "BMS001" | "5118" |
-            | "BMS002" | "5118" |
+    #| "BMS002" | "5118" |
 
     # Scenario: Alterar CFOP
     #     Given the user selects row that has the text "BMS001" in column with X3 field name: "WK5ALL5_ITMREF"
@@ -163,7 +163,8 @@ Feature: xq-s-flow-sdh-ot-al3
         # ##And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the Close page action icon on the header panel
     #--------------------------------------------------------------------------------
     #Creation of the receipt

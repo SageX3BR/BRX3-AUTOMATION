@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: xq-p-flow-sih-ot-al1
+# - Test code: xq-s-flow-sih-ot-al2
 # - Description: CRUD verification of delivey function gessdh
 # - Jira: NA
 # - Legislation: BR addon
@@ -28,7 +28,7 @@
 # ###########################################################################
 #As a user I want to Create , Modify , Delete a Sales order.
 
-Feature: xq-s-flow-sih-ot-al1
+Feature: xq-s-flow-sih-ot-al2
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -45,6 +45,7 @@ Feature: xq-s-flow-sih-ot-al1
 
         #Openning the function
         Given the user opens the "GESSOH" function
+        #And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -56,8 +57,11 @@ Feature: xq-s-flow-sih-ot-al1
         And the user selects the text field with name: "Type"
         And the user writes "BRSOI" to the selected text field and hits tab key
         And the user selects the text field with name: "Reference"
+        # And the user writes "Op Triangular Al1" to the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR004" to the selected text field and hits tab key
+        # And an alert box with the text containing "This reference already exists for this customer" appears
+        # And the user clicks the "ok" opinion in the alert box
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "107" to the selected text field and hits tab key
@@ -76,6 +80,9 @@ Feature: xq-s-flow-sih-ot-al1
         And the user writes "BR011" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
+    # And an alert box with the text containing "delivery" appears
+    # Then the user clicks the "Yes" opinion in the alert box
+    #Filling Lines
 
     Scenario Outline: Add Lines
 
@@ -88,22 +95,20 @@ Feature: xq-s-flow-sih-ot-al1
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_XQVARCFOP"
-        And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # #And the user waits (3) seconds
+        # And the user waits (3) seconds
         And an alert box appears
         And the user clicks the "Yes" opinion in the alert box
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "12" | "3.69"  | "6102" | "1"       | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "29" | "25.62" | "6118" | "1"       | "0"     | "10"      | "999"  |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "19" | "29.65" | "6118" | "0"     | "10"      | "999"  |
+            | 2   | "BMS002" | "29" | "25.62" | "6118" | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 
@@ -116,17 +121,17 @@ Feature: xq-s-flow-sih-ot-al1
     Scenario: Create Invoice
 
         And the user clicks the "Invoice" action button on the header drop down
-        # ##And the user waits 10 seconds
+        # #And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-        # #And the user waits (3) seconds
+        # And the user waits (3) seconds
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    Scenario Outline: Alter Lines
 
+    Scenario Outline: Alter Lines
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK5ALL4_ITMREF"
         And the user selects cell with X3 field name: "WK5ALL4_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell
@@ -135,6 +140,9 @@ Feature: xq-s-flow-sih-ot-al1
             | ITMREF   | XQCFOP |
             | "BMS001" | "5118" |
             | "BMS002" | "5118" |
+
+
+
     #Create order and store order number
 
     Scenario: 2.1. Create and Store Doc Number
@@ -145,10 +153,37 @@ Feature: xq-s-flow-sih-ot-al1
         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
-        # ##And the user waits 10 seconds
+        #And the user waits 10 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the "Post" main action button on the right panel
         And the selected log panel includes the message "X3 validation Invoice/Credit"
+
+
+# 			"FieldType": "",
+# 			"TestType": "set",
+# 			"Value": "ITMREF/BMS002"
+# 		},
+# 		{
+# 			"FieldAction": "XQDETIMPOSTO",
+# 			"FieldType": "Icon",
+# 			"TestType": "set",
+# 			"Value": "1"
+# 		}
+# 	]
+# },
+# {
+# 	"Grid": false,
+# 	"GridName": "",
+# 	"MaskCode": "XQDTIMP1",
+# 	"Name": "XQDTIMP1",
+# 	"Steps": [
+# 		{
+# 			"FieldAction": "VALFINST",
+# 			"FieldType": "Field",
+# 			"TestType": "check",
+# 			"Value": "13.3700"
+# 		},
