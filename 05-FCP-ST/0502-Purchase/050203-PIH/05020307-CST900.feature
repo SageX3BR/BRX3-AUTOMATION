@@ -54,6 +54,7 @@ Feature:05020307-CST900
 
 
     Scenario Outline: 05020307-03 Add Lines
+        Given the user selects the data table of section: "Lines"
         And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with header: "Source"
         And the user selects the choice "Miscellaneous" of the selected cell
