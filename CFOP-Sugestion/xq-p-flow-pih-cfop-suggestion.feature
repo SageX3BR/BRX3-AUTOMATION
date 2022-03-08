@@ -43,7 +43,7 @@ Feature:xq-p-flow-pih-CFOP-suggestion
 
     Scenario Outline: Mandatory CFOP 2 Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        And the user selects last fixed cell with header: "Source"
+        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
         And the choice selected of the selected cell is "Miscellaneous"
@@ -88,7 +88,7 @@ Feature:xq-p-flow-pih-CFOP-suggestion
 
     Scenario Outline: Suggestion CFOP Checking By function - Line 1 Fiscal Operation - Line 2 CFOP Suggestion
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        And the user selects last fixed cell with header: "Source"
+        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
         And the choice selected of the selected cell is "Miscellaneous"
@@ -131,7 +131,7 @@ Feature:xq-p-flow-pih-CFOP-suggestion
 
     Scenario Outline: Suggestion CFOP Checking - 2 Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        And the user selects last fixed cell with header: "Source"
+        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
         And the choice selected of the selected cell is "Miscellaneous"

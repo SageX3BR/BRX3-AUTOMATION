@@ -65,7 +65,7 @@ Feature: xq-p-flow-pih-oi-pistot
 
     Scenario Outline: 4. Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        And the user selects last fixed cell with header: "Source"
+        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
         And the choice selected of the selected cell is "Miscellaneous"
