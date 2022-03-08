@@ -78,8 +78,7 @@ Feature: xq-p-flow-pih-oi-frei-02
         And the user writes the stored text with key "DOCSUP031" in the selected text field and hits tab key
 
     Scenario Outline: 22. Lines
-        Given the user selects the data table of section: "Lines"
-        And the user selects editable table row number: <LIN>
+        Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
         And the user selects last fixed cell with header: "Source"
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
