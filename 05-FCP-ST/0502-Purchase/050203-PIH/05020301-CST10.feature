@@ -54,7 +54,8 @@ Feature:05020301-CST10
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
         And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the user selects the choice "Miscellaneous" of the selected cell
-        And the user hits tab key in the selected cell
+        And the user hits tab
+        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the choice selected of the selected cell is "Miscellaneous"
         And the user selects last editable cell with X3 field name: "WE8ALL3_ITMREF"
         And the user adds the text <ITMREF> in selected cell
