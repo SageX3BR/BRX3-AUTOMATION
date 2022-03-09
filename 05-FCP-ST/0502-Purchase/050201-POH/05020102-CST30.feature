@@ -46,23 +46,15 @@ Feature:05020102-CST30
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WE3ALL2_XQVARCFOP"
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WE3ALL2_XQORIGEMICMS"
-        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE3ALL2_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE3ALL2_XQCENQ"
-        And the user adds the text <XQCENQ> in selected cell
-        And the user selects last editable cell with X3 field name: "WE3ALL2_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE3ALL2_XQCSTPIS"
-        And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE3ALL2_XQCSTCOF"
-        Then the user adds the text <XQCSTCOF> in selected cell and hits enter key
-
+        And the user adds the text <XQCENQ> in selected cell and hits enter key
+        s
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI   | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "10"   | "100.20" | "1102" | "1"       | "0"          | "30"      | "999"  | "01"     | "01"     | "01"     |
-            | 2   | "BMS002" | "10"   | "135.00" | "1102" | "1"       | "0"          | "30"      | "999"  | "01"     | "01"     | "01"     |
+            | LIN | ITMREF   | QTYUOM | GROPRI   | XQCFOP | XQVARCFOP | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "10"   | "100.20" | "1102" | "1"       | "30"      | "999"  |
+            | 2   | "BMS002" | "10"   | "135.00" | "1102" | "1"       | "30"      | "999"  |
 
     Scenario: 05020102-04 Create/SEFAZ
         #Create and Send to Sefaz

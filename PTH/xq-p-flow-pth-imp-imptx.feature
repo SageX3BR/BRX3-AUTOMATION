@@ -52,23 +52,17 @@ Feature: xq-p-flow-pth-imp-imptx
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQORIGEMICMS"
-        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTPIS"
-        And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCOF"
-        Then the user adds the text <XQCSTCOF> in selected cell and hits enter key
+        And the user adds the text <XQCSTIPI> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "21"   | "51.32" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS002" | "19"   | "47.65" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
+            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQCSTICMS | XQCENQ | XQCSTIPI |
+            | 1   | "BMS001" | "21"   | "51.32" | "3101" | "00"      | "999"  | "49"     |
+            | 2   | "BMS002" | "19"   | "47.65" | "3101" | "00"      | "999"  | "49"     |
 
     Scenario: 5. DI Data
         Given the user clicks the "DI Data" action button on the header drop down

@@ -49,23 +49,15 @@ Feature:05020401-CST10
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQVARCFOP"
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQORIGEMICMS"
-        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCENQ"
-        And the user adds the text <XQCENQ> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTPIS"
-        And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCOF"
-        Then the user adds the text <XQCSTCOF> in selected cell and hits enter key
+        And the user adds the text <XQCENQ> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "10"   | "78.50" | "1102" | "1"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
-            | 2   | "BMS002" | "10"   | "85.60" | "1102" | "1"       | "0"          | "10"      | "999"  | "01"     | "01"     | "01"     |
+            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQVARCFOP | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "10"   | "78.50" | "1102" | "1"       | "10"      | "999"  |
+            | 2   | "BMS002" | "10"   | "85.60" | "1102" | "1"       | "10"      | "999"  |
 
     Scenario: 05020401-04 Create/SEFAZ/Validation
         #Create and Send to Sefaz
@@ -145,8 +137,6 @@ Feature:05020401-CST10
         And the user adds the text <XQCFOP> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQVARCFOP" of selected row
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQORIGEMICMS" of selected row
-        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTICMS" of selected row
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTIPI" of selected row
@@ -158,9 +148,9 @@ Feature:05020401-CST10
         And the user selects cell with X3 field name: "WE7ALL1_XQCENQ" of selected row
         And the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
-            | LIN    | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
-            | "1000" | "5202" | "1"       | "0"          | "10"      | "51"     | "50"     | "50"     | "999"  |
-            | "2000" | "5202" | "1"       | "0"          | "10"      | "51"     | "50"     | "50"     | "999"  |
+            | LIN    | XQCFOP | XQVARCFOP | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
+            | "1000" | "5202" | "1"       | "10"      | "51"     | "50"     | "50"     | "999"  |
+            | "2000" | "5202" | "1"       | "10"      | "51"     | "50"     | "50"     | "999"  |
 
     Scenario: 05020401-09 Create return
         Given the user clicks the "Create" main action button on the right panel

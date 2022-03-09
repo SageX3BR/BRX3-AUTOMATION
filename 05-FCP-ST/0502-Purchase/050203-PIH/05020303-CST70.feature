@@ -52,7 +52,7 @@ Feature:05020303-CST70
 
     Scenario Outline: 05020303-03 Add Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_TYPORI"
+        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the user selects the choice "Miscellaneous" of the selected cell
         And the user hits tab key in the selected cell
         And the choice selected of the selected cell is "Miscellaneous"
@@ -66,23 +66,15 @@ Feature:05020303-CST70
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQVARCFOP"
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQORIGEMICMS"
-        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_XQCENQ"
-        And the user adds the text <XQCENQ> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTPIS"
-        And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTCOF"
-        Then the user adds the text <XQCSTCOF> in selected cell and hits enter key
+        And the user adds the text <XQCENQ> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "12"   | "17.58" | "1102" | "1"       | "0"          | "70"      | "999"  | "01"     | "01"     | "01"     |
-            | 2   | "BMS002" | "15"   | "19.85" | "1102" | "1"       | "0"          | "70"      | "999"  | "01"     | "01"     | "01"     |
+            | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "12"   | "17.58" | "1102" | "1"       | "70"      | "999"  |
+            | 2   | "BMS002" | "15"   | "19.85" | "1102" | "1"       | "70"      | "999"  |
 
     Scenario: 05020303-04 Create/SEFAZ/Validation
         Given the user clicks the "Control" tab selected by title
