@@ -137,10 +137,10 @@ Feature:05020401-CST10
         And the user adds the text <XQCFOP> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQVARCFOP" of selected row
         And the user adds the text <XQVARCFOP> in selected cell
+        And the user selects cell with X3 field name: "WE7ALL1_XQORIGEMICMS" of selected row
+        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTICMS" of selected row
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQORIGEMICMS"
-        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTIPI" of selected row
         And the user adds the text <XQCSTIPI> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTPIS" of selected row
@@ -150,9 +150,9 @@ Feature:05020401-CST10
         And the user selects cell with X3 field name: "WE7ALL1_XQCENQ" of selected row
         And the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
-            | LIN    | XQCFOP | XQVARCFOP | XQCSTICMS | XQORIGEMICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
-            | "1000" | "5202" | "1"       | "10"      | "0"          | "51"     | "50"     | "50"     | "999"  |
-            | "2000" | "5202" | "1"       | "10"      | "0"          | "51"     | "50"     | "50"     | "999"  |
+            | LIN    | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
+            | "1000" | "5202" | "1"       | "0"          | "10"      | "51"     | "50"     | "50"     | "999"  |
+            | "2000" | "5202" | "1"       | "0"          | "10"      | "51"     | "50"     | "50"     | "999"  |
 
     Scenario: 05020401-09 Create return
         Given the user clicks the "Create" main action button on the right panel
