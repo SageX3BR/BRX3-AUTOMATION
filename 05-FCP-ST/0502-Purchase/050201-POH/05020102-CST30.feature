@@ -50,7 +50,7 @@ Feature:05020102-CST30
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WE3ALL2_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell and hits enter key
-        s
+
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI   | XQCFOP | XQVARCFOP | XQCSTICMS | XQCENQ |
             | 1   | "BMS001" | "10"   | "100.20" | "1102" | "1"       | "30"      | "999"  |
