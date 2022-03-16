@@ -42,13 +42,13 @@ Feature:xq-p-flow-pih-CFOP-suggestion
         Then the user writes "123ABC" to the selected text field and hits tab key
 
     Scenario Outline: Mandatory CFOP 2 Lines
-        Given the user selects the data table of section: "Lines"
-        And the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with header: "Source"
+        Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
+        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the user selects the choice "Miscellaneous" of the selected cell
-        And the user hits tab key in the selected cell
+        And the user hits tab
+        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the choice selected of the selected cell is "Miscellaneous"
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
+        And the user selects last editable cell with X3 field name: "WE8ALL3_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
@@ -88,13 +88,13 @@ Feature:xq-p-flow-pih-CFOP-suggestion
         Then the user writes "123ABC" to the selected text field and hits tab key
 
     Scenario Outline: Suggestion CFOP Checking By function - Line 1 Fiscal Operation - Line 2 CFOP Suggestion
-        Given the user selects the data table of section: "Lines"
-        And the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with header: "Source"
+        Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
+        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the user selects the choice "Miscellaneous" of the selected cell
-        And the user hits tab key in the selected cell
+        And the user hits tab
+        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the choice selected of the selected cell is "Miscellaneous"
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
+        And the user selects last editable cell with X3 field name: "WE8ALL3_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
@@ -132,13 +132,13 @@ Feature:xq-p-flow-pih-CFOP-suggestion
         Then the user writes "123ABC" to the selected text field and hits tab key
 
     Scenario Outline: Suggestion CFOP Checking - 2 Lines
-        Given the user selects the data table of section: "Lines"
-        And the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with header: "Source"
+        Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
+        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the user selects the choice "Miscellaneous" of the selected cell
-        And the user hits tab key in the selected cell
+        And the user hits tab
+        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
         And the choice selected of the selected cell is "Miscellaneous"
-        And the user selects last fixed cell with X3 field name: "WE8ALL3_ITMREF"
+        And the user selects last editable cell with X3 field name: "WE8ALL3_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
