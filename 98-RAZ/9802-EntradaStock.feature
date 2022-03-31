@@ -3,17 +3,19 @@ Feature:9802-EntradaStock
     Scenario: 9802-01 Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    Scenario: 9802-02 Rset folder to zero
-        Given the user opens the "RAZDOS" function
-        And the "Reset folder to zero" screen is displayed
-        And the user selects the text field with name: "Folder"
-        And the user writes "ATP" to the selected text field and hits tab key
-        And the user clicks the "OK" button in the header
-        And the user clicks the "Yes" option in the alert box
-        And the user waits 80 seconds
-        And the user clicks the Close page action icon on the header panel
+    # Scenario: 9802-02 Rset folder to zero
+    #     When the user selects the "param:endPointRoot" entry on endpoint panel
+    #     Given the user opens the "RAZDOS" function
+    #     And the "Reset folder to zero" screen is displayed
+    #     And the user selects the text field with name: "Folder"
+    #     And the user writes "ATP" to the selected text field and hits tab key
+    #     And the user clicks the "OK" button in the header
+    #     And the user clicks the "Yes" option in the alert box
+    #     And the user waits 80 seconds
+    #     And the user clicks the Close page action icon on the header panel
 
     Scenario: 9802-03 Stock resynchronization and control
+        # When the user selects the "param:endPointName1" entry on endpoint panel
         Given the user opens the "FUNSTOR" function
         And the "Stock resynchronization" screen is displayed
         And the user selects the text field with name: "Site"

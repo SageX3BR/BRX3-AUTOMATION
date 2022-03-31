@@ -57,7 +57,7 @@ Feature: xq-s-crud-gessoh2
         And the user selects the text field with name: "Sales site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Reference"
-        And the user writes "CRUD Test15" to the selected text field and hits tab key
+        And the user writes the stored text with key "DOCREF" in the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR001" to the selected text field and hits tab key
         #And the user clicks the "Ok" opinion in the alert box
