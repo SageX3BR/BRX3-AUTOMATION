@@ -1,9 +1,9 @@
-Feature:xq-s-flow-sih-xqamend
+Feature:xq-sih-cancel
 
-    Scenario: Login scenario
+    Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    Scenario: SIH Creation
+    Scenario: 2. SIH Creation
         Given the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL Full entry invoice" and column header: ""
@@ -41,13 +41,13 @@ Feature:xq-s-flow-sih-xqamend
         And the user hits enter
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "12" | "10.54" | "6101" | "0"     | "00"      | "999"  |
+            | 1   | "BMS001" | "10" | "10.54" | "6101" | "0"     | "00"      | "999"  |
 
     Scenario: Create
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: Transmission and Validation
+    Scenario: Resume - Transmission and Validation
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
@@ -60,21 +60,34 @@ Feature:xq-s-flow-sih-xqamend
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the Close page action icon on the header panel
 
-
-    Scenario: SIH INCAN Creation
-        Given the user opens the "GESSIH" function
-        And the user selects the data table in the popup
-        And the user selects cell with text: "INVCA   invoice cancellation" and column header: ""
-        And the user clicks on the selected cell
-        Then the "Sales invoice INVCA : invoice cancellation" screen is displayed
+    Scenario: XQAMEND information
+        Given the user opens the "GESXQAMEND" function
+        Then the "Invoice amendment" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_SALFCY"
+        And the user selects the text field with X3 field name: "XQAMEND0_CPY"
+        And the user writes "BR10" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQAMEND0_FCY"
         And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the drop down list with X3 field name: "XQAMEND0_DOCTYP"
+        When the user clicks on "Sales Invoice (SIH)" option of the selected drop down list
+        Then the value of the selected drop down list is "Sales Invoice (SIH)"
+        And the user selects the text field with X3 field name: "XQAMEND0_DOCNUM"
+        And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQAMEND1_AMENDTEXT"
+        And the user writes "TESTE DE CARTA DE CORREÇÃO AUTOMATIZADO" to the selected text area
 
+    Scenario: XQAMEND Creation
+        When the user clicks the "Create" main action button on the right panel
+        And a confirmation dialog appears with the message "Record has been created"
 
-
-
-
+    Scenario: XQAMENDSEFAZ Transmission
+        Given the user clicks the "SEFAZ Communication" button in the header
+        And an alert box with the text containing "Warning! This request cannot be reverted! Confirm the invoice amendment of the invoice:" appears
+        And the user clicks the "Yes" opinion in the alert box
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "Evento registrado e vinculado a NF-e"
+        And the user clicks the "Close page" main action button on the right panel
+        Then the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
         And the user logs-out from the system
