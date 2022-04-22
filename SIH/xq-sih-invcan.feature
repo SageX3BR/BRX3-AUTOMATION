@@ -1,9 +1,9 @@
-Feature:xq-sih-cancel
+Feature:xq-sih-invcan
 
-    Scenario: 1.Login scenario
+    Scenario: 1. Login
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    Scenario: 2. SIH Creation
+    Scenario: 2. SIH Header
         Given the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL Full entry invoice" and column header: ""
@@ -22,7 +22,7 @@ Feature:xq-sih-cancel
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    Scenario Outline: Add Lines
+    Scenario Outline: 3. SIH lines
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -43,11 +43,11 @@ Feature:xq-sih-cancel
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
             | 1   | "BMS001" | "10" | "10.54" | "6101" | "0"     | "00"      | "999"  |
 
-    Scenario: Create
+    Scenario: 4. SIH Creation
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: Resume - Transmission and Validation
+    Scenario: 5. SIH Transmission and Validation
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
@@ -60,34 +60,49 @@ Feature:xq-sih-cancel
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: XQAMEND information
-        Given the user opens the "GESXQAMEND" function
-        Then the "Invoice amendment" screen is displayed
+    Scenario: 6. SIH - INVCAN
+        Given the user opens the "GESSIH" function
+        And the user selects the data table in the popup
+        And the user selects cell with text: "INVCA   invoice cancellation" and column header: ""
+        And the user clicks on the selected cell
+        Then the "Sales invoice INVCA : invoice cancellation" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQAMEND0_CPY"
-        And the user writes "BR10" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQAMEND0_FCY"
+        And the user clicks the "Ok" opinion in the alert box
+        And the user selects the text field with X3 field name: "SIH0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the drop down list with X3 field name: "XQAMEND0_DOCTYP"
-        When the user clicks on "Sales Invoice (SIH)" option of the selected drop down list
-        Then the value of the selected drop down list is "Sales Invoice (SIH)"
-        And the user selects the text field with X3 field name: "XQAMEND0_DOCNUM"
+        And the user selects the text field with X3 field name: "SIH0_BPCINV"
+        And the user writes "BR001" to the selected text field and hits tab key
+
+    Scenario: 7. Picking
+
+        Given the user clicks the "Selection criteria" action button on the header drop down
+        And the "Credit note preloading filter" screen is displayed
+        And the user selects the text field with X3 field name: "SCRITCNO_CRISIHNUM"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQAMEND1_AMENDTEXT"
-        And the user writes "TESTE DE CARTA DE CORREÇÃO AUTOMATIZADO" to the selected text area
+        And the user clicks the "OK" button in the header
+        And the user clicks the "Invoices to cancel" link on the left panel
+        And the user selects the main picking list panel of the screen
+        And the user selects the item with the stored text with key "SIHNUM" and with the text containing "BR011" of the picking list panel
+        And the user checks the selected picking list panel item
 
-    Scenario: XQAMEND Creation
-        When the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
+    Scenario: 8. INVCAN - Creation
+        Then the user clicks the "Create" main action button on the right panel
+        And  a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: XQAMENDSEFAZ Transmission
-        Given the user clicks the "SEFAZ Communication" button in the header
-        And an alert box with the text containing "Warning! This request cannot be reverted! Confirm the invoice amendment of the invoice:" appears
+    Scenario: 9. INVCAN - transmission
+        Given the user clicks the "SEFAZ" action button on the header drop down
+        And an alert box with the text containing "Warning! This request can not be reverted! Are you sure you want to cancel:" appears
         And the user clicks the "Yes" opinion in the alert box
+        Then the "Confirm" screen is displayed
+        And the user selects the text field with X3 field name: "XQINPUT_XQINPTEXTO"
+        And the user writes "TESTE DE CANCELAMENTO DE NF-E VIA ATP" to the selected text field
+        And the user clicks the "OK" button in the header
+        Then a log panel appears
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "Evento registrado e vinculado a NF-e"
+        And the selected log panel includes the message "Invoice Cancelled"
         And the user clicks the "Close page" main action button on the right panel
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: Logout
+
+    Scenario: 10. Logout
         And the user logs-out from the system
