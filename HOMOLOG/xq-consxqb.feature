@@ -62,7 +62,18 @@ Feature:xq-s-flow-sih-xqamend
 
     Scenario: Open - CONSXQB Boletos
         Given the user opens the "CONSXQB" function
-        And the user selects the data table in the popup
+        And the "Bank Slip" screen is displayed
+        And the user selects the text field with X3 field name: "XQBOL0_FCY"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQBOL0_BAN"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQBOL0_CODCART"
+        And the user writes "001-01" to the selected text field and hits tab key
+        And the user clicks the "Search" button in the header
+
+
+
+
 
     Scenario: Logout
         And the user logs-out from the system
