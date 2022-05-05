@@ -87,7 +87,7 @@ Feature:xq-s-flow-sih-xqamend
         And the user selects the main log panel of the page
         And the selected log panel includes the message "Evento registrado e vinculado a NF-e"
         And the user clicks the "Close page" main action button on the right panel
-        Then the user clicks the "Close page" action icon on the header panel
+
 
     Scenario: Logout
         And the user logs-out from the system
