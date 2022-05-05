@@ -1,4 +1,4 @@
-Feature:xq-s-flow-sih-xqamend
+Feature:xq-consxqb-341-bol-rem
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
@@ -41,7 +41,7 @@ Feature:xq-s-flow-sih-xqamend
         And the user hits enter
         Examples:
             | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "1" | "100"  | "6101" | "0"     | "00"      | "999"  |
+            | 1   | "BMS001" | "1" | "1000" | "6101" | "0"     | "00"      | "999"  |
 
     Scenario: Create
         When the user clicks the "Create" main action button on the right panel
@@ -57,23 +57,46 @@ Feature:xq-s-flow-sih-xqamend
         And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "SIH0_NUM"
-        And the user stores the value of the selected text field with the key: "SIHNUM"
+        And the user stores the value of the selected text field with the key: "FATURA"
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: Open - CONSXQB Boletos
+    Scenario: CONSXQB Boletos
         Given the user opens the "CONSXQB" function
         And the "Bank Slip" screen is displayed
-        And the user selects the text field with X3 field name: "XQBOL0_FCY"
+        And the user selects the text field with name: "Site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQBOL0_BAN"
-        And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQBOL0_CODCART"
-        And the user writes "001-01" to the selected text field and hits tab key
+        And the user selects the text field with name: "Bank account"
+        And the user writes "0341" to the selected text field and hits tab key
+        And the user selects the text field with name: "Book code"
+        And the user writes "TS341" to the selected text field and hits tab key
+        And the user selects the text field with name: "Document no."
+        And the user writes the stored text with key "FATURA" in the selected text field and hits tab key
         And the user clicks the "Search" button in the header
+        And the user selects the data table of section: "Bank slips"
+        And the user selects first row of the selected data table
+        And the user selects cell with header: "Selection" of selected row
+        And the user clicks on the selected cell
+        And  the user clicks the "Prepare data" action button on the header drop down
+        And  the user clicks the Close page action icon on the header panel
 
 
-
-
+    Scenario: Open - CONSXQR Remessa
+        Given the user opens the "CONSXQR" function
+        And the user selects the text field with name: "Site"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the text field with name: "Invoice number"
+        And the user writes the stored text with key "FATURA" in the selected text field and hits tab key
+        And the user selects the text field with name: "Bank"
+        And the user writes "0341" to the selected text field and hits tab key
+        And the user selects the text field with name: "Book"
+        And the user writes "TS341" to the selected text field and hits tab key
+        And the user clicks the "Search" button in the header
+        And the user selects the data table of section: "Remittance"
+        And the user selects first row of the selected data table
+        And the user selects cell with header: "Selection" of selected row
+        And the user clicks on the selected cell
+        And  the user clicks the "Process selection" action button on the header drop down
+        And  the user clicks the Close page action icon on the header panel
 
 
     Scenario: Logout
