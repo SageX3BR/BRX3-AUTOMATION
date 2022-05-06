@@ -58,33 +58,33 @@ Feature: ATP-13
 
     Scenario: 3. Enable Calculation Memory and Document Creation
         Given the user clicks the "Calc. memory On/Off" action button on the header drop down
-        Then an alert box appears
+        When an alert box appears
         And the user clicks the "Ok" opinion in the alert box
         And the user hits tab key in the selected cell
         And the user clicks the "Create" main action button on the right panel
         And the user selects the main log panel of the page
         And the selected log panel includes the message "Foram retidos os impostos PIS/COFINS"
         And the selected log panel includes the message "Cálculo do PIS/COFINS por alíquota"
-        Then the user clicks the Close page action icon on the header panel
-        When a confirmation dialog appears with the message "Record has been created"
+        And the user clicks the Close page action icon on the header panel
+        Then a confirmation dialog appears with the message "Record has been created"
 
     Scenario: 4. Validation of Taxes
-        When the user clicks the "Tax Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "XQSOH1_VALPIS"
-        And the value of the selected text field is "66.00"
-        And the user selects the text field with X3 field name: "XQSOH1_VALCOF"
+        Given the user clicks the "Tax Summary" tab selected by title
+        And the user selects the text field with X3 field name: "WK2ALLXQ_VALPIS"
+        And the value of the selected date field is "66.00"
+        And the user selects the text field with X3 field name: "WK2ALLXQ_VALCOF"
         And the value of the selected text field is "304.00"
-        And the user selects the text field with X3 field name: "XQSOH1_VALPISRF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ_VALPISRF"
         And the value of the selected text field is "270.00"
-        And the user selects the text field with X3 field name: "XQSOH1_VALCOFRF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ_VALCOFRF"
         And the value of the selected text field is "320.00"
-        And the user selects the text field with X3 field name: "XQSOH1_VALCSLLRF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ_VALCSLLRF"
         And the value of the selected text field is "400.00"
-        And the user selects the text field with X3 field name: "XQSOH1_VALISSRF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ_VALISSRF"
         And the value of the selected text field is "200.00"
-        And the user selects the text field with X3 field name: "XQSOH1_VALINSS"
+        And the user selects the text field with X3 field name: "WK2ALLXQ_VALINSS"
         And the value of the selected text field is "200.00"
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
-        And the user logs-out from the system
+        Then the user logs-out from the system
