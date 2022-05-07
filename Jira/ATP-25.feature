@@ -9,7 +9,7 @@
 # - Created date : 06/05/2022
 # - Updated by :
 # - Updated date :
-# - Status : in progress
+# - Status : Done
 ###########################################################################
 # PREREQUISITES
 # -------------------------------------------------------------------------
@@ -88,7 +88,6 @@ Feature: ATP-25
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
             | 1   | "BMS001" | "10" | "15.50" | "6101" | ""        | "0"     | "00"      |
-            | 2   | "BMS001" | "10" | "20.50" | "6101" | ""        | "0"     | "00"      |
 
     Scenario: Create document
 
@@ -99,6 +98,7 @@ Feature: ATP-25
         And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
         And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the Close page action icon on the header panel
+        And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
 
 
@@ -106,18 +106,21 @@ Feature: ATP-25
         Given the user opens the "GMAINT" function
         When the user selects the text field with X3 field name: "GSTD_FICH"
         And the user writes "XQINVOICE" to the selected text field and hits tab key
+        And the user clicks the "OK" button in the header
         And the user selects the text field with X3 field name: "STD0_CLE1_1"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         And the user selects the text field with X3 field name: "STD1_ZONE3_12"
         And the user writes "17" to the selected text field and hits tab key
         And the user clicks the "Save" main action button on the right panel
         And the user clicks the "Table" button in the header
+        When the user selects the text field with X3 field name: "GSTD_FICH"
         And the user writes "XQNFELOGH" to the selected text field and hits tab key
+        And the user clicks the "OK" button in the header
         And the user selects the text field with X3 field name: "STD0_CLE1_1"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         And the user selects the text field with X3 field name: "STD1_ZONE1_8"
-        And the user writes "4" to the selected text field and hits tab key
-        Then the user clicks the "Save" main action button on the right panel
+        And the user writes "4" to the selected text field and hits enter key
+    # And the user clicks the "Save" main action button on the right panel
 
     Scenario: Post document
         Given the user opens the "GESSIH" function
@@ -132,29 +135,17 @@ Feature: ATP-25
         And the user selects the main log panel of the page
         And the selected log panel includes the message "X3 validation Invoice/Credit"
         Then the user clicks the Close page action icon on the header panel
-
-
-    Scenario: Accounting reversal
-        Given the user clicks the "Accounting reversal" action button on the header drop down
-
-
-
-
-    NFESTATUS - STD1_ZONE3_12 = 17
-    tABLE
-    XQNFELOGH
-    NFSTATUS = STD1_ZONE1_8 = 4
-    Accounting reversal
-    Document successfully reversed.
-
-    Document already set as 'Reversed'.
-    Accounting document
-    WMAC1STDCO_RVS Reversed
-
+        #tempo para esperar o job da contabilização
+        When the user waits 115 seconds
+        Given the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the value of the selected text field is "Denegated Invoice"
+        And the user waits 2 seconds
+        When the user clicks the "Accounting reversal" action button on the header drop down
+        And a confirmation dialog appears with the message "Document successfully reversed."
+        Then the user clicks the "Ok" option in the alert box
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-        And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with name: "Type"
+
 
