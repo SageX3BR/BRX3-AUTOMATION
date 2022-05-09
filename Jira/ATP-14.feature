@@ -26,7 +26,6 @@ Feature: ATP-14
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-
     #--------------------------------------------------------------------------------
     #Creation of the sales order
     #--------------------------------------------------------------------------------
