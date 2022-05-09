@@ -1,9 +1,9 @@
-Feature:xq-s-flow-sih-xqamend
+Feature:xq-xqnfemonit-sih
 
-    Scenario: Login scenario
+    Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    Scenario: SIH Creation
+    Scenario: 2. SIH Creation
         Given the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL Full entry invoice" and column header: ""
@@ -40,41 +40,38 @@ Feature:xq-s-flow-sih-xqamend
         And the user adds the text <XQCENQ> in selected cell
         And the user hits enter
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "12" | "10.54" | "6101" | "0"     | "00"      | "999"  |
+            | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
+            | 1   | "BMS001" | "1" | "1000" | "6101" | "0"     | "00"      | "999"  |
 
     Scenario: Create
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: Transmission and Validation
-        Given the user clicks the "SEFAZ" action button on the header drop down
-        And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        And the user clicks the "Close page" main action button on the right panel
-        And the user clicks the "Post" button in the header
-        And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "SIH0_NUM"
-        And the user stores the value of the selected text field with the key: "SIHNUM"
-        Then the user clicks the Close page action icon on the header panel
+        And the user stores the value of the selected text field with the key: "FATURA"
 
+    Scenario: NF-e monitoring Filter
 
-    Scenario: SIH INCAN Creation
-        Given the user opens the "GESSIH" function
-        And the user selects the data table in the popup
-        And the user selects cell with text: "INVCA   invoice cancellation" and column header: ""
-        And the user clicks on the selected cell
-        Then the "Sales invoice INVCA : invoice cancellation" screen is displayed
-        When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_SALFCY"
+        Given the user opens the "XQCONSNFE" function
+        Then the user clicks the "NF-e monitoring" tab selected by title
+        And the user selects the radio buttons group with X3 field name: "XQNFEMNT0_STATUSNFE"
+        And the user clicks on "Pending" radio button of the selected radio buttons group
+        And the user selects the text field with name: "Site"
         And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the text field with name: "Document number"
+        And the user writes the stored text with key "FATURA" in the selected text field and hits tab key
+        And the user clicks the "Search" button in the header
 
-
-
-
-
+    Scenario: Selection
+        Given the user selects the main data table of the page
+        And the user selects first row of the selected data table
+        And the user selects cell with X3 field name: "XQNFEMNT1_SELECAO" of selected row
+        And the user clicks on the selected cell
+        And the user clicks the "SEFAZ Communication" button in the header
+        Then a log panel appears
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
+        #And the user waits 10 seconds
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
         And the user logs-out from the system
