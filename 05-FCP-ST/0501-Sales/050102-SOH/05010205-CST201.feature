@@ -73,9 +73,9 @@ Feature:05010205-CST201
 
     Scenario: 05010205-05 Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
-        When the user selects the text field with X3 field name: "XQSOH1_TOTBASEFCPST"
+        When the user selects the text field with X3 field name: "WK2ALLXQ_TOTBASEFCPST"
         And the value of the selected text field is "4,495.85"
-        And the user selects the text field with X3 field name: "XQSOH1_TOTICMSFCPST"
+        And the user selects the text field with X3 field name: "WK2ALLXQ_TOTICMSFCPST"
         And the value of the selected text field is "89.92"
         And the user clicks the "Delivery" button in the header
 
