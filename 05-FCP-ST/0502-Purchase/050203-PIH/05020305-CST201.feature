@@ -55,32 +55,33 @@ Feature:05020305-CST201
 
     Scenario Outline: 05020305-03 Add Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
-        And the user selects the choice "Miscellaneous" of the selected cell
+        And the user selects last row of the selected data table
+        And the user opens "Popup view" function on toolbox of the selected row
+        And the user selects the drop down list with name: "Source"
+        And the user clicks on "Miscellaneous" option of the selected drop down list
         And the user hits tab
-        And the user selects the fixed cell with X3 field name: "WE8ALL3_TYPORI" and row number: <LIN>
-        And the choice selected of the selected cell is "Miscellaneous"
-        And the user selects last editable cell with X3 field name: "WE8ALL3_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_QTYUOM"
-        And the user adds the text <QTYUOM> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_NETPRI"
-        And the user adds the text <NETPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQVARCFOP"
-        And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCENQ"
-        And the user adds the text <XQCENQ> in selected cell
-        And the user selects last editable cell with X3 field name: "WE8ALL3_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell and hits enter key
+        And the user selects the text field with X3 field name: "WE8ALL3_ITMREF"
+        And the user writes <ITMREF> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_QTYUOM"
+        And the user writes <QTYUOM> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_NETPRI"
+        And the user writes <NETPRI> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQCFOP"
+        And the user writes <XQCFOP> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQVARCFOP"
+        And the user writes <XQVARCFOP> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQCSTICMS"
+        And the user writes <XQCSTICMS> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQCENQ"
+        And the user writes <XQCENQ> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQCSTIPI"
+        And the user writes <XQCSTIPI> to the selected text field and hits enter key
+        And the user clicks the Close page action icon on the header panel
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQCSTICMS | XQCENQ | XQCSTIPI |
-            | 1   | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "201"     | "301"  | "02"     |
-            | 2   | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "201"     | "301"  | "02"     |
+            | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQVARCFOP | XQCSTICMS | XQCENQ | XQCSTIPI |
+            | "BMS001" | "9"    | "17.58" | "1102" | "1"       | "201"     | "301"  | "02"     |
+            | "BMS002" | "8"    | "19.85" | "1102" | "1"       | "201"     | "301"  | "02"     |
 
     Scenario: 05020305-04 Create/SEFAZ/Validation
         #Control Tab
