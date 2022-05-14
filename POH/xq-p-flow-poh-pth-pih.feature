@@ -163,7 +163,7 @@ Feature:xq-p-flow-poh-pth-pih
         And the user clicks the "Save" main action button on the right panel
         Then an alert box with the text containing "Recalculate taxes?" appears
         And the user clicks the "Yes" opinion in the alert box
-        And a confirmation dialog appears with the message "Record has been modified"
+        #And a confirmation dialog appears with the message "Record has been modified"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
         ##And the user waits 10 seconds
