@@ -102,7 +102,7 @@ Feature: ATP-15
 
         When the user clicks the "Receipt selection" link on the left panel
         When the user selects the main picking list panel of the screen
-        And the user clicks on the Expand all option of the picking list toolbar
+        And the user clicks the "Expand all" button in the left top bar of the selected picking list
         And the user selects the item "BMS001" of the level 1 on the picking list panel
         And the user checks the selected picking list panel item
         And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
