@@ -64,13 +64,13 @@ Feature: ATP-11
 
     Scenario: 5. Validar resumo de impostos
         When the user clicks the "NF-e Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "XQSIH1_VALPIS"
+        Then the user selects the text field with name: "PIS value"
         And the value of the selected text field is "3.30"
-        And the user selects the text field with X3 field name: "XQSIH1_VALCOF"
+        And the user selects the text field with name: "COFINS value"
         And the value of the selected text field is "15.20"
-        And the user selects the text field with X3 field name: "XQSIH1_VALPISRF"
+        And the user selects the text field with name: "PIS RF value"
         And the value of the selected text field is "13.50"
-        And the user selects the text field with X3 field name: "XQSIH1_VALCOFRF"
+        And the user selects the text field with name: "COFINS RF value"
         And the value of the selected text field is "16.00"
 
     Scenario: 6. Transmissão NFS-e

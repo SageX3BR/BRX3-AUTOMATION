@@ -94,7 +94,7 @@ Feature: xq-s-flow-sih-al6
 
     Scenario: Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSIH1_TOTVALFINST"
+        And the user selects the text field with name: "ICMS ST value"
         And the value of the selected text field is "85.18"
 
     Scenario: Logout

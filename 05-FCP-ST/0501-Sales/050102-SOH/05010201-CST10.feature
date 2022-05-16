@@ -90,12 +90,11 @@ Feature:05010201-CST10
             | "BMS001" | "2,098.29" | "41.97"     | "2.00"    |
             | "BMS002" | "2,397.56" | "47.95"     | "2.00"    |
 
-
     Scenario: 05010201-06 Resume - Check Calculated Values
         #Given the user clicks the "Tax Summary" tab selected by title
-        Given the user selects the text field with X3 field name: "WK2ALLXQ_TOTBASEFCPST"
+        Given the user selects the text field with name: "FCP-ST Calc. base"
         And the value of the selected text field is "4,495.85"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_TOTICMSFCPST"
+        And the user selects the text field with name: "ICMS FCP-ST value"
         And the value of the selected text field is "89.92"
         And the user clicks the "Cancel" main action button on the right panel
         And the user clicks the "Delivery" button in the header

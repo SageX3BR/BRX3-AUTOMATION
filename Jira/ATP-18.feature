@@ -77,9 +77,9 @@ Feature: ATP-18
 
     Scenario: 5. Validation of Taxes
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSIH1_VALPIS"
+        And the user selects the text field with name: "PIS value"
         And the value of the selected text field is ""
-        And the user selects the text field with X3 field name: "XQSIH1_VALCOF"
+        And the user selects the text field with name: "COFINS value"
         And the value of the selected text field is "0.01"
         Then the user clicks the Close page action icon on the header panel
 
