@@ -77,19 +77,19 @@ Feature: ATP-14
     Scenario: 3. Verificar Cálculo de Iss
         Given the user clicks the "Create" main action button on the right panel
         When the user clicks the "NF-e Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "XQSIH1_VALPISRF"
+        Then the user selects the text field with name: "PIS RF value"
         And the value of the selected text field is ""
-        And the user selects the text field with X3 field name: "XQSIH1_VALCOFRF"
+        And the user selects the text field with name: "COFINS RF value"
         And the value of the selected text field is ""
-        And the user selects the text field with X3 field name: "XQSIH1_VALCSLLRF"
+        And the user selects the text field with name: "CSLL value"
         And the value of the selected text field is ""
-        And the user selects the text field with X3 field name: "XQSIH1_VALIRRF"
+        And the user selects the text field with name: "IRRF value"
         And the value of the selected text field is ""
-        And the user selects the text field with X3 field name: "XQSIH1_VALIRPJ"
+        And the user selects the text field with name: "IRPJ value"
         And the value of the selected text field is ""
-        And the user selects the text field with X3 field name: "XQSIH1_VALINSS"
+        And the user selects the text field with name: "INSS value"
         And the value of the selected text field is ""
-        And the user selects the text field with X3 field name: "XQSIH1_VALISS"
+        And the user selects the text field with name: "ISS value"
         And the value of the selected text field is ""
 
     Scenario: 4. Transmissão NFS-e

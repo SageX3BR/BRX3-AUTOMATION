@@ -70,19 +70,19 @@ Feature: ATP-13
 
     Scenario: 4. Validation of Taxes
         Given the user clicks the "Tax Summary" tab selected by title
-        And the user selects the text field with X3 field name: "WK2ALLXQ_VALPIS"
+        And the user selects the text field with name: "PIS value"
         And the value of the selected date field is "66.00"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_VALCOF"
+        And the user selects the text field with name: "COFINS value"
         And the value of the selected text field is "304.00"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_VALPISRF"
+        And the user selects the text field with name: "PIS RF value"
         And the value of the selected text field is "270.00"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_VALCOFRF"
+        And the user selects the text field with name: "COFINS RF value"
         And the value of the selected text field is "320.00"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_VALCSLLRF"
+        And the user selects the text field with name: "CSLL value"
         And the value of the selected text field is "400.00"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_VALISSRF"
+        And the user selects the text field with name: "ISS RF value"
         And the value of the selected text field is "200.00"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_VALINSS"
+        And the user selects the text field with name: "INSS value"
         And the value of the selected text field is "200.00"
         Then the user clicks the Close page action icon on the header panel
 
