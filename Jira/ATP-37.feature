@@ -58,3 +58,8 @@ Feature: atp-37
 
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
+
+
+    Scenario: Logout
+        And the user clicks the Close page action icon on the header panel
+        And the user logs-out from the system
