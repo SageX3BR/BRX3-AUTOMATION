@@ -18,9 +18,7 @@ Feature: ATP-23
         Then the "param:endPointName1" endpoint is selected
 
     Scenario: 2.BP
-        #open customer function
         Given the user opens the "GESBPR" function
-        #Set header information
         And the user selects the text field with name: "Category"
         And the user writes "BR" to the selected text field
         And the user hits tab
@@ -31,7 +29,6 @@ Feature: ATP-23
         And the user writes "ATP-23" to the selected text field
 
     #Set Addresses information
-
     Scenario: 3.Address code
         Given the user selects the fixed data table for x3 field name: "BPABPR_ARRAY_NBADR"
         And the user selects last editable cell with X3 field name: "BPABPR_CODADR"
@@ -48,11 +45,7 @@ Feature: ATP-23
         And the user writes "122612125111" to the selected text field
         And the user clicks the "Save" main action button on the right panel
     # CNPJ 64555626000147
-    #IE 122612125111
-
-    # CNPJ 96726716000140
-    # IE 389383714806
-
+    # IE 122612125111
 
     Scenario: 4. Logout scenario
         Then the user logs-out from the system
