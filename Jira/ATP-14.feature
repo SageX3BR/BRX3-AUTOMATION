@@ -83,6 +83,8 @@ Feature: ATP-14
         And the value of the selected text field is ""
         And the user selects the text field with name: "CSLL value"
         And the value of the selected text field is ""
+
+
         And the user selects the text field with name: "IRRF value"
         And the value of the selected text field is ""
         And the user selects the text field with name: "IRPJ value"
