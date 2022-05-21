@@ -86,43 +86,47 @@ Feature: ATP-27
 
         When the user clicks the "Create" main action button on the right panel
         Then the user clicks the "SEFAZ" action button on the header drop down
-        Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
+        Given the user selects the main data table of the page
+        When the user selects row that has the text "Doc. number :" in column with X3 field name: "LECFIC_LIGNE"
+        Then the user selects cell with X3 field name: "LECFIC_LIGNE" of selected row
+        And the value of the selected cell has string pattern "*NF-e: Authorized*"
         And the user clicks the Close page action icon on the header panel
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
-        Then the user clicks the "Validation" button in the header
-        Then a log panel appears
+        Then the user clicks the "Post" button in the header
+        Given the user selects the main data table of the page
+        When the user selects row that has the text "X3 validation" in column with X3 field name: "LECFIC_LIGNE"
+        Then the user selects cell with X3 field name: "LECFIC_LIGNE" of selected row
+        And the value of the selected cell has string pattern "*X3 validation Invoice/Credit memo*"
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
         And the user clicks the Close page action icon on the header panel
+
+
+
+
+    Scenario: Generete CNAB Remmitence
+        Given the user opens the "CONSXQR" function
+        When the user selects the text field with name: "Site"
+        And the user writes "BR011" to the selected text field and hits tab key
+        When the user selects the text field with name: "Bank"
+        And the user writes "BR999" to the selected text field and hits tab key
+        When the user selects the text field with name: "Book"
+        And the user writes "TS001" to the selected text field and hits tab key
+        And the user selects the text field with name: "Invoice number"
+        And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
+        Then the user clicks the "Search" button in the header
+        And the user clicks the "Process all" main action button on the right panel
+        Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
+        When the user clicks the "Yes" opinion in the alert box
+        Then the user waits 2 seconds
 
 
     Scenario: Check Open Items
         Given the user clicks the "Open items" button in the header
-
-
-    Scenario: Alterar status da nota para denegado
-        Given the user opens the "GMAINT" function
-        When the user selects the text field with X3 field name: "GSTD_FICH"
-        And the user writes "XQINVOICE" to the selected text field and hits tab key
-        And the user clicks the "OK" button in the header
-        And the user selects the text field with X3 field name: "STD0_CLE1_1"
-        And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "STD1_ZONE3_12"
-        And the user writes "17" to the selected text field and hits tab key
-        And the user clicks the "Save" main action button on the right panel
-        And the user clicks the "Table" button in the header
-        When the user selects the text field with X3 field name: "GSTD_FICH"
-        And the user writes "XQNFELOGH" to the selected text field and hits tab key
-        And the user clicks the "OK" button in the header
-        And the user selects the text field with X3 field name: "STD0_CLE1_1"
-        And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "STD1_ZONE1_8"
-        And the user writes "4" to the selected text field and hits enter key
-    # And the user clicks the "Save" main action button on the right panel
+        Given the user selects the fixed data table in the popup
+        When the user select
+        #Then the user selects last fixed cell with header: "Pymt. method"
+        When the user selects fixed table row number: 30
 
     Scenario: Post document
         Given the user opens the "GESSIH" function
@@ -134,19 +138,12 @@ Feature: ATP-27
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        And the user clicks the "Post" button in the header
-        Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "X3 validation Invoice/Credit"
-        Then the user clicks the Close page action icon on the header panel
-        #tempo para esperar o job da contabilização
-        When the user waits 115 seconds
-        Given the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
-        And the value of the selected text field is "Denegated Invoice"
-        And the user waits 2 seconds
-        When the user clicks the "Accounting reversal" action button on the header drop down
-        And an alert box with the text "Document successfully reversed." appears
-        And the user clicks the "Ok" option in the alert box
+
+    Scenario: Check Open Items
+        Given the user clicks the "Open items" button in the header
+        Given the user selects the fixed data table in the popup
+        When the user selects first row of the selected data table
+    # When the user clicks the "Products" option of the actions panel for the selected cell
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
