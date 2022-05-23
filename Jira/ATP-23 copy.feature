@@ -26,38 +26,14 @@ Feature: ATP-23
         And the user selects cell with text: "Customer" and column header: ""
         And the user clicks on the selected cell
         And the user selects the text field with name: "BP"
-        And the user writes "ATP-23" to the selected text field
-        And the user clicks the "Addresses" tab selected by title
-        And the user selects the fixed data table for x3 field name: "BPABPR_ARRAY_NBADR"
+        And the user writes "ATP-23" to the selected text field and hits enter key
 
-    Scenario Outline: Inserir Linha
-        Given the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "BPABPR_CODADR"
-        And the user adds the text <Addresses code> in selected cell and hits enter key
-
-        Examples:
-            | LIN | Addresses code |
-            | 2   | "DD"           |
-
-    Scenario: 3. Addresses code
-        Given the user selects the text field with X3 field name: "BPABPR_XBPADES"
-        And the user writes "ATP-23 Address" to the selected text field
-        And the user selects the text field with X3 field name: "BPABPR_XADDLIG1"
-        And the user writes "Av ATP-23" to the selected text field
-        And the user selects the text field with name: "Postal code"
-        And the user writes "01001001" to the selected text field
-        And the user selects the text field with X3 field name: "BPABPR_XXQBPACRN"
-        And the user writes "64555626000147" to the selected text field
-        And the user selects the text field with X3 field name: "BPABPR_XXQBPAIE"
-        And the user writes "122612125111" to the selected text field
-        And the user clicks the "Save" main action button on the right panel
-
-    Scenario: 4. Delete Address code
+    Scenario: 3.Delete Address code
         Given the user selects the fixed data table for x3 field name: "BPABPR_ARRAY_NBADR"
         When the user selects editable row that has the text "DD" in column with X3 field name: "BPABPR_CODADR"
         Then the user opens "Delete" function on toolbox of the selected row
         And the user clicks the "Save" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been modified"
 
-    Scenario: 5. Logout scenario
+    Scenario: 3. Logout scenario
         Then the user logs-out from the system
