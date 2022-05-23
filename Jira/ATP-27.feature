@@ -6,7 +6,7 @@
 # - Jira: X3DEV-770
 # - Legislation: BR addon
 # - Created by : Carla Cury
-# - Created date : 06/05/2022
+# - Created date : 21/05/2022
 # - Updated by :
 # - Updated date :
 # - Status : Done
@@ -115,20 +115,13 @@ Feature: ATP-27
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
-        And the user clicks the "Process all" main action button on the right panel
+        Then the user waits 1 seconds
+        Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
         Then the user waits 2 seconds
 
-
-    Scenario: Check Open Items
-        Given the user clicks the "Open items" button in the header
-        Given the user selects the fixed data table in the popup
-        When the user select
-        #Then the user selects last fixed cell with header: "Pymt. method"
-        When the user selects fixed table row number: 30
-
-    Scenario: Post document
+    Scenario: Delete Open Items
         Given the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
@@ -142,8 +135,53 @@ Feature: ATP-27
     Scenario: Check Open Items
         Given the user clicks the "Open items" button in the header
         Given the user selects the fixed data table in the popup
+        Given the user selects the main fixed data table of the page
         When the user selects first row of the selected data table
+        When the user selects fixed table row number: 10
+        # When the user selects row that has the text "BOL" in column with header: "Pymet. method"
+        Then the user opens "Delete" function on toolbox of the selected row
+
+    Scenario Outline: Scenario Outline name
+
+        When the user selects row that has the text <LIN> in column with header: "No."
+        Then the user opens "Delete" function on toolbox of the selected row
+
+        Examples:
+            | LIN |
+            | 1   |
+            | 2   |
+            | 3   |
+            | 4   |
+            | 5   |
+            | 6   |
+
+    Scenario: Add Saldo in the last Open Item
+        Given the user selects the fixed data table in the popup
+        Given the user selects the main fixed data table of the page
+        When the user selects row that has the text "30" in column with header: "Amount"
+        Then the user opens "Close" function on toolbox of the selected row
+
+    # Given the user selects last fixed cell with header: "Product"
+
+    # Then the user adds the text "BMS001" in selected cell
+
     # When the user clicks the "Products" option of the actions panel for the selected cell
+
+    # Then the "Product" screen is displayed
+
+
+    # Scenario Outline: Scenario Outline name
+
+    #     Given the user selects editable table row number: <LIN>
+    #     And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
+    #     And the user adds the text <ITMREF> in selected cell
+    #     And the user hits enter key in the selected cell
+
+    #     Examples:
+    #         | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
+    #         | 1   | "BMS001" | "10" | "15.50" | "6101" | ""        | "0"     | "00"      |
+
+
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
