@@ -1,4 +1,4 @@
-Feature: atp-37
+Feature: ATP-37
 
     #--------------------------------------------------------------------------------
     #X3 Logingit checkout ATP-6 Scenario
@@ -58,7 +58,7 @@ Feature: atp-37
 
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-
+        And the user clicks the "Yes" option in the alert box
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
