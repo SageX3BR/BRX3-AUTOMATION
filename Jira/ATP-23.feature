@@ -57,7 +57,7 @@ Feature: ATP-23
         When the user selects editable row that has the text "DD" in column with X3 field name: "BPABPR_CODADR"
         Then the user opens "Delete" function on toolbox of the selected row
         And the user clicks the "Save" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been modified"
+        Then the user clicks the Close page action icon on the header panel
 
     Scenario: 5. Logout scenario
         Then the user logs-out from the system
