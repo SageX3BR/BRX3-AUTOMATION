@@ -48,7 +48,7 @@ Feature:ATP-34
         And the user selects cell with text: "AAL     Full entry credit" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice AAL : Full entry credit" screen is displayed
-        Given the user clicks the "Create" main action button on the right panel
+        Given the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Sales site"
         And the user writes "PT032" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
@@ -78,5 +78,3 @@ Feature:ATP-34
     Scenario: 08. Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-
-
