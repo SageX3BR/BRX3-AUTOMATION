@@ -37,7 +37,7 @@ Feature:ATP-34
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         When the user clicks the "Validation" button in the header
-        And the user clicks "Ok" button on the confirmation dialog
+        And the user clicks the "Ok" option in the alert box
         Then the user selects the text field with X3 field name: "SDH0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
         And the user clicks the Close page action icon on the header panel
@@ -53,7 +53,7 @@ Feature:ATP-34
         And the user selects the text field with X3 field name: "SRH0_STOFCY"
         And the user writes "FR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SRH0_BPCORD"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "FR001" to the selected text field and hits tab key
 
         When the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
@@ -62,7 +62,7 @@ Feature:ATP-34
         #Picking the delivery / All items
         Given the user clicks the "Delivery selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "SDHNUM" and with the text containing "BR001" of the picking list panel
+        And the user selects the item with the stored text with key "SDHNUM" and with the text containing "FR001" of the picking list panel
         And the user checks the selected picking list panel item
         When the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
