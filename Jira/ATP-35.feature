@@ -1,4 +1,4 @@
-Feature:ATP-34
+Feature:ATP-35
 
     Scenario: 01.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
