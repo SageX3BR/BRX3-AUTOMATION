@@ -13,7 +13,7 @@
 ###########################################################################
 # PREREQUISITES
 # -------------------------------------------------------------------------
-# Parameterize a bank portfolio that uses Cobrebem
+# Parameterize a bank portfolio that uses Tecnospeed
 #
 # ###########################################################################
 
@@ -136,36 +136,39 @@ Feature: ATP-27
         Given the user clicks the "Open items" button in the header
         Given the user selects the data table in the popup
         When the user selects first row of the selected data table
-        # When the user selects editable table row number: 10
+        When the user selects editable table row number: 2
+        Then the user opens "Delete" function on toolbox of the selected row
+        When the user selects editable table row number: 3
         Then the user opens "Delete" function on toolbox of the selected row
         Given the user selects the data table in the popup
-        When the user selects cell with text: "5" and column header: "Nr."
-        When the user clicks the "Amount" option of the actions panel for the selected cell
-        Then the "Amount" screen is displayed
-        Then the user opens "Close" function on toolbox of the selected row
+        When the user selects cell with text: "5" and column header: "No."
+        When the user clicks the "Close" option of the actions panel for the selected cell
+        And the user selects cell with text: "5" and column header: "Amount"
+        And the value of the selected cell is stored
+        And the user stores the value of the selected cell with the key: "Amount"
+        Then the user clicks the "OK" button in the popup header
 
 
-    # Given the user selects last fixed cell with header: "Product"
-
-    # Then the user adds the text "BMS001" in selected cell
-
-    # When the user clicks the "Products" option of the actions panel for the selected cell
-
-    # Then the "Product" screen is displayed
-
-
-    # Scenario Outline: Scenario Outline name
-
-    #     Given the user selects editable table row number: <LIN>
-    #     And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
-    #     And the user adds the text <ITMREF> in selected cell
-    #     And the user hits enter key in the selected cell
-
-    #     Examples:
-    #         | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
-    #         | 1   | "BMS001" | "10" | "15.50" | "6101" | ""        | "0"     | "00"      |
-
-
+    Scenario: Generete CNAB Remmitence
+        Given the user opens the "CONSXQR" function
+        When the user selects the text field with name: "Site"
+        And the user writes "BR011" to the selected text field and hits tab key
+        When the user selects the text field with name: "Bank"
+        And the user writes "BR999" to the selected text field and hits tab key
+        When the user selects the text field with name: "Book"
+        And the user writes "TS001" to the selected text field and hits tab key
+        And the user selects the text field with name: "Invoice number"
+        And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
+        Then the user clicks the "Search" button in the header
+        # Then the user waits 1 seconds
+        # Given the user selects the fixed cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" and row number: 1
+        # When the value of the selected cell is "Inclusion"
+        # Given the user selects the fixed cell with X3 field name: "XQREMESSA1_VALOR" and row number: 1
+        # And the value of the selected cell matches the stored text with key "Amount"
+        Then the user clicks the "Process all" action button on the header drop down
+        Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
+        When the user clicks the "Yes" opinion in the alert box
+        Then the user waits 2 seconds
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
