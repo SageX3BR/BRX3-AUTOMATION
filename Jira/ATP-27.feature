@@ -134,32 +134,16 @@ Feature: ATP-27
 
     Scenario: Check Open Items
         Given the user clicks the "Open items" button in the header
-        Given the user selects the fixed data table in the popup
-        Given the user selects the main fixed data table of the page
+        Given the user selects the data table in the popup
         When the user selects first row of the selected data table
-        When the user selects fixed table row number: 10
-        # When the user selects row that has the text "BOL" in column with header: "Pymet. method"
+        # When the user selects editable table row number: 10
         Then the user opens "Delete" function on toolbox of the selected row
-
-    Scenario Outline: Scenario Outline name
-
-        When the user selects row that has the text <LIN> in column with header: "No."
-        Then the user opens "Delete" function on toolbox of the selected row
-
-        Examples:
-            | LIN |
-            | 1   |
-            | 2   |
-            | 3   |
-            | 4   |
-            | 5   |
-            | 6   |
-
-    Scenario: Add Saldo in the last Open Item
-        Given the user selects the fixed data table in the popup
-        Given the user selects the main fixed data table of the page
-        When the user selects row that has the text "30" in column with header: "Amount"
+        Given the user selects the data table in the popup
+        When the user selects cell with text: "5" and column header: "Nr."
+        When the user clicks the "Amount" option of the actions panel for the selected cell
+        Then the "Amount" screen is displayed
         Then the user opens "Close" function on toolbox of the selected row
+
 
     # Given the user selects last fixed cell with header: "Product"
 
