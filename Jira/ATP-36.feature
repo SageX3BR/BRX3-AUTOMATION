@@ -31,7 +31,7 @@ Feature:ATP-36
             | LIN | ITMREF   | QTY | GROPRI  |
             | 1   | "BMS012" | "2" | "45.75" |
 
-    Scenario: 04. Document Creation and Fiscal Operation field check
+    Scenario: 04. Document Creation and BR Add-on field check
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         #Then the user selects the text field with X3 field name: "SOH0_XQCODOPF"
