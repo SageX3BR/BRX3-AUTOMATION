@@ -32,6 +32,7 @@ Feature: xq-p-flow-pih-oi-impac
         Then the "Purchase invoice ALL : Full entry" screen is displayed
         #Criar string baseada em datetime$ + 5 Random
         When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
         And the user clicks the "Calculator" secondary action button on the right panel
         And the "Calculator" screen is displayed
         And the user selects the text field with name: "Calculation:"
