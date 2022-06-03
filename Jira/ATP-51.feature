@@ -77,7 +77,6 @@ Feature: ATP-51
         And the user hits tab
         And the user selects last fixed cell with X3 field name: "XQIREF1_UF"
         And the user adds the text "PR" in selected cell
-        #And the user selects last fixed cell with X3 field name: "XQIREF1_NBREF"
         When the user selects last editable cell with column header: "Issue month"
         Then the user enters todays date in the selected cell
         And the user hits tab
