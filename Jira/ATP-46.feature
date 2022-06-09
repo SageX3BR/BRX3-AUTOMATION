@@ -1,7 +1,7 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: ATP-27
+# - Test code: ATP-46
 # - Description: Garantir que seja possível gerenciar Ocorrência bancária de baixa
 # - Jira: X3DEV-770
 # - Legislation: BR addon
@@ -17,7 +17,7 @@
 #
 # ###########################################################################
 
-Feature: ATP-27
+Feature: ATP-46
 
     #--------------------------------------------------------------------------------
     #X3 Login Scenario
@@ -111,7 +111,7 @@ Feature: ATP-27
         When the user selects the text field with name: "Bank"
         And the user writes "BR999" to the selected text field and hits tab key
         When the user selects the text field with name: "Book"
-        And the user writes "TS001" to the selected text field and hits tab key
+        And the user writes "CB341" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
@@ -119,6 +119,7 @@ Feature: ATP-27
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
+        And the user clicks the "Ok" opinion in the alert box
         Then the user waits 2 seconds
 
     Scenario: Delete Open Items
@@ -156,7 +157,7 @@ Feature: ATP-27
         When the user selects the text field with name: "Bank"
         And the user writes "BR999" to the selected text field and hits tab key
         When the user selects the text field with name: "Book"
-        And the user writes "TS01" to the selected text field and hits tab key
+        And the user writes "CB341" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
@@ -168,6 +169,7 @@ Feature: ATP-27
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
+        And the user clicks the "Ok" opinion in the alert box
         Then the user waits 2 seconds
 
     Scenario: Logout
