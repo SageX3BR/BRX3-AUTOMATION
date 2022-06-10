@@ -108,12 +108,12 @@ Feature: ATP-51
         Then the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the value of the selected text field is "2"
         When the user selects the text field with X3 field name: "XQPTD1_BCICMS"
-        And the value of the selected text field is "100"
+        And the value of the selected text field is "100.0000"
         When the user selects the text field with X3 field name: "XQPTD1_VLICMSDV"
-        And the value of the selected text field is "10"
-        And the user clicks the "OK" button in the popup header
+        And the value of the selected text field is "10.0000"
         And the user clicks the "Close" main action button on the right panel
         Given the user clicks the "Save" main action button on the right panel
 
     Scenario: 8. Logout
+        And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
