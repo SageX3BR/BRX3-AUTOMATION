@@ -99,6 +99,7 @@ Feature: ATP-49
         And the value of the selected cell has string pattern "*X3 validation Invoice/Credit memo*"
         And the user selects the main log panel of the page
         And the user clicks the Close page action icon on the header panel
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
@@ -119,7 +120,7 @@ Feature: ATP-49
         And the user selects the fixed cell with X3 field name: "XQREMESSA1_SELECAO" and row number: 3
         And the user ticks the checkbox contained in the selected cell
         Then the user clicks the "Process selection" action button on the header drop down
-        Then the user waits 2 seconds
+        Then the user waits 4 seconds
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

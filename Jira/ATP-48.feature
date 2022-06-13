@@ -100,9 +100,7 @@ Feature: ATP-48
         And the value of the selected cell has string pattern "*X3 validation Invoice/Credit memo*"
         And the user selects the main log panel of the page
         And the user clicks the Close page action icon on the header panel
-
-
-
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
