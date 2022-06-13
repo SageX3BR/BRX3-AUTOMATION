@@ -100,9 +100,7 @@ Feature: ATP-27
         And the value of the selected cell has string pattern "*X3 validation Invoice/Credit memo*"
         And the user selects the main log panel of the page
         And the user clicks the Close page action icon on the header panel
-
-
-
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
@@ -120,6 +118,7 @@ Feature: ATP-27
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
         Then the user waits 2 seconds
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Delete Open Items
         Given the user opens the "GESSIH" function
@@ -147,6 +146,7 @@ Feature: ATP-27
         And the value of the selected cell is stored
         And the user stores the value of the selected cell with the key: "Amount"
         Then the user clicks the "OK" button in the popup header
+        And the user clicks the Close page action icon on the header panel
 
 
     Scenario: Generete CNAB Remmitence
@@ -168,7 +168,7 @@ Feature: ATP-27
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
-        Then the user waits 2 seconds
+        Then the user waits 4 seconds
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
