@@ -31,11 +31,9 @@ Feature: xq-sih-credit-discount
         And the user selects the text field with X3 field name: "XQSIH0_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
-
         And the user selects the data table of section: "Invoicing elements"
         And the user selects cell with column header: "% or amount" and row number: 2
         And the user adds the text "5" in selected cell and hits tab key
-
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
@@ -59,8 +57,8 @@ Feature: xq-sih-credit-discount
         And the user adds the text <XQCENQ> in selected cell
         And the user hits enter
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI    | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS002" | "1" | "1500.00" | "6101" | ""        | "0"     | "00"      | "999"  |
+            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
+            | 1   | "BMS002" | "1" | "100.00" | "6101" | ""        | "0"     | "00"      | "999"  |
 
     Scenario: Create
         When the user clicks the "Create" main action button on the right panel
@@ -109,10 +107,6 @@ Feature: xq-sih-credit-discount
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SIHNUM" and with the text containing "BR011" of the picking list panel
         And the user checks the selected picking list panel item
-
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK5AAL4_ARRAY_NBLIG"
-
 
     Scenario: 5. Creation
         Then the user clicks the "Create" main action button on the right panel
