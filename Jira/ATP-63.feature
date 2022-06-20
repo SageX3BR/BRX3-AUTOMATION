@@ -69,6 +69,13 @@ Feature: ATP-63
 
     Scenario: 7. Attachments
         When the user clicks the "Attachments" main action button on the right panel
+        Then the "Attachments" screen is displayed
+        And the user selects the fixed data table of section: "Attachments"
+        And the user selects first row of the selected data table
+        And the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
+        And the value of the selected cell contains ".XML"
+        And the user selects the fixed cell with X3 field name: "AOBJTXT_M1" and row number: 1
+        And the value of the selected cell contains "XML Dist"
         And the user clicks the "Close" main action button on the right panel
 
     Scenario: 8. Logout
