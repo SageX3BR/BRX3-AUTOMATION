@@ -71,12 +71,16 @@ Feature: ATP-57
         And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
         And the user clicks the "Post" button in the header
-        And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_NUM"
-        And the user stores the value of the selected text field with the key: "SIHNUM"
+        Then the user clicks the Close page action icon on the header panel
+        And the user selects the text field with X3 field name: "SIH0_XQNUMNFE"
+        And the user stores the value of the selected text field with the key: "NFE_NUM"
 
     Scenario: 5. Attachments
-        When the user clicks the "Attachments" main action button on the right panel
+        Given the user clicks the "Attachments" main action button on the right panel
+        And the user selects the fixed data table of section: "Attachments"
+        And the user selects first row of the selected data table
+        And the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
+        And the value of the selected cell has string pattern "*[NFE_NUM]*.XML"
         And the user clicks the "Close" main action button on the right panel
 
     Scenario: 6. Logout
