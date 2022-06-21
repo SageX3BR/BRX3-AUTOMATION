@@ -113,10 +113,8 @@ Feature: ATP-59
 
     Scenario: 7. Create SRL document
         Given the user clicks the "Create" main action button on the right panel
-        When the "Print labels" screen is displayed
-        Then the user clicks the Close page action icon on the header panel
-        Then a confirmation dialog appears with the message "Record has been created"
-        Given the user clicks the "SEFAZ" action button on the header drop down
+        And a confirmation dialog appears with the message "Record has been created"
+        And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         When the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
@@ -129,9 +127,7 @@ Feature: ATP-59
         Given the user clicks the "Attachments" main action button on the right panel
         And the user selects the fixed data table of section: "Attachments"
         And the user selects first row of the selected data table
-        And the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
+        Then the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
         And the value of the selected cell has string pattern "*[NFE_NUM]*"
         And the user clicks the "Close" main action button on the right panel
-
-    Scenario: 9. Logout
         And the user logs-out from the system
