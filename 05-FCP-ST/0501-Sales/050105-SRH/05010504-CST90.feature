@@ -71,9 +71,9 @@ Feature:05010504-CST90
 
     Scenario: 05010504-05 Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
-        When the user selects the text field with X3 field name: "XQSDH1_TOTBASEFCPST"
+        When the user selects the text field with name: "FCP-ST Calc. base"
         And the value of the selected text field is "4,271.07"
-        And the user selects the text field with X3 field name: "XQSDH1_TOTICMSFCPST"
+        And the user selects the text field with name: "ICMS FCP-ST value"
         And the value of the selected text field is "85.42"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears

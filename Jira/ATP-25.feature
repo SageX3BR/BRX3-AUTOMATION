@@ -128,6 +128,8 @@ Feature: ATP-25
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
+        And the user selects the text field with name: "Sales site"
+        And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         And the user clicks the "Post" button in the header
@@ -141,8 +143,8 @@ Feature: ATP-25
         And the value of the selected text field is "Denegated Invoice"
         And the user waits 2 seconds
         When the user clicks the "Accounting reversal" action button on the header drop down
-        And a confirmation dialog appears with the message "Document successfully reversed."
-        Then the user clicks the "Ok" option in the alert box
+        And an alert box with the text "Document successfully reversed." appears
+        And the user clicks the "Ok" option in the alert box
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

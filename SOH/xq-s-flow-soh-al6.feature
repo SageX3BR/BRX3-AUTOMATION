@@ -110,7 +110,7 @@ Feature: xq-s-flow-soh-al6
 
     Scenario: Resume - Check Calculated Values
         Given the user clicks the "Tax Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSOH1_TOTVALFINST"
+        And the user selects the text field with name: "ICMS ST value"
         And the value of the selected text field is "152.54"
 
     Scenario: Logout

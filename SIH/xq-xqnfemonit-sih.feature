@@ -48,6 +48,7 @@ Feature:xq-xqnfemonit-sih
         And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "FATURA"
+        Then the user clicks the Close page action icon on the header panel
 
     Scenario: NF-e monitoring Filter
 
@@ -70,7 +71,6 @@ Feature:xq-xqnfemonit-sih
         Then a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
-        #And the user waits 10 seconds
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
