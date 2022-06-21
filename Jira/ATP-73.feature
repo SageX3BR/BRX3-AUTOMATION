@@ -1,42 +1,28 @@
-###########################################################################
-# Header
-# -------------------------------------------------------------------------
-# - Test code:ATP-64
-# - Description: Garantir que XML de distribuição seja anexado junto ao documento de origem ao transmitir uma GESPNH
-# - Jira: ATP-64
-# - Legislation: BR addon
-# - Created by : Diego Oliveira
-# - Created date : 17/06/2022
-# - Updated by :
-# - Updated date :
-# - Status :
-###########################################################################
 
-Feature: ATP-64
+
+Feature: ATP-73
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    Scenario: 2.Creation PTH
+    Scenario: 2. PTH Header
         Given the user opens the "GESPTH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase receipt ALL : Full entry" screen is displayed
-        #Header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
-        #General Tab
         When the user clicks the "General Data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "113" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
-    #Lines
-    Scenario Outline: 3.Add Lines
+
+    Scenario Outline: 3. PTH Add Lines
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -50,10 +36,10 @@ Feature: ATP-64
         And the user adds the text <XQORIGEMICMS> in selected cell
         Then the user hits enter
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS |
-            | 1   | "BMS001" | "28"   | "15.23" | "2101" | "0"          | "40"      |
+            | LIN | ITMREF   | QTYUOM | GROPRI | XQCFOP | XQORIGEMICMS | XQCSTICMS |
+            | 1   | "BMS001" | "30"   | "100"  | "2101" | "0"          | "40"      |
 
-    Scenario: 4.Create/Sefaz/Validation
+    Scenario: 4. PTH Creation / SEFAZ / Posting
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
@@ -66,13 +52,12 @@ Feature: ATP-64
         And the user clicks the "Close page" main action button on the right panel
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: 5.Creating Purchase Return PNH
+    Scenario: 5. Creating Purchase Return PNH
         Given the user opens the "GESPNH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase return ALL : Full entry" screen is displayed
-        #Filling the Invoice header information
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
         And the user writes "BR011" to the selected text field and hits tab key
@@ -81,21 +66,20 @@ Feature: ATP-64
         And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
         And the user writes "130" to the selected text field
         Then the user hits tab
-        #Filter with the order created above
+
+    Scenario: 6. Picking PTH > PNH
         When the user clicks the "Selection criteria" action button on the header drop down
         And the "Preloading Criteria" screen is displayed
         And the user selects the text field with X3 field name: "PCRITRCP_WNUMRCP"
         And the user writes the stored text with key "DOCPTH" in the selected text field and hits tab key
         And the user clicks the "OK" main action button on the right panel
-
-    Scenario: 6.Picking
         When the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR001" of the picking list panel
         Then the user checks the selected picking list panel item
         And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
-    Scenario Outline: 7.Lines
+    Scenario Outline: 7. PNH Lines
         Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALL1_PTDLIN"
         And the user selects cell with X3 field name: "WE7ALL1_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell
@@ -115,81 +99,62 @@ Feature: ATP-64
             | LIN    | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
             | "1000" | "6201" | "0"          | "00"      | "50"     | "01"     | "01"     | "999"  |
 
-    Scenario: 8.Creation
+    Scenario: 8. PNH - Creation / SEFAZ / POST
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: 9.Transmission
+        And the user selects the text field with X3 field name: "WE7ALL1_PNHNUM"
+        And the user stores the value of the selected text field with the key: "PNHNUM"
         And the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
         And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         Then the user clicks the "Close page" main action button on the right panel
-
-    Scenario: 10. SIH Creation
-        Given the user opens the "GESSIH" function
-        And the user selects the data table in the popup
-        And the user selects cell with text: "ALL Full entry invoice" and column header: ""
-        And the user clicks on the selected cell
-        Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-        When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_SALFCY"
-        And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_SIVTYP"
-        And the user writes "BRNFC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_BPCINV"
-        And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSIH0_CODOPF"
-        And the user writes "100" to the selected text field and hits tab key
-        And the user hits escape
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-
-    Scenario Outline: Add Lines
-        Given the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
-        And the user adds the text <QTY> in selected cell
-        And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
-        And the user adds the text <GROPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
-        And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK5ALL4_XQOICMS"
-        And the user adds the text <XQOICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
-        And the user adds the text <XQCENQ> in selected cell
-        And the user hits enter
-        Examples:
-            | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "1" | "100"  | "6102" | ""        | "0"     | "00"      | "999"  |
-
-    Scenario: 11. Document Creation
-        When the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: 12. Transmission and Validation
-        When the user clicks the "SEFAZ" action button on the header drop down
+        When the user clicks the "Validation" button in the header
+        And the user clicks the "Ok" opinion in the alert box
         And a log panel appears
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "Return Validation End"
+        And the user clicks the "Close page" main action button on the right panel
+        Then the user clicks the Close page action icon on the header panel
+
+    Scenario: 9. GESXQSADD - Header
+        Given the user opens the "GESXQSADD" function
+        Then the "Additional Invoice" screen is displayed
+        When the user clicks the "New" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSADDI0_CPY"
+        And the user writes "BR10" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSADDI0_FCY"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the drop down list with X3 field name: "XQSADDI0_DOCTYP"
+        And the user clicks on "Purchase Return (PNH)" option of the selected drop down list
+        Then the value of the selected drop down list is "Purchase Return (PNH)"
+        And the user selects the text field with X3 field name: "XQSADDI0_ORIDOCNUM"
+        And the user writes the stored text with key "PNHNUM" in the selected text field and hits tab key
+
+    Scenario: 10. GESXQSADD - Tax detail
+        Given the user clicks the "Tax detail" action button on the header drop down
+        When the "Tax detail" screen is displayed
+        Then the user selects the text field with X3 field name: "XQSTD1_CSTICMS"
+        And the user writes "41" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSTD1_XQCENQ"
+        And the user writes "301" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSTD1_CSTIPI"
+        And the user writes "03" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSTD1_CSTPIS"
+        And the user writes "07" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSTD1_CSTCOF"
+        And the user writes "07" to the selected text field and hits tab key
+        And the user clicks the "OK" action button on the header drop down
+
+    Scenario: 11. GESXQSADD - Creation / SEFAZ
+        Given the user clicks the "Close" main action button on the right panel
+        Then the user clicks the "Yes" opinion in the alert box
+        And the user clicks the "Create" main action button on the right panel
+        Given the user clicks the "SEFAZ" action button on the header drop down
+        When a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
         And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_XQNUMNFE"
-        And the user stores the value of the selected text field with the key: "NFE_NUM"
-
-    Scenario: 13. Attachments
-        Given the user clicks the "Attachments" main action button on the right panel
-        And the user selects the fixed data table of section: "Attachments"
-        And the user selects first row of the selected data table
-        And the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
-        And the value of the selected cell has string pattern "*[NFE_NUM]*.XML"
-        And the user clicks the "Close" main action button on the right panel
-
-    Scenario: 14. Logout
-        And the user logs-out from the system
+        Then the user clicks the "Close page" main action button on the right panel
+        Then the user logs-out from the system
