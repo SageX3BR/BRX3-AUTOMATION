@@ -66,16 +66,15 @@ Feature: ATP-63
         And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
         And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQPTH1_NUMNFE"
+        And the user stores the value of the selected text field with the key: "NFE_NUM"
 
     Scenario: 7. Attachments
-        When the user clicks the "Attachments" main action button on the right panel
-        Then the "Attachments" screen is displayed
+        Given the user clicks the "Attachments" main action button on the right panel
         And the user selects the fixed data table of section: "Attachments"
         And the user selects first row of the selected data table
         And the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
-        And the value of the selected cell contains ".XML"
-        And the user selects the fixed cell with X3 field name: "AOBJTXT_M1" and row number: 1
-        And the value of the selected cell contains "XML Dist"
+        And the value of the selected cell has string pattern "*[NFE_NUM]*.XML"
         And the user clicks the "Close" main action button on the right panel
 
     Scenario: 8. Logout
