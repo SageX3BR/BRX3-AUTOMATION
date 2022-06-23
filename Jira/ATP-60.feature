@@ -9,7 +9,7 @@
 # - Created date : 21/06/2022
 # - Updated by :
 # - Updated date :
-# - Status : In Progress
+# - Status : Done
 ###########################################################################
 
 Feature: ATP-60
