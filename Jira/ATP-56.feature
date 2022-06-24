@@ -1,10 +1,11 @@
 ###########################################################################
 # - Test code: ATP-56
-# - Description:
+# - Description: Garantir que o picking dos serviços de diferentes SOH's
+#                sejam concatenados na Observação Adicional da SIH
 # - Jira: ATP-56
 # - Legislation: BR addon
 # - Created by : Diogo Nascimento
-# - Created date :
+# - Created date : 24/06/2022
 # - Updated by :
 # - Status :
 ###########################################################################
