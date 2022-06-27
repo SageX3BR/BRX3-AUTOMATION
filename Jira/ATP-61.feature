@@ -2,7 +2,8 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: ATP-61
-# - Description: Garantir que XML de distribuição seja anexado junto ao documento de origem ao transmitir uma GESSIH
+# - Description: Garantir que a NFE seja criada pela GESSIH e transmitida pela XQNFEAUT
+#   além de verificar se o número da nota está correto no XML anexado junto ao documento.
 # - Jira: ATP-61
 # - Created by : Douglas Duarte
 # - Created date : 24/06/2022
