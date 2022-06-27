@@ -107,5 +107,5 @@ Feature: ATP-61
         And the value of the selected cell has string pattern "*[NFE_NUM]*.XML"
         And the user clicks the "Close" main action button on the right panel
 
-    Scenario: 7. Logout
+    Scenario: 8. Logout
         And the user logs-out from the system
