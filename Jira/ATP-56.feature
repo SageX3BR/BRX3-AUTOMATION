@@ -6,7 +6,7 @@
 # - Legislation: BR addon
 # - Created by : Diogo Nascimento
 # - Created date : 24/06/2022
-# - Updated by :
+# - Updated by : Diogo
 # - Status :
 ###########################################################################
 
