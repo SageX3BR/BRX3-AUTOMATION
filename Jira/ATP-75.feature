@@ -1,21 +1,24 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: ATP-59
-# - Description: Garantir que XML de distribuição seja anexado junto ao documento
-#                de origem ao transmitir uma Devolução de Empréstimo GESSRL
-# - Jira: ATP-59
-# - Created by : Fausto A Neto
-# - Created date : 17/06/2022
-# - Updated by :
-# - Updated date :
-# - Status : Done
+# - Test code: ATP-75
+# - Description: Garantir a criação e autorização de numa Nota adicional (GESXQADD) de uma GESSRL
+# - Jira: ATP-75
+# - Legislation: BRA
+# - Created by : Ricardo Ribeiro
+# - Created date : 22/06/2022
+# - Update date : 29/06/2022
 ###########################################################################
 
-Feature: ATP-59
+Feature: ATP-75
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
+
+
+    # #--------------------------------------------------------------------------------
+    # #Creation of the Delivery
+    # #--------------------------------------------------------------------------------
 
     Scenario: 2. Create a Delivery
         Given the user opens the "GESSDH" function
@@ -113,21 +116,62 @@ Feature: ATP-59
 
     Scenario: 7. Create SRL document
         Given the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
-        And the user clicks the "SEFAZ" action button on the header drop down
+        When the "Print labels" screen is displayed
+        Then the user clicks the Close page action icon on the header panel
+        Then a confirmation dialog appears with the message "Record has been created"
+        And the user selects the text field with name: "Return no."
+        And the user stores the value of the selected text field with the key: "FATURA"
+
+    Scenario: Sefaz
+        Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         When the user selects the main log panel of the page
         And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
         And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "XQSRL1_NUMNFE"
-        And the user stores the value of the selected text field with the key: "NFE_NUM"
-
-    Scenario: 8. Attachments
-        Given the user clicks the "Attachments" main action button on the right panel
-        And the user selects the fixed data table of section: "Attachments"
-        And the user selects first row of the selected data table
-        Then the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
-        And the value of the selected cell has string pattern "*[NFE_NUM]*"
         And the user clicks the "Close" main action button on the right panel
+        And the user clicks the "Close page" main action button on the right panel
+
+    Scenario: 9.GESXQSADD Creation
+        Given the user opens the "GESXQSADD" function
+        Then the "Additional Invoice" screen is displayed
+        #Header
+        When the user clicks the "New" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSADDI0_CPY"
+        And the user writes "BR10" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSADDI0_FCY"
+        And the user writes "BR011" to the selected text field and hits tab key
+        And the user selects the drop down list with X3 field name: "XQSADDI0_DOCTYP"
+        And the user clicks on "Loan Returns (SRL)" option of the selected drop down list
+        Then the value of the selected drop down list is "Loan Returns (SRL)"
+        And the user selects the text field with X3 field name: "XQSADDI0_ORIDOCNUM"
+        And the user writes the stored text with key "FATURA" in the selected text field and hits tab key
+
+    Scenario: 10.Tax detail
+        Given the user clicks the "Tax detail" action button on the header drop down
+        When the "Tax detail" screen is displayed
+        Then the user selects the text field with X3 field name: "XQSTD1_CSTICMS"
+        And the user writes "41" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSTD1_XQCENQ"
+        And the user writes "301" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSTD1_CSTIPI"
+        And the user writes "03" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSTD1_CSTPIS"
+        And the user writes "07" to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "XQSTD1_CSTCOF"
+        And the user writes "07" to the selected text field and hits tab key
+        And the user clicks the "OK" action button on the header drop down
+
+    Scenario: 11.Resume - Creation and Transmission
+        Given the user clicks the "Close" main action button on the right panel
+        Then the user clicks the "Yes" opinion in the alert box
+        And the user clicks the "Create" main action button on the right panel
+        Given the user clicks the "SEFAZ" action button on the header drop down
+        When a log panel appears
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
+        Then the user clicks the "Close page" main action button on the right panel
+        Then the user clicks the "Close page" main action button on the right panel
+
+    Scenario: 12. Logout
         And the user logs-out from the system
