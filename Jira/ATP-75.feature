@@ -7,6 +7,7 @@
 # - Legislation: BRA
 # - Created by : Ricardo Ribeiro
 # - Created date : 22/06/2022
+# - Update date : 29/06/2022
 ###########################################################################
 
 Feature: ATP-75
