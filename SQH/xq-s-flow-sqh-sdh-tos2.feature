@@ -186,12 +186,14 @@ Feature: xq-s-flow-sqh-sdh-tos2
 
         Given the user selects editable table row number: <LIN>
         And the user selects cell with X3 field name: "WK4ALL1_XQCFOP" of selected row
-        And the user adds the text <XQCFOP> in selected cell and hits enter key
+        And the user adds the text <XQCFOP> in selected cell
+        And the user selects cell with X3 field name: "WK4ALL1_XQVARCFOP" of selected row
+        And the user adds the text <XQVARCFOP> in selected cell and hits tab key
 
         Examples:
-            | LIN | XQCFOP |
-            | 1   | "6923" |
-            | 2   | "6923" |
+            | LIN | XQCFOP | XQVARCFOP |
+            | 1   | "6923" | "1"       |
+            | 2   | "6923" | "1"       |
 
     Scenario: 2.1. Create and Store Doc Number
 
