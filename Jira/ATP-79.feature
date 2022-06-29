@@ -28,7 +28,7 @@ Feature: ATP-79
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
-        And the user writes "202" to the selected text field
+        And the user writes "200" to the selected text field
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
@@ -47,19 +47,14 @@ Feature: ATP-79
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI    | XQSTISS | XQEXISS |
-            | 1   | "SER001" | "1" | "1000.00" | "1"     | "1"     |
+            | 1   | "SER020" | "1" | "1000.00" | "1"     | "1"     |
 
     Scenario: 3. Inserir Desconto
         Given the user clicks the "Invoicing" tab selected by title
         When the user selects the data table of section: "Invoicing elements"
+        And the user selects cell with column header: "% or amount" and row number: 2
+        And the user adds the text "10" in selected cell and hits tab key
 
-        And the user selects cell with column header: "Short description" and row number: 2
-
-        And
-        And the user writes "10" to the selected text field and hits tab key
-        And the user adds the text <XQSTISS> in selected cell
-        the user selects the fixed data table for x3 field name: "WK5ALL2_INVDTAAMT"
-        Given
     Scenario: 4. Transmissão NFS-e
         Given the user clicks the "Create" main action button on the right panel
         Given the user clicks the "Transmit RPS" action button on the header drop down
@@ -69,6 +64,7 @@ Feature: ATP-79
         Then the user clicks the Close page action icon on the header panel
         Given the user selects the text field with X3 field name: "SIH0_NUM"
         Then the user stores the value of the selected text field with the key: "SIH_NUM"
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: 5. Validação do RPS
         Given the user opens the "CONSXQRPS" function
@@ -88,7 +84,7 @@ Feature: ATP-79
         And the user selects first row of the selected data table
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains ""ValTotalRecebido": 4000"
+        And the value of the selected text field contains ""ItemDescIncondicionado": 100"
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
