@@ -67,10 +67,9 @@ Feature: ATP-75
         Then a confirmation dialog appears with the message "Record has been created"
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
-        When the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        Then the user clicks the Close page action icon on the header panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the value of the selected text field is "Authorized invoice"
         Given the user clicks the "Validation" button in the header
         When a dialog box appears
         Then the user clicks the "Ok" opinion in the alert box
@@ -126,9 +125,16 @@ Feature: ATP-75
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         When the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        And the user clicks the "Close" main action button on the right panel
+        And the user clicks the "Close page" main action button on the right panel
+        #Verificar status da nota (6 = Autorizada)
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
+        And the value of the "Result" text field is "6"
+        Then the user clicks the Close page action icon on the header panel
         And the user clicks the "Close page" main action button on the right panel
 
     Scenario: 9.GESXQSADD Creation
@@ -167,10 +173,9 @@ Feature: ATP-75
         And the user clicks the "Create" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
         When a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        Then the user clicks the "Close page" main action button on the right panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
+        And the value of the selected text field is "Autorizada"
         Then the user clicks the "Close page" main action button on the right panel
 
     Scenario: 12. Logout

@@ -129,10 +129,9 @@ Feature: xq-s-flow-sqh-sdh-tos2
         Then the user clicks the "SEFAZ" action button on the header drop down
         ##And the user waits 10 seconds
         Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the value of the selected text field is "Authorized invoice"
     Scenario: 8. Create and Store Doc Number
 
         Given the user clicks the "Post" action button on the header drop down
@@ -202,10 +201,9 @@ Feature: xq-s-flow-sqh-sdh-tos2
         Then the user clicks the "SEFAZ" action button on the header drop down
         ##And the user waits 10 seconds
         Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
