@@ -115,8 +115,6 @@ Feature: ATP-75
 
     Scenario: 7. Create SRL document
         Given the user clicks the "Create" main action button on the right panel
-        When the "Print labels" screen is displayed
-        Then the user clicks the Close page action icon on the header panel
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with name: "Return no."
         And the user stores the value of the selected text field with the key: "FATURA"

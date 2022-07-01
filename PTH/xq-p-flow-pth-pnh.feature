@@ -78,7 +78,6 @@ Feature: xq-p-flow-pth-pnh
         And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        Then the user stores the value of the selected text field with the key: "CHAVENFEPTH"
 
     Scenario: Header PNH
         Given the user opens the "GESPNH" function
