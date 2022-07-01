@@ -79,6 +79,7 @@ Feature:xq-p-flow-pth-pnh-modbcst6-cst10
         And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
         And the user stores the value of the selected text field with the key: "DOCPTH"
+        Then the user stores the value of the selected text field with the key: "CHAVENFEPTH"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
@@ -91,7 +92,6 @@ Feature:xq-p-flow-pth-pnh-modbcst6-cst10
         And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        Then the user stores the value of the selected text field with the key: "CHAVENFEPTH"
 
 
 
