@@ -77,6 +77,7 @@ Feature: ATP-61
         And the user writes today to the selected date field
         And the user selects the text field with X3 field name: "XQRPSAUT1_SENDLIMIT"
         And the user writes "1" to the selected text field and hits enter key
+        And the user waits 60 seconds
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
 
