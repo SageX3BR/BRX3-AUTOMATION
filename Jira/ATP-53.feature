@@ -82,69 +82,113 @@ Feature: ATP-53
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "SIH0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SRH0_BPCORD"
+        And the user selects the text field with X3 field name: "SIH0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
-        And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
-        And the user writes the stored text with key "SDH_NUM10" in the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "SCRITSIH_CRISDHNUM"
+        And the user writes the stored text with key "SIH_NUM10" in the selected text field and hits tab key
         And the user clicks the "OK" main action button on the right panel
         #Picking the delivery / All items
-        And the user clicks the "Delivery selection" link on the left panel
+        And the user clicks the "Invoice selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "SDH_NUM10" and with the text containing "BR001" of the picking list panel
+        And the user selects the item with the stored text with key "SIHNUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "XQSRH1_CODOPF"
-        And the user writes "140" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "XQSRH1_DTEMI"
-        And the user writes today to the selected date field
-        And the user selects the date field with X3 field name: "XQSRH1_DTSAIENT"
-        And the user writes today to the selected date field
-        And the user clicks the "Lines (tax)" tab selected by title
-        And the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"
-        Then the user selects first row of the selected data table
+        And the user selects the text field with X3 field name: "XQSIH0_CODOPF"
+        And the user writes "105" to the selected text field and hits tab key
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    Scenario Outline: 6. Add Lines
-        Given the user selects cell with X3 field name: "XQSRH3_CFOP" of selected row
-        And the user adds the text <CFOP> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_OICMS" of selected row
-        And the user adds the text <ORIICMS> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_CSTICMS" of selected row
-        And the user adds the text <CSTICMS> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_XQCENQ" of selected row
+    Scenario Outline: 3. SIH lines
+        Given the user selects editable table row number: <LIN>
+        And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
+        And the user adds the text <ITMREF> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
+        And the user adds the text <QTY> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
+        And the user adds the text <GROPRI> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCFOP"
+        And the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQOICMS"
+        And the user adds the text <XQOICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
+        And the user adds the text <XQCSTICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_CSTIPI" of selected row
-        And the user adds the text <IPICST> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_CSTPIS" of selected row
-        And the user adds the text <PISCST> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_CSTCOF" of selected row
-        And the user adds the text <COFCST> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_VALICMSOP" of selected row
-        And the user adds the text <VALICMS> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_VALICMSDEVID" of selected row
-        And the user adds the text <VICMSDEV> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_IPIBCALC" of selected row
-        And the user adds the text <IPIBCAL> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_VALIPI" of selected row
-        And the user adds the text <IPIVAL> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_BASEPISVAL" of selected row
-        And the user adds the text <PISBASE> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_VALPIS" of selected row
-        And the user adds the text <PISVAL> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_BASECOFVAL" of selected row
-        And the user adds the text <COFBASE> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_VALCOF" of selected row
-        And the user adds the text <COFVAL> in selected cell
         And the user hits enter
-        Then the user selects table row that is below the currently selected row
+        # Examples:
+        #     | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
+        #     | 1   | "BMS001" | "2" | "234.78" | "6101" | "0"     | "00"      | "999"  |
+
+
         # Alterando os valores dos impostos entre as linhas, exemplo: ICMS de 1.33 e 0.34 para 1.30 e 0.37
         Examples:
-            | CFOP   | ORIICMS | CSTICMS | XQCENQ | IPICST | PISCST | COFCST | VALICMS | VICMSDEV | IPIBCAL | IPIVAL | PISBASE | PISVAL | COFBASE | COFVAL |
-            | "2901" | "0"     | "00"    | "999"  | "49"   | "01"   | "01"   | "1.30"  | "1.30"   | "19.19" | "1.90" | "17.85" | "0.10" | "17.85" | "0.50" |
-            | "2901" | "0"     | "00"    | "999"  | "49"   | "01"   | "01"   | "0.37"  | "0.37"   | "4.68"  | "0.49" | "4.35"  | "0.05" | "4.35"  | "0.17" |
+            | LIN | QTY | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
+            | 1   | "1" | "2209" | "0"     | "00"      | "999"  |
 
-    Scenario: 7. Return Creation
-        Given the user clicks the "Create" main action button on the right panel
-        When a confirmation dialog appears with the message "Record has been created"
+
+    # DADO a criação de uma nota de crédito (SIH)
+    # QUANDO o usuário acessar a tela “Detalhamento de Impostos“ da linha
+    # ENTÃO os campos, CST, Base e Valor de todos os tributos (ICMS, IPI, PIS e COFINS) devem permitir edição
+    Scenario: 4. SIH Creation
+        When the user clicks the "Create" main action button on the right panel
+        And a confirmation dialog appears with the message "Record has been created"
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
+
+
+    Scenario Outline: Tax Detail - Check Calculated Values
+        Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK5ALL4_ITMREF"
+        And the user selects cell with X3 field name: "WK5ALL4_XQDETIMPOSTO" of selected row
+        When the user clicks on the icon contained in the selected cell
+        Then the "Tax determination" screen is displayed
+        #Check Values
+        And the user selects the text field with X3 field name: "XQDTIMP1_CSTICMS"
+        And the value of the selected text field is <CSTICMS>
+        And the user selects the text field with X3 field name: "XQDTIMP1_ICMSBCALC"
+        And the value of the selected text field is <ICMSBCALC>
+        And the user selects the text field with X3 field name: "XQDTIMP1_VALICMSDEVID"
+        And the value of the selected text field is <VALICMSDEVID>
+        And the user selects the text field with X3 field name: "XQDTIMP1_CSTIPI"
+        And the value of the selected text field is <CSTIPI>
+        And the user selects the text field with X3 field name: "XQDTIMP1_IPIBCALC"
+        And the value of the selected text field is <IPIBCALC>
+        And the user selects the text field with X3 field name: "XQDTIMP1_VALIPI"
+        And the value of the selected text field is <VALIPI>
+        And the user selects the text field with X3 field name: "XQDTIMP1_VLCREDIPI"
+        And the value of the selected text field is <VLCREDIPI>
+        #Valores PIS
+        And the user selects the text field with X3 field name: "XQDTIMP1_CSTPIS"
+        And the value of the selected text field is <CSTPIS>
+        And the user selects the text field with X3 field name: "XQDTIMP1_BASEPISVAL"
+        And the value of the selected text field is <BASEPISVAL>
+        And the user selects the text field with X3 field name: "XQDTIMP1_VALPIS"
+        And the value of the selected text field is <VALPIS>
+        And the user selects the text field with X3 field name: "XQDTIMP1_BCCREDPIS"
+        And the value of the selected text field is <BCCREDPIS>
+        And the user selects the text field with X3 field name: "XQDTIMP1_VLCREDPIS"
+        And the value of the selected text field is <VLCREDPIS>
+        #Valores COFINS
+        And the user selects the text field with X3 field name: "XQDTIMP1_CSTCOF"
+        And the value of the selected text field is <CSTPIS>
+        And the user selects the text field with X3 field name: "XQDTIMP1_BASECOFVAL"
+        And the value of the selected text field is <BASEPISVAL>
+        And the user selects the text field with X3 field name: "XQDTIMP1_VALCOF"
+        And the value of the selected text field is <VALPIS>
+        And the user selects the text field with X3 field name: "XQDTIMP1_BCCREDCOF"
+        And the value of the selected text field is <BCCREDPIS>
+        And the user selects the text field with X3 field name: "XQDTIMP1_VLCREDCOF"
+        And the value of the selected text field is <VLCREDPIS>
+        Then the user clicks the "OK" button in the popup header
+        Then the user clicks the Close page action icon on the header panel
+        #234,78, "16,4400"
+        Examples:
+            | CSTICMS | ICMSBCALC | VALICMSDEVID | CSTIPI | IPIBCALC | VALIPI | VLCREDIPI | CSTPIS | BASEPISVAL | VALPIS | BCCREDPIS | VLCREDPIS | CSTCOF | COFBCALC | VALCOF | VLCREDCOF |
+            | "00"    | "234.77"  | "16.4300"    | 49     | "234.77" | 11.73  | 11.73     | 72     | "234.77"   | 3.87   | "234.77"  | 3.87      | 72     | "234.77" | 11.84  | 11.84     |
+
+
+
+
+    Scenario: SEFAZ
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
@@ -157,9 +201,11 @@ Feature: ATP-53
         And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "SRH0_SRHNUM"
-        And the user stores the value of the selected text field with the key: "SRH_NUM"
+        And the user selects the text field with X3 field name: "SIHC0_NUM"
+        And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the Close page action icon on the header panel
+
+
 
     Scenario: 8. XML tags validation
         Given the user opens the "XQCONSNFE" function
