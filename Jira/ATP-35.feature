@@ -1,3 +1,16 @@
+###########################################################################
+# Header
+# -------------------------------------------------------------------------
+# - Test code: ATP-35
+# - Description: Garantir que os campos e botões da legislação brasileira estão
+#   desabilitados na criação de Devolução de Venda com estabelecimento não BR
+# - Created by : Fausto A Neto
+# - Created date : 27/05/2022
+# - Updated by : Fausto A Neto
+# - Updated date : 06/07/2022
+# - Status : Done
+###########################################################################
+
 Feature:ATP-35
 
     Scenario: 01.Login scenario
@@ -30,8 +43,9 @@ Feature:ATP-35
         And the user adds the text <GROPRI> in selected cell
         Then the user hits enter
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI |
-            | 1   | "BMS057" | "1" | "100"  |
+            | LIN | ITMREF   | QTY | GROPRI  |
+            | 1   | "BMS057" | "1" | "13.33" |
+            | 2   | "DIS012" | "3" | "249.5" |
 
     Scenario: 04. SDH Creation and validation
         Given the user clicks the "Create" main action button on the right panel
@@ -67,9 +81,15 @@ Feature:ATP-35
         When the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 06. Check Fiscal Operation field disabled and Logout
+    Scenario: 06. Check Fiscal Operation field and buttons disabled
         Given the user clicks the "General data" tab selected by title
-        And the user selects the text field with name: "Fiscal operation"
+        When the user selects the text field with name: "Fiscal operation"
         Then the selected text field should be disabled
+        And the "Calc. memory On/Off" main action button on the right panel is disabled
+        And the user opens the header drop down
+        And the "SEFAZ" secondary action button is disabled
+        And the "Preview Danfe" secondary action button is disabled
+
+    Scenario: 07. Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

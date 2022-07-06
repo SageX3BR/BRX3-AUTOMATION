@@ -1,3 +1,16 @@
+###########################################################################
+# Header
+# -------------------------------------------------------------------------
+# - Test code: ATP-34
+# - Description: Garantir que os campos e botões da legislação brasileira estão
+#   desabilitados na criação de Nota de Crédito com estabelecimento não BR
+# - Created by : Fausto A Neto
+# - Created date : 24/05/2022
+# - Updated by : Fausto A Neto
+# - Updated date : 06/07/2022
+# - Status : Done
+###########################################################################
+
 Feature:ATP-34
 
     Scenario: 01.Login scenario
@@ -30,6 +43,7 @@ Feature:ATP-34
         Examples:
             | LIN | ITMREF   | QTY |
             | 1   | "FIN002" | "2" |
+            | 2   | "FIN003" | "3" |
 
     Scenario: 04. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel
@@ -70,10 +84,14 @@ Feature:ATP-34
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 07. Check Fiscal Operation field disabled
+    Scenario: 07. Check Fiscal Operation field and buttons disabled
         Given the user clicks the "General data" tab selected by title
-        Given the user selects the text field with name: "Fiscal operation"
+        When the user selects the text field with name: "Fiscal operation"
         Then the selected text field should be disabled
+        Given the user opens the header drop down
+        Then the "Calc. memory On/Off" secondary action button is disabled
+        And the "SEFAZ" secondary action button is disabled
+        And the "Preview Danfe" secondary action button is disabled
 
     Scenario: 08. Logout
         And the user clicks the Close page action icon on the header panel

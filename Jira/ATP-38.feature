@@ -2,14 +2,12 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: ATP-38
-# - Description: Garantir que os campos da legislação brasileira estão desabilitados na criação de Encomenda de Compra com estabelecimento não BR
-# - Jira: X3DEV-654
-# - Legislation:
+# - Description: Garantir que os campos e botões da legislação brasileira estão
+#   desabilitados na criação de Encomenda de Compra com estabelecimento não BR
 # - Created by : Gustavo Albanus
 # - Created date : 03/06/2022
 # - Status : Done
 ###########################################################################
-
 
 Feature:ATP-38
 

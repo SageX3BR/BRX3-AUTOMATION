@@ -11,7 +11,6 @@ Feature:ATP-32
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
     Scenario: 2. Create GESSIH
-
         Given the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
@@ -26,7 +25,6 @@ Feature:ATP-32
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
     Scenario Outline: 3. Lines
-
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
