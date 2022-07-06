@@ -77,10 +77,8 @@ Feature: ATP-61
         And the user writes today to the selected date field
         And the user selects the text field with X3 field name: "XQRPSAUT1_SENDLIMIT"
         And the user writes "1" to the selected text field and hits enter key
+        And the user waits 60 seconds
         And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
 
     Scenario: 6. Back to last document invoice created
@@ -95,6 +93,8 @@ Feature: ATP-61
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user writes the stored text with key "NFE_NUM2" in the selected text field and hits enter key
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the value of the selected text field is "Authorized invoice"
         And the user selects the text field with X3 field name: "SIH0_XQNUMNFE"
         And the user stores the value of the selected text field with the key: "NFE_NUM"
 

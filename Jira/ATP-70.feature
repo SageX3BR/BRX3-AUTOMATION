@@ -1,44 +1,40 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: ATP-16
-# - Description: Criar Devolução de Compras Total com IPI
-# - Jira: X3DEV-170
-# - Legislation: BR addon
+# - Test code: ATP-70
+# - Description: Garantir cálculo correto para ICMS-ST para devolução parcial de compra GESPNH
+# - Jira: X3-179494
+# - Legislation: BRA
 # - Created by : Gustavo Albanus
-# - Created date : 23/05/2022
+# - Created date : 01/07/2022
 # - Updated by :
 # - Updated date :
 # - Status : Done
 ###########################################################################
 
-Feature: ATP-16
+Feature: ATP-70
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    Scenario: 2. Creation
+    Scenario: 2. Header
         Given the user opens the "GESPTH" function
         When the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase receipt ALL : Full entry" screen is displayed
-
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
-
-        When the user clicks the "General Data" tab selected by title
-        And the user selects the text field with name: "Fiscal operation"
+        When the user selects the text field with name: "Fiscal operation"
         And the user writes "110" to the selected text field and hits tab key
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
 
-
-    Scenario Outline: Add Lines
-        Given the user selects editable table row number: <LIN>
+    Scenario Outline: 3. Add Lines
+        Given the user clicks the "Lines" tab selected by title
+        When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
+        And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
@@ -46,44 +42,47 @@ Feature: ATP-16
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQORIGEMICMS"
-        And the user adds the text <XQORIGEMICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell
-        Then the user hits enter
-        Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI   | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI |
-            | 1   | "BMS001" | "10"   | "100.00" | "2101" | "0"          | "90"      | "49"     |
-            | 2   | "BMS001" | "10"   | "100.00" | "2101" | "0"          | "90"      | "49"     |
-            | 3   | "BMS001" | "10"   | "100.00" | "2101" | "0"          | "90"      | "49"     |
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
+        Then the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQVARCFOP"
+        Then the user adds the text <XQVARCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTICMS"
+        Then the user adds the text <XQCSTICMS> in selected cell and hits enter key
 
-    Scenario: 3. Create/Sefas/Validation
-        When the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
+        Examples:
+            | LIN | ITMREF   | QTYUOM | GROPRI    | XQCFOP | XQVARCFOP | XQCSTICMS |
+            | 1   | "BMS001" | "10"   | "1000.00" | "2101" | "11"      | "10"      |
+
+
+    Scenario: 4. Creation
+        Given the user clicks the "Create" main action button on the right panel
+        Then a confirmation dialog appears with the message "Record has been created"
+
+    Scenario: 5. Transmission
+        Given the user clicks the "SEFAZ" action button on the header drop down
+        And a log panel appears
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
+        And the user clicks the "Close page" main action button on the right panel
+
+    Scenario: 6. Tax Detail
+        Given the user clicks the "Tax detail" action button on the header drop down
+        Then the "Tax detail" screen is displayed
+        And the user selects the text field with X3 field name: "XQPTD1_BCICMSST"
+        And the value of the selected text field is "15024.3900"
+        And the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
+        And the value of the selected text field is "2,704.39"
+        And the user selects the text field with X3 field name: "XQPTD1_VLFINICMS"
+        And the value of the selected text field is "1,504.39"
+        Then the user clicks the Close page action icon on the header panel
+
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
         And the user stores the value of the selected text field with the key: "DOCPTH"
-        And the user clicks the "SEFAZ" action button on the header drop down
-        And a log panel appears
-        And the user clicks the "Close page" main action button on the right panel
-        #Verificar status da nota (6 = Autorizada)
-        When the user opens the header drop down
-        And the user opens the "Diagnosis..." section on the right panel
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
-        And the value of the "Result" text field is "6"
-        Then the user clicks the Close page action icon on the header panel
-
-    Scenario: 4. Validation Taxes
-        When the user clicks the "Resume" tab selected by title
-        Then the user selects the text field with X3 field name: "XQPTH2_TTIPI"
-        And the value of the selected text field is "300.00"
-        Then the user clicks the Close page action icon on the header panel
+        And the user clicks the Close page action icon on the header panel
 
 
-    Scenario: 5. Creating Purchase Return PNH
+    Scenario: 7. Creating Purchase Return PNH
         Given the user opens the "GESPNH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -118,38 +117,29 @@ Feature: ATP-16
         And the user adds the text <QTYUOM> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQORIGEMICMS" of selected row
-        And the user adds the text <XQORIGEMICMS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTICMS" of selected row
-        And the user adds the text <XQCSTICMS> in selected cell and hits tab key
+        And the user adds the text <XQCSTICMS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTIPI" of selected row
         And the user adds the text <XQCSTIPI> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTPIS" of selected row
         And the user adds the text <XQCSTPIS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTCOF" of selected row
-        Then the user adds the text <XQCSTCOF> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCENQ" of selected row
-        And the user adds the text <XQCENQ> in selected cell and hits enter key
+        Then the user adds the text <XQCSTCOF> in selected cell and hits enter key
+
         Examples:
-            | LIN    | QTYUOM | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
-            | "1000" | "5"    | "6201" | "0"          | "00"      | "50"     | "01"     | "01"     | "999"  |
+            | LIN    | QTYUOM | XQCFOP | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF |
+            | "1000" | "5"    | "6201" | "10"      | "99"     | "49"     | "49"     |
 
 
-    Scenario: 6. Create / Transmit to Sefaz and Validation
+    Scenario: 8. Create / Transmit to Sefaz and Validation
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears
-        And the user clicks the "Close page" main action button on the right panel
-        #Verificar status da nota (6 = Autorizada)
-        When the user opens the header drop down
-        And the user opens the "Diagnosis..." section on the right panel
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "[F:XQPNH]NFESTATUS" to the selected text field and hits enter key
-        And the value of the "Result" text field is "6"
-        Then the user clicks the Close page action icon on the header panel
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
+        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
+        Then the user clicks the "Close page" main action button on the right panel
         When the user clicks the "Validation" button in the header
         And the user clicks the "Ok" opinion in the alert box
         And a log panel appears
@@ -157,12 +147,16 @@ Feature: ATP-16
         And the selected log panel includes the message "Return Validation End"
         And the user clicks the "Close page" main action button on the right panel
 
-    Scenario: 7. Validation Taxes
+    Scenario: 9. Validation Taxes
         When the user clicks the "Tax detail" action button on the header drop down
-        Then the user selects the text field with X3 field name: "XQPTD1_VLIPIDEVOL"
-        And the value of the selected text field is "50.00"
+        Then the user selects the text field with X3 field name: "XQPTD1_BCICMSST"
+        And the value of the selected text field is "7512.2000"
+        Then the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
+        And the value of the selected text field is "1,352.20"
+        Then the user selects the text field with X3 field name: "XQPTD1_VLFINICMS"
+        And the value of the selected text field is "752.20"
         And the user clicks the "Close" main action button on the right panel
-        Then the user clicks the Close page action icon on the header panel
 
-    Scenario: 8. Logout
-        And the user logs-out from the system
+    Scenario: 10. Logout
+        Given the user clicks the Close page action icon on the header panel
+        Then the user logs-out from the system

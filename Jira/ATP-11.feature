@@ -1,14 +1,11 @@
 ###########################################################################
-# Header
-# -------------------------------------------------------------------------
 # - Test code: ATP-11 - SIH - EnvioNFSe
 # - Description: PIS / COFINS cumulativo e não cumulativo
-# - Jira: X3DEV-518
+# - Jira: ATP-11
 # - Created by : Diogo Nascimento
 # - Created date : 02/05/2022
 # - Updated by : -
 # - Updated date : -
-# - Status : []Automated [x]Work In Progress []Broken
 ###########################################################################
 
 Feature: ATP-11
@@ -81,4 +78,3 @@ Feature: ATP-11
     Scenario: 7. Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-
