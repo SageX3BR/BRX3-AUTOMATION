@@ -89,9 +89,17 @@ Feature:ATP-34
         When the user selects the text field with name: "Fiscal operation"
         Then the selected text field should be disabled
         Given the user opens the header drop down
-        Then the "Calc. memory On/Off" secondary action button is disabled
-        And the "SEFAZ" secondary action button is disabled
-        And the "Preview Danfe" secondary action button is disabled
+        Then the "Calc. memory On/Off" action button on the header drop down is disabled
+        And the "FS-DA (Contingency)" action button on the header drop down is disabled
+        And the "SEFAZ" action button on the header drop down is disabled
+        And the "Invoice amendment" action button on the header drop down is disabled
+        And the "Preview Danfe" action button on the header drop down is disabled
+        And the "Export information" action button on the header drop down is disabled
+        And the "Transmit RPS" action button on the header drop down is disabled
+        And the "Validate NFS-e" action button on the header drop down is disabled
+        And the "Legal data" action button on the header drop down is disabled
+        And the "Referenced docs." action button on the header drop down is disabled
+        And the "Accounting reversal" action button on the header drop down is disabled
 
     Scenario: 08. Logout
         And the user clicks the Close page action icon on the header panel

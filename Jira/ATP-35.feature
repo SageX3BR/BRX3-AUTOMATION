@@ -40,8 +40,8 @@ Feature:ATP-35
         And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_GROPRI"
-        And the user adds the text <GROPRI> in selected cell
-        Then the user hits enter
+        And the user adds the text <GROPRI> in selected cell and hits enter key
+
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  |
             | 1   | "BMS057" | "1" | "13.33" |
@@ -85,10 +85,14 @@ Feature:ATP-35
         Given the user clicks the "General data" tab selected by title
         When the user selects the text field with name: "Fiscal operation"
         Then the selected text field should be disabled
-        And the "Calc. memory On/Off" main action button on the right panel is disabled
-        And the user opens the header drop down
-        And the "SEFAZ" secondary action button is disabled
-        And the "Preview Danfe" secondary action button is disabled
+        And the "Calc. memory On/Off" action button on the header drop down is disabled
+        Given the user opens the header drop down
+        Then the "FS-DA (Contingency)" action button on the header drop down is disabled
+        And the "SEFAZ" action button on the header drop down is disabled
+        And the "Invoice amendment" action button on the header drop down is disabled
+        And the "Preview Danfe" action button on the header drop down is disabled
+        And the "Referenced docs." action button on the header drop down is disabled
+        And the "Posting" action button on the header drop down is disabled
 
     Scenario: 07. Logout
         And the user clicks the Close page action icon on the header panel

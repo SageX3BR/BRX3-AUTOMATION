@@ -36,8 +36,8 @@ Feature:ATP-36
         And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
-        And the user adds the text <QTY> in selected cell
-        And the user hits enter
+        And the user adds the text <QTY> in selected cell and hits enter key
+
         Examples:
             | LIN | ITMREF   | QTY |
             | 1   | "BMS012" | "2" |
@@ -50,7 +50,9 @@ Feature:ATP-36
         #And the text field with name: "Fiscal operation" is hidden
         Then the value of the "Total value of the order" text field is ""
         And the user opens the header drop down
-        And the "Calc. memory On/Off" secondary action button is disabled
+        And the "Calc. memory On/Off" action button on the header drop down is disabled
+        And the "Export information" action button on the header drop down is disabled
+        And the "Referenced docs." action button on the header drop down is disabled
 
     Scenario: 05. Logout
         And the user clicks the Close page action icon on the header panel

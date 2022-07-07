@@ -51,12 +51,18 @@ Feature: ATP-37
         And a confirmation dialog appears with the message "Record has been created"
 
     Scenario: 05. Check Fiscal Operation field and buttons disabled
-        Given the user clicks the "Tax summary" tab selected by title
+        Given the user clicks the "Tax Summary" tab selected by title
         Then the value of the "Total shipment value" text field is ""
+
         Given the user opens the header drop down
-        Then the "Calc. memory On/Off" secondary action button is disabled
-        And the "SEFAZ" secondary action button is disabled
-        And the "Preview Danfe" secondary action button is disabled
+        Then the "Calc. memory On/Off" action button on the header drop down is disabled
+        And the "FS-DA (Contingency)" action button on the header drop down is disabled
+        And the "SEFAZ" action button on the header drop down is disabled
+        And the "Invoice amendment" action button on the header drop down is disabled
+        And the "Preview Danfe" action button on the header drop down is disabled
+        And the "Export information" action button on the header drop down is disabled
+        And the "Referenced docs." action button on the header drop down is disabled
+        And the "Posting" action button on the header drop down is disabled
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
