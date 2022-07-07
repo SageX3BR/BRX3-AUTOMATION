@@ -182,25 +182,39 @@ Feature: ATP-53
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        # #Verificar status da nota (6 = Autorizada)
-        # When the user opens the header drop down
-        # And the user opens the "Diagnosis..." section on the right panel
-        # And the user clicks the "Calculator" secondary action button on the right panel
-        # And the "Calculator" screen is displayed
-        # And the user selects the text field with name: "Calculation:"
-        # And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
-        # And the value of the "Result" text field is "6"
-        # Then the user clicks the Close page action icon on the header panel
+        #Verificar status da nota (6 = Autorizada)
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "[F:XQSIH]NFESTATUS" to the selected text field and hits enter key
+        And the value of the "Result" text field is "6"
+        Then the user clicks the Close page action icon on the header panel
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUMC"
 
-    #fALTA AJUSTAR O RESUMO
-    # Scenario: Check Calculated Values
 
-    #     Given the user clicks the "NF-e Summary" tab selected by title
-    #     And the user selects the text field with name: "ICMS ST value"
-    #     And the value of the selected text field is "121.50"
-    #     Then the user clicks the Close page action icon on the header panel
+    Scenario: Check Calculated Values
+
+        Given the user clicks the "NF-e Summary" tab selected by title
+        And the user selects the text field with name: "ICMS base total"
+        And the value of the selected text field is "234.77"
+        And the user selects the text field with name: "ICMS payable value"
+        And the value of the selected text field is "16.43"
+        And the user selects the text field with name: "IPI base total"
+        And the value of the selected text field is "234.77"
+        And the user selects the text field with name: "IPI total"
+        And the value of the selected text field is "11.73"
+        And the user selects the text field with name: "PIS base (R$)"
+        And the value of the selected text field is "234.77"
+        And the user selects the text field with name: "PIS value"
+        And the value of the selected text field is "3.87"
+        And the user selects the text field with name: "COFINS base (R$)"
+        And the value of the selected text field is "234.77"
+        And the user selects the text field with name: "COFINS value"
+        And the value of the selected text field is "3.87"
+        Then the user clicks the Close page action icon on the header panel
 
 
 
