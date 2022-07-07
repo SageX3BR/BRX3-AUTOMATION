@@ -168,7 +168,6 @@ Feature: ATP-53
         And the user selects the text field with X3 field name: "XQDTIMP1_VLCREDCOF"
         And the user writes <VLCREDPIS> to the selected text field and hits tab key
         Then the user clicks the "OK" button in the popup header
-        Then the user clicks the Close page action icon on the header panel
         #234,78, "16,4400"
         Examples:
             | ITMREF   | CSTICMS | ICMSBCALC | VALICMSDEVID | CSTIPI | IPIBCALC | VALIPI  | VLCREDIPI | CSTPIS | BASEPISVAL | VALPIS | BCCREDPIS | VLCREDPIS | CSTCOF | COFBCALC | VALCOF  | VLCREDCOF |
@@ -179,21 +178,29 @@ Feature: ATP-53
 
     Scenario: SEFAZ
         When the user clicks the "Save" main action button on the right panel
+        When the user clicks the "No" opinion in the alert box
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        #Verificar status da nota (6 = Autorizada)
-        When the user opens the header drop down
-        And the user opens the "Diagnosis..." section on the right panel
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
-        And the value of the "Result" text field is "6"
-        Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "SIHC0_NUM"
-        And the user stores the value of the selected text field with the key: "SIHNUM"
-        Then the user clicks the Close page action icon on the header panel
+        # #Verificar status da nota (6 = Autorizada)
+        # When the user opens the header drop down
+        # And the user opens the "Diagnosis..." section on the right panel
+        # And the user clicks the "Calculator" secondary action button on the right panel
+        # And the "Calculator" screen is displayed
+        # And the user selects the text field with name: "Calculation:"
+        # And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
+        # And the value of the "Result" text field is "6"
+        # Then the user clicks the Close page action icon on the header panel
+        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user stores the value of the selected text field with the key: "SIHNUMC"
+
+    #fALTA AJUSTAR O RESUMO
+    # Scenario: Check Calculated Values
+
+    #     Given the user clicks the "NF-e Summary" tab selected by title
+    #     And the user selects the text field with name: "ICMS ST value"
+    #     And the value of the selected text field is "121.50"
+    #     Then the user clicks the Close page action icon on the header panel
 
 
 
@@ -201,7 +208,7 @@ Feature: ATP-53
         Given the user opens the "XQCONSNFE" function
         And the "NF-e Monitoring" screen is displayed
         When the user selects the text field with X3 field name: "XQNFEMNT0_NUMDOC"
-        And the user writes the stored text with key "SIHC0_NUM" in the selected text field and hits tab key
+        And the user writes the stored text with key "SIHNUMC" in the selected text field and hits tab key
         And the user clicks the "Search" button in the header
         Then the user selects the data table with x3 field name: "XQNFEMNT1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
@@ -211,14 +218,13 @@ Feature: ATP-53
         Then the user clicks on the selected row
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         #Verificando os valores dos impostos editados manualmente no Scenario outline 6.
-        And the value of the selected text field contains "<vICMS>234.77</vICMS>"
+        And the value of the selected text field contains "<vBC>234.77</vBC>"
         And the value of the selected text field contains "<vICMS>16.43</vICMS>"
-        And the value of the selected text field contains "<vIPI>11.73</vIPI>"
+        And the value of the selected text field contains "<CST>49</CST>"
         And the value of the selected text field contains "<vIPI>11.73</vIPI>"
         And the value of the selected text field contains "<vPIS>3.87</vPIS>"
-        And the value of the selected text field contains "<vPIS>3.87</vPIS>"
-        And the value of the selected text field contains "<vCOFINS11.84</vCOFINS>"
-        And the value of the selected text field contains "vCOFINS>11.84</vCOFINS>"
+        And the value of the selected text field contains "<CST>72</CST>"
+        And the value of the selected text field contains "<vCOFINS>3.87</vCOFINS>"
 
     Scenario: 9. Logout
         Then the user clicks the Close page action icon on the header panel
