@@ -2,21 +2,21 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: ATP-40
-# - Description: Garantir que os campos da legislação brasileira estão desabilitados na criação de Fatura de Compra com estabelecimento não BR
-# - Jira: X3DEV-654
-# - Legislation:
+# - Description: Garantir que os campos e botões da legislação brasileira estão
+#   desabilitados na criação de Fatura de Compra com estabelecimento não BR
 # - Created by : Gustavo Albanus
 # - Created date : 08/06/2022
+# - Updated by : Fausto A Neto
+# - Updated date : 06/07/2022
 # - Status : Done
 ###########################################################################
-
 
 Feature:ATP-40
 
     Scenario: 01.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    Scenario: 02. GESSOH Header
+    Scenario: 02. GESPIH Header
         Given the user opens the "GESPIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -77,6 +77,16 @@ Feature:ATP-40
         Given the user clicks the "General data" tab selected by title
         Given the user selects the text field with name: "Fiscal operation"
         Then the selected text field should be disabled
+        Given the user opens the header drop down
+        Then the "Auto. tax calc." action button on the header drop down is disabled
+        And the "View log" action button on the header drop down is disabled
+        And the "Tax detail" action button on the header drop down is disabled
+        And the "DI Data" action button on the header drop down is disabled
+        And the "Referenced docs." action button on the header drop down is disabled
+        And the "Invoice amendment" action button on the header drop down is disabled
+        And the "FS-DA (Contingency)" action button on the header drop down is disabled
+        And the "SEFAZ" action button on the header drop down is disabled
+        And the "Preview Danfe" action button on the header drop down is disabled
 
     Scenario: 06. Logout
         And the user clicks the Close page action icon on the header panel
