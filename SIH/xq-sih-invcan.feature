@@ -50,10 +50,9 @@ Feature:xq-sih-invcan
     Scenario: 5. SIH Transmission and Validation
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "SIH0_NUM"
