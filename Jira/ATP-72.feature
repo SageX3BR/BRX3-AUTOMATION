@@ -62,10 +62,9 @@ Feature: ATP-72
     Scenario: 4.Resume - Transmission and Validation
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the value of the selected text field is "Authorized invoice"
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
         Then the user clicks the Close page action icon on the header panel
@@ -116,10 +115,9 @@ Feature: ATP-72
         And the user clicks the "Create" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
         When a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        Then the user clicks the "Close page" main action button on the right panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
+		And the value of the selected text field is "Autorizada"
 
     Scenario: 8.Logout
         Given the user clicks the Close page action icon on the header panel

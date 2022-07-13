@@ -1,14 +1,11 @@
 ###########################################################################
-# Header
-# -------------------------------------------------------------------------
 # - Test code: ATP-11 - SIH - EnvioNFSe
 # - Description: PIS / COFINS cumulativo e não cumulativo
-# - Jira: X3DEV-518
+# - Jira: ATP-11
 # - Created by : Diogo Nascimento
 # - Created date : 02/05/2022
 # - Updated by : -
 # - Updated date : -
-# - Status : []Automated [x]Work In Progress []Broken
 ###########################################################################
 
 Feature: ATP-11
@@ -35,7 +32,7 @@ Feature: ATP-11
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    Scenario Outline: 3. Inserir Linha de Serviço
+    Scenario: 3. Inserir Linha de Serviço
         Given the user selects editable table row number: 1
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text "SER017" in selected cell
@@ -47,10 +44,6 @@ Feature: ATP-11
         And the user adds the text "1" in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQEXISS"
         Then the user adds the text "1" in selected cell and hits enter key
-
-        Examples:
-            | LIN | ITMREF   | QTY | GROPRI    | XQSTISS | XQEXISS |
-            | 1   | "SER001" | "1" | "4368.59" | "1"     | "1"     |
 
     Scenario: 4. Validar impostos na memoria de calculo
         Given the user clicks the "Calc. memory On/Off" action button on the header drop down
@@ -85,4 +78,3 @@ Feature: ATP-11
     Scenario: 7. Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-

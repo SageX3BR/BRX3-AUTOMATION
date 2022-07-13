@@ -6,7 +6,7 @@
 # - Legislation: BR addon
 # - Created by : Diogo Nascimento
 # - Created date : 24/06/2022
-# - Updated by :
+# - Updated by : Diogo
 # - Status :
 ###########################################################################
 
@@ -48,7 +48,7 @@ Feature: ATP-56
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI   | XQSTISS | XQEXISS |
-            | 1   | "SER001" | "1" | "100.00" | "1"     | "1"     |
+            | 1   | "SER020" | "1" | "100.00" | "1"     | "1"     |
 
     Scenario: 3. Create document
         Given the user clicks the "Create" main action button on the right panel
@@ -84,7 +84,7 @@ Feature: ATP-56
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI   | XQSTISS | XQEXISS |
-            | 1   | "SER016" | "1" | "200.00" | "1"     | "1"     |
+            | 1   | "SER017" | "1" | "200.00" | "1"     | "1"     |
 
     Scenario: 5. Create document
         Given the user clicks the "Create" main action button on the right panel
@@ -158,7 +158,7 @@ Feature: ATP-56
         And the user selects first row of the selected data table
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains ""Discriminacao": "Instalação software Office \u000d\u000aBR Automation RPS Transmission"
+        And the value of the selected text field contains ""Discriminacao": "Serviço Generico \u000d\u000aPIS COFINS Retido"
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
