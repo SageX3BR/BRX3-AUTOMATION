@@ -154,11 +154,11 @@ Feature: ATP-46
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
-        Given the user selects the main data table of the page
-        And the user selects the fixed cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" and row number: 1
-        When the value of the selected cell is "Inclusion"
-        Given the user selects the fixed cell with X3 field name: "XQREMESSA1_VALOR" and row number: 1
-        And the value of the selected cell matches the stored text with key "amount"
+        # Given the user selects the main data table of the page
+        # And the user selects the fixed cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" and row number: 1
+        # When the value of the selected cell is "Inclusion"
+        # Given the user selects the fixed cell with X3 field name: "XQREMESSA1_VALOR" and row number: 1
+        # And the value of the selected cell matches the stored text with key "amount"
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
