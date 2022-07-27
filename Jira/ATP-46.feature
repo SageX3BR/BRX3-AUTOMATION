@@ -100,9 +100,6 @@ Feature: ATP-46
         And the user selects the main log panel of the page
         And the user clicks the Close page action icon on the header panel
 
-
-
-
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
         When the user selects the text field with name: "Site"
@@ -114,12 +111,10 @@ Feature: ATP-46
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
-        Then the user waits 1 seconds
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
         And the user clicks the "Ok" opinion in the alert box
-        Then the user waits 2 seconds
 
     Scenario: Delete Open Items
         Given the user opens the "GESSIH" function
@@ -140,14 +135,13 @@ Feature: ATP-46
         Then the user opens "Delete" function on toolbox of the selected row
         When the user selects editable table row number: 3
         Then the user opens "Delete" function on toolbox of the selected row
-        Given the user selects the data table in the popup
-        When the user selects cell with text: "5" and column header: "No."
+        And the user selects editable table row number: 5
+        And the user selects cell with header: "Amount" of selected row
         When the user clicks the "Close" option of the actions panel for the selected cell
-        And the user selects cell with text: "5" and column header: "Amount"
         And the value of the selected cell is stored
-        And the user stores the value of the selected cell with the key: "Amount"
+        And the user stores the value of the selected cell with the key: "amount"
         Then the user clicks the "OK" button in the popup header
-
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
@@ -160,16 +154,15 @@ Feature: ATP-46
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
-        # Then the user waits 1 seconds
-        # Given the user selects the fixed cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" and row number: 1
-        # When the value of the selected cell is "Inclusion"
-        # Given the user selects the fixed cell with X3 field name: "XQREMESSA1_VALOR" and row number: 1
-        # And the value of the selected cell matches the stored text with key "Amount"
+        Given the user selects the main data table of the page
+        And the user selects the fixed cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" and row number: 1
+        When the value of the selected cell is "Inclusion"
+        Given the user selects the fixed cell with X3 field name: "XQREMESSA1_VALOR" and row number: 1
+        And the value of the selected cell matches the stored text with key "amount"
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
         And the user clicks the "Ok" opinion in the alert box
-        Then the user waits 2 seconds
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
