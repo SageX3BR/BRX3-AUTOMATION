@@ -98,17 +98,26 @@ Feature: ATP-71
         And the user selects the item with the stored text with key "SDH_NUM" and with the text containing "SDH" of the picking list panel
         Then the user checks the selected picking list panel item
 
+
     Scenario:8. Complete the document
         Given the user selects the text field with X3 field name: "XQSRH1_CODOPF"
-        And the user writes "105" to the selected text field and hits tab key
+        And the user writes "140" to the selected text field and hits tab key
         And the user clicks the "Lines (tax)" tab selected by title
         Given the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"
         Then the user selects first row of the selected data table
         And the user selects cell with X3 field name: "XQSRH3_OICMS" of selected row
         And the user adds the text "0" in selected cell
         And the user selects cell with X3 field name: "XQSRH3_CSTICMS" of selected row
-        And the user adds the text "00" in selected cell and hits tab key
+        And the user adds the text "00" in selected cell
+        And the user selects cell with X3 field name: "XQSRH3_CSTIPI" of selected row
+        And the user adds the text "00" in selected cell
+        And the user selects cell with X3 field name: "XQSRH3_CSTPIS" of selected row
+        And the user adds the text "01" in selected cell
+        And the user selects cell with X3 field name: "XQSRH3_CSTCOF" of selected row
+        And the user adds the text "01" in selected cell and hits tab key
         And the user hits enter
+
+
 
     Scenario: 9. Document Creation
         When the user clicks the "Create" main action button on the right panel
