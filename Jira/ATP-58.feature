@@ -36,7 +36,7 @@ Feature: ATP-58
     # Then the user clicks the "Yes" opinion in the alert box
     #Filling Lines
 
-    Scenario Outline: Add Lines
+    Scenario Outline: 3. Add Lines
 
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
@@ -57,7 +57,7 @@ Feature: ATP-58
             | 1   | "BMS001" | "1" | "6901" |
             | 2   | "BMS002" | "2" | "6901" |
 
-    Scenario: Create document
+    Scenario: 4. Create document
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
@@ -66,10 +66,9 @@ Feature: ATP-58
         Then the user clicks the "SEFAZ" action button on the header drop down
         # ##And the user waits 10 seconds
         Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
@@ -81,7 +80,7 @@ Feature: ATP-58
     # #Creation of the return invoice
     # #--------------------------------------------------------------------------------
 
-    Scenario: 2. FCP_ST fields and calculation - ICMS CST-900
+    Scenario: 5. FCP_ST fields and calculation - ICMS CST-900
         Given the user opens the "GESSRH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -97,7 +96,7 @@ Feature: ATP-58
         And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
         And the user writes the stored text with key "SDH_NUM10" in the selected text field and hits tab key
         And the user clicks the "OK" main action button on the right panel
-        #Picking the order / All items
+        #Picking the delivery / All items
         And the user clicks the "Delivery selection" link on the left panel
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SDH_NUM10" and with the text containing "BR001" of the picking list panel
@@ -115,7 +114,7 @@ Feature: ATP-58
 
 
     #Lines
-    Scenario Outline: Add Lines
+    Scenario Outline: 6. Add Lines
         Given the user selects cell with X3 field name: "XQSRH3_CFOP" of selected row
         And the user adds the text <CFOP> in selected cell
         And the user selects cell with X3 field name: "XQSRH3_VARCFOP" of selected row
@@ -141,31 +140,36 @@ Feature: ATP-58
             | "2901" | ""      | "0"   | "00"    | "999"  | "49"   | "98"   | "98"   |
             | "2901" | ""      | "0"   | "00"    | "999"  | "49"   | "98"   | "98"   |
 
-    Scenario: Return Creation
+    Scenario: 7. Return Creation
         #Create
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
-        And the user selects the main log panel of the page
-
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
+        #Verificar status da nota (6 = Autorizada)
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
+        And the value of the "Result" text field is "6"
+        Then the user clicks the Close page action icon on the header panel
+        And the user selects the text field with X3 field name: "XQSRH1_NUMNFE"
+        And the user stores the value of the selected text field with the key: "NFE_NUM"
 
-    Scenario: Attachments
-        When the user clicks the "Attachments" main action button on the right panel
-        Then the "Attachments" screen is displayed
+
+    Scenario: 8. Attachments
+        Given the user clicks the "Attachments" main action button on the right panel
         And the user selects the fixed data table of section: "Attachments"
         And the user selects first row of the selected data table
-        And the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
-        And the value of the selected cell contains ".XML"
-        And the user selects the fixed cell with X3 field name: "AOBJTXT_M1" and row number: 1
-        And the value of the selected cell contains "XML Dist"
+        Then the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
+        And the value of the selected cell has string pattern "*[NFE_NUM]*"
         And the user clicks the "Close" main action button on the right panel
-        And the user clicks the "Close page" main action button on the right panel
 
-    Scenario: Logout
+
+    Scenario: 9. Logout
         # And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
 
