@@ -7,8 +7,9 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 20/06/2022
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 28/07/2022
+# - Changes: Incluído as linhas 89 a 95 para editar as linhas
 # - Status :
 ###########################################################################
 
@@ -85,6 +86,13 @@ Feature: ATP-72
         #And the user writes "SDH-BR01122/00000497" to the selected text field and hits tab key
         And the user writes the stored text with key "SDHNUM" in the selected text field and hits tab key
         And the user hits escape
+        And the user selects the fixed data table for x3 field name: "XQSADDI2_ARRAY_NBLIG"
+        Then the user selects first row of the selected data table
+
+    Scenario: Editing Lines
+        Given the user selects cell with X3 field name: "XQSADDI2_QTY" of selected row
+        And the user adds the text "1" in selected cell
+        And the user hits enter
 
     Scenario: 6.Tax detail
         Given the user clicks the "Tax detail" action button on the header drop down
@@ -105,7 +113,7 @@ Feature: ATP-72
         And the user writes "3" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSTD1_BASECOFVAL"
         And the user writes "100.00" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSTD1_VALCOFDESON"
+        And the user selects the text field with X3 field name: "XQSTD1_VALCOF"
         And the user writes "3.00" to the selected text field and hits tab key
         And the user clicks the "OK" action button on the header drop down
 
@@ -117,7 +125,7 @@ Feature: ATP-72
         When a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
-		And the value of the selected text field is "Autorizada"
+        And the value of the selected text field is "Autorizada"
 
     Scenario: 8.Logout
         Given the user clicks the Close page action icon on the header panel
