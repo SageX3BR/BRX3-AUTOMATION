@@ -7,8 +7,9 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 28/06/2022
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 28/07/2022
+# - Changes: Alteração para edição das linhas na GESXQSADD
 # - Status : Done
 ###########################################################################
 
@@ -60,10 +61,9 @@ Feature: ATP-76
         And the user stores the value of the selected text field with the key: "SDH_NUM"
         Then the user clicks the "SEFAZ" action button on the header drop down
         Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
@@ -132,10 +132,16 @@ Feature: ATP-76
         When a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
+        #Verificar status da nota (6 = Autorizada)
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
+        And the value of the "Result" text field is "6"
+        Then the user clicks the Close page action icon on the header panel
         And the user selects the text field with X3 field name: "SRH0_SRHNUM"
         And the user stores the value of the selected text field with the key: "SRHNUM"
         Then the user clicks the Close page action icon on the header panel
@@ -156,6 +162,13 @@ Feature: ATP-76
         #And the user writes "SRTBR0110062" to the selected text field and hits tab key
         And the user writes the stored text with key "SRHNUM" in the selected text field and hits tab key
         And the user hits escape
+        And the user selects the fixed data table for x3 field name: "XQSADDI2_ARRAY_NBLIG"
+        Then the user selects first row of the selected data table
+
+    Scenario: Editing Lines
+        Given the user selects cell with X3 field name: "XQSADDI2_QTY" of selected row
+        And the user adds the text "1" in selected cell
+        And the user hits enter
 
     Scenario: 10.Tax detail
         Given the user clicks the "Tax detail" action button on the header drop down
@@ -186,10 +199,9 @@ Feature: ATP-76
         And the user clicks the "Create" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
         When a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        Then the user clicks the "Close page" main action button on the right panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
+        And the value of the selected text field is "Autorizada"
 
     Scenario: 12.Logout
         Then the user logs-out from the system
