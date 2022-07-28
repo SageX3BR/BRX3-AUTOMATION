@@ -1,3 +1,16 @@
+###########################################################################
+# Header
+# -------------------------------------------------------------------------
+# - Test code: ATP-36
+# - Description: Garantir que os campos e botões da legislação brasileira estão
+#   desabilitados na criação de Encomenda de Venda com estabelecimento não BR
+# - Created by : Fausto A Neto
+# - Created date : 27/05/2022
+# - Updated by : Fausto A Neto
+# - Updated date : 06/07/2022
+# - Status : Done
+###########################################################################
+
 Feature:ATP-36
 
     Scenario: 01.Login scenario
@@ -23,20 +36,23 @@ Feature:ATP-36
         And the user selects last fixed cell with X3 field name: "WK2ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_QTY"
-        And the user adds the text <QTY> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_GROPRI"
-        And the user adds the text <GROPRI> in selected cell
-        And the user hits enter
-        Examples:
-            | LIN | ITMREF   | QTY | GROPRI  |
-            | 1   | "BMS012" | "2" | "45.75" |
+        And the user adds the text <QTY> in selected cell and hits enter key
 
-    Scenario: 04. Document Creation and BR Add-on field check
-        When the user clicks the "Create" main action button on the right panel
+        Examples:
+            | LIN | ITMREF   | QTY |
+            | 1   | "BMS012" | "2" |
+            | 2   | "BMS058" | "3" |
+
+    Scenario: 04. Document Creation and BR Add-on field and button disabled check
+        Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         #Then the user selects the text field with X3 field name: "SOH0_XQCODOPF"
         #And the text field with name: "Fiscal operation" is hidden
-        And the value of the "Total value of the order" text field is ""
+        Then the value of the "Total value of the order" text field is ""
+        And the user opens the header drop down
+        And the "Calc. memory On/Off" action button on the header drop down is disabled
+        And the "Export information" action button on the header drop down is disabled
+        And the "Referenced docs." action button on the header drop down is disabled
 
     Scenario: 05. Logout
         And the user clicks the Close page action icon on the header panel
