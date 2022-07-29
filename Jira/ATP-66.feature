@@ -29,10 +29,10 @@ Feature: ATP-66
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
-        #General Tab
+        #General Data
         When the user clicks the "General Data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
-        And the user writes "113" to the selected text field and hits tab key
+        And the user writes "110" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
     #Lines
@@ -53,7 +53,7 @@ Feature: ATP-66
         Then the user hits enter
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI |
-            | 1   | "BMS001" | "310"  | "15.23" | "2101" | "0"          | "90"      | "49"     |
+            | 1   | "BMS107" | "310"  | "15.23" | "2101" | "0"          | "90"      | "49"     |
 
     Scenario: 4.Create/Sefaz/Validation
         And the user writes "DEV SIMBOL" to the selected text field and hits tab key
@@ -110,7 +110,6 @@ Feature: ATP-66
         And the user adds the text <XQCSTPIS> in selected cell
         And the user selects cell with X3 field name: "WE7ALL1_XQCSTCOF" of selected row
         And the user adds the text <XQCSTCOF> in selected cell and hits enter key
-
         Examples:
             | LIN | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTPIS | XQCSTCOF |
             | "1" | "6919" | "0"          | "00"      | "70"     | "70"     |
@@ -127,4 +126,3 @@ Feature: ATP-66
 
     Scenario: 11.Logout
         And the user logs-out from the system
-
