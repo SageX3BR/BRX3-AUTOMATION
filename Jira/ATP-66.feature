@@ -56,10 +56,11 @@ Feature: ATP-66
             | 1   | "BMS107" | "310"  | "15.23" | "2101" | "0"          | "90"      | "49"     |
 
     Scenario: 4.Create/Sefaz/Validation
+        And the user selects the text field with X3 field name: "STOENTLOT_USRFLD1"
         And the user writes "DEV SIMBOL" to the selected text field and hits tab key
         And the user clicks the "OK" main action button on the right panel
 
-    Scenario: 4.Create/Sefaz/Validation
+    Scenario: 5.Create/Sefaz/Validation
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
@@ -69,7 +70,7 @@ Feature: ATP-66
         And the user clicks the "Close page" main action button on the right panel
     #Verificar status da nota (6 = Autorizada)And a log panel appears
 
-    Scenario: 5.Creating Purchase Return PNH
+    Scenario: 6.Creating Purchase Return PNH
         Given the user opens the "GESPNH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
@@ -91,14 +92,14 @@ Feature: ATP-66
         And the user writes the stored text with key "DOCPTH" in the selected text field and hits tab key
         And the user clicks the "OK" main action button on the right panel
 
-    Scenario: 6.Picking
+    Scenario: 7.Picking
         When the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR001" of the picking list panel
         Then the user checks the selected picking list panel item
         And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
-    Scenario Outline: 7.Lines
+    Scenario Outline: 8.Lines
         Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALL1_PTDLIN"
         And the user selects cell with X3 field name: "WE7ALL1_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell
