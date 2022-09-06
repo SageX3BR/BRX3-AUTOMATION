@@ -111,7 +111,7 @@ Feature: ATP-46
         When the user selects the text field with name: "Bank"
         And the user writes "BR999" to the selected text field and hits tab key
         When the user selects the text field with name: "Book"
-        And the user writes "CB341" to the selected text field and hits tab key
+        And the user writes "TS001" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
@@ -157,7 +157,7 @@ Feature: ATP-46
         When the user selects the text field with name: "Bank"
         And the user writes "BR999" to the selected text field and hits tab key
         When the user selects the text field with name: "Book"
-        And the user writes "CB341" to the selected text field and hits tab key
+        And the user writes "TS001" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
