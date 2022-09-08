@@ -6,7 +6,6 @@ Feature:ATP-32
     # 3. Invoice deletion
     # 4. Invoie Import with SIH template
     ###########################################################################
-
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
