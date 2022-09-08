@@ -61,6 +61,9 @@ Feature:ATP-32
         And the user writes "[ATP]/atp-32-sih-import.txt" to the selected text field
         Then the user clicks the "OK" button in the header
         And the user clicks the "Ok" opinion in the alert box
+        Then the user clicks the Close page action icon on the header panel
+
+
         And the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
@@ -74,6 +77,12 @@ Feature:ATP-32
         And the user clicks the "OK" button in the header
         And the user clicks the "Ok" opinion in the alert box
         Then the user clicks the Close page action icon on the header panel
+
+
+    Scenario: Logout scenario
+        Then the user logs-out from the system
+    Scenario: Login scenario
+        Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
     Scenario: 6. Open GIMPOBJ function
         Given the user opens the "GIMPOBJ" function
