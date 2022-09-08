@@ -78,7 +78,6 @@ Feature:ATP-32
         And the user clicks the "Ok" opinion in the alert box
         Then the user clicks the Close page action icon on the header panel
 
-
     Scenario: Logout scenario
         Then the user logs-out from the system
     Scenario: Login scenario
