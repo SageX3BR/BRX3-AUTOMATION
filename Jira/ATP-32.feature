@@ -63,7 +63,6 @@ Feature:ATP-32
         And the user clicks the "Ok" opinion in the alert box
         Then the user clicks the Close page action icon on the header panel
 
-
         And the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
