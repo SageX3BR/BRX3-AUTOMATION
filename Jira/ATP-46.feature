@@ -1,21 +1,4 @@
-###########################################################################
-# Header
-# -------------------------------------------------------------------------
-# - Test code: ATP-46
-# - Description: Garantir que seja possível gerenciar Ocorrência bancária de baixa
-# - Jira: X3DEV-770
-# - Legislation: BR addon
-# - Created by : Carla Cury
-# - Created date : 21/05/2022
-# - Updated by :
-# - Updated date :
-# - Status : Done
-###########################################################################
-# PREREQUISITES
-# -------------------------------------------------------------------------
-# Parameterize a bank portfolio that uses Cobrebem
-#
-# ###########################################################################
+
 
 Feature: ATP-46
 
@@ -107,7 +90,7 @@ Feature: ATP-46
         When the user selects the text field with name: "Bank"
         And the user writes "BR999" to the selected text field and hits tab key
         When the user selects the text field with name: "Book"
-        And the user writes "CB341" to the selected text field and hits tab key
+        And the user writes "TS001" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
@@ -150,7 +133,7 @@ Feature: ATP-46
         When the user selects the text field with name: "Bank"
         And the user writes "BR999" to the selected text field and hits tab key
         When the user selects the text field with name: "Book"
-        And the user writes "CB341" to the selected text field and hits tab key
+        And the user writes "TS001" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice number"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         Then the user clicks the "Search" button in the header
@@ -167,5 +150,3 @@ Feature: ATP-46
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-
-
