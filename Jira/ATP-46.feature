@@ -1,21 +1,4 @@
-###########################################################################
-# Header
-# -------------------------------------------------------------------------
-# - Test code: ATP-46
-# - Description: Garantir que seja possível gerenciar Ocorrência bancária de baixa
-# - Jira: X3DEV-770
-# - Legislation: BR addon
-# - Created by : Carla Cury
-# - Created date : 21/05/2022
-# - Updated by :
-# - Updated date :
-# - Status : Done
-###########################################################################
-# PREREQUISITES
-# -------------------------------------------------------------------------
-# Parameterize a bank portfolio that uses Cobrebem
-#
-# ###########################################################################
+
 
 Feature: ATP-46
 
@@ -167,5 +150,3 @@ Feature: ATP-46
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-
-
