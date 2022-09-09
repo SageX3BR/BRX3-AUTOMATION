@@ -84,9 +84,6 @@ Feature: ATP-46
         And the user selects the main log panel of the page
         And the user clicks the Close page action icon on the header panel
 
-
-
-
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
         When the user selects the text field with name: "Site"
@@ -102,7 +99,6 @@ Feature: ATP-46
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
-        Then the user waits 2 seconds
 
     Scenario: Delete Open Items
         Given the user opens the "GESSIH" function
@@ -131,7 +127,6 @@ Feature: ATP-46
         And the user stores the value of the selected cell with the key: "Amount"
         Then the user clicks the "OK" button in the popup header
 
-
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
         When the user selects the text field with name: "Site"
@@ -151,7 +146,6 @@ Feature: ATP-46
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
-        Then the user waits 2 seconds
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
