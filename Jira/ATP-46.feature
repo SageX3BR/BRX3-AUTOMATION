@@ -126,6 +126,7 @@ Feature: ATP-46
         And the value of the selected cell is stored
         And the user stores the value of the selected cell with the key: "Amount"
         Then the user clicks the "OK" button in the popup header
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
