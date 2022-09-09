@@ -97,7 +97,6 @@ Feature: ATP-46
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
-        And the user clicks the "Ok" opinion in the alert box
 
     Scenario: Delete Open Items
         Given the user opens the "GESSIH" function
@@ -145,7 +144,6 @@ Feature: ATP-46
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
-        And the user clicks the "Ok" opinion in the alert box
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
