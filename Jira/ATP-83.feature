@@ -48,7 +48,6 @@ Feature: ATP-83
         # #Set purchases order lines information
         # Then the user selects the fixed data table of section: "Lines"
         # And the user selects last fixed cell with header: "Product"
-
         When the user clicks the "Lines" tab selected by title
         When the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
         And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
