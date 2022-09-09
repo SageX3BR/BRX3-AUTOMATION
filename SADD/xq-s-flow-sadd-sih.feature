@@ -79,10 +79,9 @@ Feature:xq-s-flow-sadd-sih
     Scenario: Resume - Transmission and Validation
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
         And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "SIH0_NUM"
@@ -136,14 +135,17 @@ Feature:xq-s-flow-sadd-sih
     Scenario: Resume - Creation and Transmission
         Given the user clicks the "Close" main action button on the right panel
         Then the user clicks the "Yes" opinion in the alert box
+        And the user selects the text field with X3 field name: "XQSADDI1_DTVENC"
+        And the user writes "12/31/23" to the selected text field and hits tab key
+
+
         And the user clicks the "Create" main action button on the right panel
 
         Given the user clicks the "SEFAZ" action button on the header drop down
         When a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
-        Then the user clicks the "Close page" main action button on the right panel
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
+        And the value of the selected text field is "Autorizada"
 
         #Logout
         Given the user clicks the Close page action icon on the header panel

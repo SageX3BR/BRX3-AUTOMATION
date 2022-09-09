@@ -54,6 +54,7 @@ Feature: ATP-8
         And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "DOCSIH"
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Validation CONSXQRPS
         Given the user opens the "CONSXQRPS" function

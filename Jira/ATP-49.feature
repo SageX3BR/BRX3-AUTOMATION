@@ -86,10 +86,10 @@ Feature: ATP-49
         When the user clicks the "Create" main action button on the right panel
         Then the user clicks the "SEFAZ" action button on the header drop down
         Given the user selects the main data table of the page
-        When the user selects row that has the text "Doc. number :" in column with X3 field name: "LECFIC_LIGNE"
-        Then the user selects cell with X3 field name: "LECFIC_LIGNE" of selected row
-        And the value of the selected cell has string pattern "*NF-e: Authorized*"
-        And the user clicks the Close page action icon on the header panel
+        And a log panel appears
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the value of the selected text field is "Authorized invoice"
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the "Post" button in the header
@@ -98,6 +98,7 @@ Feature: ATP-49
         Then the user selects cell with X3 field name: "LECFIC_LIGNE" of selected row
         And the value of the selected cell has string pattern "*X3 validation Invoice/Credit memo*"
         And the user selects the main log panel of the page
+        And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Generete CNAB Remmitence
@@ -119,7 +120,7 @@ Feature: ATP-49
         And the user selects the fixed cell with X3 field name: "XQREMESSA1_SELECAO" and row number: 3
         And the user ticks the checkbox contained in the selected cell
         Then the user clicks the "Process selection" action button on the header drop down
-        Then the user waits 2 seconds
+        Then the user waits 4 seconds
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
