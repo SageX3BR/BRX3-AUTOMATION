@@ -107,11 +107,10 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
         Given the user clicks the "SEFAZ" action button on the header drop down
         ##And the user waits 10 seconds
         Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Rejected            : 000"
-        And the selected log panel includes the message "    Number of NF-e Pending return      : 000"
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the value of the selected text field is "Authorized invoice"
+        Then the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
-
-        And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

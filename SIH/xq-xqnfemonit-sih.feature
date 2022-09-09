@@ -48,6 +48,7 @@ Feature:xq-xqnfemonit-sih
         And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "FATURA"
+        Then the user clicks the Close page action icon on the header panel
 
     Scenario: NF-e monitoring Filter
 
@@ -68,9 +69,14 @@ Feature:xq-xqnfemonit-sih
         And the user clicks on the selected cell
         And the user clicks the "SEFAZ Communication" button in the header
         Then a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "    Number of NF-e Authorized          : 001"
-        #And the user waits 10 seconds
+        And the user clicks the "Close page" main action button on the right panel
+        And the user selects the radio buttons group with X3 field name: "XQNFEMNT0_STATUSNFE"
+        And the user clicks on "Authorized/Rejected" radio button of the selected radio buttons group
+        And the user clicks the "Search" button in the header
+        And the user selects the main data table of the page
+        And the user selects first row of the selected data table
+        And the user selects cell with X3 field name: "XQNFEMNT1_STATUSPROC" of selected row
+        And the value of the selected cell is "Authorized"
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
