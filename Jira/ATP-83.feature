@@ -18,9 +18,9 @@ Feature: ATP-83
 
     Scenario: 020BB0 - Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
-        And the user changes the main language code to "en-US"
-        When the user selects the "param:endPointName1" entry on endpoint panel
-        Then the "param:endPointName1" endpoint is selected
+    # And the user changes the main language code to "en-US"
+    # When the user selects the "param:endPointName1" entry on endpoint panel
+    # Then the "param:endPointName1" endpoint is selected
 
 
     Scenario: 0202B1 - Purchases order creation
@@ -44,11 +44,13 @@ Feature: ATP-83
         And the user selects the text field with name: "Supplier"
         And the user writes "NA052" to the selected text field
 
-        Then the user clicks the "Lines" tab selected by title
-
-        #Set purchases order lines information
-        Then the user selects the fixed data table of section: "Lines"
-        And the user selects last fixed cell with header: "Product"
+        # Then the user clicks the "Lines" tab selected by title
+        # #Set purchases order lines information
+        # Then the user selects the fixed data table of section: "Lines"
+        # And the user selects last fixed cell with header: "Product"
+        When the user clicks the "Lines" tab selected by title
+        When the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
+        And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
         When the user clicks the "Selection" action button of the selected cell
         Then the user selects the data table in the popup
         And the user selects search cell with header: "Description 1"
