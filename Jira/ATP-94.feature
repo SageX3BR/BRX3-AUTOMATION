@@ -2,7 +2,7 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: ATP-94
-# - Description: PROCESSO PARA GERAÇÃO CORRETA DA USER STORY X3DEV-1322 (NOTAENT - UF REMENTE e UF DESTINATARIO)
+# - Description: PROCESSO PARA GERAÇÃO CORRETA DA USER STORY X3DEV-1322 (NOTAENT - UFs REMENTE E DESTINATARIO)
 # - Jira:
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
