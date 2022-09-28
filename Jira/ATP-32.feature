@@ -6,7 +6,6 @@ Feature:ATP-32
     # 3. Invoice deletion
     # 4. Invoie Import with SIH template
     ###########################################################################
-
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
@@ -60,6 +59,7 @@ Feature:ATP-32
         And the user selects the text field with X3 field name: "EXPOBJ_VOLFIL"
         And the user writes "[ATP]/atp-32-sih-import.txt" to the selected text field
         Then the user clicks the "OK" button in the header
+        Then the user clicks the Close page action icon on the header panel
 
         And the user opens the "GESSIH" function
         And the user selects the data table in the popup
@@ -74,6 +74,11 @@ Feature:ATP-32
         And the user clicks the "OK" button in the header
         And the user clicks the "Ok" opinion in the alert box
         Then the user clicks the Close page action icon on the header panel
+
+    Scenario: Logout scenario
+        Then the user logs-out from the system
+    Scenario: Login scenario
+        Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
     Scenario: 6. Open GIMPOBJ function
         Given the user opens the "GIMPOBJ" function
