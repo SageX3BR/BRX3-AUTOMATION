@@ -138,11 +138,7 @@ Feature: xq-s-crud-sqh-print
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SQH0_SQHNUM"
         And the user writes the stored text with key "SQHDocumentNo" in the selected text field and hits tab key
-
-
         Then the user clicks the "Delete" main action button on the right panel
-
-
 
     Scenario: Logout
 

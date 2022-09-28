@@ -65,16 +65,12 @@ Feature: xq-s-flow-sih-oi4
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
         And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
-
-
         # Scenario: Fill Management
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK5ALL1_VACBPR"
         And the user writes "BRL" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-
-
 
     Scenario Outline: Add Lines
         #Lines
@@ -99,8 +95,6 @@ Feature: xq-s-flow-sih-oi4
             | LIN | ITMREF   | QTY | GROPRI  | XQSTISS | XQEXISS | VACITM1 |
             | 1   | "SER001" | "2" | "21.36" | "1"     | "1"     | "BRL"   |
             | 2   | "SER007" | "3" | "12.69" | "1"     | "1"     | "BRL"   |
-
-
 
     Scenario: Open Items
         When the user clicks the "Create" main action button on the right panel

@@ -71,7 +71,6 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter
 
-
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
             | 1   | "BMS001" | "12" | "3.69"  | "6101" | "4"       | "4"       | "0"     | "10"      |
@@ -110,7 +109,6 @@ Feature:xq-s-flow-soh-modbcst-cst10
     Scenario: SAVE
 
         And the user clicks the "Save" main action button on the right panel
-
 
         #--------------------------------------------------------------------------------
         #modalidade 5 cts 10
@@ -156,7 +154,6 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter
 
-
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
             | 1   | "BMS001" | "12" | "3.69"  | "6101" | "5"       | "5"       | "0"     | "10"      |
@@ -195,7 +192,6 @@ Feature:xq-s-flow-soh-modbcst-cst10
     Scenario: SAVE
 
         And the user clicks the "Save" main action button on the right panel
-
 
         #--------------------------------------------------------------------------------
         #modalidade 6 cts 10
@@ -241,7 +237,6 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user adds the text <XQCSTICMS> in selected cell
         And the user hits enter
 
-
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
             | 1   | "BMS001" | "12" | "3.69"  | "6101" | "6"       | "6"       | "0"     | "10"      |
@@ -259,8 +254,6 @@ Feature:xq-s-flow-soh-modbcst-cst10
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
 
-
-
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK2ALL4_ITMREF"
         And the user selects cell with X3 field name: "WK2ALL4_XQDETIMPOSTO" of selected row
@@ -276,13 +269,8 @@ Feature:xq-s-flow-soh-modbcst-cst10
             | "BMS001" | "6 - Operation Value" |
             | "BMS001" | "6 - Operation Value" |
 
+    Scenario: Save and Logout
 
-    Scenario: SAVE
-
-        And the user clicks the "Save" main action button on the right panel
-
-
-    Scenario: Logout
-
-        And the user clicks the Close page action icon on the header panel
+        Given the user clicks the "Save" main action button on the right panel
+        Then the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

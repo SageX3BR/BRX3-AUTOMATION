@@ -34,7 +34,6 @@ Feature: xq-s-flow-sih-oi3
     #--------------------------------------------------------------------------------
     #Creation of the sales order
     #--------------------------------------------------------------------------------
-
     Scenario: 2. Create a Invoice
 
         Given the user opens the "GESSIH" function
@@ -84,8 +83,6 @@ Feature: xq-s-flow-sih-oi3
             | LIN | ITMREF   | QTY | GROPRI  | XQSTISS | XQEXISS | VACITM1 |
             | 1   | "SER001" | "2" | "21.36" | "1"     | "1"     | "BRL"   |
             | 2   | "SER007" | "3" | "16.25" | "1"     | "1"     | "BRL"   |
-
-
 
     Scenario: Open Items
         When the user clicks the "Create" main action button on the right panel

@@ -111,6 +111,4 @@ Feature: xq-s-flow-sdh-modbcst6-cts30
         And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         Then the user clicks the Close page action icon on the header panel
-
-    Scenario: Logout
         And the user logs-out from the system
