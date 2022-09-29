@@ -87,10 +87,8 @@ Feature: xq-s-flow-soh-sdh-sih-llp-02
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell and hits enter key
-
 
         Examples:
             | LIN | ITMREF   | QTY | XQCFOP | XQCSTICMS |
@@ -154,7 +152,6 @@ Feature: xq-s-flow-soh-sdh-sih-llp-02
         And the user clicks the "Ok" opinion in the alert box
         And the user clicks the Close page action icon on the header panel
 
-
     #--------------------------------------------------------------------------------
     #Creation of the sales invoice EXPORT
     #--------------------------------------------------------------------------------
@@ -164,7 +161,6 @@ Feature: xq-s-flow-soh-sdh-sih-llp-02
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
-
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         #Filling the Invoice header information
         When the user clicks the "New" main action button on the right panel
@@ -175,8 +171,6 @@ Feature: xq-s-flow-soh-sdh-sih-llp-02
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "PT006" to the selected text field and hits tab key
         And the user clicks the Close page action icon on the header panel
-
-
 
     # Scenario: Left List
 
@@ -205,7 +199,7 @@ Feature: xq-s-flow-soh-sdh-sih-llp-02
         #And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-		And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         Then a log panel appears

@@ -141,9 +141,8 @@ Feature: xq-s-flow-sih-modbcst5-cts10
         #And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-		And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
-
-    Scenario: Logout
+        Then the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
 

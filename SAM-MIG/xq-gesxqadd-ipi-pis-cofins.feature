@@ -124,14 +124,15 @@ Feature: xq-gesxqadd-ipi-pis-cofins
         Given the user clicks the "Close" main action button on the right panel
         Then the user clicks the "Yes" opinion in the alert box
         And the user selects the text field with X3 field name: "XQSADDI1_DTVENC"
-        And the user writes "04/27/25" to the selected text field and hits tab key
+        And the user writes a generated date in the selected date field using the value "T+1"
+        #And the user writes "04/27/25" to the selected text field and hits tab key
         And the user clicks the "Create" main action button on the right panel
 
         Given the user clicks the "SEFAZ" action button on the header drop down
         When a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
-		And the value of the selected text field is "Autorizada"
+        And the value of the selected text field is "Autorizada"
 
     Scenario: 8.Logout
         Given the user clicks the Close page action icon on the header panel

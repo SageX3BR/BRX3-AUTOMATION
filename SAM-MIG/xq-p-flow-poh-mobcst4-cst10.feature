@@ -88,14 +88,13 @@ Feature:xq-p-flow-poh-mobcst4-cst10
         And the user selects the text field with X3 field name: "XQPTD1_MDBCICMSST"
         And the value of the selected text field is <MDBCICMSST>
 
-
         Examples:
             | CURLIG | MDBCICMSST                   |
             | "1"    | "4 - Margin Value added (%)" |
             | "2"    | "4 - Margin Value added (%)" |
 
-
     #Logout
     Scenario: Logout
+        And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
         Then the user logs-out from the system

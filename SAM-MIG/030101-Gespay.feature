@@ -51,9 +51,9 @@ Feature:xq-s-flow-sih-xqamend-gespay
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-		And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
-		And the user clicks the "Post" button in the header
+        And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
@@ -95,6 +95,4 @@ Feature:xq-s-flow-sih-xqamend-gespay
         And the user clicks the "OK" button in the header
         And the user clicks the "Close page" main action button on the right panel
         Then the user clicks the Close page action icon on the header panel
-
-    Scenario: Logout
         And the user logs-out from the system

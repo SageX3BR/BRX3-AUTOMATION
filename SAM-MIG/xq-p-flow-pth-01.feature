@@ -75,7 +75,8 @@ Feature: xq-p-flow-pth-01
         And the user selects the text field with name: "Calculation:"
         And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
-        Then the user clicks the Close page action icon on the header panel
 
     Scenario: 7. Logout
+        Then the user clicks the Close page action icon on the header panel
+        And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
