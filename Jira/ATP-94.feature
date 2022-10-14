@@ -7,8 +7,8 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 19/09/2022
-# - Updated by :
-# - Updated date :
+# - Updated by : Fausto A Neto
+# - Updated date : 14/10/2022
 # - Status : Done
 ###########################################################################
 
@@ -206,7 +206,7 @@ Feature: ATP-94
         And the user clicks the "Post" button in the header
         And the user clicks the "Ok" opinion in the alert box
         And the user clicks the "Ok" opinion in the alert box
-        And the user waits 10 seconds
+        And the user waits 60 seconds
         And the user selects the text field with X3 field name: "WE8ALL0_NUM"
         And the user stores the value of the selected text field with the key: "DOCCTE"
         And the user clicks the "Close page" main action button on the right panel
@@ -217,7 +217,6 @@ Feature: ATP-94
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Purchase invoice ALL : Full entry" screen is displayed
-        And the user waits 10 seconds
         And the user selects the text field with name: "Invoicing site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Invoice type"
