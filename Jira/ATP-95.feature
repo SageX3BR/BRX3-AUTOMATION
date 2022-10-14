@@ -121,7 +121,7 @@ Feature: ATP-95
 
     Scenario: 5. Validation of Taxes
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSIH1_TOTICMSDIF"
+        And the user selects the text field with X3 field name: "WK5ALLXQ_TOTICMSDIF"
         And the value of the selected text field is "105.00"
         Then the user clicks the Close page action icon on the header panel
 
