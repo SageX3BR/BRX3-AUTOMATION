@@ -59,7 +59,6 @@ Feature: xq-s-flow-sih-oi2
         And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
 
-
         #IMPORTAÇÃO
         And the user selects the text field with X3 field name: "XQSIH0_UFEMBARQUE"
         And the user writes "SP" to the selected text field and hits tab key
@@ -76,7 +75,6 @@ Feature: xq-s-flow-sih-oi2
         And the user writes "BRL" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-
 
     Scenario Outline: Add Lines
         #Lines
@@ -96,7 +94,6 @@ Feature: xq-s-flow-sih-oi2
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell and hits enter key
 
-
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
             | 1   | "BMS001" | "8"  | "25.98" | "7101" | "0"     | "00"      | "999"  |
@@ -113,4 +110,3 @@ Feature: xq-s-flow-sih-oi2
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-

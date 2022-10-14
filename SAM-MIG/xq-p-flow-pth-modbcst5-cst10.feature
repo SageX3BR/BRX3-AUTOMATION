@@ -107,7 +107,6 @@ Feature:xq-p-flow-pth-modbcst5-cst10
             | "2"    | "5 - Ruling (value)" |
 
     Scenario: Logout
-        #And the user clicks the "Close page" main action button on the right panel
         Given the user clicks the Close page action icon on the header panel
-        #Logout
+        And the user clicks the Close page action icon on the header panel
         Then the user logs-out from the system

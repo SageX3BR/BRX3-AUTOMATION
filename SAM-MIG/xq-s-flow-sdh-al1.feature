@@ -119,8 +119,9 @@ Feature: xq-s-flow-sdh-al1
             | ITMREF   | XQVALFINST |
             | "BMS001" | "156.90"   |
 
-
     Scenario: Logout
+        And the user clicks the Close page action icon on the header panel
+        And the user clicks the "Cancel" main action button on the right panel
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
 

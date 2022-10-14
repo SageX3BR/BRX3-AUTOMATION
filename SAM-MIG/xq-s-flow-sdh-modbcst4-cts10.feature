@@ -100,7 +100,7 @@ Feature: xq-s-flow-sdh-modbcst4-cts10
             | "BMS001" | "4 - Margin Value added (%)" |
             | "BMS001" | "4 - Margin Value added (%)" |
 
-    Scenario: SEFAZ
+    Scenario: SEFAZ and Logout
         When the user clicks the "Save" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
         ##And the user waits 10 seconds
@@ -108,6 +108,5 @@ Feature: xq-s-flow-sdh-modbcst4-cts10
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
-
-    Scenario: Logout
+        Then the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

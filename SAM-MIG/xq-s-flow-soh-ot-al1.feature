@@ -37,7 +37,6 @@ Feature: xq-s-flow-soh-ot-al1
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-
     #--------------------------------------------------------------------------------
     #Creation of the sales order
     #--------------------------------------------------------------------------------
@@ -72,7 +71,6 @@ Feature: xq-s-flow-soh-ot-al1
         #  And the user writes "MT" to the selected text field and hits tab key
         And the user selects the text field with name: "Shipment site"
         And the user writes "BR011" to the selected text field and hits tab key
-
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
 
@@ -102,15 +100,11 @@ Feature: xq-s-flow-soh-ot-al1
             | 1   | "BMS001" | "23" | "32.65" | "6118" | "0"     | "10"      | "999"  |
             | 2   | "BMS002" | "15" | "19.87" | "6118" | "0"     | "10"      | "999"  |
 
-
-
     Scenario: Create document
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
-
-
 
     Scenario: Check Calculated Values
 
