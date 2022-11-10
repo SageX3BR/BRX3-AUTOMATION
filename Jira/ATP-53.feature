@@ -6,8 +6,8 @@
 #                os valores são refletidos no resumo dos impostos e no XML
 # - Created by : Carla Cury
 # - Created date : 05/07/2022
-# - Updated by :
-# - Updated date :
+# - Updated by : Fausto A Neto
+# - Updated date : 10/11/2022
 # - Status : In progress
 ###########################################################################
 
@@ -72,7 +72,7 @@ Feature: ATP-53
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the Close page action icon on the header panel
 
-    Scenario: 5. Creation of the Credit Invoice
+    Scenario: 6. Creation of the Credit Invoice
         Given the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "AAL     Full entry credit" and column header: ""
@@ -102,7 +102,7 @@ Feature: ATP-53
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5AAL4_ARRAY_NBLIG"
 
-    Scenario Outline: 3. SIH lines
+    Scenario Outline: 7. SIH lines
         Given the user selects editable table row number: <LIN>
         And the user edits text to <QTY> for cell with X3 field name: "WK5AAL4_QTY" of selected row
         And the user edits text to <XQCFOP> for cell with X3 field name: "WK5AAL4_XQCFOP" of selected row
@@ -118,14 +118,14 @@ Feature: ATP-53
     # DADO a criação de uma nota de crédito (SIH)
     # QUANDO o usuário acessar a tela “Detalhamento de Impostos“ da linha
     # ENTÃO os campos, CST, Base e Valor de todos os tributos (ICMS, IPI, PIS e COFINS) devem permitir edição
-    Scenario: 4. SIH Creation
+    Scenario: 8. SIH Creation
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5AAL4_ARRAY_NBLIG"
 
 
-    Scenario Outline: Tax Detail - Check Calculated Values
+    Scenario Outline: 9. Tax Detail - Check Calculated Values
         Given the user selects row that has the text <ITMREF> in column with X3 field name: "WK5AAL4_ITMREF"
         And the user selects cell with X3 field name: "WK5AAL4_XQDETIMPOSTO" of selected row
         When the user clicks on the icon contained in the selected cell
@@ -174,9 +174,7 @@ Feature: ATP-53
             | "BMS001" | "00"    | "234.77"  | "16.4300"    | "49"   | "234.77" | "11.73" | "11.73"   | "72"   | "234.77"   | "3.87" | "234.77"  | "3.87"    | "72"   | "234.77" | "11.84" | "11.84"   |
 
 
-
-
-    Scenario: SEFAZ
+    Scenario: 10. SEFAZ
         When the user clicks the "Save" main action button on the right panel
         When the user clicks the "No" opinion in the alert box
         And the user clicks the "SEFAZ" action button on the header drop down
@@ -195,7 +193,7 @@ Feature: ATP-53
         And the user stores the value of the selected text field with the key: "SIHNUMC"
 
 
-    Scenario: Check Calculated Values
+    Scenario: 11. Check Calculated Values
 
         Given the user clicks the "NF-e Summary" tab selected by title
         And the user selects the text field with name: "ICMS base total"
@@ -217,8 +215,7 @@ Feature: ATP-53
         Then the user clicks the Close page action icon on the header panel
 
 
-
-    Scenario: 8. XML tags validation
+    Scenario: 12. XML tags validation
         Given the user opens the "XQCONSNFE" function
         And the "NF-e Monitoring" screen is displayed
         When the user selects the text field with X3 field name: "XQNFEMNT0_NUMDOC"
@@ -228,8 +225,11 @@ Feature: ATP-53
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
         When the user selects the data table with x3 field name: "XQNFELOG1_ARRAY_NBLIG"
-        And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
-        Then the user clicks on the selected row
+        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
+        #Then the user clicks on the selected row
+        Then the user selects row that has the text "103" in column with header: "SEFAZ Ret. Code"
+        And the user selects cell with header: "Event" of selected row
+        And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         #Verificando os valores dos impostos editados manualmente no Scenario outline 6.
         And the value of the selected text field contains "<vBC>234.77</vBC>"
@@ -240,9 +240,7 @@ Feature: ATP-53
         And the value of the selected text field contains "<CST>72</CST>"
         And the value of the selected text field contains "<vCOFINS>3.87</vCOFINS>"
 
-    Scenario: 9. Logout
+    Scenario: 13. Logout
         Then the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-
-
