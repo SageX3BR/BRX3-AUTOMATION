@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 08/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 08/07/2020
+# - Updated by : Fausto A Neto
+# - Updated date : 03/11/2022
 # - Status : Completed
 ###########################################################################
 #Global parameter intialization
@@ -129,7 +129,6 @@ Feature: xq-s-crud-sqh-print
 
         #Openning the function
         Given the user opens the "GESSQH" function
-        #And the user waits 10 seconds
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
@@ -139,8 +138,12 @@ Feature: xq-s-crud-sqh-print
         And the user selects the text field with X3 field name: "SQH0_SQHNUM"
         And the user writes the stored text with key "SQHDocumentNo" in the selected text field and hits tab key
         Then the user clicks the "Delete" main action button on the right panel
+        #Garantir que o documento será cancelado clickando "OK" nas telas de confirmação
+        Given the "Code cancellation" screen is displayed
+        And the user clicks the "OK" button in the header
+        When a dialog box appears
+        Then the user clicks the "Ok" opinion in the alert box
 
     Scenario: Logout
-
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

@@ -6,9 +6,9 @@
 #                os valores são refletidos no resumo dos impostos e no XML
 # - Created by : Fausto A Neto
 # - Created date : 22/06/2022
-# - Updated by :
-# - Updated date :
-# - Status : In progress
+# - Updated by : Fausto A Neto
+# - Updated date : 10/11/2022
+# - Status : Automated
 ###########################################################################
 
 Feature: ATP-52
@@ -169,8 +169,10 @@ Feature: ATP-52
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
         When the user selects the data table with x3 field name: "XQNFELOG1_ARRAY_NBLIG"
-        And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
-        Then the user clicks on the selected row
+        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
+        Then the user selects row that has the text "103" in column with header: "SEFAZ Ret. Code"
+        And the user selects cell with header: "Event" of selected row
+        And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         #Verificando os valores dos impostos editados manualmente no Scenario outline 6.
         And the value of the selected text field contains "<vICMS>1.30</vICMS>"

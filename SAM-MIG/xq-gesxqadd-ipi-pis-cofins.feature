@@ -9,6 +9,8 @@
 # - Legislation: BR addon
 # - Created by : Gustavo Albanus
 # - Created date : 05/02/2022
+# - Updated by : Fausto A Neto
+# - Updated date : 27/10/2022
 # - Status : Automated
 ###########################################################################
 
@@ -87,7 +89,6 @@ Feature: xq-gesxqadd-ipi-pis-cofins
         Then the value of the selected drop down list is "Sales Invoice (SIH)"
         And the user selects the text field with X3 field name: "XQSADDI0_ORIDOCNUM"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        And the user hits escape
 
     Scenario: 6.Tax detail
         Given the user clicks the "Tax detail" action button on the header drop down
@@ -123,9 +124,8 @@ Feature: xq-gesxqadd-ipi-pis-cofins
     Scenario: 7.Resume - Creation and Transmission
         Given the user clicks the "Close" main action button on the right panel
         Then the user clicks the "Yes" opinion in the alert box
-        And the user selects the text field with X3 field name: "XQSADDI1_DTVENC"
+        And the user selects the date field with X3 field name: "XQSADDI1_DTVENC"
         And the user writes a generated date in the selected date field using the value "T+1"
-        #And the user writes "04/27/25" to the selected text field and hits tab key
         And the user clicks the "Create" main action button on the right panel
 
         Given the user clicks the "SEFAZ" action button on the header drop down
