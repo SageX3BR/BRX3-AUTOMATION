@@ -80,4 +80,5 @@ Feature: ATP-28
     ##And the user waits 5 seconds
     Scenario: 5.Logout
         And the user clicks the Close page action icon on the header panel
+        And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
