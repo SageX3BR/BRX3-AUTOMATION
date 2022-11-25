@@ -170,7 +170,7 @@ Feature: ATP-58
 
 
     Scenario: 9. Logout
-        # And the user clicks the Close page action icon on the header panel
+        And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
 
 

@@ -74,6 +74,7 @@ Feature: ATP-63
         Then the user clicks the Close page action icon on the header panel
         And the user selects the text field with X3 field name: "XQPTH1_NUMNFE"
         And the user stores the value of the selected text field with the key: "NFE_NUM"
+        Then the user clicks the Close page action icon on the header panel
 
     Scenario: 7. Attachments
         Given the user clicks the "Attachments" main action button on the right panel
@@ -84,4 +85,5 @@ Feature: ATP-63
         And the user clicks the "Close" main action button on the right panel
 
     Scenario: 8. Logout
+        Then the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

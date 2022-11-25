@@ -135,4 +135,7 @@ Feature: ATP-59
         Then the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
         And the value of the selected cell has string pattern "*[NFE_NUM]*"
         And the user clicks the "Close" main action button on the right panel
+
+    Scenario: 9. Logout
+        And the user clicks the "Close" main action button on the right panel
         And the user logs-out from the system
