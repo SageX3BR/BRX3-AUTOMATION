@@ -108,7 +108,7 @@ Feature:  xq-s-flow-sih-pick-sdh-03
         #And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-		And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         Then a log panel appears
@@ -118,5 +118,6 @@ Feature:  xq-s-flow-sih-pick-sdh-03
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
+        And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
 

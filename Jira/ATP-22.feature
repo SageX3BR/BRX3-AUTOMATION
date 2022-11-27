@@ -77,7 +77,6 @@ Feature: ATP-22
         And the user opens "Delete" function on toolbox of the selected row
         And the user clicks the "Save" main action button on the right panel
 
-
     Scenario: 6.Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
