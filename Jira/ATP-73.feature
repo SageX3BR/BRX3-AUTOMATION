@@ -168,7 +168,6 @@ Feature: ATP-73
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
         And the value of the selected text field is "Autorizada"
-        And the user clicks the "OK" action button on the header drop down
 
     Scenario: 12. Logout
         Then the user clicks the Close page action icon on the header panel
