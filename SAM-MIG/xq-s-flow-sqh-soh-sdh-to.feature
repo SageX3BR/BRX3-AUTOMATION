@@ -147,7 +147,10 @@ Feature: xq-s-flow-sqh-soh-sdh-to
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
-		And the value of the selected text field is "Authorized invoice"
+        And the value of the selected text field is "Authorized invoice"
+        And the user clicks the "Close page" main action button on the right panel
+        #Fechando SOH para conseguir fazer Logout
+        And the user clicks the "Close page" main action button on the right panel
 
 
     Scenario: Logout
