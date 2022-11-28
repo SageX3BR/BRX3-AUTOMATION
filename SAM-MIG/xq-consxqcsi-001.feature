@@ -89,6 +89,7 @@ Feature: xq-conxqcsi-001
         And the user selects the data table of section: "Invoices"
         And the user selects first row of the selected data table
         And the user opens "Popup view" function on toolbox of the selected row
+        #fechando popup view
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
