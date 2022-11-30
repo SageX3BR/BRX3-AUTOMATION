@@ -99,10 +99,11 @@ Feature: xq-s-flow-gessdh
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
-		And the value of the selected text field is "Authorized invoice"
+        And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
+        And the user clicks the Close page action icon on the header panel
 
     #--------------------------------------------------------------------------------
     #Creation of the receipt
@@ -184,7 +185,7 @@ Feature: xq-s-flow-gessdh
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
-		And the value of the selected text field is "Authorized invoice"
+        And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box

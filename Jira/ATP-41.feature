@@ -38,10 +38,13 @@ Feature:ATP-41
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
         And the user stores the value of the selected text field with the key: "PTH_NUMBER"
 
+
     Scenario: 05. Check Fiscal Operation field disabled
         Given the user clicks the "General Data" tab selected by title
         Given the user selects the text field with name: "Fiscal operation"
         Then the selected text field should be disabled
+        #Fechando PTH antes de ir para PNH
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: 06 .Picking GESPTH on GESPNH
         Given the user opens the "GESPNH" function

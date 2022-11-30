@@ -128,4 +128,7 @@ Feature: ATP-60
         And the user selects the fixed cell with X3 field name: "AOBJTXT_M1" and row number: 1
         And the value of the selected cell contains "XML Dist"
         And the user clicks the "Close" main action button on the right panel
+
+    Scenario: 9. Logout
+        And the user clicks the "Close" main action button on the right panel
         And the user logs-out from the system

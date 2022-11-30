@@ -108,4 +108,5 @@ Feature: ATP-61
         And the user clicks the "Close" main action button on the right panel
 
     Scenario: 8. Logout
+        And the user clicks the "Close" main action button on the right panel
         And the user logs-out from the system

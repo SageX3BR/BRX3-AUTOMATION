@@ -91,6 +91,8 @@ Feature: ATP-78
         Then the user clicks the Close page action icon on the header panel
         Given the user selects the text field with X3 field name: "SIH0_NUM"
         Then the user stores the value of the selected text field with the key: "SIH_NUM"
+        #Saindo da SIH antes de chamar a CONSXQRPS
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: 6. Validação do RPS
         Given the user opens the "CONSXQRPS" function
@@ -111,6 +113,8 @@ Feature: ATP-78
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
         And the value of the selected text field contains ""ValDescIncond": 1000"
+        And the user clicks the Close page action icon on the header panel
+        #Fechando CONSXQRPS
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout

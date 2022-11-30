@@ -99,6 +99,7 @@ Feature: ATP-25
         And the value of the selected text field is "Authorized invoice"
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
+        And the user clicks the Close page action icon on the header panel
 
 
     Scenario: Alterar status da nota para denegado
@@ -119,6 +120,7 @@ Feature: ATP-25
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         And the user selects the text field with X3 field name: "STD1_ZONE1_8"
         And the user writes "4" to the selected text field and hits enter key
+        And the user clicks the Close page action icon on the header panel
     # And the user clicks the "Save" main action button on the right panel
 
     Scenario: Post document

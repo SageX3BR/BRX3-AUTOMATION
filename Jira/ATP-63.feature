@@ -84,4 +84,5 @@ Feature: ATP-63
         And the user clicks the "Close" main action button on the right panel
 
     Scenario: 8. Logout
+        Then the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

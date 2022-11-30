@@ -143,6 +143,7 @@ Feature:xq-p-flow-pth-pnh-simple
         And the user selects the main log panel of the page
         And the selected log panel includes the message "Return Validation End"
         And the user clicks the "Close page" main action button on the right panel
-        Then the user clicks the Close page action icon on the header panel
+
         #Logout
+        And the user clicks the "Close page" main action button on the right panel
         Then the user logs-out from the system

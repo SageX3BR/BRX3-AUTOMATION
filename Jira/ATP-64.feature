@@ -138,6 +138,8 @@ Feature: ATP-64
         And the user writes "[F:XQPNH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
+        #Fechando PNH antes de ir pra SIH
+        And the user clicks the "Close" main action button on the right panel
 
     Scenario: 10. SIH Creation
         Given the user opens the "GESSIH" function
@@ -203,4 +205,5 @@ Feature: ATP-64
         And the user clicks the "Close" main action button on the right panel
 
     Scenario: 14. Logout
+        And the user clicks the "Close" main action button on the right panel
         And the user logs-out from the system

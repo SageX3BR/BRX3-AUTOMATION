@@ -91,6 +91,8 @@ Feature: ATP-81
         And the value of the selected text field contains ""ItemDescIncondicionado": 200"
         And the value of the selected text field contains ""ValDescIncond": 200"
         And the user clicks the Close page action icon on the header panel
+        #Fechando a tela antes de sair
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

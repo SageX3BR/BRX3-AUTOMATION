@@ -159,6 +159,9 @@ Feature: ATP-56
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
         And the value of the selected text field contains ""Discriminacao": "Serviço Generico \u000d\u000aPIS COFINS Retido"
+        #Fecha o log
+        And the user clicks the Close page action icon on the header panel
+        #Fecha a Janela do Log
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout

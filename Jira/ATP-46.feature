@@ -8,7 +8,6 @@ Feature: ATP-46
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-
     #--------------------------------------------------------------------------------
     #Creation of the sales order
     #--------------------------------------------------------------------------------
@@ -29,7 +28,6 @@ Feature: ATP-46
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
-
 
     Scenario: Process Id
         Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
@@ -81,6 +79,9 @@ Feature: ATP-46
         Then the user selects cell with X3 field name: "LECFIC_LIGNE" of selected row
         And the value of the selected cell has string pattern "*X3 validation Invoice/Credit memo*"
         And the user selects the main log panel of the page
+        #Fecha o Log
+        And the user clicks the Close page action icon on the header panel
+        #Fecha a SIH antes de abrir a CONSXQR
         And the user clicks the Close page action icon on the header panel
 
     Scenario: Generete CNAB Remmitence
@@ -97,6 +98,8 @@ Feature: ATP-46
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
+        #Fecha a CONSXQR antes de retorna para a SIH
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Delete Open Items
         Given the user opens the "GESSIH" function
