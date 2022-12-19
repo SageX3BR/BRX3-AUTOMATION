@@ -93,6 +93,8 @@ Feature: ATP-80
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
         And the value of the selected text field contains ""ItemDescIncondicionado": 380"
         And the user clicks the Close page action icon on the header panel
+        #Adicionado pata fechar o CONSXQRPS
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

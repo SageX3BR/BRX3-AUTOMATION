@@ -68,7 +68,8 @@ Feature: ATP-66
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-    #Verificar status da nota (6 = Autorizada)And a log panel appears
+        #Verificar status da nota (6 = Autorizada)And a log panel appears
+        And the user clicks the "Close page" main action button on the right panel
 
     Scenario: 6.Creating Purchase Return PNH
         Given the user opens the "GESPNH" function
@@ -126,4 +127,5 @@ Feature: ATP-66
     #Verificar status da nota (6 = Autorizada)
 
     Scenario: 11.Logout
+        And the user clicks the "Close page" main action button on the right panel
         And the user logs-out from the system

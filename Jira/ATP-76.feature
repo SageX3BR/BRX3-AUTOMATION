@@ -69,7 +69,6 @@ Feature: ATP-76
         And the user clicks the "Ok" opinion in the alert box
         And the user clicks the Close page action icon on the header panel
 
-
     Scenario: 5. GESSRH Creation
         Given the user opens the "GESSRH" function
         And the user selects the data table in the popup
@@ -202,6 +201,9 @@ Feature: ATP-76
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
         And the value of the selected text field is "Autorizada"
+        Then the user clicks the Close page action icon on the header panel
+
+
 
     Scenario: 12.Logout
         Then the user logs-out from the system

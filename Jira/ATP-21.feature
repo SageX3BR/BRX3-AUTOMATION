@@ -61,6 +61,7 @@ Feature: ATP-21
 
     Scenario: 4.Save
         Given the user clicks the "Save" main action button on the right panel
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: 5. Delete Address code
         Given the user opens the "GESBPC" function

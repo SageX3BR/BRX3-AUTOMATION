@@ -66,6 +66,8 @@ Feature: ATP-26
         And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
         Then the user clicks the Close page action icon on the header panel
+        #Adicionado para fechar a função de contratos antes de sair
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: 4. Logout
         And the user logs-out from the system

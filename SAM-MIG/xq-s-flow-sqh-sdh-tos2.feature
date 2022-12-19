@@ -207,6 +207,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user clicks the "Validation" button in the header
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: Logout
 

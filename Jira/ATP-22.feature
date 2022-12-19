@@ -62,6 +62,7 @@ Feature: ATP-22
 
     Scenario: 4.Save
         Given the user clicks the "Save" main action button on the right panel
+        And the user clicks the Close page action icon on the header panel
 
     Scenario: 5. Delete Address code
         Given the user opens the "GESBPS" function
@@ -75,7 +76,6 @@ Feature: ATP-22
         And the user selects row that has the text "RJ" in column with header: "Address code"
         And the user opens "Delete" function on toolbox of the selected row
         And the user clicks the "Save" main action button on the right panel
-
 
     Scenario: 6.Logout
         And the user clicks the Close page action icon on the header panel

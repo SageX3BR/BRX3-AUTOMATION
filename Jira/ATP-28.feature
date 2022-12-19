@@ -76,6 +76,9 @@ Feature: ATP-28
         ##And the user waits 30 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
+        And the user clicks the Close page action icon on the header panel
+        #Fechando SIH
+        And the user clicks the Close page action icon on the header panel
 
     ##And the user waits 5 seconds
     Scenario: 5.Logout
