@@ -132,7 +132,7 @@ Feature: ATP-59
         Given the user clicks the "Attachments" main action button on the right panel
         And the user selects the fixed data table of section: "Attachments"
         And the user selects first row of the selected data table
-        Then the user selects the fixed cell with X3 field name: "AOBJTXT_NAM" and row number: 1
+        Then the user selects the fixed cell with X3 field name: "AOBJTXT_ORINAM" and row number: 1
         And the value of the selected cell has string pattern "*[NFE_NUM]*"
         And the user clicks the "Close" main action button on the right panel
 
