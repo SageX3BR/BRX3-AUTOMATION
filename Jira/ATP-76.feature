@@ -199,8 +199,15 @@ Feature: ATP-76
         Given the user clicks the "SEFAZ" action button on the header drop down
         When a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
-        And the value of the selected text field is "Autorizada"
+        #Verificar status da nota (6 = Autorizada)
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "[F:XQSIH]NFESTATUS" to the selected text field and hits enter key
+        And the value of the "Result" text field is "6"
+        Then the user clicks the Close page action icon on the header panel
         Then the user clicks the Close page action icon on the header panel
 
 
