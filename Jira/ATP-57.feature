@@ -79,7 +79,7 @@ Feature: ATP-57
         And the user selects the fixed data table of section: "Attachments"
         And the user selects first row of the selected data table
         And the user selects the fixed cell with X3 field name: "AOBJTXT_ORINAM" and row number: 1
-        And the value of the selected cell has string pattern "*[NFE_NUM]*.XML"
+        And the value of the selected cell has string pattern "*[NFE_NUM]*.xml"
         And the user clicks the "Close" main action button on the right panel
 
     Scenario: 6. Logout
