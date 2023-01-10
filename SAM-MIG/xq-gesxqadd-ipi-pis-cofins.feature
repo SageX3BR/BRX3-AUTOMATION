@@ -137,7 +137,7 @@ Feature: xq-gesxqadd-ipi-pis-cofins
         And the user clicks the "Calculator" secondary action button on the right panel
         And the "Calculator" screen is displayed
         And the user selects the text field with name: "Calculation:"
-        And the user writes "[F:XQSIH]NFESTATUS" to the selected text field and hits enter key
+        And the user writes "[F:XQSADI]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
 
