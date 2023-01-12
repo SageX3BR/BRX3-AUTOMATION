@@ -61,11 +61,14 @@ Feature: ATP-102
 
     Scenario: 4. Validation of Taxes
         When the user clicks the "Tax Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTMERCA"
+        #Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTMERCA"
+        Then the user selects the text field with X3 field name: "XQSOH1_TOTMERCA"
         And the value of the selected text field is "5.00"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_TOTDESCDESON"
+        #And the user selects the text field with X3 field name: "WK2ALLXQ_TOTDESCDESON"
+        And the user selects the text field with X3 field name: "XQSOH1_TOTDESCDESON"
         And the value of the selected text field is "0.12"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_TOTNF"
+        #And the user selects the text field with X3 field name: "WK2ALLXQ_TOTNF"
+        And the user selects the text field with X3 field name: "XQSOH1_TOTNF"
         And the value of the selected text field is "5.00"
     #O Valor Esperado é 5.00, pois na RTAX está marcado para não deduzir do Total da NF
 
