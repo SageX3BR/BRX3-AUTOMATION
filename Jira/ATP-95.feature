@@ -62,7 +62,8 @@ Feature: ATP-95
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         When the user clicks the "Tax Summary" tab selected by title
-        And the user selects the text field with X3 field name: "WK2ALLXQ_TOTICMSDIF"
+        And the user selects the text field with name: "Deferred ICMS value"
+        #And the user selects the text field with X3 field name: "WK2ALLXQ_TOTICMSDIF"
         And the value of the selected text field is "105.00"
         And the user selects the text field with X3 field name: "SOH0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHNUM"
@@ -121,7 +122,8 @@ Feature: ATP-95
 
     Scenario: 5. Validation of Taxes
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "WK5ALLXQ_TOTICMSDIF"
+        And the user selects the text field with name: "Deferred ICMS value"
+        #And the user selects the text field with X3 field name: "WK5ALLXQ_TOTICMSDIF"
         And the value of the selected text field is "105.00"
         Then the user clicks the Close page action icon on the header panel
 
