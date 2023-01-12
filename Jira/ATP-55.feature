@@ -69,11 +69,14 @@ Feature: ATP-55
 
     Scenario: 4. Validation of Taxes
         When the user clicks the "Tax Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTDESC"
+        Then the user selects the text field with name: "Total discount"
+        #Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTDESC"
         And the value of the selected text field is "100.00"
-        Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTBASEIPI"
+        Then the user selects the text field with name: "IPI base total"
+        #Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTBASEIPI"
         And the value of the selected text field is "900.00"
-        And the user selects the text field with X3 field name: "WK2ALLXQ_TOTIPI"
+        And the user selects the text field with name: "IPI total"
+        #And the user selects the text field with X3 field name: "WK2ALLXQ_TOTIPI"
         And the value of the selected text field is "90.00"
         Then the user clicks the Close page action icon on the header panel
 
