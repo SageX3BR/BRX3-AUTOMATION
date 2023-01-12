@@ -25,11 +25,11 @@ Feature:ATP-34
         #Cabeçalho
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Sales site"
-        And the user writes "PT032" to the selected text field and hits tab key
+        And the user writes "NA011" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
-        And the user writes "FTC" to the selected text field and hits tab key
+        And the user writes "REG" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
-        And the user writes "PT002" to the selected text field and hits tab key
+        And the user writes "NA001" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
@@ -64,11 +64,11 @@ Feature:ATP-34
         Then the "Sales invoice AAL : Full entry credit" screen is displayed
         Given the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Sales site"
-        And the user writes "PT032" to the selected text field and hits tab key
+        And the user writes "NA011" to the selected text field and hits tab key
         And the user selects the text field with name: "Type"
-        And the user writes "NCC" to the selected text field and hits tab key
+        And the user writes "CRM" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
-        When the user writes "PT002" to the selected text field and hits tab key
+        When the user writes "NA001" to the selected text field and hits tab key
         And the user opens the header drop down
         And the user opens the "Option" section on the right panel
         Then the user clicks the "Selection criteria" secondary action button on the right panel
@@ -79,7 +79,7 @@ Feature:ATP-34
     Scenario: 06. Credit Note Creation
         Given the user clicks the "Select invoices" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "SIHNUM" and with the text containing "PT002" of the picking list panel
+        And the user selects the item with the stored text with key "SIHNUM" and with the text containing "INV" of the picking list panel
         And the user checks the selected picking list panel item
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
