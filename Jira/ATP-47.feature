@@ -102,13 +102,13 @@ Feature: ATP-47
 
     Scenario: 9. Tax Summary
         Given the user clicks the "Tax Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTICMSOP"
+        Then the user selects the text field with name: "Operation ICMS value"
         And the value of the selected text field is "360.00"
-        Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTIPI"
+        Then the user selects the text field with name: "IPI total"
         And the value of the selected text field is "200.00"
-        Then the user selects the text field with X3 field name: "WK2ALLXQ_VALPIS"
+        Then the user selects the text field with name: "PIS value"
         And the value of the selected text field is "10.66"
-        Then the user selects the text field with X3 field name: "WK2ALLXQ_VALCOF"
+        Then the user selects the text field with name: "COFINS value"
         And the value of the selected text field is "49.20"
         Then the user clicks the Close page action icon on the header panel
 

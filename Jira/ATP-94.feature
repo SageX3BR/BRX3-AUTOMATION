@@ -135,7 +135,7 @@ Feature: ATP-94
         And the user selects the text field with X3 field name: "XQPIH1_SERNFE"
         And the user writes "1" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQPIH1_CHAVENFE"
-        And the user writes "42200415807135000130550010000013251187602392" to the selected text field and hits tab key
+        And the user writes "35170264555626000147550770000000201000000203" to the selected text field and hits tab key
 
     Scenario: 11. Management - PIH CTE
         Given the user clicks the "Management" tab selected by title
