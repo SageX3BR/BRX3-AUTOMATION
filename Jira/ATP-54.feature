@@ -80,9 +80,11 @@ Feature: ATP-54
         And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
         And the user clicks the "Tax Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "XQSDH1_TOTMERCA"
+        #Then the user selects the text field with X3 field name: "XQSDH1_TOTMERCA"
+        Then the user selects the text field with name: "Products total value"
         And the value of the selected text field is "190.57"
-        Then the user selects the text field with X3 field name: "XQSDH1_TOTNF"
+        #And the user selects the text field with X3 field name: "XQSDH1_TOTNF"
+        And the user selects the text field with name: "Total shipment value"
         And the value of the selected text field is "209.63"
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
@@ -150,9 +152,11 @@ Feature: ATP-54
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "NF-e Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "XQSRH2_TOTMERCA"
+        #Then the user selects the text field with X3 field name: "XQSRH2_TOTMERCA"
+        Then the user selects the text field with name: "Products total value"
         And the value of the selected text field is "190.57"
-        Then the user selects the text field with X3 field name: "XQSRH2_TOTNF"
+        #Then the user selects the text field with X3 field name: "XQSRH2_TOTNF"
+        Then the user selects the text field with name: "Invoice total value"
         And the value of the selected text field is "209.63"
 
     Scenario: 9.Logout

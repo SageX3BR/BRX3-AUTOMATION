@@ -70,7 +70,8 @@ Feature: ATP-71
         Then the user clicks the "Ok" opinion in the alert box
         And the user selects the text field with X3 field name: "SDH0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM"
-        And the user selects the text field with X3 field name: "XQSDH1_TOTMERCA"
+        #And the user selects the text field with X3 field name: "XQSDH1_TOTMERCA"
+        And the user selects the text field with name: "Products total value"
         And the user stores the value of the selected text field with the key: "SDH_TOTMERCA"
         Then the user clicks the Close page action icon on the header panel
 
