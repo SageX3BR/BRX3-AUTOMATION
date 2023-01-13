@@ -62,13 +62,16 @@ Feature: ATP-102
     Scenario: 4. Validation of Taxes
         When the user clicks the "Tax Summary" tab selected by title
         #Then the user selects the text field with X3 field name: "WK2ALLXQ_TOTMERCA"
-        Then the user selects the text field with X3 field name: "XQSOH1_TOTMERCA"
+        #Then the user selects the text field with X3 field name: "XQSOH1_TOTMERCA"
+        Then the user selects the text field with name: "Products total value"
         And the value of the selected text field is "5.00"
         #And the user selects the text field with X3 field name: "WK2ALLXQ_TOTDESCDESON"
-        And the user selects the text field with X3 field name: "XQSOH1_TOTDESCDESON"
+        #And the user selects the text field with X3 field name: "XQSOH1_TOTDESCDESON"
+        And the user selects the text field with name: "Exemption discount value"
         And the value of the selected text field is "0.12"
         #And the user selects the text field with X3 field name: "WK2ALLXQ_TOTNF"
-        And the user selects the text field with X3 field name: "XQSOH1_TOTNF"
+        #And the user selects the text field with X3 field name: "XQSOH1_TOTNF"
+        And the user selects the text field with name: "Total value of the order"
         And the value of the selected text field is "5.00"
     #O Valor Esperado é 5.00, pois na RTAX está marcado para não deduzir do Total da NF
 
@@ -114,11 +117,14 @@ Feature: ATP-102
 
     Scenario: 9. Validation of Taxes
         When the user clicks the "Tax Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "XQSDH1_TOTMERCA"
+        #Then the user selects the text field with X3 field name: "XQSDH1_TOTMERCA"
+        Then the user selects the text field with name: "Products total value"
         And the value of the selected text field is "5.00"
-        And the user selects the text field with X3 field name: "XQSDH1_TOTDESCDESON"
+        #And the user selects the text field with X3 field name: "XQSDH1_TOTDESCDESON"
+        And the user selects the text field with name: "Exemption discount value"
         And the value of the selected text field is "0.12"
-        And the user selects the text field with X3 field name: "XQSDH1_TOTNF"
+        #And the user selects the text field with X3 field name: "XQSDH1_TOTNF"
+        And the user selects the text field with name: "Total shipment value"
         And the value of the selected text field is "5.00"
     #O Valor Esperado é 5.00, pois na RTAX está marcado para não deduzir do Total da NF
 
@@ -161,11 +167,14 @@ Feature: ATP-102
 
     Scenario: 14. Validation of Taxes
         When the user clicks the "NF-e Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "XQSIH1_TOTMERCA"
+        #Then the user selects the text field with X3 field name: "XQSIH1_TOTMERCA"
+        Then the user selects the text field with name: "Products total value"
         And the value of the selected text field is "5.00"
-        And the user selects the text field with X3 field name: "XQSIH1_TOTDESCDESON"
+        #And the user selects the text field with X3 field name: "XQSIH1_TOTDESCDESON"
+        Then the user selects the text field with name: "Exemption discount value"
         And the value of the selected text field is "0.12"
-        And the user selects the text field with X3 field name: "XQSIH1_TOTNF"
+        #And the user selects the text field with X3 field name: "XQSIH1_TOTNF"
+        Then the user selects the text field with name: "Invoice total value"
         And the value of the selected text field is "5.00"
         #O Valor Esperado é 5.00, pois na RTAX está marcado para não deduzir do Total da NF
         Then the user clicks the Close page action icon on the header panel
