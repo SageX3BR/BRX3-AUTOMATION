@@ -46,7 +46,7 @@ Feature:xq-p-flow-pih-CFOP-suggestion
         And the user selects last row of the selected data table
         And the user opens "Popup view" function on toolbox of the selected row
         And the user selects the drop down list with name: "Source"
-        And the user clicks on "Miscellaneous" option of the selected drop down list
+        And the user clicks on "laneous" option of the selected drop down list
         And the user hits tab
         And the user selects the text field with X3 field name: "WE8ALL3_ITMREF"
         And the user writes <ITMREF> to the selected text field and hits tab key
