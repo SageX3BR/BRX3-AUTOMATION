@@ -99,9 +99,12 @@ Feature: ATP-119
         And the user clicks on the selected cell
         And the user clicks the "Processar Seleção" button in the header
         And the user waits 3 seconds
-        #Checando se o documento está agora no filtro de enviados
+        #Filtra já gerados
         And the user selects the check box with name: "Sent open itens"
-        Given the user selects the main data table of the page
+        Then the user sets the check box to ticked
+        Then the user clicks the "Search" button in the header
+        #Valida se foi listado nos já gerados
+        And the user selects the main data table of the page
         And the user selects first row of the selected data table
         And the user selects cell with X3 field name: "XQREMPAG1_NUM" of selected row
         And the value of the selected cell matches the stored text with key "VENCIMENTO"
