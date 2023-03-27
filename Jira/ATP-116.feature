@@ -273,9 +273,9 @@ Feature: ATP-116
         And the user writes "CBAA1234" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
         And the user waits 5 seconds
-        And the user selects the text field with name: "UF Descarregamento"
+        And the user selects the text field with name: "Unloading state"
         And the user writes "SP" to the selected text field and hits tab key
-        And the user selects the text field with name: "UF Descarregamento"
+        And the user selects the text field with name: "Unloading state"
         And the user writes "MT" to the selected text field and hits tab key
 
     Scenario: 24. Salvar e Transmitir
