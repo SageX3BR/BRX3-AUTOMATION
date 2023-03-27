@@ -57,7 +57,7 @@ Feature: ATP-21
         And the user selects the text field with name: "Receives XML"
         And the user writes "" to the selected text field and hits tab key
         And the user selects the text field with name: "Receives Bankslip"
-        And the user writes "" to the selected text field and hits tab key
+        And the user writes "" to the selected text field
 
     Scenario: 4.Save
         Given the user clicks the "Save" main action button on the right panel
