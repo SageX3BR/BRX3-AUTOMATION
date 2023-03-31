@@ -127,8 +127,8 @@ Feature: xq-gesxqadd-ipi-pis-cofins
         And the user selects the date field with X3 field name: "XQSADDI1_DTVENC"
         And the user writes a generated date in the selected date field using the value "T+1"
         And the user clicks the "Create" main action button on the right panel
-
         Given the user clicks the "SEFAZ" action button on the header drop down
+        Then the user clicks the "No" opinion in the alert box
         When a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         #Verificar status da nota (6 = Autorizada)
