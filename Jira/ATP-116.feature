@@ -81,28 +81,28 @@ Feature: ATP-116
 
     Scenario: 6. GESXQMDFE
         Given the user opens the "GESXQMDFE" function
-        Then the "Manifesto Doc. Fiscais (MDF-e)" screen is displayed
+        Then the "Fiscal Doc. Manifest (MDF-e)" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with name: "Estab. Expedição"
+        And the user selects the text field with name: "Shipment site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with name: "BIC code"
+        And the user selects the text field with name: "Fiscal op."
         And the user writes "400" to the selected text field and hits tab key
-        And the user selects the text field with name: "UF Descarregamento"
+        And the user selects the text field with name: "Unloading state"
         And the user writes "MT" to the selected text field and hits tab key
 
-    Scenario: 7. General Data - Município de carregamento
-        And the user selects the data table of section: "Município de carregamento"
-        And the user selects cell with column header: "Código Municipio" and row number: 1
+    Scenario: 6. General Data - Município de carregamento
+        And the user selects the data table of section: "Loading city"
+        And the user selects cell with column header: "IBGE City Code" and row number: 1
         When the user clicks the "Selection" action button of the selected cell
         Then the user selects the data table in the popup
         And the user selects search cell with header: "Municipality code"
         And the user adds the text "01001000" in selected cell and hits enter key
-        And the user selects cell with column header: "Municipality code" and row number: 1
+        And the user selects cell with column header: "City" and row number: 1
         And the user clicks on the selected cell
         And the user hits enter
 
-    Scenario: 8. General Data - UF´s do Percurso
-        And the user selects the data table of section: "UF´s do Percurso"
+    Scenario: 7. General Data - UF´s do Percurso
+        And the user selects the data table of section: "States in route"
         And the user selects cell with column header: "EU" and row number: 1
         When the user clicks the "Selection" action button of the selected cell
         Then the user selects the data table in the popup
@@ -116,36 +116,36 @@ Feature: ATP-116
 
     Scenario: 9. Generation
         And the user clicks the "Generation" button in the header
-        Then the "Consulta documentos para MDF-e" screen is displayed
+        Then the "Search documents for MDF-e" screen is displayed
         And the user selects the drop down list with name: "Term"
-        And the user clicks on "Rodoviário" option of the selected drop down list
+        And the user clicks on "Road" option of the selected drop down list
         And the user hits tab
-        And the user selects the check box with name: "Veículo Vazio"
+        And the user selects the check box with name: "Empty vehicle"
         And the user sets the check box to ticked
-        And the user selects the text field with name: "Fatura Início"
+        And the user selects the text field with name: "Start invoice"
         #And the user writes "NFCBR01122/00000068" to the selected text field and hits tab key
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        And the user selects the text field with name: "Fatura Fim"
+        And the user selects the text field with name: "End invoice"
         #And the user writes "NFCBR01122/00000068" to the selected text field and hits tab key
         And the user writes the stored text with key "SIHNUM02" in the selected text field and hits tab key
         And the user clicks the "Search" button in the header
         And the user clicks the "OK" button in the header
 
-    Scenario: 10. Rodoviário - Condutor
-        Then the user clicks the "Rodoviário" action button on the header drop down
-        Then the "Modal Rodoviário" screen is displayed
-        And the user selects the text field with name: "Código de Agendamento no porto"
+    Scenario: 9. Rodoviário - Condutor
+        Then the user clicks the "Road transportation" action button on the header drop down
+        Then the "Road modal" screen is displayed
+        And the user selects the text field with name: "Port Scheduling Code"
         And the user writes "231231" to the selected text field and hits tab key
-        And the user selects the text field with name: "Placa do veículo de tração"
+        And the user selects the text field with name: "Truck's plate"
         And the user writes "ABC3333" to the selected text field and hits tab key
-        And the user selects the data table of section: "Condutor"
+        And the user selects the data table of section: "Driver"
         And the user selects cell with column header: "CPF" and row number: 1
         And the user selects first row of the selected data table
         And the user selects cell with header: "CPF" of selected row
         And the user adds the text "97728862006" in selected cell and hits enter key
 
-    Scenario: 11. Rodoviário - Reboque
-        And the user selects the data table of section: "Reboque"
+    Scenario: 10. Rodoviário - Reboque
+        And the user selects the data table of section: "Trailer"
         And the user selects cell with column header: "License plate" and row number: 1
         And the user selects first row of the selected data table
         And the user selects cell with header: "License plate" of selected row
@@ -153,15 +153,15 @@ Feature: ATP-116
 
     Scenario: 12. Rodoviário - CIOT
         And the user selects the data table of section: "CIOT"
-        And the user selects cell with column header: "Núm. CIOT" and row number: 1
+        And the user selects cell with column header: "CIOT number" and row number: 1
         And the user selects first row of the selected data table
-        And the user selects cell with header: "Núm. CIOT" of selected row
+        And the user selects cell with header: "CIOT number" of selected row
         And the user adds the text "232132442424" in selected cell and hits tab key
-        And the user selects cell with header: "Código Terceiro" of selected row
+        And the user selects cell with header: "Business Partner Code" of selected row
         And the user adds the text "BR001" in selected cell and hits enter key
 
     Scenario: 13. Rodoviário - Contratantes
-        And the user selects the data table of section: "Contratantes"
+        And the user selects the data table of section: "Contractors"
         And the user selects cell with column header: "First name" and row number: 1
         And the user selects first row of the selected data table
         And the user selects cell with header: "First name" of selected row
@@ -174,50 +174,50 @@ Feature: ATP-116
     Scenario: 14. Select First Document
         And the user clicks the "Documents" tab selected by title
         When the user selects the data table of section: "Documents"
-        And the user selects cell with column header: "Nr. Nota Fiscal" and row number: 1
+        And the user selects cell with column header: "NF-e number" and row number: 1
         And the user clicks on the selected cell
 
     Scenario: 15. Un. Transp/Pro Perig - Un. de Transporte
-        When the user clicks the "Un. Transp/Pro Perig" tab selected by title
-        And the user selects the data table of section: "Un. de Transporte"
+        When the user clicks the "Tran. Un/Dang. Prod" tab selected by title
+        And the user selects the data table of section: "Tranportation unit"
         And the user selects first row of the selected data table
-        And the user opens "Nova Un. Transp." function on toolbox of the selected row
-        Then the "Cadastrar Un. de Doc" screen is displayed
+        And the user opens "New Transp. Un." function on toolbox of the selected row
+        Then the "Register Doc. Un." screen is displayed
         And the user selects the text field with name: "Identification"
         And the user writes "ABC3333" to the selected text field and hits tab key
-        And the user selects the text field with name: "Qtde Rateada"
+        And the user selects the text field with name: "Apportioned Quantity"
         And the user writes "1" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
 
     Scenario: 16. Un. Transp/Pro Perig - Lacres da Un. Trans
-        And the user selects the data table of section: "Lacres da Un. Trans"
+        And the user selects the data table of section: "Tranportation unit seals"
         And the user selects first row of the selected data table
-        And the user opens "Novo Lacre Un. Transp." function on toolbox of the selected row
-        Then the "Cadastrar Lacre Un. Transp" screen is displayed
-        And the user selects the text field with name: "Lacre"
+        And the user opens "New Transp. Un. Seal" function on toolbox of the selected row
+        Then the "Register Transp. Un. Seal" screen is displayed
+        And the user selects the text field with name: "Seal"
         And the user writes "ABC123" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
 
     Scenario: 17. Un. Transp/Pro Perig - Un. de Carga
-        And the user selects the data table of section: "Un. de Carga"
+        And the user selects the data table of section: "Cargo unit"
         And the user selects first row of the selected data table
-        And the user opens "Nova Un. Carga" function on toolbox of the selected row
-        Then the "Cadastrar Un. Carga" screen is displayed
-        And the user selects the drop down list with name: "Tipo Unid. Transp."
+        And the user opens "New Cargo Un." function on toolbox of the selected row
+        Then the "Register Cargo Un." screen is displayed
+        And the user selects the drop down list with name: "Transport Unit Type"
         And the user clicks on "Pallet" option of the selected drop down list
         And the user hits tab
         And the user selects the text field with name: "Identification"
         And the user writes "PALLET" to the selected text field and hits tab key
-        And the user selects the text field with name: "Qtde Rateada"
+        And the user selects the text field with name: "Apportioned Quantity"
         And the user writes "1" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
 
     Scenario: 18. Un. Transp/Pro Perig - Lacres da Un. Carga
-        And the user selects the data table of section: "Lacres da Un. Carga"
+        And the user selects the data table of section: "Cargo unit seals"
         And the user selects first row of the selected data table
-        And the user opens "Novo Lacre Un. Carga" function on toolbox of the selected row
-        Then the "Cadastrar Lcre Un. Carga" screen is displayed
-        And the user selects the text field with name: "Lacre"
+        And the user opens "New Cargo Un. Seal" function on toolbox of the selected row
+        Then the "Register Cargo Un. Seal" screen is displayed
+        And the user selects the text field with name: "Seal"
         And the user writes "AABC1234" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
         And the user waits 5 seconds
@@ -225,57 +225,57 @@ Feature: ATP-116
     Scenario: 19. Select Second Document
         And the user clicks the "Documents" tab selected by title
         When the user selects the data table of section: "Documents"
-        And the user selects cell with column header: "Nr. Nota Fiscal" and row number: 2
+        And the user selects cell with column header: "NF-e number" and row number: 2
         And the user clicks on the selected cell
 
 
     Scenario: 20. Un. Transp/Pro Perig - Un. de Transporte
-        When the user clicks the "Un. Transp/Pro Perig" tab selected by title
-        And the user selects the data table of section: "Un. de Transporte"
+        When the user clicks the "Tran. Un/Dang. Prod" tab selected by title
+        And the user selects the data table of section: "Tranportation unit"
         And the user selects first row of the selected data table
-        And the user opens "Nova Un. Transp." function on toolbox of the selected row
-        Then the "Cadastrar Un. de Doc" screen is displayed
+        And the user opens "New Transp. Un." function on toolbox of the selected row
+        Then the "Register Doc. Un." screen is displayed
         And the user selects the text field with name: "Identification"
         And the user writes "ABC3333" to the selected text field and hits tab key
-        And the user selects the text field with name: "Qtde Rateada"
+        And the user selects the text field with name: "Apportioned Quantity"
         And the user writes "1" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
 
     Scenario: 21. Un. Transp/Pro Perig - Lacres da Un. Trans
-        And the user selects the data table of section: "Lacres da Un. Trans"
+        And the user selects the data table of section: "Tranportation unit seals"
         And the user selects first row of the selected data table
-        And the user opens "Novo Lacre Un. Transp." function on toolbox of the selected row
-        Then the "Cadastrar Lacre Un. Transp" screen is displayed
-        And the user selects the text field with name: "Lacre"
+        And the user opens "New Transp. Un. Seal" function on toolbox of the selected row
+        Then the "Register Transp. Un. Seal" screen is displayed
+        And the user selects the text field with name: "Seal"
         And the user writes "CBA123" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
 
     Scenario: 22. Un. Transp/Pro Perig - Un. de Carga
-        And the user selects the data table of section: "Un. de Carga"
+        And the user selects the data table of section: "Cargo unit"
         And the user selects first row of the selected data table
-        And the user opens "Nova Un. Carga" function on toolbox of the selected row
-        Then the "Cadastrar Un. Carga" screen is displayed
-        And the user selects the drop down list with name: "Tipo Unid. Transp."
+        And the user opens "New Cargo Un." function on toolbox of the selected row
+        Then the "Register Cargo Un." screen is displayed
+        And the user selects the drop down list with name: "Transport Unit Type"
         And the user clicks on "Pallet" option of the selected drop down list
         And the user hits tab
         And the user selects the text field with name: "Identification"
         And the user writes "PALLET1" to the selected text field and hits tab key
-        And the user selects the text field with name: "Qtde Rateada"
+        And the user selects the text field with name: "Apportioned Quantity"
         And the user writes "1" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
 
     Scenario: 23. Un. Transp/Pro Perig - Lacres da Un. Carga
-        And the user selects the data table of section: "Lacres da Un. Carga"
+        And the user selects the data table of section: "Cargo unit seals"
         And the user selects first row of the selected data table
-        And the user opens "Novo Lacre Un. Carga" function on toolbox of the selected row
-        Then the "Cadastrar Lcre Un. Carga" screen is displayed
-        And the user selects the text field with name: "Lacre"
+        And the user opens "New Cargo Un. Seal" function on toolbox of the selected row
+        Then the "Register Cargo Un. Seal" screen is displayed
+        And the user selects the text field with name: "Seal"
         And the user writes "CBAA1234" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
         And the user waits 5 seconds
-        And the user selects the text field with name: "UF Descarregamento"
+        And the user selects the text field with name: "Unloading state"
         And the user writes "SP" to the selected text field and hits tab key
-        And the user selects the text field with name: "UF Descarregamento"
+        And the user selects the text field with name: "Unloading state"
         And the user writes "MT" to the selected text field and hits tab key
 
     Scenario: 24. Salvar e Transmitir
@@ -290,7 +290,7 @@ Feature: ATP-116
         And the user waits 5 seconds
 
     Scenario: 25. Encerrar MDF-e
-        And the user clicks the "Encerrar MDF-e" action button on the header drop down
+        And the user clicks the "Close MDF-e" action button on the header drop down
         And a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "Código: 135 - Evento registrado e vinculado ao MDF-e"

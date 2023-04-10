@@ -35,8 +35,6 @@ Feature:ATP-38
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
         And the user adds the text <ITMREF> in selected cell and hits tab key
-        When the "Requirements to consider" screen is displayed
-        Then the user clicks the Close page action icon on the header panel
         And the user selects last editable cell with X3 field name: "WE3ALL2_QTYUOM"
         And the user adds the text <QTY> in selected cell and hits enter key
 

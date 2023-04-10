@@ -138,10 +138,9 @@ Feature:xq-s-flow-sadd-sih
         And the user selects the text field with X3 field name: "XQSADDI1_DTVENC"
         And the user writes "12/31/23" to the selected text field and hits tab key
 
-
         And the user clicks the "Create" main action button on the right panel
-
         Given the user clicks the "SEFAZ" action button on the header drop down
+        Then the user clicks the "No" opinion in the alert box
         When a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         #Verificar status da nota (6 = Autorizada)
