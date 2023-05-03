@@ -83,13 +83,13 @@ Feature: ATP-97
         And the user selects the text field with X3 field name: "SIH0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
 
-    Scenario: 7. Validation of Information
+    Scenario: 6. Validation of Information
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSIH1_TOTDESC"
+        And the user selects the text field with name: "Total discount"
         And the value of the selected text field is "20.00"
-        And the user selects the text field with X3 field name: "XQSIH1_TOTFRETE"
+        And the user selects the text field with name: "Freight"
         And the value of the selected text field is "100.00"
-        And the user selects the text field with X3 field name: "XQSIH1_TOTNF"
+        And the user selects the text field with name: "Invoice total value"
         And the value of the selected text field is "1,190.00"
         And the user clicks the "Close page" main action button on the right panel
         And the user waits 20 seconds
@@ -140,11 +140,11 @@ Feature: ATP-97
 
     Scenario: 11. Validation of Information
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSIH1_TOTDESC"
+        And the user selects the text field with name: "Total discount"
         And the value of the selected text field is "10.00"
-        And the user selects the text field with X3 field name: "XQSIH1_TOTFRETE"
+        And the user selects the text field with name: "Freight"
         And the value of the selected text field is "50.00"
-        And the user selects the text field with X3 field name: "XQSIH1_TOTNF"
+        And the user selects the text field with name: "Invoice total value"
         And the value of the selected text field is "595.00"
         Then the user clicks the Close page action icon on the header panel
 
