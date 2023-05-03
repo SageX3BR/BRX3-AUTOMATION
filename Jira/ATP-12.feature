@@ -73,19 +73,19 @@ Feature: ATP-12
 
     Scenario: 4. Validation of Taxes
         When the user clicks the "Tax Summary" tab selected by title
-        Then the user selects the text field with X3 field name: "XQSQH1_VALPIS"
+        Then the user selects the text field with name: "PIS value"
         And the value of the selected text field is "66.00"
-        And the user selects the text field with X3 field name: "XQSQH1_VALCOF"
+        And the user selects the text field with name: "COFINS value"
         And the value of the selected text field is "304.00"
-        And the user selects the text field with X3 field name: "XQSQH1_VALPISRF"
+        And the user selects the text field with name: "PIS RF value"
         And the value of the selected text field is "270.00"
-        And the user selects the text field with X3 field name: "XQSQH1_VALCOFRF"
+        And the user selects the text field with name: "COFINS RF value"
         And the value of the selected text field is "320.00"
-        And the user selects the text field with X3 field name: "XQSQH1_VALCSLLRF"
+        And the user selects the text field with name: "CSLL value"
         And the value of the selected text field is "400.00"
-        And the user selects the text field with X3 field name: "XQSQH1_VALISSRF"
+        And the user selects the text field with name: "ISS RF value"
         And the value of the selected text field is "200.00"
-        And the user selects the text field with X3 field name: "XQSQH1_VALINSS"
+        And the user selects the text field with name: "INSS value"
         And the value of the selected text field is "200.00"
 
 
