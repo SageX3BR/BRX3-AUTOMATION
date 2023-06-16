@@ -228,7 +228,7 @@ Feature: ATP-109
         Given the user clicks the "Attachments" main action button on the right panel
         And the user selects the fixed data table of section: "Attachments"
         #And the user selects first row of the selected data table
-        Then the user selects the fixed cell with X3 field name: "AOBJTXT_ORINAM" and row number: 1
+        Then the user selects the fixed cell with X3 field name: "AOBJTXT_ORINAM" and row number: 2
         And the value of the selected cell has string pattern "*[CHAVE_MDFE]*"
         And the user clicks the "Close" main action button on the right panel
 
