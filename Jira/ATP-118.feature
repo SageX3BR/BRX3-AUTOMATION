@@ -59,15 +59,17 @@ Feature: ATP-118
         Given the user clicks the Close page action icon on the header panel
 
     Scenario: 5. View PR Orders - Num. GESPOH
-        Then the user clicks the "View PR orders" action button on the header drop down
-        Given the user selects the fixed data table in the popup
+        Given the user clicks the "View PR orders" action button on the header drop down
+        And the user selects the fixed data table in the popup
         When the user selects first row of the selected data table
         And the user opens "Popup view" function on toolbox of the selected row
         And the user selects the text field with name: "Order no."
         And the user stores the value of the selected text field with the key: "NUMGESPOH"
-        And the user clicks the Close page action icon on the header panel
-        Given the user clicks the Close page action icon on the header panel
-        Given the user clicks the Close page action icon on the header panel
+        Then the user clicks the Close page action icon on the header panel
+        And the user waits 3 seconds
+        Then the user clicks the Close page action icon on the header panel
+        And the user waits 3 seconds
+        Then the user clicks the Close page action icon on the header panel
 
     Scenario: 6. GESPTH2
         Given the user opens the "GESPTH2" function
