@@ -140,7 +140,7 @@ Feature:xq-s-flow-sadd-sih
 
         And the user clicks the "Create" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
-        Then the user clicks the "No" opinion in the alert box
+        #Then the user clicks the "No" opinion in the alert box
         When a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         #Verificar status da nota (6 = Autorizada)
