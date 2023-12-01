@@ -6,7 +6,8 @@
 # - Legislation: BR addon
 # - Created by : Diogo Nascimento
 # - Created date : 24/06/2022
-# - Updated by : Diogo
+# - Updated by : Gustavo Albanus
+# - Updated date : 01/12/2023
 # - Status :
 ###########################################################################
 
@@ -158,7 +159,7 @@ Feature: ATP-56
         And the user selects first row of the selected data table
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains ""Discriminacao": "Serviço Generico \u000d\u000aPIS COFINS Retido"
+        And the value of the selected text field contains ""Discriminacao": "Serviço Generico !CHR13!PIS COFINS Retido"
         #Fecha o log
         And the user clicks the Close page action icon on the header panel
         #Fecha a Janela do Log
