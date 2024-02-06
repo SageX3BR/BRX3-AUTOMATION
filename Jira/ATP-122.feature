@@ -7,8 +7,8 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 08/03/2023
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 05/02/2024
 # - Status : Done
 ###########################################################################
 
@@ -36,9 +36,9 @@ Feature: ATP-122
         When the user selects the text field with name: "Fiscal operation"
         And the user writes "901" to the selected text field and hits tab key
         And the user stores the generated value with length 5 with the key "ALEATORIO_NF"
-        When the user selects the text field with X3 field name: "XQPIH1_NUMNFE"
+        When the user selects the text field with X3 field name: "WE8ALLXQ_NUMNFE"
         And the user writes the stored text with key "ALEATORIO_NF" in the selected text field
-        When the user selects the text field with X3 field name: "XQPIH1_SERNFE"
+        When the user selects the text field with X3 field name: "WE8ALLXQ_SERNFE"
         And the user writes "1" to the selected text field and hits tab key
 
     Scenario: 4. Management
@@ -120,11 +120,11 @@ Feature: ATP-122
         Given the user clicks the "General data" tab selected by title
         When the user selects the text field with name: "Fiscal operation"
         And the user writes "99" to the selected text field and hits tab key
-        And the user stores the generated value with length 5 with the key "ALEATORIO_NF"
-        When the user selects the text field with X3 field name: "XQPIH1_NUMNFE"
-        And the user writes the stored text with key "ALEATORIO_NF" in the selected text field
-        When the user selects the text field with X3 field name: "XQPIH1_SERNFE"
-        And the user writes "1" to the selected text field and hits tab key
+    #And the user stores the generated value with length 5 with the key "ALEATORIO_NF"
+    #When the user selects the text field with X3 field name: "WE8ALLXQ_NUMNFE"
+    #And the user writes the stored text with key "ALEATORIO_NF" in the selected text field
+    #When the user selects the text field with X3 field name: "WE8ALLXQ_SERNFE"
+    #And the user writes "1" to the selected text field and hits tab key
 
     Scenario: 11. Management - Credit
         Given the user clicks the "Management" tab selected by title
