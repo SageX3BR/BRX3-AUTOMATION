@@ -64,15 +64,15 @@ Feature: ATP-144
         Then the user selects the text field with name: "Products total value"
         And the value of the selected text field is "4,000.00"
         And the user selects the text field with name: "Total shipment value"
-        And the value of the selected text field is "4,200.00"
+        And the value of the selected text field is "4,400.00"
         And the user selects the text field with name: "Operation ICMS value"
         And the value of the selected text field is "280.00"
         And the user selects the text field with name: "IPI total"
-        And the value of the selected text field is "200.00"
+        And the value of the selected text field is "400.00"
         And the user selects the text field with name: "PIS value"
-        And the value of the selected text field is "26.00"
+        And the value of the selected text field is "24.18"
         And the user selects the text field with name: "COFINS value"
-        And the value of the selected text field is "120.00"
+        And the value of the selected text field is "111.60"
 
     Scenario: 005. Logout
         And the user clicks the "Close" main action button on the right panel
