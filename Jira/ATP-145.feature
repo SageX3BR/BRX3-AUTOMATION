@@ -7,7 +7,7 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 28/12/2023
-# - Updated by :
+# - Updated by : 25/03/2024
 # - Updated date :
 # - Status : Done
 ###########################################################################
