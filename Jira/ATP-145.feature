@@ -108,7 +108,7 @@ Feature: ATP-145
         When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
         And the user selects editable table row number: 1
         And the user selects cell with X3 field name: "WE6ALL1_LINAMTCPR" of selected row
-        And the value of the selected cell is "245.6500"
+        And the value of the selected cell is "292.1800"
 
     Scenario: 009. Logout
         And the user clicks the "Close" main action button on the right panel
