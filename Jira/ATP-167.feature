@@ -1,8 +1,8 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: ATP-166
-# - Description: Elementos de faturação Desconto % e R$ e frete preenchido na Encomenda, Expedição e Fatura de Venda
+# - Test code: ATP-167
+# - Description: Elementos de faturação Desconto R$ e frete preenchido na Encomenda, Expedição e Fatura de Venda
 # - Jira: X3DEV-5369
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
@@ -12,7 +12,7 @@
 # - Status : Done
 ###########################################################################
 
-Feature: ATP-166
+Feature: ATP-167
 
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
@@ -52,8 +52,6 @@ Feature: ATP-166
 
     Scenario: 3. Document Creation
         And the user selects the data table of section: "Invoicing elements"
-        And the user selects cell with column header: "% or amount" and row number: 2
-        And the user adds the text "20" in selected cell and hits tab key
         And the user selects cell with column header: "% or amount" and row number: 3
         And the user adds the text "10.00" in selected cell and hits tab key
         And the user selects cell with column header: "% or amount" and row number: 9
@@ -64,7 +62,7 @@ Feature: ATP-166
     Scenario: 4. Validation of Taxes
         When the user clicks the "Tax Summary" tab selected by title
         Then the user selects the text field with name: "Total discount"
-        And the value of the selected text field is "205.00"
+        And the value of the selected text field is "5.00"
         Then the user selects the text field with name: "Freight"
         And the value of the selected text field is "10.00"
         And the user clicks the Close page action icon on the header panel
@@ -102,15 +100,13 @@ Feature: ATP-166
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
         And the user hits enter
-        
+
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "1" | "50.00" | "6102" |
 
     Scenario: 7. Discount and Create GESSDH
         And the user selects the data table of section: "Invoicing elements"
-        And the user selects cell with column header: "% or amount" and row number: 2
-        And the user adds the text "20" in selected cell and hits tab key
         And the user selects cell with column header: "% or amount" and row number: 3
         And the user adds the text "10.00" in selected cell and hits tab key
         And the user selects cell with column header: "% or amount" and row number: 9
@@ -120,8 +116,8 @@ Feature: ATP-166
 
     Scenario: 8. Validation of Taxes
         When the user clicks the "Tax Summary" tab selected by title
-        #Then the user selects the text field with name: "Total discount"
-        #And the value of the selected text field is "205.00"
+        Then the user selects the text field with name: "Total discount"
+        And the value of the selected text field is "5.00"
         Then the user selects the text field with name: "Freight"
         And the value of the selected text field is "10.00"
         And the user clicks the Close page action icon on the header panel
@@ -143,8 +139,6 @@ Feature: ATP-166
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
         And the user selects the data table of section: "Invoicing elements"
-        And the user selects cell with column header: "% or amount" and row number: 2
-        And the user adds the text "20" in selected cell and hits tab key
         And the user selects cell with column header: "% or amount" and row number: 3
         And the user adds the text "10.00" in selected cell and hits tab key
         And the user selects cell with column header: "% or amount" and row number: 9
@@ -175,7 +169,7 @@ Feature: ATP-166
     Scenario: 12. Validation of Taxes
         Given the user clicks the "NF-e Summary" tab selected by title
         Then the user selects the text field with name: "Total discount"
-        And the value of the selected text field is "205.00"
+        And the value of the selected text field is "5.00"
         Then the user selects the text field with name: "Freight"
         And the value of the selected text field is "10.00"
 
