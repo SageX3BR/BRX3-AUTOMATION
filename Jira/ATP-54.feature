@@ -112,7 +112,7 @@ Feature: ATP-54
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SDHNUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "XQSRH1_CODOPF"
+        And the user selects the text field with X3 field name: "WK6ALLXQ_CODOPF"
         And the user writes "105" to the selected text field and hits tab key
         And the user clicks the "Ok" opinion in the alert box
         And the user clicks the "Ok" opinion in the alert box
