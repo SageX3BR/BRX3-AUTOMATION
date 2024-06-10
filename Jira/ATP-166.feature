@@ -102,7 +102,7 @@ Feature: ATP-166
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
         And the user hits enter
-
+        
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "1" | "50.00" | "6102" |
