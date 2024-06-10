@@ -101,7 +101,7 @@ Feature: ATP-71
 
 
     Scenario:8. Complete the document
-        Given the user selects the text field with X3 field name: "XQSRH1_CODOPF"
+        Given the user selects the text field with X3 field name: "WK6ALLXQ_CODOPF"
         And the user writes "140" to the selected text field and hits tab key
         And the user clicks the "Lines (tax)" tab selected by title
         Given the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"
