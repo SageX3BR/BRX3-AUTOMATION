@@ -81,7 +81,7 @@ Feature:05020301-CST10
 
     Scenario: 05020301-04 Create/Sefaz/Validation
         Given the user clicks the "Control" tab selected by title
-        When the user selects the text field with X3 field name: "WE8ALL4_CLCLINAMT"
+        When the user selects the text field with X3 field name: "WE8ALL3_CUMLINAMT1"
         And the user stores the value of the selected text field with the key: "CALCVALUE"
         And the user selects the text field with X3 field name: "WE8ALL4_TOTLINAMT"
         Then the user writes the stored text with key "CALCVALUE" in the selected text field and hits tab key
