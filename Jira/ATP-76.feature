@@ -95,7 +95,7 @@ Feature: ATP-76
         #And the user clicks the "Ok" opinion in the alert box
         And the user selects the date field with X3 field name: "WK6ALLXQ_DTEMI"
         And the user writes today to the selected date field
-        And the user selects the date field with X3 field name: "XQSRH1_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK6ALLXQ_DTSAIENT"
         And the user writes today to the selected date field
 
         And the user clicks the "Lines (tax)" tab selected by title
