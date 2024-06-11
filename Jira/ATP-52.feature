@@ -93,7 +93,7 @@ Feature: ATP-52
         And the user checks the selected picking list panel item
         And the user selects the text field with X3 field name: "WK6ALLXQ_CODOPF"
         And the user writes "140" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "XQSRH1_DTEMI"
+        And the user selects the date field with X3 field name: "WK6ALLXQ_DTEMI"
         And the user writes today to the selected date field
         And the user selects the date field with X3 field name: "XQSRH1_DTSAIENT"
         And the user writes today to the selected date field
