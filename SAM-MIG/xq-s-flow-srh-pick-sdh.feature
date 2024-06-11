@@ -130,7 +130,7 @@ Feature:  xq-s-flow-srh-pick-sdh
         And the user writes "140" to the selected text field and hits tab key
         And the user selects the date field with X3 field name: "WK6ALLXQ_DTEMI"
         And the user writes today to the selected date field
-        And the user selects the date field with X3 field name: "XQSRH1_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK6ALLXQ_DTSAIENT"
         And the user writes today to the selected date field
 
         And the user clicks the "Lines" tab selected by title

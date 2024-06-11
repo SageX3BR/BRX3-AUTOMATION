@@ -116,7 +116,7 @@ Feature: ATP-103
         And the user clicks the "Ok" opinion in the alert box
         And the user selects the date field with X3 field name: "WK6ALLXQ_DTEMI"
         And the user writes today to the selected date field
-        And the user selects the date field with X3 field name: "XQSRH1_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK6ALLXQ_DTSAIENT"
         And the user writes today to the selected date field
         And the user clicks the "Lines (tax)" tab selected by title
         And the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"
