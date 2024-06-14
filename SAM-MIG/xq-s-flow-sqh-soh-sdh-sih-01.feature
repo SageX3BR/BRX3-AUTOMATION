@@ -172,10 +172,6 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-01
         And the user selects the item with the stored text with key "SOH_NUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
 
-        And the user selects the text field with name: "Fiscal operation"
-        #alert
-        And the user writes "100" to the selected text field and hits tab key
-        And the user hits enter
 
     Scenario: 7. Create document
 
@@ -229,7 +225,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-01
         #And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-		And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         Then a log panel appears

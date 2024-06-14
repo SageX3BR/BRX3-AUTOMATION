@@ -146,6 +146,7 @@ Feature: ATP-27
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
+        Then the user waits 60 seconds
         When the user selects the text field with name: "Site"
         And the user writes "BR011" to the selected text field and hits tab key
         When the user selects the text field with name: "Bank"
