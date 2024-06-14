@@ -61,19 +61,18 @@ Feature: xq-s-flow-sih-oi4
         And the user selects the text field with X3 field name: "XQSIH0_DESLOCDESP"
         And the user writes "Paranagua" to the selected text field and hits tab key
 
-    Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
-        And the user adds the text "1" in selected cell and hits tab key
         # Scenario: Fill Management
-        When the user clicks the "Management" tab selected by title
+        # Scenario: Fill Management
+        And the user clicks the "Management" tab selected by title
+        And the user selects the text field with X3 field name: "WK5ALL1_BPCORD"
+        And the user writes "PT006" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALL1_VACBPR"
         And the user writes "BRL" to the selected text field and hits tab key
-        And the user clicks the "Lines" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
     Scenario Outline: Add Lines
         #Lines
+        And the user clicks the "Lines" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell

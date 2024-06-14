@@ -95,10 +95,14 @@ Feature: xq-p-flow-pih-oi-frei-01
             | 2   | "BMS002" | "16"   | "25.36" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
     Scenario: 6. Control
+
+
         Given the user clicks the "Control" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
-        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 2
-        Then the user adds the text "26.32" in selected cell and hits enter key
+        When the user selects the text field with X3 field name: "WE8ALL3_CUMLINAMT1"
+        And the user stores the value of the selected text field with the key: "CALCVALUE"
+        And the user selects the text field with X3 field name: "WE8ALL4_TOTLINAMT"
+        Then the user writes the stored text with key "CALCVALUE" in the selected text field and hits tab key
+
 
     Scenario: 7. Creation
         Given the user clicks the "Create" main action button on the right panel

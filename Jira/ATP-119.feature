@@ -61,7 +61,7 @@ Feature: ATP-119
         #Dados Cobrança
         Then the user selects the drop down list with name: "Payment type"
         When the user clicks on "Títulos com código de barras" option of the selected drop down list
-        Then the user selects the drop down list with name: "Forma de Pagamento"
+        Then the user selects the drop down list with name: "Form of payment"
         When the user clicks on "11-Tributos com código de barras" option of the selected drop down list
 
         #Invoice Creation & Posting
@@ -82,7 +82,7 @@ Feature: ATP-119
 
     Scenario: Geração de remessa SISPAG
         Given the user opens the "CONSXQP" function
-        Then the "Remessa Pagamento Bancário" screen is displayed
+        Then the "Bank Payment Remittance" screen is displayed
         And the user selects the text field with name: "Site"
         And the user writes "BR011" to the selected text field
         And the user selects the text field with name: "Invoice number"

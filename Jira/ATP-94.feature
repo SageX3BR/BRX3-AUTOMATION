@@ -130,7 +130,7 @@ Feature: ATP-94
         Given the user clicks the "General data" tab selected by title
         When the user selects the text field with name: "Fiscal operation"
         And the user writes "995" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPIH1_NUMNFE"
+        And the user selects the text field with X3 field name: "WE8ALLXQ_NUMNFE"
         And the user writes the stored text with key "DOCSUP041" in the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQPIH1_SERNFE"
         And the user writes "1" to the selected text field and hits tab key
@@ -193,7 +193,7 @@ Feature: ATP-94
         And the user clicks the Close page action icon on the header panel
 
     Scenario: 14. Control - PIH CTE
-        Then the user selects the text field with X3 field name: "XQPIH1_NUMNFE"
+        Then the user selects the text field with X3 field name: "WE8ALLXQ_NUMNFE"
         Given the user clicks the "Control" tab selected by title
         When the user selects the text field with X3 field name: "WE8ALL3_CUMLINAMT1"
         And the user stores the value of the selected text field with the key: "CALCVALUE01"

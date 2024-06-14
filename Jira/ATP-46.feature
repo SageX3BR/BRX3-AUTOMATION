@@ -128,8 +128,10 @@ Feature: ATP-46
         Then the user clicks the "OK" button in the popup header
         And the user clicks the Close page action icon on the header panel
 
+
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
+        Then the user waits 60 seconds
         When the user selects the text field with name: "Site"
         And the user writes "BR011" to the selected text field and hits tab key
         When the user selects the text field with name: "Bank"

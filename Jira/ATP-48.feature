@@ -100,6 +100,7 @@ Feature: ATP-48
         And the user selects the main log panel of the page
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
+        Then the user waits 60 seconds
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function

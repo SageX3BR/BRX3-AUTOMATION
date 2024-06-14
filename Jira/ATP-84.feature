@@ -39,15 +39,11 @@ Feature: atp-84
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "200" to the selected text field and hits tab key
 
-    Scenario: 3.Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
-        And the user adds the text "1" in selected cell and hits tab key
-        And the user clicks the "Lines" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
     Scenario Outline: 4.Add Lines
         #Lines
+        And the user clicks the "Lines" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
