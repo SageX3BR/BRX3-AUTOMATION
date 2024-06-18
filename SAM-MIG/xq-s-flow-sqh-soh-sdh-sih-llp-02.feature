@@ -68,14 +68,16 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         And the user selects the text field with X3 field name: "XQSQH0_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
         And the user clicks the "Management" tab selected by title
+        And the user selects the text field with X3 field name: "WK1ALL1_BPAADD"
+        And the user writes "001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK1ALL1_VACBPR"
         And the user writes "BRL" to the selected text field and hits tab key
-        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WK1ALL2_ARRAY_NBLIG"
+
     #Filling Lines
 
     Scenario Outline: 3. Add Lines
-
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WK1ALL2_ARRAY_NBLIG"
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK1ALL2_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -210,7 +212,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-		And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         Then a log panel appears

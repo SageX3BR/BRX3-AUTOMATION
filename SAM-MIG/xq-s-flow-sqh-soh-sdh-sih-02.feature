@@ -74,6 +74,8 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-02
         And the user selects the text field with X3 field name: "XQSOH0_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
         And the user clicks the "Management" tab selected by title
+        And the user selects the text field with X3 field name: "WK2ALL1_BPCINV"
+        And the user writes "PT006" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK2ALL1_VACBPR"
         And the user writes "BRL" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
@@ -200,7 +202,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-02
         #And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-		And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         Then a log panel appears

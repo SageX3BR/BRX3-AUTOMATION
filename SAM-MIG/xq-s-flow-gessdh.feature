@@ -61,6 +61,7 @@ Feature: xq-s-flow-gessdh
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "121" to the selected text field and hits tab key
+
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
     # And an alert box with the text containing "delivery" appears
@@ -137,6 +138,8 @@ Feature: xq-s-flow-gessdh
         And the user writes "Paranaguá" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSDH0_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
+        And the user hits tab
+        And the user hits tab
         And the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK4ALL2_VACBPR"
         And the user writes "BRL" to the selected text field and hits tab key
