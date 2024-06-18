@@ -71,6 +71,8 @@ Feature: xq-s-flow-sih-oi2
 
     Scenario: Fill Management
         When the user clicks the "Management" tab selected by title
+        And the user selects the text field with X3 field name: "WK5ALL1_BPCORD"
+        And the user writes "PT006" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALL1_VACBPR"
         And the user writes "BRL" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title

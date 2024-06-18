@@ -61,6 +61,8 @@ Feature:  xq-s-flow-sih-pick-sdh-02
         And the user writes "Paranaguá" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSDH0_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
+        And the user hits tab
+        And the user hits tab
         And the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK4ALL2_VACBPR"
         And the user writes "BRL" to the selected text field and hits tab key
@@ -144,7 +146,7 @@ Feature:  xq-s-flow-sih-pick-sdh-02
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-		And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         Then a log panel appears
