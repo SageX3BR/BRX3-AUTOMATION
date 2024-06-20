@@ -52,6 +52,7 @@ Feature: xq-p-flow-pth-pnh
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell and hits enter key
+
         #And the user clicks the "OK" button in the header
 
         Examples:
