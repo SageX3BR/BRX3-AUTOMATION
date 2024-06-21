@@ -60,6 +60,9 @@ Feature:  xq-s-flow-sih-pick-sdh-04
         And the user writes "Paranaguá" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSDH0_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
+        And the user hits tab
+        And the user hits tab
+
         And the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK4ALL2_BPCPYR"
         And the user writes "PT006" to the selected text field and hits tab key
