@@ -46,8 +46,7 @@ Feature: ATP-136
         When the user sets the check box to unticked
         Then the selected check box is not checked
         Given the user selects the check box with name: "All products"
-        When the user sets the check box to unticked
-        Then the selected check box is not checked
+        When the selected check box is disabled
         Given the user selects the check box with name: "Count"
         When the user sets the check box to ticked
         When the selected check box is checked
