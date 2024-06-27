@@ -7,9 +7,9 @@
 # - Legislation: BRA
 # - Created by :
 # - Created date :
-# - Updated by :
-# - Updated date
-# - Status :
+# - Updated by : Gustavo Albanus
+# - Updated date: 27/06/2024
+# - Status : Alterado a forma de preenchimento das Linhas
 ###########################################################################
 
 Feature: xq-p-flow-pth-crud
@@ -45,35 +45,52 @@ Feature: xq-p-flow-pth-crud
     Scenario Outline: 4. Add Lines
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
-        And the user selects editable table row number: <LIN>
+        Given the user selects editable table row number: 1
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
+        And the user adds the text "BMS001" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
-        And the user adds the text <QTYUOM> in selected cell
+        And the user adds the text "23" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
-        And the user adds the text <GROPRI> in selected cell
+        And the user adds the text "32.95" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell
+        And the user adds the text "1101" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQORIGEMICMS"
-        And the user adds the text <XQORIGEMICMS> in selected cell
+        And the user adds the text "0" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
+        And the user adds the text "10" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCENQ"
-        And the user adds the text <XQCENQ> in selected cell
+        And the user adds the text "999" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell
+        And the user adds the text "49" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTPIS"
-        And the user adds the text <XQCSTPIS> in selected cell
+        And the user adds the text "01" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCOF"
-        And the user adds the text <XQCSTCOF> in selected cell
-        #Retirado a gestão de stock
-        #And the "Enter receipts ALL : Full entry" screen is displayed
-        #Then the user clicks the "Save" main action button on the right panel
+        And the user adds the text "01" in selected cell and hits enter key
 
-        Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
-            | 1   | "BMS001" | "23"   | "32.95" | "1101" | "0"          | "10"      | "999"  | "49"     | "01"     | "01"     |
-            | 2   | "BMS002" | "15"   | "25.32" | "1101" | "0"          | "10"      | "999"  | "49"     | "01"     | "01"     |
+        Given the user selects editable table row number: 2
+        And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
+        And the user adds the text "BMS002" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
+        And the user adds the text "15" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
+        And the user adds the text "25.32" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
+        And the user adds the text "1101" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQORIGEMICMS"
+        And the user adds the text "0" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTICMS"
+        And the user adds the text "10" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCENQ"
+        And the user adds the text "999" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIPI"
+        And the user adds the text "49" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTPIS"
+        And the user adds the text "01" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCOF"
+        And the user adds the text "01" in selected cell and hits enter key
+    #Retirado a gestão de stock
+    #And the "Enter receipts ALL : Full entry" screen is displayed
+    #Then the user clicks the "Save" main action button on the right panel
 
     Scenario: 5. Creation
         Given the user clicks the "Create" main action button on the right panel

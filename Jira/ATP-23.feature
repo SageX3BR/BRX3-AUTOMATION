@@ -5,9 +5,9 @@
 # - Description: Garantir cadastro com mesmo CNPJ e IE para Terceiro
 # - Created by : Diogo Nascimento
 # - Created date : 20/05/2022
-# - Updated by :
-# - Updated date :
-# - Status :
+# - Updated by : Gustavo Albanus
+# - Updated date : 27/06/2024
+# - Status : Incluido um Tab após a seleção do Campo BP
 ###########################################################################
 
 Feature: ATP-23
@@ -27,6 +27,7 @@ Feature: ATP-23
         And the user clicks on the selected cell
         And the user selects the text field with name: "BP"
         And the user writes "ATP-23" to the selected text field
+        And the user hits tab
         And the user clicks the "Addresses" tab selected by title
         And the user selects the fixed data table for x3 field name: "BPABPR_ARRAY_NBADR"
 

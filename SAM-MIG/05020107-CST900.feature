@@ -7,9 +7,9 @@
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 01/06/2020
-# - Updated by : Jonatas Hille
-# - Updated date : 03/01/2022
-# - Status : [X]Automated []Work In Progress []Broken
+# - Updated by : Gustavo Albanus
+# - Updated date : 27/06/2024
+# - Status : Ajustado o Campo TOTICMSFCPST
 ###########################################################################
 
 Feature:05020107-CST900
@@ -84,7 +84,7 @@ Feature:05020107-CST900
         And the user clicks the "Resume" tab selected by title
         When the user selects the text field with X3 field name: "WE3ALLXQ_TOTBASEFCPST"
         And the value of the selected text field is "1,445.18"
-        And the user selects the text field with X3 field name: "XQPOH2_TOTICMSFCPST"
+        And the user selects the text field with X3 field name: "WE3ALLXQ_TOTICMSFCPST"
         And the value of the selected text field is "28.90"
 
     Scenario: 05020107-07 Logout

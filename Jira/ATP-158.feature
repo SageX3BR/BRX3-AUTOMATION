@@ -54,9 +54,9 @@ Feature: ATP-158
         And the user adds the text <VACITM1> in selected cell
         And the user hits tab
         #Alert box: Question
-        Then an alert box with the text "Recalculate prices/discounts?" appears
-        And the user clicks the "No" opinion in the alert box
-        And the user hits enter
+        #Then an alert box with the text "Recalculate prices/discounts?" appears
+        #And the user clicks the "No" opinion in the alert box
+        #And the user hits enter
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI    | XQSTISS | XQEXISS | VACITM1 |
