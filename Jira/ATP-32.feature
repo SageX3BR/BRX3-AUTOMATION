@@ -5,6 +5,7 @@ Feature:ATP-32
     # 2. Invoice export with SIH template
     # 3. Invoice deletion
     # 4. Invoie Import with SIH template
+    # Update: 27/06/2024 - Ajustes na Exportação e Mensagens
     ###########################################################################
     Scenario: 1.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
@@ -46,19 +47,17 @@ Feature:ATP-32
         And the user selects the text field with name: "Template to use"
         And the user writes "SIH" to the selected text field
         And the user selects the fixed data table of section: "Range"
-        And the user selects first row of the selected data table
-        And the user selects last editable cell with X3 field name: "EXPOBJ_BDEB"
+        Given the user selects editable table row number: 1
+        And the user selects last fixed cell with X3 field name: "EXPOBJ_BDEB"
         And the user adds the stored text with key "SIH_NUMBER" in selected cell and hits enter key
-        And the user selects the fixed data table of section: "Range"
-        And the user selects first row of the selected data table
         And the user selects the fixed cell with X3 field name: "EXPOBJ_BFIN" and row number: 1
-        And the user adds the stored text with key "SIH_NUMBER" in selected cell
+        And the user adds the stored text with key "SIH_NUMBER" in selected cell and hits tab key
         And the user selects the radio buttons group with X3 field name: "EXPOBJ_TYPEXP"
         And the user clicks on "Server" radio button of the selected radio buttons group
-        And the user clicks the "Ok" opinion in the alert box
         And the user selects the text field with X3 field name: "EXPOBJ_VOLFIL"
         And the user writes "[ATP]/atp-32-sih-import.txt" to the selected text field
         Then the user clicks the "OK" button in the header
+        And the user clicks the "Ok" opinion in the alert box
         Then the user clicks the Close page action icon on the header panel
 
         And the user opens the "GESSIH" function
@@ -73,6 +72,7 @@ Feature:ATP-32
         Then the "Code cancellation" screen is displayed
         And the user clicks the "OK" button in the header
         And the user clicks the "Ok" opinion in the alert box
+        And the user waits 3 seconds
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: Logout scenario
@@ -88,7 +88,7 @@ Feature:ATP-32
         And the user selects the radio buttons group with X3 field name: "IMPOBJ_TYPEXP"
         And the user clicks on "Client" radio button of the selected radio buttons group
         And the user clicks on "Server" radio button of the selected radio buttons group
-        And the user clicks the "Ok" opinion in the alert box
+        #And the user clicks the "Ok" opinion in the alert box
         And the user selects the text field with X3 field name: "IMPOBJ_VOLFIL"
         And the user writes "[ATP]/atp-32-sih-import.txt" to the selected text field
         Then the user clicks the "OK" button in the header

@@ -7,9 +7,9 @@
 #- Legislation: BRA
 #- Created by : Gustavo Albanus
 #- Created date : 30/01/2023
-#- Updated by :
-#- Updated date :
-#- Status : Done
+#- Updated by : Gustavo Albanus
+#- Updated date : 27/06/2024
+#- Status : Ajustado a duplicação de documentos
 ##########################################################################
 
 Feature: ATP-116
@@ -63,7 +63,8 @@ Feature: ATP-116
     Scenario: 5. Duplicar GESSIH
         And the user selects the text field with name: "Invoice no."
         And the user writes " " to the selected text field and hits tab key
-        And the user clicks the "Lines" tab selected by title
+        And the user selects the text field with name: "Fiscal operation"
+        And the user writes "100" to the selected text field and hits tab key
         Given the user clicks the "Create" main action button on the right panel
         Then an alert box with the text "Continue and confirm the duplication?" appears
         And the user clicks the "Yes" opinion in the alert box
