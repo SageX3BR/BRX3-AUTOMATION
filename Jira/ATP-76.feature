@@ -8,8 +8,8 @@
 # - Created by : Gustavo Albanus
 # - Created date : 28/06/2022
 # - Updated by : Gustavo Albanus
-# - Updated date : 28/07/2022
-# - Changes: Alteração para edição das linhas na GESXQSADD
+# - Updated date : 28/06/2024
+# - Changes: Ajustado a opção de documento na SADD
 # - Status : Done
 ###########################################################################
 
@@ -155,8 +155,8 @@ Feature: ATP-76
         And the user selects the text field with X3 field name: "XQSADDI0_FCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the drop down list with X3 field name: "XQSADDI0_DOCTYP"
-        And the user clicks on "Customer Returns (SRH)" option of the selected drop down list
-        Then the value of the selected drop down list is "Customer Returns (SRH)"
+        And the user clicks on "Customer Return (SRH)" option of the selected drop down list
+        Then the value of the selected drop down list is "Customer Return (SRH)"
         And the user selects the text field with X3 field name: "XQSADDI0_ORIDOCNUM"
         #And the user writes "SRTBR0110062" to the selected text field and hits tab key
         And the user writes the stored text with key "SRHNUM" in the selected text field and hits tab key

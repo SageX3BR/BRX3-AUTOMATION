@@ -42,7 +42,7 @@ Feature: ATP-82
         And the user selects the date field with name: "Date"
         And the user writes a generated date in the selected date field using the value "T+2"
         And the user selects the text field with name: "Sold-to"
-        And the user writes "NA008" to the selected text field
+        And the user writes "NA008" to the selected text field and hits tab key
 
         #Select management section
         #Verification of the Tax rule & currency used on the sales invoice.

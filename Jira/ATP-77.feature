@@ -6,8 +6,9 @@
 # - Jira: ATP-77
 # - Created by : Ueder Budni
 # - Created date : 27/06/2022
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 28/06/2024
+# - Changes: Ajustado a opção de documento na SADD
 ###########################################################################
 
 Feature: ATP-77
@@ -132,8 +133,8 @@ Feature: ATP-77
         And the user selects the text field with X3 field name: "XQSADDI0_FCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the drop down list with X3 field name: "XQSADDI0_DOCTYP"
-        And the user clicks on "Subcontract Material Returns (SRS)" option of the selected drop down list
-        Then the value of the selected drop down list is "Subcontract Material Returns (SRS)"
+        And the user clicks on "Subc. Material Return (SRS)" option of the selected drop down list
+        Then the value of the selected drop down list is "Subc. Material Return (SRS)"
         And the user selects the text field with X3 field name: "XQSADDI0_ORIDOCNUM"
         And the user writes the stored text with key "SRS_NUM" in the selected text field and hits tab key
         And the user hits escape

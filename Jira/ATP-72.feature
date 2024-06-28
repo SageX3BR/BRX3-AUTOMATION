@@ -8,8 +8,8 @@
 # - Created by : Gustavo Albanus
 # - Created date : 20/06/2022
 # - Updated by : Gustavo Albanus
-# - Updated date : 28/07/2022
-# - Changes: Incluído as linhas 89 a 95 para editar as linhas
+# - Updated date : 28/06/2024
+# - Changes: Ajustado a opção de documento na SADD
 # - Status :
 ###########################################################################
 
@@ -80,8 +80,8 @@ Feature: ATP-72
         And the user selects the text field with X3 field name: "XQSADDI0_FCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the drop down list with X3 field name: "XQSADDI0_DOCTYP"
-        And the user clicks on "Deliveries (SDH)" option of the selected drop down list
-        Then the value of the selected drop down list is "Deliveries (SDH)"
+        And the user clicks on "Delivery (SDH)" option of the selected drop down list
+        Then the value of the selected drop down list is "Delivery (SDH)"
         And the user selects the text field with X3 field name: "XQSADDI0_ORIDOCNUM"
         #And the user writes "SDH-BR01122/00000497" to the selected text field and hits tab key
         And the user writes the stored text with key "SDHNUM" in the selected text field and hits tab key

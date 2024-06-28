@@ -4,9 +4,9 @@
 # - Legislation: BR addon
 # - Created by : Diogo Nascimento
 # - Created date : 07/07/2022
-# - Updated by :
-# - Updated date :
-# - Status : Done
+# - Updated by : Gustavo Albanus
+# - Updated date : 28/06/2024
+# - Status : Ajustado o Texto do JSON
 ###########################################################################
 
 Feature: ATP-81
@@ -52,7 +52,7 @@ Feature: ATP-81
     Scenario: 3. Inserir Desconto
         Given the user clicks the "Invoicing" tab selected by title
         When the user selects the data table of section: "Invoicing elements"
-        And the user selects cell with column header: "% or amount" and row number: 8
+        And the user selects cell with column header: "% or amount" and row number: 9
         And the user adds the text "200" in selected cell and hits tab key
 
         Given the user clicks the "Create" main action button on the right panel
@@ -88,8 +88,8 @@ Feature: ATP-81
         And the user selects first row of the selected data table
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains ""ItemDescIncondicionado": 200"
-        And the value of the selected text field contains ""ValDescIncond": 200"
+        And the value of the selected text field contains ""ItemDescIncondicionado": "200"
+        And the value of the selected text field contains ""ValDescIncond": "200"
         And the user clicks the Close page action icon on the header panel
         #Fechando a tela antes de sair
         And the user clicks the Close page action icon on the header panel
