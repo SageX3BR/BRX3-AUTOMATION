@@ -119,7 +119,7 @@ Feature: ATP-109
         And the user selects the text field with name: "Port Scheduling Code"
         And the user writes "231231" to the selected text field and hits tab key
         And the user selects the text field with name: "Truck's plate"
-        And the user writes "ABC33311" to the selected text field and hits tab key
+        And the user writes "ABC3331" to the selected text field and hits tab key
         And the user selects the data table of section: "Driver"
         And the user selects cell with column header: "CPF" and row number: 1
         And the user selects first row of the selected data table
