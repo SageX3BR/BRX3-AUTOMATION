@@ -160,7 +160,7 @@ Feature: ATP-109
         And the user opens "New Transp. Un." function on toolbox of the selected row
         Then the "Register Doc. Un." screen is displayed
         And the user selects the text field with name: "Identification"
-        And the user writes "ABC33313" to the selected text field and hits tab key
+        And the user writes "ABC3331" to the selected text field and hits tab key
         And the user selects the text field with name: "Apportioned Quantity"
         And the user writes "1" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header

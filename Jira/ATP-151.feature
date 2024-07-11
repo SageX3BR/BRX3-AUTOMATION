@@ -60,7 +60,7 @@ Feature: ATP-151
         When the user selects the text field with name: "Shipment method"
         And the user writes "ES03" to the selected text field and hits tab key
         When the user selects the text field with name: "License plate"
-        And the user writes "ABC33313" to the selected text field and hits tab key
+        And the user writes "ABC3331" to the selected text field and hits tab key
         When the user selects the text field with name: "License plate state"
         And the user writes "SP" to the selected text field and hits tab key
 
