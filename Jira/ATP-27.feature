@@ -143,6 +143,7 @@ Feature: ATP-27
         And the user stores the value of the selected cell with the key: "amount"
         Then the user clicks the "OK" button in the popup header
         And the user clicks the Close page action icon on the header panel
+        And the user waits 60 seconds
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function

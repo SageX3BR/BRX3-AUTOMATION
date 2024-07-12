@@ -94,15 +94,18 @@ Feature: xq-p-flow-pih-oi-insur-01
             | 1   | "BMS001" | "26"   | "45.69" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
             | 2   | "BMS002" | "21"   | "18.32" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
-    Scenario: 6. Control
+
+    Scenario: 6. Creation
+        Given the user clicks the "Create" main action button on the right panel
+        Then a confirmation dialog appears with the message "Record has been created"
+
+    Scenario: 7. Control
         Given the user clicks the "Control" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 5
         Then the user adds the text "25.25" in selected cell and hits enter key
-
-    Scenario: 7. Creation
-        Given the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
+        And the user hits enter
+        When the user clicks the "Yes" opinion in the alert box
 
     Scenario: 8. Open Items
         Given the user clicks the "Open items" button in the header
