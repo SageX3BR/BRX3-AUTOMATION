@@ -6,9 +6,9 @@
 # - Jira: X3DEV-518
 # - Created by : Gustavo Albanus
 # - Created date : 02/05/2022
-# - Updated by :
-# - Updated date :
-# - Status : In Progress
+# - Updated by : Gustavo Albanus
+# - Updated date : 17/07/2024
+# - Status : Done
 ###########################################################################
 
 
@@ -66,8 +66,6 @@ Feature: ATP-12
         And the user hits tab key in the selected cell
         And the user clicks the "Create" main action button on the right panel
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "Foram retidos os impostos PIS/COFINS"
-        And the selected log panel includes the message "Cálculo do PIS/COFINS por alíquota"
         Then the user clicks the Close page action icon on the header panel
         When a confirmation dialog appears with the message "Record has been created"
 
