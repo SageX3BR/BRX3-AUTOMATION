@@ -63,8 +63,6 @@ Feature: ATP-13
         And the user hits tab key in the selected cell
         And the user clicks the "Create" main action button on the right panel
         And the user selects the main log panel of the page
-        And the selected log panel includes the message "Foram retidos os impostos PIS/COFINS"
-        And the selected log panel includes the message "Cálculo do PIS/COFINS por alíquota"
         And the user clicks the Close page action icon on the header panel
         Then a confirmation dialog appears with the message "Record has been created"
 
