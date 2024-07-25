@@ -8,8 +8,9 @@
 # - Created by : Gustavo Albanus
 # - Created date : 08/03/2023
 # - Updated by : Gustavo Albanus
-# - Updated date : 05/02/2024
+# - Updated date : 24/07/2024
 # - Status : Done
+# - Ajustes Efetuados: No Picking clicar em Next e gerar os números aleatórios da NFe e Serie
 ###########################################################################
 
 Feature: ATP-122
@@ -107,6 +108,8 @@ Feature: ATP-122
 
     Scenario: 9. Picking
         Given the user clicks the "Invoice selection" link on the left panel
+        Given the user selects the data table of left panel
+        When the user clicks the "Next" button in the right top bar of the selected data table
         When the user selects the main picking list panel of the screen
         #Then the user clicks the "Expand all" button in the left top bar of the selected picking list
         When the user clicks the "Maximize" button in the right top bar of the selected picking list
@@ -120,11 +123,11 @@ Feature: ATP-122
         Given the user clicks the "General data" tab selected by title
         When the user selects the text field with name: "Fiscal operation"
         And the user writes "99" to the selected text field and hits tab key
-    #And the user stores the generated value with length 5 with the key "ALEATORIO_NF"
-    #When the user selects the text field with X3 field name: "WE8ALLXQ_NUMNFE"
-    #And the user writes the stored text with key "ALEATORIO_NF" in the selected text field
-    #When the user selects the text field with X3 field name: "WE8ALLXQ_SERNFE"
-    #And the user writes "1" to the selected text field and hits tab key
+        And the user stores the generated value with length 5 with the key "ALEATORIO_NF"
+        When the user selects the text field with X3 field name: "WE8ALLXQ_NUMNFE"
+        And the user writes the stored text with key "ALEATORIO_NF" in the selected text field
+        When the user selects the text field with X3 field name: "WE8ALLXQ_SERNFE"
+        And the user writes "1" to the selected text field and hits tab key
 
     Scenario: 11. Management - Credit
         Given the user clicks the "Management" tab selected by title

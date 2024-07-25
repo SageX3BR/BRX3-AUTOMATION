@@ -7,9 +7,10 @@
 #- Legislation: BRA
 #- Created by : Gustavo Albanus
 #- Created date : 16/10/2023
-#- Updated by :
-#- Updated date :
+#- Updated by : Gustavo Albanus
+#- Updated date : 24/07/2024
 #- Status : Done
+#- Ajustes Efetuados: Ajustado a Variação da CFOP nas linhas
 ##########################################################################
 
 Feature: ATP-142
@@ -43,11 +44,13 @@ Feature: ATP-142
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
-        And the user adds the text <GROPRI> in selected cell and hits enter key
+        And the user adds the text <GROPRI> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI   |
-            | 1   | "BMS001" | "1" | "100.00" |
+            | LIN | ITMREF   | QTY | GROPRI   | XQVARCFOP |
+            | 1   | "BMS001" | "1" | "100.00" | ""        |
 
     Scenario: 004. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel
@@ -104,11 +107,13 @@ Feature: ATP-142
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
-        And the user adds the text <GROPRI> in selected cell and hits enter key
+        And the user adds the text <GROPRI> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI   |
-            | 1   | "BMS001" | "1" | "150.00" |
+            | LIN | ITMREF   | QTY | GROPRI   | XQVARCFOP |
+            | 1   | "BMS001" | "1" | "150.00" | ""        |
 
     Scenario: 008. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel

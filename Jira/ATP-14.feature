@@ -6,9 +6,10 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 06/05/2022
-# - Updated by : Diogo Nascimento
-# - Updated date : 12/05/2022
+# - Updated by : Gustavo Albanus
+# - Updated date : 24/07/2024
 # - Status : Done
+# - Ajustes Efetuados: Texto do Valor Total Recebido
 ###########################################################################
 # PREREQUISITES
 # -------------------------------------------------------------------------
@@ -123,7 +124,7 @@ Feature: ATP-14
         And the user selects first row of the selected data table
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains ""ValTotalRecebido": 4000"
+        And the value of the selected text field contains ""ValTotalRecebido": "4000"
         And the user clicks the Close page action icon on the header panel
         #Fechando janela aberta antes do log.
         And the user clicks the Close page action icon on the header panel

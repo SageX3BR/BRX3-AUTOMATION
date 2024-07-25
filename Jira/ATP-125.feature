@@ -7,9 +7,10 @@
 #- Legislation: BRA
 #- Created by : Gustavo Albanus
 #- Created date : 19/05/2023
-#- Updated by :
-#- Updated date :
+#- Updated by : Gustavo Albanus
+#- Updated date : 24/07/2024
 #- Status : Done
+#- Ajustes Efetuados: Parametrização da ADPVAL Doc. Aut. / Variação da CFOP e Ajuste do Campo Chave NFe
 ##########################################################################
 
 Feature: ATP-125
@@ -43,11 +44,13 @@ Feature: ATP-125
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
-        And the user adds the text <GROPRI> in selected cell and hits enter key
+        And the user adds the text <GROPRI> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI   |
-            | 1   | "BMS108" | "10" | "100.00" |
+            | LIN | ITMREF   | QTY  | GROPRI   | XQVARCFOP |
+            | 1   | "BMS108" | "10" | "100.00" | ""        |
 
     Scenario: 4. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel
@@ -59,6 +62,7 @@ Feature: ATP-125
         And the user selects the text field with X3 field name: "XQLDATANFE_CHAVENFE"
         And the user stores the value of the selected text field with the key: "CHAVE"
         Then the user clicks the Close page action icon on the header panel
+        #Given the user clicks the "Cancel" main action button on the right panel
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: 003. GESPTH
@@ -82,7 +86,7 @@ Feature: ATP-125
         And the user writes the stored text with key "ALEATORIO" in the selected text field and hits tab key
         And the user selects the text field with name: "Serial number"
         And the user writes "1" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTH1_CHAVENFE"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_CHAVENFE"
         And the user writes the stored text with key "CHAVE" in the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
@@ -223,8 +227,8 @@ Feature: ATP-125
     Scenario: 009.Resume - Creation and Transmission
         And the user clicks the "Create" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
-        #When a log panel appears
-        #And the user clicks the "Close page" main action button on the right panel
+        When a log panel appears
+        And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "XQSADDI1_STATUSSEFAZ"
         And the value of the selected text field is "Authorized"
         And the user clicks the "Post" button in the header

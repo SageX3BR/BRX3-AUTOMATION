@@ -7,9 +7,10 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 15/03/2024
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 24/07/2024
 # - Status : Done
+# - Ajustes Efetuados: Parametrizado a RTAX 1005 / Criado o Cliente BR013
 ###########################################################################
 
 Feature: ATP-163
@@ -51,10 +52,6 @@ Feature: ATP-163
         Then the user adds the text <XQEXISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_VACITM1"
         And the user adds the text <VACITM1> in selected cell
-        And the user hits tab
-        #Alert box: Question
-        Then an alert box with the text "Recalculate prices/discounts?" appears
-        And the user clicks the "No" opinion in the alert box
         And the user hits enter
 
         Examples:

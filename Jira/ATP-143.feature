@@ -7,9 +7,10 @@
 #- Legislation: BRA
 #- Created by : Gustavo Albanus
 #- Created date : 16/10/2023
-#- Updated by :
-#- Updated date :
+#- Updated by : Gustavo Albanus
+#- Updated date : 24/07/2024
 #- Status : Done
+#- Ajustes Efetuados: Por algum motivo a Observação é cortada pela Metade. Tive que inseir 2x o mesmo tópico para funcionar como esperado
 ##########################################################################
 
 Feature: ATP-143
@@ -54,8 +55,11 @@ Feature: ATP-143
 
     Scenario: 3. Informações Adicionais
         When the user clicks the "NF-e Summary" tab selected by title
+        And the user waits 3 seconds
         Then the user selects the text field with name: "Additional Observations"
-        Then the user writes "TESTE DE CONCATENAR AS OBSERVAÇÕES ADICIONAIS CONFORME O TICKET X3DEV-3723" to the selected text area
+        Then the user writes "TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES X3DEV-3723" to the selected text area
+        Then the user selects the text field with name: "Additional Observations"
+        Then the user writes "TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES X3DEV-3723" to the selected text area
         Given the user clicks the "Create" main action button on the right panel
 
     Scenario: 4. Transmissão NFS-e
@@ -84,7 +88,7 @@ Feature: ATP-143
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
         And the value of the selected text field contains "Discriminacao": "Instalação software Office "
-        And the value of the selected text field contains "NFSOutrasinformacoes": " | TESTE DE CONCATENAR AS OBSERVAÇÕES ADICIONAIS CONFORME O TICKET X3DEV-3723"
+        And the value of the selected text field contains ""NFSOutrasinformacoes": " | TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES X3DEV-3723"
         And the user clicks the Close page action icon on the header panel
         #Fechando janela aberta antes do log.
         And the user clicks the Close page action icon on the header panel
