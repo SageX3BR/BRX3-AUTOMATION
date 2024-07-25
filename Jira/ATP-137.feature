@@ -7,9 +7,10 @@
 #- Legislation: BRA
 #- Created by : Gustavo Albanus
 #- Created date : 22/06/2023
-#- Updated by :
-#- Updated date :
-#- Status :
+#- Updated by : Gustavo Albanus
+#- Updated date : 24/07/2024
+#- Status : Done
+#- Ajustes: Campo DTSAIENT / Preenchimento das Linhas
 ########################################################################################################
 
 Feature: ATP-137
@@ -31,29 +32,44 @@ Feature: ATP-137
         And the user selects the text field with name: "Fiscal operation"
         Then the user writes "110" to the selected text field and hits tab key
 
-    Scenario Outline: Lines GESPOH
+
+    Scenario Outline: Inserir Linha
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
-        And the user selects editable table row number: <LIN>
+        Given the user selects editable table row number: 1
         And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
+        And the user adds the text "BMS001" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE3ALL2_QTYUOM"
-        And the user adds the text <QTYUOM> in selected cell
+        And the user adds the text "1" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE3ALL2_GROPRI"
-        And the user adds the text <GROPRI> in selected cell
+        And the user adds the text "100.00" in selected cell
         And the user selects last editable cell with X3 field name: "WE3ALL2_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell and hits enter key
+        And the user adds the text "2102" in selected cell and hits enter key
 
-        Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI   | XQCFOP |
-            | 1   | "BMS001" | "1"    | "100.00" | "2102" |
-            | 2   | "BMS001" | "1"    | "200.00" | "2102" |
-            | 3   | "BMS001" | "1"    | "150.00" | "2102" |
+        Given the user selects editable table row number: 2
+        And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
+        And the user adds the text "BMS001" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE3ALL2_QTYUOM"
+        And the user adds the text "1" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE3ALL2_GROPRI"
+        And the user adds the text "100.00" in selected cell
+        And the user selects last editable cell with X3 field name: "WE3ALL2_XQCFOP"
+        And the user adds the text "2102" in selected cell and hits enter key
+
+        Given the user selects editable table row number: 3
+        And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
+        And the user adds the text "BMS001" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE3ALL2_QTYUOM"
+        And the user adds the text "1" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE3ALL2_GROPRI"
+        And the user adds the text "100.00" in selected cell
+        And the user selects last editable cell with X3 field name: "WE3ALL2_XQCFOP"
+        And the user adds the text "2102" in selected cell and hits enter key
 
     Scenario: 003. Informações Adicionais e Criar
         Given the user clicks the "Resume" tab selected by title
-        Given the user selects the text field with X3 field name: "XQPOH2_OBSADIC"
-        Then the user writes "TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES ADICIONAIS CONFORME O TICKET X3DEV-2946" to the selected text area
+        Given the user selects the text field with X3 field name: "WE3ALLXQ_OBSADIC"
+        Then the user writes "  TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES ADICIONAIS CONFORME O TICKET X3DEV-2946" to the selected text area
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         #And the user selects the text field with X3 field name: "WE3ALL3_OCNNUM"
@@ -89,7 +105,7 @@ Feature: ATP-137
         And the user clicks the "No" opinion in the alert box
         And the user clicks the "No" opinion in the alert box
         And the user waits 3 seconds
-        And the user selects the date field with X3 field name: "XQPTH1_DTSAIENT"
+        And the user selects the date field with X3 field name: "WE6ALLXQ_DTSAIENT"
         And the user writes today to the selected date field
         And the user hits tab
         And the user hits tab
