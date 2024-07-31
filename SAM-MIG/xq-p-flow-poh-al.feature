@@ -7,9 +7,9 @@
 # - Legislation: BRA
 # - Created by : Daniela Anile
 # - Created date : 08/02/2021
-# - Updated by : Daniela Anile
-# - Updated date : 08/02/2021
-# - Status : Automated
+# - Updated by : Fausto A Neto
+# - Updated date : 31/07/2024
+# - Status : In progress
 ###########################################################################
 
 Feature: xq-p-flow-poh-al
@@ -36,10 +36,10 @@ Feature: xq-p-flow-poh-al
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         Then the user writes "52" to the selected text field and hits tab key
-
-    Scenario Outline: 3. Lines
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
+
+    Scenario Outline: 3. Lines
         And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -93,7 +93,8 @@ Feature: xq-p-flow-poh-al
     Scenario: 7. Resume
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPOH2_TTICMSST"
+        And the user selects the text field with name: "IPI + ICMS ST value"
+        # VERIFICAR SE ESTÁ UTILIZANDO A VTAX/RTAX CORRETA PARA CÁLCULO DO ST
         And the value of the selected text field is "231.37"
         Then the user clicks the Close page action icon on the header panel
 
