@@ -7,9 +7,9 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 02/06/2022
-# - Updated by :
-# - Updated date :
-# - Status : Done
+# - Updated by : Fausto A Neto
+# - Updated date : 05/08/2024
+# - Status : IN PROGRESS
 ###########################################################################
 
 Feature: ATP-51
@@ -30,15 +30,11 @@ Feature: ATP-51
         And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
-        And the user writes "130" to the selected text field
-        Then the user hits tab
-        #And the user clicks the "Lines" tab selected by title
+        And the user writes "130" to the selected text field and hits tab key
+        And the user clicks the "Lines" tab selected by title
         And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
-
     Scenario Outline: Lines
-
-
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
