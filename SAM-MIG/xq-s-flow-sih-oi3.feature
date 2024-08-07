@@ -2,27 +2,16 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: xq-s-flow-sih-oi3
-# - Description: Open Items for Sales National invoice without incidences - Product
+# - Description: Open Items for Sales National invoice with retention,
+#                without other invoicing elements - Service
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated by : Fausto A Neto
+# - Updated date : 08/07/2024
+# - Status : In progress
 ###########################################################################
-
-#Global parameter intialization
-###########################################################################
-# Notes
-# -------------------------------------------------------------------------
-# For the purpose of this test:
-#
-#
-# ###########################################################################
-#
-#
-# ###########################################################################
 
 Feature: xq-s-flow-sih-oi3
     #--------------------------------------------------------------------------------
@@ -52,11 +41,10 @@ Feature: xq-s-flow-sih-oi3
         # And the user clicks the "OK" action button on the header drop down
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "200" to the selected text field
-
-
-    Scenario Outline: Add Lines
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
+
+    Scenario Outline: Add Lines
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -70,9 +58,6 @@ Feature: xq-s-flow-sih-oi3
         And the user adds the text <XQEXISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_VACITM1"
         And the user adds the text <VACITM1> in selected cell and hits enter key
-        # #And the user waits (1) seconds
-        #And an alert box appears
-        #And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQSTISS | XQEXISS | VACITM1 |
@@ -84,8 +69,18 @@ Feature: xq-s-flow-sih-oi3
         And the user clicks the "Open items" action button on the header drop down
         And the user selects the fixed data table for x3 field name: "BPCDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPCDUD_AMTCUR" and row number: (1)
-        And the value of the selected cell is "91.47"
+        And the value of the selected cell is "54.23"
         Given the user clicks the "OK" action button on the header drop down
+
+    Scenario: Check Calculated Values
+        Given the user clicks the "Valuation" tab selected by title
+        And the user selects the fixed data table for x3 field name: "SIHV_ARRAY_NBFOOT"
+        When the user selects the fixed cell with X3 field name: "SIHV_XFATI" and row number: (1)
+        Then the value of the selected cell is "-37.24"
+        Given the user clicks the "NF-e Summary" tab selected by title
+        And the user selects the text field with name: "Invoice total value"
+        And the value of the selected text field is "91.47"
+
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

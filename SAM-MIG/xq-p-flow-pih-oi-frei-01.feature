@@ -7,8 +7,8 @@
 # - Legislation: BRA
 # - Created by : Daniela Anile
 # - Created date : 05/02/2021
-# - Updated by : Daniela Anile
-# - Updated date : 05/02/2021
+# - Updated by : Fausto A Neto
+# - Updated date : 06/08/2024
 # - Status : In progress
 ###########################################################################
 
@@ -53,12 +53,17 @@ Feature: xq-p-flow-pih-oi-frei-01
         When the user selects the text field with name: "Fiscal operation"
         And the user writes "110" to the selected text field and hits tab key
 
-    Scenario: 4. Management
+    Scenario: 4. Management and Invoicing element
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
         And the user writes the stored text with key "DOCSUP030" in the selected text field and hits tab key
         And the user selects the text field with name: "Payment term"
         And the user writes "BR_AVISTA" to the selected text field and hits tab key
+
+        Then the user selects the fixed data table for x3 field name: "WE8ALL1_ARRAY_NBFAC1"
+        #Freight
+        And the user selects the fixed cell with X3 field name: "WE8ALL1_INVDTAAMT1" and row number: (2)
+        And the user adds the text "25.75" in selected cell and hits enter key
 
     Scenario Outline: 5. Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
@@ -87,7 +92,7 @@ Feature: xq-p-flow-pih-oi-frei-01
         And the user writes <XQCSTPIS> to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE8ALL3_XQCSTCOF"
         And the user writes <XQCSTCOF> to the selected text field and hits enter key
-        And the user clicks the Close page action icon on the header panel
+        Then the user clicks the Close page action icon on the header panel
 
         Examples:
             | LIN | ITMREF   | QTYUOM | NETPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCENQ | XQCSTIPI | XQCSTPIS | XQCSTCOF |
@@ -95,7 +100,6 @@ Feature: xq-p-flow-pih-oi-frei-01
             | 2   | "BMS002" | "16"   | "25.36" | "2101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
     Scenario: 6. Control
-
 
         Given the user clicks the "Control" tab selected by title
         When the user selects the text field with X3 field name: "WE8ALL3_CUMLINAMT1"
@@ -108,12 +112,21 @@ Feature: xq-p-flow-pih-oi-frei-01
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
+    Scenario: 8. Invoicing elements control
+        Given the user clicks the "Control" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
+        When the user selects cell with column header: "Order footer amount" and row number: (2)
+        And the user adds the text "25.75" in selected cell and hits enter key
+        Then the user clicks the "Save" main action button on the right panel
+        And an alert box with the text containing "Recalculate taxes?" appears
+        And the user clicks the "Yes" opinion in the alert box
+
     Scenario: 8. Open Items
         Given the user clicks the "Open items" button in the header
         And the "Open item edit" screen is displayed
         And the user selects the fixed data table for x3 field name: "BPSDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPSDUD_AMTCUR" and row number: 1
-        And the value of the selected cell is "670.72"
+        And the value of the selected cell is "670.09"
         Then the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
 
