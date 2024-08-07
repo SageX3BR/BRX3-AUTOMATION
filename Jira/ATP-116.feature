@@ -43,11 +43,13 @@ Feature: ATP-116
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
-        And the user adds the text <GROPRI> in selected cell and hits enter key
+        And the user adds the text <GROPRI> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI   |
-            | 1   | "BMS001" | "1" | "100.00" |
+            | LIN | ITMREF   | QTY | GROPRI   | XQVARCFOP |
+            | 1   | "BMS001" | "1" | "100.00" | ""        |
 
     Scenario: 4. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel
@@ -138,7 +140,7 @@ Feature: ATP-116
         And the user selects the text field with name: "Port Scheduling Code"
         And the user writes "231231" to the selected text field and hits tab key
         And the user selects the text field with name: "Truck's plate"
-        And the user writes "ABC3333" to the selected text field and hits tab key
+        And the user writes "ABC3334" to the selected text field and hits tab key
         And the user selects the data table of section: "Driver"
         And the user selects cell with column header: "CPF" and row number: 1
         And the user selects first row of the selected data table
@@ -185,7 +187,7 @@ Feature: ATP-116
         And the user opens "New Transp. Un." function on toolbox of the selected row
         Then the "Register Doc. Un." screen is displayed
         And the user selects the text field with name: "Identification"
-        And the user writes "ABC3333" to the selected text field and hits tab key
+        And the user writes "ABC3334" to the selected text field and hits tab key
         And the user selects the text field with name: "Apportioned Quantity"
         And the user writes "1" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header
@@ -237,7 +239,7 @@ Feature: ATP-116
         And the user opens "New Transp. Un." function on toolbox of the selected row
         Then the "Register Doc. Un." screen is displayed
         And the user selects the text field with name: "Identification"
-        And the user writes "ABC3333" to the selected text field and hits tab key
+        And the user writes "ABC3334" to the selected text field and hits tab key
         And the user selects the text field with name: "Apportioned Quantity"
         And the user writes "1" to the selected text field and hits tab key
         And the user clicks the "OK" button in the header

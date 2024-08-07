@@ -10,6 +10,7 @@
 # - Updated by :
 # - Updated date :
 # - Status : Done
+# - Ajustes Efetuados = Parametrização no Ambiente para RTAX/VTAX/Variação de CFOP e OPF
 ###########################################################################
 
 Feature: ATP-165
@@ -32,7 +33,7 @@ Feature: ATP-165
     Scenario: 3. General Data
         Given the user clicks the "General Data" tab selected by title
         When the user selects the text field with name: "Fiscal operation"
-        And the user writes "110" to the selected text field and hits tab key
+        And the user writes "158" to the selected text field and hits tab key
 
     Scenario Outline: 4. Add Lines
         Given the user clicks the "Lines" tab selected by title
@@ -48,7 +49,7 @@ Feature: ATP-165
         And the user adds the text <BPSLOT> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_VAT1"
         And the user adds the text <VAT1> in selected cell and hits tab key
-        Then the user clicks the "Ok" option in the alert box
+        #Then the user clicks the "Ok" option in the alert box
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
         Then the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQVARCFOP"
@@ -58,7 +59,7 @@ Feature: ATP-165
 
         Examples:
             | LIN | ITMREF   | QTYUOM | BPSLOT    | GROPRI    | VAT1  | XQCFOP | XQVARCFOP | XQCSTICMS |
-            | 1   | "BMS112" | "1"    | "LOTEFOR" | "4000.00" | "BRL" | "2101" | "12"      | "10"      |
+            | 1   | "BMS112" | "1"    | "LOTEFOR" | "4000.00" | "BRL" | "2102" | "3"       | "10"      |
 
     Scenario: 5. Creation
         And the user clicks the "OK" button in the header
@@ -96,7 +97,7 @@ Feature: ATP-165
         And the user selects the text field with X3 field name: "SDH0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SDH0_BPCORD"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR002" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
@@ -116,7 +117,8 @@ Feature: ATP-165
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_LOT"
-        And the user adds the stored text with key "LOTSDH" in selected cell and hits enter key
+        And the user adds the stored text with key "LOTSDH" in selected cell and hits tab key
+        And the user hits enter
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQCSTICMS |
