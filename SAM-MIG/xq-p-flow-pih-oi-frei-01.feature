@@ -9,7 +9,7 @@
 # - Created date : 05/02/2021
 # - Updated by : Fausto A Neto
 # - Updated date : 06/08/2024
-# - Status : In progress
+# - Status : Automated
 ###########################################################################
 
 Feature: xq-p-flow-pih-oi-frei-01

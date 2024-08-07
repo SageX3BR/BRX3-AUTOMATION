@@ -10,7 +10,7 @@
 # - Created date : 10/07/2020
 # - Updated by : Fausto A Neto
 # - Updated date : 08/07/2024
-# - Status : In progress
+# - Status : Automated
 ###########################################################################
 
 Feature: xq-s-flow-sih-oi3
