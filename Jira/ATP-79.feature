@@ -84,7 +84,7 @@ Feature: ATP-79
         And the user selects first row of the selected data table
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains ""ItemDescIncondicionado": 100"
+        And the value of the selected text field contains "ItemDescIncondicionado": "100"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
 

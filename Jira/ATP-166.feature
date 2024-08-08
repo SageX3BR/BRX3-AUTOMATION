@@ -7,9 +7,10 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 10/06/2024
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 07/08/2024
 # - Status : Done
+# - Ajustes Efetuados: Ajustado a Variação da CFOP
 ###########################################################################
 
 Feature: ATP-166
@@ -102,7 +103,7 @@ Feature: ATP-166
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
         And the user hits enter
-        
+
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
             | 1   | "BMS001" | "1" | "50.00" | "6102" |
@@ -162,11 +163,13 @@ Feature: ATP-166
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI    | XQCFOP |
-            | 1   | "BMS001" | "1" | "1000.00" | "6102" |
+            | LIN | ITMREF   | QTY | GROPRI    | XQCFOP | XQVARCFOP |
+            | 1   | "BMS001" | "1" | "1000.00" | "6102" | ""        |
 
     Scenario: 11. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel

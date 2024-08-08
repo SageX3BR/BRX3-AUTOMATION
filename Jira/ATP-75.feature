@@ -145,8 +145,8 @@ Feature: ATP-75
         And the user selects the text field with X3 field name: "XQSADDI0_FCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the drop down list with X3 field name: "XQSADDI0_DOCTYP"
-        And the user clicks on "Loan Returns (SRL)" option of the selected drop down list
-        Then the value of the selected drop down list is "Loan Returns (SRL)"
+        And the user clicks on "Loan Return (SRL)" option of the selected drop down list
+        Then the value of the selected drop down list is "Loan Return (SRL)"
         And the user selects the text field with X3 field name: "XQSADDI0_ORIDOCNUM"
         And the user writes the stored text with key "FATURA" in the selected text field and hits tab key
 
