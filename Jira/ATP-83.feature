@@ -126,6 +126,9 @@ Feature: ATP-83
         When the user selects the "param:endPointName1" entry on endpoint panel
         Then the "param:endPointName1" endpoint is selected
 
+        #Select the en-US Language
+        And the user changes the main language code to "en-US"
+
 
     Scenario: 0202B5 - Create receipt with purchase order picking
 

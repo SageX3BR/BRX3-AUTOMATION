@@ -2,27 +2,16 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: xq-s-flow-sih-oi-all
-# - Description: Open Items for Sales National invoice without incidences - Product
+# - Description: Open Items for Sales National invoice with
+#                discount, freight and insurance - Product
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated by : Fausto A Neto
+# - Updated date : 06/08/2024
+# - Status : Automated
 ###########################################################################
-
-#Global parameter intialization
-###########################################################################
-# Notes
-# -------------------------------------------------------------------------
-# For the purpose of this test:
-#
-#
-# ###########################################################################
-#
-#
-# ###########################################################################
 
 Feature: xq-s-flow-sih-oi-all
 
@@ -60,16 +49,6 @@ Feature: xq-s-flow-sih-oi-all
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-    # Scenario: Fill Management
-    #     When the user clicks the "Management" tab selected by title
-    #     And the user selects the text field with name: "Sold-to"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-    #     And the user selects the text field with name: "Pay-by"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-    #     And the user selects the text field with name: "Group customer"
-    #     And the user writes "BR001" to the selected text field and hits tab key
-
-
     Scenario Outline: Add Lines
         #Lines
         Given the user selects editable table row number: <LIN>
@@ -87,9 +66,6 @@ Feature: xq-s-flow-sih-oi-all
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        # And the user waits (3) seconds
-        # And an alert box appears
-        # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
@@ -100,7 +76,7 @@ Feature: xq-s-flow-sih-oi-all
         And the user clicks the "Invoicing" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL2_ARRAY_NBFAC"
         #SHO/Insurance
-        And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (1)
+        And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (8)
         And the user adds the text "3.69" in selected cell and hits enter key
         #SHO/Discounts %
         And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (2)
@@ -114,7 +90,7 @@ Feature: xq-s-flow-sih-oi-all
         And the user clicks the "Open items" action button on the header drop down
         And the user selects the fixed data table for x3 field name: "BPCDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPCDUD_AMTCUR" and row number: (1)
-        And the value of the selected cell is "1,031.44"
+        And the value of the selected cell is "1,031.80"
         Given the user clicks the "OK" action button on the header drop down
 
     Scenario: Logout

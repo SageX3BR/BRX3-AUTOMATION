@@ -136,16 +136,20 @@ Feature: xq-p-flow-pih-oi-insur-02
             | "1"    | "10"  | "123"  |
             | "2"    | "20"  | "456"  |
 
-    Scenario: 16. Control
         Given the user clicks the Close page action icon on the header panel
+
+    Scenario: 16. Creation
+        Given the user clicks the "Create" main action button on the right panel
+        Then a confirmation dialog appears with the message "Record has been created"
+
+
+    Scenario: 17. Control
         And the user clicks the "Control" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 5
         Then the user adds the text "102.99" in selected cell and hits enter key
-
-    Scenario: 17. Creation
-        Given the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
+        And the user hits enter
+        When the user clicks the "Yes" opinion in the alert box
 
     Scenario: 18. Open Items
         Given the user clicks the "Open items" button in the header
