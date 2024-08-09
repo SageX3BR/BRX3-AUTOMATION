@@ -8,8 +8,8 @@
 # - Created by : Daniela Anile
 # - Created date : 08/02/2021
 # - Updated by : Fausto A Neto
-# - Updated date : 31/07/2024
-# - Status : In progress
+# - Updated date : 09/08/2024
+# - Status : Automated
 ###########################################################################
 
 Feature: xq-p-flow-poh-al
@@ -93,8 +93,7 @@ Feature: xq-p-flow-poh-al
     Scenario: 7. Resume
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
-        And the user selects the text field with name: "IPI + ICMS ST value"
-        # VERIFICAR SE ESTÁ UTILIZANDO A VTAX/RTAX CORRETA PARA CÁLCULO DO ST
+        And the user selects the text field with name: "ICMS ST total value"
         And the value of the selected text field is "231.37"
         Then the user clicks the Close page action icon on the header panel
 
