@@ -54,7 +54,6 @@ Feature: ATP-129
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user hits enter
 
         Examples:

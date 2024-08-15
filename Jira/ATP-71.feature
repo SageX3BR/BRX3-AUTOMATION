@@ -7,9 +7,10 @@
 # - Jira: ATP-71
 # - Created by : Douglas Duarte
 # - Created date : 23/06/2022
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 13/08/2024
 # - Status : Done
+# - Ajustes Efetuados: Alterado de Enter para Tab no preechimento da OPF
 ###########################################################################
 
 
@@ -36,7 +37,7 @@ Feature: ATP-71
         And the user selects the text field with X3 field name: "SDH0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
-        And the user writes "125" to the selected text field and hits enter key
+        And the user writes "125" to the selected text field and hits tab key
         And the user hits escape
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
