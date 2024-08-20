@@ -6,8 +6,8 @@
 # - Jira: NA
 # - Created by : Jonatas Hille
 # - Created date : 26/05/2020
-# - Updated by : Jonatas Hille
-# - Updated date : 31/12/2021
+# - Updated by : Fausto A Neto
+# - Updated date : 16/08/2024
 # - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
@@ -32,9 +32,9 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
         Then the user writes "56" to the selected text field and hits tab key
+        And the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Mandatory CFOP 2 Lines
-        Given the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
         When the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -77,9 +77,9 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
         Then the user writes "58" to the selected text field and hits tab key
+        Given the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Suggestion CFOP Checking - 2 Lines
-        Given the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
         When the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -119,9 +119,9 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
         Then the user writes "59" to the selected text field and hits tab key
+        Given the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Suggestion CFOP Checking By function - Line 1 Fiscal Operation - Line 2 CFOP Suggestion
-        Given the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
         When the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
