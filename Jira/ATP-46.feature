@@ -1,4 +1,16 @@
 
+###########################################################################
+# Header
+# -------------------------------------------------------------------------
+# - Test code: ATP-46
+# - Description: Garantir a criação e autorização de numa Nota adicional (GESXQADD) de uma GESSRS
+# - Jira:
+# - Created by :
+# - Created date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 15/08/2024
+# - Changes: Incluido a validação da parcela com Alteração-Baixa
+###########################################################################
 
 Feature: ATP-46
 
@@ -83,6 +95,7 @@ Feature: ATP-46
         And the user clicks the Close page action icon on the header panel
         #Fecha a SIH antes de abrir a CONSXQR
         And the user clicks the Close page action icon on the header panel
+        And the user waits 60 seconds
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
@@ -146,6 +159,17 @@ Feature: ATP-46
         # When the value of the selected cell is "Inclusion"
         # Given the user selects the fixed cell with X3 field name: "XQREMESSA1_VALOR" and row number: 1
         # And the value of the selected cell matches the stored text with key "amount"
+        Then the user selects the fixed data table for x3 field name: "XQREMESSA1_ARRAY_NBLIG"
+        And the user selects first row of the selected data table
+        And the user selects cell with X3 field name: "XQREMESSA1_VALOR" of selected row
+        And the value of the selected cell is "1.71"
+        And the user selects cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" of selected row
+        And the value of the selected cell is "Amount update"
+        Given the user selects fixed table row number: 2
+        And the user selects cell with X3 field name: "XQREMESSA1_VALOR" of selected row
+        And the value of the selected cell is "18.76"
+        And the user selects cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" of selected row
+        And the value of the selected cell is "Amount update"
         Then the user clicks the "Process all" action button on the header drop down
         Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
         When the user clicks the "Yes" opinion in the alert box
