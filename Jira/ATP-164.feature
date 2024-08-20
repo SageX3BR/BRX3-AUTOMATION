@@ -101,7 +101,7 @@ Feature: ATP-164
         And the user selects editable table row number: 1
         And the user selects cell with X3 field name: "XQEXPO1_NUMDRWBCK" of selected row
         And the value of the selected cell is "1234567890"
-        And the user selects editable table row number: 3
+        And the user selects editable table row number: 2
         And the user selects cell with X3 field name: "XQEXPO1_NUMDRWBCK" of selected row
         And the value of the selected cell is ""
         And the user clicks the "Close" main action button on the right panel

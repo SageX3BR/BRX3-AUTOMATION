@@ -7,9 +7,9 @@
 # - Legislation: BRA
 # - Created by : Daniela Anile
 # - Created date : 05/02/2021
-# - Updated by : Daniela Anile
-# - Updated date : 05/02/2021
-# - Status : In progress
+# - Updated by : Fausto A Neto
+# - Updated date : 09/08/2024
+# - Status : Automated
 ###########################################################################
 
 Feature: xq-p-flow-pih-oi-frei-02
@@ -50,7 +50,7 @@ Feature: xq-p-flow-pih-oi-frei-02
         And the user selects the text field with X3 field name: "WE8ALL0_BPRSAC"
         Then the user writes "FORE" to the selected text field and hits tab key
 
-    Scenario: 20. General data
+    Scenario: 3. General data
         Given the user clicks the "General data" tab selected by title
         When the user selects the text field with name: "Fiscal operation"
         And the user writes "133" to the selected text field and hits tab key
@@ -73,12 +73,12 @@ Feature: xq-p-flow-pih-oi-frei-02
         And the user selects the date field with name: "Clearance date"
         And the user writes today to the selected date field
 
-    Scenario: 21. Management
+    Scenario: 4. Management
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
         And the user writes the stored text with key "DOCSUP031" in the selected text field and hits tab key
 
-    Scenario Outline: 22. Lines
+    Scenario Outline: 5. Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
         And the user selects last row of the selected data table
         And the user opens "Popup view" function on toolbox of the selected row
@@ -112,11 +112,11 @@ Feature: xq-p-flow-pih-oi-frei-02
             | 1   | "BMS001" | "52"   | "42.36" | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
             | 2   | "BMS002" | "64"   | "8.36"  | "3101" | "0"          | "00"      | "999"  | "49"     | "01"     | "01"     |
 
-    Scenario: 23. DI Data
+    Scenario: 6. DI Data
         Given the user clicks the "DI Data" action button on the header drop down
         Then the "Import declaration" screen is displayed
 
-    Scenario Outline: 24. Inform DI Data Additions
+    Scenario Outline: 7. Inform DI Data Additions
         Given the user selects the text field with X3 field name: "XQDI0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the fixed data table for x3 field name: "XQDI1_ARRAY_NBAD"
@@ -131,18 +131,26 @@ Feature: xq-p-flow-pih-oi-frei-02
             | "1"    | "10"  | "123"  |
             | "2"    | "20"  | "456"  |
 
-    Scenario: 25. Control
+    Scenario: 8. Creation
         Given the user clicks the Close page action icon on the header panel
-        And the user clicks the "Control" tab selected by title
-        And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
-        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 2
-        Then the user adds the text "32.69" in selected cell and hits enter key
-
-    Scenario: 26. Creation
-        Given the user clicks the "Create" main action button on the right panel
+        And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 27. Open Items
+    Scenario: 9. Invoicing elements and Control
+        Given the user clicks the "Control" tab selected by title
+        When the user selects the text field with X3 field name: "WE8ALL3_CUMLINAMT1"
+        And the user stores the value of the selected text field with the key: "CALCVALUE"
+        And the user selects the text field with X3 field name: "WE8ALL4_TOTLINAMT"
+        Then the user writes the stored text with key "CALCVALUE" in the selected text field and hits tab key
+
+        Given the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
+        When the user selects cell with column header: "Entry amount" and row number: (2)
+        And the user adds the text "32.69" in selected cell and hits enter key
+        Then the user clicks the "Save" main action button on the right panel
+        And an alert box with the text containing "Recalculate taxes?" appears
+        And the user clicks the "Yes" opinion in the alert box
+
+    Scenario: 10. Open Items
         Given the user clicks the "Open items" button in the header
         And the "Open item edit" screen is displayed
         And the user selects the fixed data table for x3 field name: "BPSDUD_ARRAY_NBECH"
@@ -151,5 +159,5 @@ Feature: xq-p-flow-pih-oi-frei-02
         And the user clicks the Close page action icon on the header panel
         Then the user clicks the "Close page" main action button on the right panel
 
-    Scenario: 28. Logout
+    Scenario: 11. Logout
         And the user logs-out from the system

@@ -7,9 +7,9 @@
 # - Legislation: BR addon
 # - Created by : Daniela Anile
 # - Created date : 10/02/2021
-# - Updated by : Carla Cury
-# - Updated date : 05/07/2021
-# - Status : In progress
+# - Updated by : Fausto A Neto
+# - Updated date : 05/08/2024
+# - Status : Automated
 ###########################################################################
 
 Feature: xq-p-flow-pth-pnh
@@ -39,10 +39,10 @@ Feature: xq-p-flow-pth-pnh
         Given the user clicks the "General Data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "113" to the selected text field and hits tab key
-
-    Scenario Outline: Add Lines
         Given the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
+
+    Scenario Outline: Add Lines
         And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -105,10 +105,9 @@ Feature: xq-p-flow-pth-pnh
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR011" of the picking list panel
         Then the user checks the selected picking list panel item
-
+        Given the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Lines
-        Given the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
         And the user selects row that has the text <LIN> in column with X3 field name: "WE7ALL1_PTDLIN"
         And the user selects cell with X3 field name: "WE7ALL1_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell

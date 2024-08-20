@@ -6,6 +6,9 @@
 # - Legislation: BR addon
 # - Created by : Ueder Budni
 # - Created date : 22/06/2022
+# - Updated by : Gustavo Albanus
+# - Updated date : 28/06/2024
+# - Changes: Invertido os tópicos 3 e 4, pois estava validando os impostos antes de criar o documento
 ###########################################################################
 
 Feature: ATP-78
@@ -58,7 +61,11 @@ Feature: ATP-78
             | LIN | ITMREF   | QTY | GROPRI    | XQSTISS | XQEXISS | DISCRGVAL1 |
             | 1   | "SER017" | "1" | "2000.00" | "1"     | "1"     | "50.00"    |
 
-    Scenario: 3. Verificar Cálculo de Impostos com desconto aplicado
+    Scenario: 3. Create
+        Given the user clicks the "Create" main action button on the right panel
+        Then a confirmation dialog appears with the message "Record has been created"
+
+    Scenario: 4. Verificar Cálculo de Impostos com desconto aplicado
         Given the user clicks the "NF-e Summary" tab selected by title
         #PIS/COFINS sem desconto na base
         When the user selects the text field with name: "PIS value"
@@ -78,10 +85,6 @@ Feature: ATP-78
         And the value of the selected text field is "50.00"
     # And the user clicks the "Create" main action button on the right panel
     # And a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: 4. Create
-        Given the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
 
     Scenario: 5. Transmissão NFS-e
         Given the user clicks the "Transmit RPS" action button on the header drop down
@@ -112,7 +115,7 @@ Feature: ATP-78
         And the user selects first row of the selected data table
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains ""ValDescIncond": 1000"
+        And the value of the selected text field contains "ValDescIncond": "1000"
         And the user clicks the Close page action icon on the header panel
         #Fechando CONSXQRPS
         And the user clicks the Close page action icon on the header panel

@@ -2,27 +2,16 @@
 # Header
 # -------------------------------------------------------------------------
 # - Test code: xq-s-flow-sih-oi-all4
-# - Description: Open Items for Sales National invoice without incidences - Product
+# - Description: Open Items for Sales National invoice without incidences,
+#                with invoicing elements - Service
 # - Jira: NA
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 10/07/2020
-# - Updated by : Carla Cury
-# - Updated date : 10/07/2020
-# - Status : in progress
+# - Updated by : Fausto A Neto
+# - Updated date : 07/08/2024
+# - Status : Automated
 ###########################################################################
-
-#Global parameter intialization
-###########################################################################
-# Notes
-# -------------------------------------------------------------------------
-# For the purpose of this test:
-#
-#
-# ###########################################################################
-#
-#
-# ###########################################################################
 
 Feature: xq-s-flow-sih-oi-all4
     #--------------------------------------------------------------------------------
@@ -61,23 +50,15 @@ Feature: xq-s-flow-sih-oi-all4
         And the user selects the text field with X3 field name: "XQSIH0_DESLOCDESP"
         And the user writes "Santos" to the selected text field and hits tab key
 
-    Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
-        And the user adds the text "1" in selected cell and hits tab key
-
-
-    Scenario: Fill Management
-        When the user clicks the "Management" tab selected by title
+        And the user clicks the "Management" tab selected by title
+        And the user selects the text field with X3 field name: "WK5ALL1_BPCORD"
+        And the user writes "PT006" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALL1_VACBPR"
         And the user writes "BRL" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
-
-
     Scenario Outline: Add Lines
-        #Lines
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -91,22 +72,17 @@ Feature: xq-s-flow-sih-oi-all4
         And the user adds the text <XQEXISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_VACITM1"
         And the user adds the text <VACITM1> in selected cell and hits enter key
-        # #And the user waits (1) seconds
-        #And an alert box appears
-        #And the user clicks the "Yes" opinion in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQSTISS | XQEXISS | VACITM1 |
             | 1   | "SER001" | "1" | "15.21" | "1"     | "1"     | "BRL"   |
             | 2   | "SER007" | "2" | "21.36" | "1"     | "1"     | "BRL"   |
 
-
-
     Scenario: Invoicing
         And the user clicks the "Invoicing" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL2_ARRAY_NBFAC"
         #SHO/Insurance
-        And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (1)
+        And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (8)
         And the user adds the text "9.32" in selected cell and hits enter key
         #SHO/Discounts %
         And the user selects the fixed cell with X3 field name: "WK5ALL2_INVDTAAMT" and row number: (2)

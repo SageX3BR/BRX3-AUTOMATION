@@ -7,9 +7,10 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 15/03/2024
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 24/07/2024
 # - Status : Done
+# - Ajustes Efetuados: Parametrizado a RTAX 1005 / Criado o Cliente BR014 /Ajustado o valor da Parcela (Deduziu PIS/COFINS/CSLL/INSS/ISS/IRRF)
 ###########################################################################
 
 Feature: ATP-162
@@ -51,10 +52,10 @@ Feature: ATP-162
         Then the user adds the text <XQEXISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_VACITM1"
         And the user adds the text <VACITM1> in selected cell
-        And the user hits tab
+        #And the user hits tab
         #Alert box: Question
-        Then an alert box with the text "Recalculate prices/discounts?" appears
-        And the user clicks the "No" opinion in the alert box
+        #Then an alert box with the text "Recalculate prices/discounts?" appears
+        #And the user clicks the "No" opinion in the alert box
         And the user hits enter
 
         Examples:
@@ -88,7 +89,7 @@ Feature: ATP-162
         When the user selects first row of the selected data table
         And the user selects cell with header: "Amount" of selected row
         And the user clicks on the selected cell
-        And the value of the selected cell is "1688.00"
+        And the value of the selected cell is "1588.00"
         #And the value of the selected cell is "1,655.00"
         Given the user clicks the Close page action icon on the header panel
 

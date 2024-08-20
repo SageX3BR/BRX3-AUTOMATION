@@ -7,7 +7,9 @@
 # - Legislation: BRA
 # - Created by : Ricardo Ribeiro
 # - Created date : 22/06/2022
-# - Update date : 29/06/2022
+# - Update by : Gustavo Albanus
+# - Update date : 16/08/2024
+# - Ajustes: Ajustado a OPF na SRL
 ###########################################################################
 
 Feature: ATP-75
@@ -99,7 +101,7 @@ Feature: ATP-75
         And the user selects the item with the stored text with key "SDH_NUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
         And the user selects the text field with X3 field name: "XQSRL1_CODOPF"
-        And the user writes "141" to the selected text field and hits tab key
+        And the user writes "159" to the selected text field and hits tab key
         And the user selects the date field with X3 field name: "XQSRL1_DTSAIENT"
         When the user writes a generated date in the selected date field using the value "T+1"
         And the user selects the text field with X3 field name: "XQSRL1_HRSAIENT"
@@ -145,8 +147,8 @@ Feature: ATP-75
         And the user selects the text field with X3 field name: "XQSADDI0_FCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the drop down list with X3 field name: "XQSADDI0_DOCTYP"
-        And the user clicks on "Loan Returns (SRL)" option of the selected drop down list
-        Then the value of the selected drop down list is "Loan Returns (SRL)"
+        And the user clicks on "Loan Return (SRL)" option of the selected drop down list
+        Then the value of the selected drop down list is "Loan Return (SRL)"
         And the user selects the text field with X3 field name: "XQSADDI0_ORIDOCNUM"
         And the user writes the stored text with key "FATURA" in the selected text field and hits tab key
 

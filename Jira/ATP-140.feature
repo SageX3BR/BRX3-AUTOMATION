@@ -7,9 +7,10 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 03/08/2023
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 24/07/2024
 # - Status : Done
+# - Ajustes Efetuados: Ajustado a Chave da Nota / Criado o Scenario de Deletar o documento
 ###########################################################################
 
 Feature: ATP-140
@@ -36,15 +37,19 @@ Feature: ATP-140
         When the user selects the text field with name: "Fiscal operation"
         And the user writes "995" to the selected text field and hits tab key
         And the user stores the generated value with length 5 with the key "ALEATORIO"
-    #When the user selects the text field with name: "NF-e number"
-    #And the user writes the stored text with key "ALEATORIO" in the selected text field
-    #When the user selects the text field with name: "Serial number"
-    #And the user writes "1" to the selected text field and hits tab key
+        When the user selects the text field with name: "NF-e number"
+        And the user writes the stored text with key "ALEATORIO" in the selected text field
+        When the user selects the text field with name: "Serial number"
+        And the user writes "1" to the selected text field and hits tab key
+        When the user selects the text field with name: "NF-e Access key"
+        And the user writes "35170364555626000147550770000000441000000446" to the selected text field and hits tab key
+        When the user selects the text field with name: "NF-e number"
+        And the user stores the value of the selected text field with the key: "NUMBER"
 
     Scenario: 4. Management
         Given the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Supplier doc no."
-        And the user writes the stored text with key "ALEATORIO" in the selected text field
+        And the user writes the stored text with key "NUMBER" in the selected text field
 
     Scenario: 5. Shipping data
         Given the user clicks the "Shipping data" tab selected by title
@@ -84,8 +89,14 @@ Feature: ATP-140
         And the value of the selected text field is "1,000.00"
         Then the user selects the text field with X3 field name: "XQPIH2_TTNFE"
         And the value of the selected text field is "1,000.00"
+        And the user waits 5 seconds
 
-    Scenario: 8. Logout
+    Scenario: 8. Delete Doc.
+        Given the user clicks the "Delete" main action button on the right panel
+        And the user clicks the "OK" button in the header
+        Then the user clicks the "Ok" option in the alert box
+
+    Scenario: 9. Logout
         Given the user clicks the Close page action icon on the header panel
         Then the user logs-out from the system
 

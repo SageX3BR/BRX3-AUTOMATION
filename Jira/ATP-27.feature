@@ -103,6 +103,7 @@ Feature: ATP-27
 
     Scenario: Generete CNAB Remmitence
         Given the user opens the "CONSXQR" function
+        Then the user waits 60 seconds
         When the user selects the text field with name: "Site"
         And the user writes "BR011" to the selected text field and hits tab key
         When the user selects the text field with name: "Bank"
@@ -144,29 +145,7 @@ Feature: ATP-27
         Then the user clicks the "OK" button in the popup header
         And the user clicks the Close page action icon on the header panel
 
-    Scenario: Generete CNAB Remmitence
-        Given the user opens the "CONSXQR" function
-        Then the user waits 60 seconds
-        When the user selects the text field with name: "Site"
-        And the user writes "BR011" to the selected text field and hits tab key
-        When the user selects the text field with name: "Bank"
-        And the user writes "BR999" to the selected text field and hits tab key
-        When the user selects the text field with name: "Book"
-        And the user writes "TS001" to the selected text field and hits tab key
-        And the user selects the text field with name: "Invoice number"
-        And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        Then the user clicks the "Search" button in the header
-        Given the user selects the main data table of the page
-        And the user selects the fixed cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" and row number: 1
-        When the value of the selected cell is "Inclusion"
-        Given the user selects the fixed cell with X3 field name: "XQREMESSA1_VALOR" and row number: 1
-        And the value of the selected cell matches the stored text with key "amount"
-        Then the user clicks the "Process all" action button on the header drop down
-        Given an alert box with the text "All filtered registries will be processed. Please confirm." appears
-        When the user clicks the "Yes" opinion in the alert box
-
     Scenario: Logout
-        And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
 
 

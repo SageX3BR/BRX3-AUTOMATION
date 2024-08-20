@@ -8,9 +8,10 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 07/03/2024
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 17/07/2024
 # - Status : Done
+# - Os elementos que devem ser deduzidos são PIS/COFIS/CSLL/IRRF/INSS/ISS. Apenas o IRPJ fica de fora.
 ###########################################################################
 
 Feature: ATP-161
@@ -52,10 +53,6 @@ Feature: ATP-161
         Then the user adds the text <XQEXISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_VACITM1"
         And the user adds the text <VACITM1> in selected cell
-        And the user hits tab
-        #Alert box: Question
-        Then an alert box with the text "Recalculate prices/discounts?" appears
-        And the user clicks the "No" opinion in the alert box
         And the user hits enter
 
         Examples:

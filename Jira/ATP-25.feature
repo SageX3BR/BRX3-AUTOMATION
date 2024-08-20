@@ -7,9 +7,9 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 06/05/2022
-# - Updated by :
-# - Updated date :
-# - Status : Done
+# - Updated by : Gustavo Albanus
+# - Updated date : 28/06/2024
+# - Changes: Ajustado o texto Nota Denegada
 ###########################################################################
 # PREREQUISITES
 # -------------------------------------------------------------------------
@@ -141,7 +141,8 @@ Feature: ATP-25
         #tempo para esperar o job da contabilização
         When the user waits 115 seconds
         Given the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
-        And the value of the selected text field is "Denegated Invoice"
+        #And the value of the selected text field is "Denegated Invoice"
+        And the value of the selected text field is "Nota Denegada"
         And the user waits 2 seconds
         When the user clicks the "Accounting reversal" action button on the header drop down
         And an alert box with the text "Document successfully reversed." appears
