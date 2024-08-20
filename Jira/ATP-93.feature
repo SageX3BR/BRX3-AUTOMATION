@@ -6,9 +6,9 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 03/11/2022
-# - Updated by :
-# - Updated date :
-# - Status : Done
+# - Updated by : Fausto A Neto
+# - Updated date : 16/08/2024
+# - Status : Automated
 ###########################################################################
 
 Feature: ATP-93
@@ -32,11 +32,11 @@ Feature: ATP-93
         Given the user clicks the "General Data" tab selected by title
         When the user selects the text field with name: "Fiscal operation"
         And the user writes "111" to the selected text field and hits tab key
+        And the user clicks the "Lines" tab selected by title
+        Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
 
     Scenario Outline: 4. Add Lines
-        Given the user clicks the "Lines" tab selected by title
-        When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
-        And the user selects editable table row number: <LIN>
+        Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
