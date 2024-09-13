@@ -40,7 +40,7 @@ Feature:ATP-36
 
         Examples:
             | LIN | ITMREF   | QTY |
-            | 1   | "BMS012" | "2" |
+            | 1   | "BMS014" | "2" |
             | 2   | "BMS058" | "3" |
 
     Scenario: 04. Document Creation and BR Add-on field and button disabled check
