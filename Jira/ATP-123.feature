@@ -55,21 +55,44 @@ Feature: ATP-123
         And the user writes today to the selected date field
         And the user hits tab
 
+    # Scenario Outline: 4. Add Lines
+    #     Given the user clicks the "Lines" tab selected by title
+    #     When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
+    #     And the user selects editable table row number: <LIN>
+    #     And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
+    #     And the user adds the text <ITMREF> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
+    #     And the user adds the text <QTYUOM> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
+    #     Then the user adds the text <XQCFOP> in selected cell and hits enter key
+
+    #     Examples:
+    #         | LIN | ITMREF   | QTYUOM | XQCFOP |
+    #         | 1   | "BMS001" | "1"    | "3102" |
+    #         | 2   | "BMS001" | "1"    | "3102" |
+
+
+
     Scenario Outline: 4. Add Lines
         Given the user clicks the "Lines" tab selected by title
         When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
-        And the user selects editable table row number: <LIN>
+        And the user selects editable table row number: 1
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
+        And the user adds the text "BMS001" in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
-        And the user adds the text <QTYUOM> in selected cell
+        And the user adds the text "1" in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
-        Then the user adds the text <XQCFOP> in selected cell and hits enter key
+        Then the user adds the text "3102" in selected cell and hits enter key
 
-        Examples:
-            | LIN | ITMREF   | QTYUOM | XQCFOP |
-            | 1   | "BMS001" | "1"    | "3102" |
-            | 2   | "BMS001" | "1"    | "3102" |
+        And the user selects editable table row number: 2
+        And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
+        And the user adds the text "BMS001" in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
+        And the user adds the text "1" in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
+        Then the user adds the text "3102" in selected cell and hits enter key
+
+
 
 
     Scenario: 5. DI Data

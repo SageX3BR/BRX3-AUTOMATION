@@ -7,8 +7,8 @@
 # - Legislation: BRA
 # - Created by : Daniela Anile
 # - Created date : 01/02/2021
-# - Updated by : Daniela Anile
-# - Updated date : 02/02/2021
+# - Updated by : Fausto A Neto
+# - Updated date : 02/08/2024
 # - Status : Automated
 ###########################################################################
 
@@ -62,10 +62,10 @@ Feature: xq-p-flow-pth-03
         And the user writes "PR" to the selected text field and hits tab key
         And the user selects the date field with name: "Clearance date"
         And the user writes today to the selected date field
-
-    Scenario Outline: 5. Add Lines
         Given the user clicks the "Lines" tab selected by title
         When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
+
+    Scenario Outline: 5. Add Lines
         And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell

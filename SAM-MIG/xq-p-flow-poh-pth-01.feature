@@ -7,8 +7,8 @@
 # - Legislation: BRA
 # - Created by : Daniela Anile
 # - Created date : 02/02/2021
-# - Updated by : Daniela Anile
-# - Updated date : 03/02/2021
+# - Updated by : Fausto A Neto
+# - Updated date : 31/07/2024
 # - Status : Automated
 ###########################################################################
 
@@ -36,10 +36,10 @@ Feature: xq-p-flow-poh-pth-01
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "113" to the selected text field and hits tab key
-
-    Scenario Outline: 3. Lines POH
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
+
+    Scenario Outline: 3. Lines POH
         And the user selects editable table row number: <LIN>
         When the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
         And the user adds the text <ITMREF> in selected cell
