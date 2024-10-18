@@ -7,8 +7,8 @@
 # - Legislation: BRA
 # - Created by : Daniela Anile
 # - Created date : 04/02/2021
-# - Updated by : Daniela Anile
-# - Updated date : 04/02/2021
+# - Updated by : Fausto A Neto
+# - Updated date : 18/10/2024
 # - Status : Automated
 ###########################################################################
 
@@ -39,10 +39,10 @@ Feature: xq-p-flow-pth-pih
         Given the user clicks the "General Data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "112" to the selected text field and hits tab key
-
-    Scenario Outline: 4. Lines PTH
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
+
+    Scenario Outline: 4. Lines PTH
         And the user selects editable table row number: <LIN>
         When the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
