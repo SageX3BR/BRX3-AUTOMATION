@@ -7,8 +7,9 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 22/10/2024
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 28/10/2024
+# - Ajustes: Alterado o Cliente para BR007
 # - Status : Done
 ###########################################################################
 
@@ -29,7 +30,7 @@ Feature: ATP-173
         And the user selects the text field with name: "Type"
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
-        And the user writes "BR006" to the selected text field and hits tab key
+        And the user writes "BR007" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "160" to the selected text field and hits tab key
         And the user hits escape
