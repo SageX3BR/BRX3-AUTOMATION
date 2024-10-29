@@ -110,6 +110,9 @@ Feature: ATP-122
         Given the user clicks the "Invoice selection" link on the left panel
         Given the user selects the data table of left panel
         When the user clicks the "Next" button in the right top bar of the selected data table
+        When the user clicks the "Next" button in the right top bar of the selected data table
+        When the user clicks the "Next" button in the right top bar of the selected data table
+        When the user clicks the "Next" button in the right top bar of the selected data table
         When the user selects the main picking list panel of the screen
         #Then the user clicks the "Expand all" button in the left top bar of the selected picking list
         When the user clicks the "Maximize" button in the right top bar of the selected picking list
