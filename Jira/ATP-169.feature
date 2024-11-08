@@ -7,9 +7,10 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 11/06/2024
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 03/09/2024
 # - Status : Done
+# - Ajustes Efetuados: Parametrizado o Ponto de Entrada PNHEDIT e ajustado o Taxa BRL
 ###########################################################################
 
 Feature: ATP-169
@@ -49,7 +50,7 @@ Feature: ATP-169
 
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI   | VAT1  |
-            | 1   | "BMS001" | "1"    | "200.00" | "BRA" |
+            | 1   | "BMS001" | "1"    | "200.00" | "BRL" |
 
     Scenario: 5. Creation
         Given the user clicks the "Create" main action button on the right panel
@@ -108,7 +109,7 @@ Feature: ATP-169
 
     Scenario: 08. Legal Data
         Given the user clicks the "Legal data" action button on the header drop down
-        When the "Legal data" screen is displayed
+        When the "Purchasing Legal data" screen is displayed
         #Then the user selects the text field with X3 field name: "XQPLD2_TTBCIPI"
         Then the user selects the text field with name: "IPI base calc"
         And the value of the selected text field is "500.00"

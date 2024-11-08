@@ -7,7 +7,7 @@
 # - Created by : Jonatas Hille
 # - Created date : 26/05/2020
 # - Updated by : Fausto A Neto
-# - Updated date : 16/08/2024
+# - Updated date : 18/10/2024
 # - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
@@ -36,11 +36,11 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
 
     Scenario Outline: Mandatory CFOP 2 Lines
         When the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
+        And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_QTYUOM"
+        And the user selects last editable cell with X3 field name: "WE3ALL2_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_GROPRI"
+        And the user selects last editable cell with X3 field name: "WE3ALL2_GROPRI"
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALL1_XQCFOP"
         And the user adds the text "" in selected cell and hits tab key
