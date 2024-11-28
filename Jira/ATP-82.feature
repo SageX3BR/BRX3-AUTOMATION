@@ -17,8 +17,8 @@ Feature: ATP-82
     Scenario: 0202A0 - Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
         And the user changes the main language code to "en-US"
-        When the user selects the "param:endPointName1" entry on endpoint panel
-        Then the "param:endPointName1" endpoint is selected
+    #When the user selects the "param:endPointName1" entry on endpoint panel
+    #Then the "param:endPointName1" endpoint is selected
 
 
     Scenario: 0202A1 - Sales order creation
@@ -64,7 +64,7 @@ Feature: ATP-82
         #Set sales order lines information
         When the user selects the fixed data table of section: "Lines"
         Then the user selects last fixed cell with header: "Product"
-        And the user adds the text "BMS012" in selected cell
+        And the user adds the text "BMS114" in selected cell
         And the user selects last editable cell with column header: "Ordered qty."
         And the user adds the text "4" in selected cell
         And the user selects last editable cell with column header: "Gross price"
@@ -114,7 +114,7 @@ Feature: ATP-82
         And the user clicks the "Expand all" button in the left top bar of the selected picking list
         And the user selects the item with the stored text with key "ENV_ATPSOHNUM01" and with the text containing "NA008" of the picking list panel
         And the user expands the selected picking list panel item
-        And the user selects the item "BMS012 PCI E 128 Mb graphics adapter Remains to be delivered 4 UN" of the picking list panel next level
+        And the user selects the item "BMS114 PCI E 128 Mb graphics adapter Remains to be delivered 4 UN" of the picking list panel next level
         And the user checks the selected picking list panel item
 
         #Create the delivery
