@@ -69,7 +69,9 @@ Feature: ATP-137
     Scenario: 003. Informações Adicionais e Criar
         Given the user clicks the "Resume" tab selected by title
         Given the user selects the text field with X3 field name: "WE3ALLXQ_OBSADIC"
-        Then the user writes "  TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES ADICIONAIS CONFORME O TICKET X3DEV-2946" to the selected text area
+        Then the user writes "123" to the selected text area
+        Given the user selects the text field with X3 field name: "WE3ALLXQ_OBSADIC"
+        Then the user writes "TESTE DE DUPLICACAO DAS OBSERVACOES ADICIONAIS CONFORME O TICKET X3DEV-2946" to the selected text area
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         #And the user selects the text field with X3 field name: "WE3ALL3_OCNNUM"
@@ -122,7 +124,7 @@ Feature: ATP-137
         Then the user selects the text field with name: "Additional Observations"
         Then the value of the selected text area contains
             """
-            TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES ADICIONAIS CONFORME O TICKET X3DEV-2946
+            TESTE DE DUPLICACAO DAS OBSERVACOES ADICIONAIS CONFORME O TICKET X3DEV-2946
             """
         Then the user clicks the Close page action icon on the header panel
         And the user waits 5 seconds
@@ -175,7 +177,7 @@ Feature: ATP-137
         Then the user selects the text field with name: "Additional Observations"
         Then the value of the selected text area contains
             """
-            TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES ADICIONAIS CONFORME O TICKET X3DEV-2946
+            TESTE DE DUPLICACAO DAS OBSERVACOES ADICIONAIS CONFORME O TICKET X3DEV-2946
             """
         And the user clicks the "Close page" main action button on the right panel
 
