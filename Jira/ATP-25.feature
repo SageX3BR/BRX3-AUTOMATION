@@ -109,7 +109,7 @@ Feature: ATP-25
         And the user clicks the "OK" button in the header
         And the user selects the text field with X3 field name: "STD0_CLE1_1"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "STD1_ZONE3_15"
+        And the user selects the text field with X3 field name: "STD1_ZONE3_16"
         And the user writes "17" to the selected text field and hits tab key
         And the user clicks the "Save" main action button on the right panel
         And the user clicks the "Table" button in the header
