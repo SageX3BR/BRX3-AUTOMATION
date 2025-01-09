@@ -61,6 +61,10 @@ Feature: xq-s-flow-sdh-al1
         #alert
         And the user writes "100" to the selected text field and hits tab key
         #Filling my industrialize
+        When the user clicks the "Lines" tab selected by title
+        And the user selects the date field with name: "Shipment"
+        And the user writes today to the selected date field
+        And the user hits tab
         When the user clicks the "Management" tab selected by title
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "br003" to the selected text field and hits tab key

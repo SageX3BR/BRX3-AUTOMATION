@@ -56,6 +56,7 @@ Feature: ATP-21
         And the user writes "" to the selected text field and hits tab key
         And the user selects the text field with name: "Receives XML"
         And the user writes "" to the selected text field and hits tab key
+        And the user hits escape
         And the user selects the text field with name: "Receives Bankslip"
         And the user writes "" to the selected text field
 
