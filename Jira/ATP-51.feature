@@ -31,8 +31,11 @@ Feature: ATP-51
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
         And the user writes "130" to the selected text field and hits tab key
-        And the user clicks the "Lines" tab selected by title
-        And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
+
+        Given the user selects the data table of section: "Lines"
+
+    #And the user clicks the "Lines" tab selected by title
+    # And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Lines
         Given the user selects editable table row number: <LIN>
