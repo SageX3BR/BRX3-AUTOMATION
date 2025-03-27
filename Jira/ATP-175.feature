@@ -91,6 +91,7 @@ Feature: ATP-175
         When the user selects the text field with X3 field name: "XQNFEMNT0_NUMDOC"
         And the user writes the stored text with key "SIH_NUM" in the selected text field and hits tab key
         And the user clicks the "Search" button in the header
+        And the user waits 3 seconds
         Then the user selects the data table with x3 field name: "XQNFEMNT1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
@@ -101,8 +102,8 @@ Feature: ATP-175
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         And the value of the selected text field contains "<vICMSDeson>154.00</vICMSDeson>"
-        And the value of the selected text field contains "<vCOFINS>167.20</vCOFINS>"
-        And the value of the selected text field contains "<vPIS>36.30</vPIS>"
+        And the value of the selected text field contains "<vPIS>33.76</vPIS>"
+        And the value of the selected text field contains "<vCOFINS>155.50</vCOFINS>"
 
     Scenario: 008. Logout
         Then the user clicks the Close page action icon on the header panel

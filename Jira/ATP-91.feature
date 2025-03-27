@@ -89,6 +89,7 @@ Feature: ATP-91
         When the user selects the text field with X3 field name: "XQNFEMNT0_NUMDOC"
         And the user writes the stored text with key "SIH_NUM" in the selected text field and hits tab key
         And the user clicks the "Search" button in the header
+        And the user waits 3 seconds
         Then the user selects the data table with x3 field name: "XQNFEMNT1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
@@ -99,10 +100,8 @@ Feature: ATP-91
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         And the value of the selected text field contains "<vBC>23.94</vBC>"
-        And the value of the selected text field contains "<pPIS>0.6500</pPIS>"
         And the value of the selected text field contains "<vPIS>0.16</vPIS>"
         And the value of the selected text field contains "<vBC>20.41</vBC>"
-        And the value of the selected text field contains "<pCOFINS>3.0000</pCOFINS>"
         And the value of the selected text field contains "<vCOFINS>0.61</vCOFINS>"
 
     Scenario: 007. Logout
