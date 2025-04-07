@@ -7,9 +7,9 @@
 # - Legislation: BR addon
 # - Created by : Carla Cury
 # - Created date : 19/06/2020
-# - Updated by : Carla Cury
-# - Updated date : 19/06/2020
-# - Status : in progress
+# - Updated by : Gustavo Albanus
+# - Updated date : 07/04/2025
+# - Status : Done
 ###########################################################################
 #Global parameter intialization
 ###########################################################################
@@ -92,7 +92,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         Examples:
             | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQVARCFOP |
             | 1   | "BMS001" | "3" | "21.25" | "6118" | "1"       |
-            | 2   | "BMS002" | "3" | "35,32" | "6118" | "1"       |
+            | 2   | "BMS002" | "3" | "35.32" | "6118" | "1"       |
 
     Scenario: 4.Create document
 
@@ -167,6 +167,8 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "134" to the selected text field and hits tab key
         When the user clicks the "Management" tab selected by title
+        And the user selects the date field with X3 field name: "WK4ALL1_SHIDAT"
+        And the user writes today to the selected date field
         And the user selects the text field with name: "Pay-by"
         And the user writes "BR150" to the selected text field and hits tab key
         And the user selects the text field with name: "Group customer"
