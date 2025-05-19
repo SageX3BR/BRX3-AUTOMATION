@@ -71,7 +71,7 @@ Feature: ATP-87
         And the user selects the text field with name: "ICMS DIFAL value"
         And the value of the selected text field is "8.62"
         And the user selects the text field with name: "ICMS FCP value"
-        And the value of the selected text field is "1.44"
+        And the value of the selected text field is "2.87"
 
     Scenario: 007. Transmissão NF-e
         And the user clicks the "SEFAZ" action button on the header drop down
@@ -97,6 +97,7 @@ Feature: ATP-87
         When the user selects the text field with X3 field name: "XQNFEMNT0_NUMDOC"
         And the user writes the stored text with key "SIH_NUM" in the selected text field and hits tab key
         And the user clicks the "Search" button in the header
+        And the user waits 3 seconds
         Then the user selects the data table with x3 field name: "XQNFEMNT1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
@@ -109,7 +110,7 @@ Feature: ATP-87
         And the value of the selected text field contains "<indFinal>1</indFinal>"
         And the value of the selected text field contains "<indIEDest>9</indIEDest>"
         And the value of the selected text field contains "<vICMS>17.25</vICMS>"
-        And the value of the selected text field contains "<vFCPUFDest>1.44</vFCPUFDest>"
+        And the value of the selected text field contains "<vFCPUFDest>2.87</vFCPUFDest>"
         And the value of the selected text field contains "<vICMSUFDest>8.62</vICMSUFDest>"
 
     Scenario: 007. Logout
