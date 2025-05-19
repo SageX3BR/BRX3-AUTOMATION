@@ -8,8 +8,8 @@
 # - Created by :
 # - Created date :
 # - Updated by : Gustavo Albanus
-# - Updated date : 15/08/2024
-# - Changes: Incluido a validação da parcela com Alteração-Baixa
+# - Updated date : 16/05/2025
+# - Changes: Ajustado a Condição de Pagamento 30XX e o valor das parcelas
 ###########################################################################
 
 Feature: ATP-46
@@ -48,7 +48,7 @@ Feature: ATP-46
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
         And the user selects the text field with name: "Terms"
-        And the user writes "30X" to the selected text field and hits tab key
+        And the user writes "30XX" to the selected text field and hits tab key
     #Filling Lines
 
     Scenario Outline: Add Lines
@@ -162,14 +162,12 @@ Feature: ATP-46
         Then the user selects the fixed data table for x3 field name: "XQREMESSA1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
         And the user selects cell with X3 field name: "XQREMESSA1_VALOR" of selected row
-        #And the value of the selected cell is "1.71"
-        And the value of the selected cell is "17.05"
+        And the value of the selected cell is "1.55"
         And the user selects cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" of selected row
         And the value of the selected cell is "Amount update"
         Given the user selects fixed table row number: 2
         And the user selects cell with X3 field name: "XQREMESSA1_VALOR" of selected row
-        #And the value of the selected cell is "18.76"
-        And the value of the selected cell is "1.55"
+        And the value of the selected cell is "17.05"
         And the user selects cell with X3 field name: "XQREMESSA1_XTIPOMOVIMEN" of selected row
         And the value of the selected cell is "Amount update"
         Then the user clicks the "Process all" action button on the header drop down

@@ -7,9 +7,10 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 28/02/2024
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 16/05/2025
 # - Status : Done
+# - Ajustes Efetuados: Editado a condição de pagamento para não ocorrer problema nas parcelas
 ###########################################################################
 
 Feature: ATP-156
@@ -33,8 +34,6 @@ Feature: ATP-156
         And the user selects the text field with X3 field name: "XQSIH0_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
-        When the user selects the text field with name: "Terms"
-        And the user writes "BR_30/60DDN" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
 
@@ -60,6 +59,9 @@ Feature: ATP-156
             | 1   | "BMS001" | "1" | "100.00" | "6101" | "0"     | "00"      | "999"  |
 
     Scenario: 004. SIH Creation
+        When the user selects the text field with name: "Terms"
+        And the user writes "BR_AVISTA" to the selected text field and hits tab key
+        And the user writes "BR_30/60DDN" to the selected text field and hits tab key
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
 
