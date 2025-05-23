@@ -89,8 +89,8 @@ Feature: xq-s-flow-sih-al5
 
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "16" | "18.24" | "5101" | "0"     | "10"      | "999"  |
-            | 2   | "BMS002" | "17" | "9.63"  | "5101" | "0"     | "10"      | "999"  |
+            | 1   | "BMS001" | "16" | "18.24" | "6101" | "0"     | "10"      | "999"  |
+            | 2   | "BMS002" | "17" | "9.63"  | "6101" | "0"     | "10"      | "999"  |
 
     Scenario: Create document
 
