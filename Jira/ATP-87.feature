@@ -1,23 +1,26 @@
 ##########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: ATP-91
-# - Description: Gerar o Grupo Correto de PIS ST e COFINS ST no XML com Regra Parametrizada para Alíquota Percentual
-# - JIRA: X3DEV-7049
+# - Test code: ATP-87
+# - Description: Vendas ICMS DIFAL - Grupo <ICMSUFDest> + FCP
+# - JIRA: X3DEV-7278
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
-# - Created date : 03/02/2025
+# - Created date :10/02/2025
 # - Updated by :
 # - Updated date :
 # - Status : Done
 ###########################################################################
 
-Feature: ATP-91
+Feature: ATP-87
 
     Scenario: 001.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
+    #And the user changes the main language code to "en-US"
+    #When the user selects the "param:endPointName1" entry on endpoint panel
+    #Then the "param:endPointName1" endpoint is selected
 
-    Scenario: 002. Create a Invoice
+    Scenario: 002. GESSIH
         Given the user opens the "GESSIH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry invoice" and column header: ""
@@ -29,13 +32,15 @@ Feature: ATP-91
         And the user selects the text field with name: "Type"
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
-        And the user writes "BR001" to the selected text field and hits tab key
+        #And the user writes "BR015" to the selected text field and hits tab key
+        And the user writes "BR015" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
-        And the user writes "100" to the selected text field
+        And the user writes "100" to the selected text field and hits tab key
+        And the user hits escape
+
+    Scenario Outline: 003. Add Lines
         And the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
-
-    Scenario Outline: Inserir Linha de Serviço
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
         And the user adds the text <ITMREF> in selected cell
@@ -47,25 +52,28 @@ Feature: ATP-91
         And the user adds the text <XQCFOP> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI    | XQCFOP |
-            | 1   | "BMS101" | "1" | "1000.00" | "6102" |
+            | LIN | ITMREF   | QTY | GROPRI  | XQCFOP |
+            | 1   | "BMS001" | "1" | "43.71" | "6403" |
 
-    Scenario: 003. Create
+    Scenario: 004. Elementos de Faturação Frete
+        And the user selects the data table of section: "Invoicing elements"
+        And the user selects cell with column header: "% or amount" and row number: 3
+        And the user adds the text "100" in selected cell and hits tab key
+
+    Scenario: 005. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
+        And a confirmation dialog appears with the message "Record has been created"
 
-    Scenario: 004. Verificar Cálculo de Impostos
+    Scenario: 006. Verificar Cálculo de Impostos
         Given the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with name: "PIS ST base (R$)"
-        And the value of the selected text field is "23.94"
-        And the user selects the text field with name: "PIS ST value"
-        And the value of the selected text field is "0.16"
-        And the user selects the text field with name: "COFINS ST base (R$)"
-        And the value of the selected text field is "20.41"
-        And the user selects the text field with name: "COFINS ST value"
-        And the value of the selected text field is "0.61"
+        And the user selects the text field with name: "ICMS payable value"
+        And the value of the selected text field is "17.25"
+        And the user selects the text field with name: "ICMS DIFAL value"
+        And the value of the selected text field is "8.62"
+        And the user selects the text field with name: "ICMS FCP value"
+        And the value of the selected text field is "2.87"
 
-    Scenario: 005. Transmissão NF-e
+    Scenario: 007. Transmissão NF-e
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
@@ -99,10 +107,11 @@ Feature: ATP-91
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
-        And the value of the selected text field contains "<vBC>23.94</vBC>"
-        And the value of the selected text field contains "<vPIS>0.16</vPIS>"
-        And the value of the selected text field contains "<vBC>20.41</vBC>"
-        And the value of the selected text field contains "<vCOFINS>0.61</vCOFINS>"
+        And the value of the selected text field contains "<indFinal>1</indFinal>"
+        And the value of the selected text field contains "<indIEDest>9</indIEDest>"
+        And the value of the selected text field contains "<vICMS>17.25</vICMS>"
+        And the value of the selected text field contains "<vFCPUFDest>2.87</vFCPUFDest>"
+        And the value of the selected text field contains "<vICMSUFDest>8.62</vICMSUFDest>"
 
     Scenario: 007. Logout
         Then the user clicks the Close page action icon on the header panel

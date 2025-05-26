@@ -7,9 +7,10 @@
 # - Legislation: BR addon
 # - Created by : Diogo Nascimento
 # - Created date : 12/05/2022
-# - Updated by :
-# - Updated date :
-# - Status : in progress
+# - Updated by : Gustavo Albanus
+# - Updated date : 01/04/2025
+# - Status : Done
+# - Correção: Ajustado a validação do Município para depois de criado o documento
 ###########################################################################
 #PREREQUISITES
 ###########################################################################
@@ -43,9 +44,6 @@ Feature: ATP-9
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "200" to the selected text field and hits tab key
-        # Validação da Sugestão
-        Then the user selects the text field with X3 field name: "XQSOH0_MUNPRESTDES"
-        And the value of the selected text field is "São Paulo"
 
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
@@ -71,6 +69,10 @@ Feature: ATP-9
 
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
+        # Validação da Sugestão
+        Then the user selects the text field with X3 field name: "XQSOH0_MUNPRESTDES"
+        And the value of the selected text field is "São Paulo"
+
         Then the user clicks the "Invoice" action button on the header drop down
 
     #--------------------------------------------------------------------------------

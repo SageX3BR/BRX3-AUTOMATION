@@ -7,9 +7,10 @@
 # - Legislation: BRA
 # - Created by : Gustavo Albanus
 # - Created date : 28/12/2023
-# - Updated by : 25/03/2024
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 10/03/2025
 # - Status : Done
+# - AJUSTES EFETUADOS: Ajustado o Valor do Campo Custo
 ###########################################################################
 
 Feature: ATP-145
@@ -108,7 +109,8 @@ Feature: ATP-145
         When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
         And the user selects editable table row number: 1
         And the user selects cell with X3 field name: "WE6ALL1_LINAMTCPR" of selected row
-        And the value of the selected cell is "292.1800"
+        #Está Somando AFRMM + Import Cost + ICMS + IPI + PIS + COFINS
+        And the value of the selected cell is "290.2900"
 
     Scenario: 009. Logout
         And the user clicks the "Close" main action button on the right panel
