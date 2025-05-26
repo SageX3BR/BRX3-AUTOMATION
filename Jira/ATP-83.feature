@@ -62,6 +62,8 @@ Feature: ATP-83
         And the user adds the text "4" in selected cell
         And the user selects last editable cell with column header: "Gross price"
         And the user adds the text "100" in selected cell
+        And the user selects last editable cell with X3 field name: "WE3ALL2_VAT1"
+        And the user adds the text "NT" in selected cell and hits enter key
 
         #Create the purchases order
         When the user clicks the "Create" main action button on the right panel
@@ -77,10 +79,12 @@ Feature: ATP-83
 
     Scenario: 020BB2 - Reconnect with Purchase order approver
         And the user logs-out from the system
+        And the user waits 5 seconds
+        Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-        Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserRootName" and password "param:loginUserRootPassword"
-        When the user selects the "param:endPointName1" entry on endpoint panel
-        Then the "param:endPointName1" endpoint is selected
+    #Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserRootName" and password "param:loginUserRootPassword"
+    #When the user selects the "param:endPointName1" entry on endpoint panel
+    #Then the "param:endPointName1" endpoint is selected
 
 
     Scenario: 0202B3 - Purchases order approbation
@@ -121,10 +125,12 @@ Feature: ATP-83
 
     Scenario: 020BB4 - Reconnect with main user
         And the user logs-out from the system
-
+        And the user waits 5 seconds
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
-        When the user selects the "param:endPointName1" entry on endpoint panel
-        Then the "param:endPointName1" endpoint is selected
+
+        #Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
+        #When the user selects the "param:endPointName1" entry on endpoint panel
+        #Then the "param:endPointName1" endpoint is selected
 
         #Select the en-US Language
         And the user changes the main language code to "en-US"

@@ -53,10 +53,10 @@ Feature: xq-s-crud-gessoh
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Sales site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with name: "Reference"
-        And the user writes the stored text with key "DOCREF" in the selected text field and hits tab key
         And the user selects the text field with name: "Sold-to"
         And the user writes "BR001" to the selected text field and hits tab key
+        And the user selects the text field with name: "Reference"
+        And the user writes the stored text with key "DOCREF" in the selected text field and hits tab key
         #And the user clicks the "Ok" opinion in the alert box
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
