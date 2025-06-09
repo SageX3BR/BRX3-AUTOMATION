@@ -26,39 +26,40 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user clicks on the selected cell
         Then the "Purchase return ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "BR013" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
-        Then the user writes "56" to the selected text field and hits tab key
-        And the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
+        And the user selects the text field with name: "Fiscal operation"
+        And the user writes "56" to the selected text field
+        Then the user hits tab
+        And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: Mandatory CFOP 2 Lines
         When the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE3ALL2_ITMREF"
+        And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE3ALL2_QTYUOM"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
-        And the user selects last editable cell with X3 field name: "WE3ALL2_GROPRI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
         And the user adds the text <GROPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCFOP"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
         And the user adds the text "" in selected cell and hits tab key
         And an alert box with the text "Mandatory field" appears
         And the user clicks the "Ok" opinion in the alert box
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCFOP"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQORIGEMICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
         And the user adds the text <XQORIGEMICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTIPI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
         And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTPIS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
         And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTCOF"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text <XQCSTCOF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCENQ"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
@@ -71,35 +72,36 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
     Scenario: 3. CFOP suggestion checking
         Given the user clicks the "Cancel" main action button on the right panel
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "BR014" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
-        Then the user writes "58" to the selected text field and hits tab key
-        Given the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
+        And the user selects the text field with name: "Fiscal operation"
+        And the user writes "58" to the selected text field
+        Then the user hits tab
+        Given the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: Suggestion CFOP Checking - 2 Lines
         When the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
+        And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_QTYUOM"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_GROPRI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
         And the user adds the text <GROPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCFOP"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
         And the value of the selected cell contains <XQCFOP>
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQORIGEMICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
         And the user adds the text <XQORIGEMICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTIPI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
         And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTPIS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
         And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTCOF"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text <XQCSTCOF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCENQ"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
@@ -113,35 +115,36 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
     Scenario: 4. CFOP suggestion by function
         Given the user clicks the "Cancel" main action button on the right panel
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "BR013" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
-        Then the user writes "59" to the selected text field and hits tab key
-        Given the user selects the fixed data table for x3 field name: "WE7ALL1_ARRAY_NBLIG"
+        And the user selects the text field with name: "Fiscal operation"
+        And the user writes "59" to the selected text field
+        Then the user hits tab
+        Given the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: Suggestion CFOP Checking By function - Line 1 Fiscal Operation - Line 2 CFOP Suggestion
         When the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
+        And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text <ITMREF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_QTYUOM"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_GROPRI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
         And the user adds the text <GROPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCFOP"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
         And the value of the selected cell contains <XQCFOP>
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQORIGEMICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
         And the user adds the text <XQORIGEMICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTIPI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
         And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTPIS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
         And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTCOF"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text <XQCSTCOF> in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCENQ"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |

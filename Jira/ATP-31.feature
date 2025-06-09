@@ -45,9 +45,9 @@ Feature:ATP-31
         And the user clicks on the selected cell
         Then the "Purchase return ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "NA011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "NA058" to the selected text field and hits tab key
 
 
