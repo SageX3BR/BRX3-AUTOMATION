@@ -127,11 +127,11 @@ Feature: ATP-125
         Then the "Purchase return ALL : Full entry" screen is displayed
 
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
+        And the user selects the text field with name: "Fiscal operation"
         And the user writes "130" to the selected text field
         Then the user hits tab
 
@@ -146,21 +146,21 @@ Feature: ATP-125
         And the user clicks the "Expand all" button in the left top bar of the selected picking list
         And the user selects the item "BMS108" of the level 1 on the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
+        And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: Lines
-        Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALL1_PTDLIN"
-        And the user selects cell with X3 field name: "WE7ALL1_XQCFOP" of selected row
+        Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALLXQ0_PTDLIN"
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQORIGEMICMS" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS" of selected row
         And the user adds the text <XQORIGEMICMS> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTICMS" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTICMS" of selected row
         And the user adds the text <XQCSTICMS> in selected cell and hits tab key
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTPIS" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTPIS" of selected row
         And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTCOF" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTCOF" of selected row
         Then the user adds the text <XQCSTCOF> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCENQ" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCENQ" of selected row
         And the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
             | LIN    | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTPIS | XQCSTCOF | XQCENQ |
@@ -188,7 +188,7 @@ Feature: ATP-125
         And the user selects the main log panel of the page
         And the selected log panel includes the message "Return Validation End"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHNUM"
+        And the user selects the text field with X3 field name: "WE7ALLXQ0_PNHNUM"
         And the user stores the value of the selected text field with the key: "DOCPNH"
         And the user clicks the "Close page" main action button on the right panel
 

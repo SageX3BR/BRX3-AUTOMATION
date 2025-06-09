@@ -25,60 +25,61 @@ Feature: ATP-51
         Then the "Purchase return ALL : Full entry" screen is displayed
 
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
-        And the user writes "130" to the selected text field and hits tab key
+        And the user selects the text field with name: "Fiscal operation"
+        And the user writes "130" to the selected text field
+        Then the user hits tab
 
         Given the user selects the data table of section: "Lines"
 
         Given the user selects editable table row number: 1
-        And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
+        And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text "BMS001" in selected cell and hits tab key
-        And the user selects last editable cell with X3 field name: "WE7ALL1_QTYUOM"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
         And the user adds the text "5" in selected cell and hits tab key
-        And the user selects last editable cell with X3 field name: "WE7ALL1_GROPRI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
         And the user adds the text "100" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCFOP"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
         And the user adds the text "6201" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQORIGEMICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
         And the user adds the text "0" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
         And the user adds the text "60" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTIPI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
         And the user adds the text "50" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTPIS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
         And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTCOF"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCENQ"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
         And the user adds the text "999" in selected cell and hits enter key
 
         Given the user clicks the "Save" main action button on the right panel
         When the user clicks the "Yes" option in the alert box
 
         Given the user selects editable table row number: 2
-        And the user selects last fixed cell with X3 field name: "WE7ALL1_ITMREF"
+        And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text "BMS001" in selected cell and hits tab key
-        And the user selects last editable cell with X3 field name: "WE7ALL1_QTYUOM"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
         And the user adds the text "5" in selected cell and hits tab key
-        And the user selects last editable cell with X3 field name: "WE7ALL1_GROPRI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
         And the user adds the text "100" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCFOP"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
         And the user adds the text "6201" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQORIGEMICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
         And the user adds the text "0" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTICMS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
         And the user adds the text "60" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTIPI"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
         And the user adds the text "50" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTPIS"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
         And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCSTCOF"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALL1_XQCENQ"
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
         And the user adds the text "999" in selected cell and hits enter key
 
         Given the user clicks the "Save" main action button on the right panel
@@ -110,9 +111,9 @@ Feature: ATP-51
         When the user clicks the "Tax detail" action button on the header drop down
         Then the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes "2" to the selected text field and hits tab key
-        When the user selects the text field with X3 field name: "XQPTD1_BCICMS"
+        Then the user selects the text field with name: "Base ICMS"
         And the user writes "100" to the selected text field and hits tab key
-        When the user selects the text field with X3 field name: "XQPTD1_VLICMSDV"
+        Then the user selects the text field with name: "ICMS payable value"
         And the user writes "10" to the selected text field and hits tab key
         And the user clicks the "OK" button in the popup header
         And the user clicks the "Close" main action button on the right panel
@@ -124,9 +125,9 @@ Feature: ATP-51
         When the user clicks the "Tax detail" action button on the header drop down
         Then the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the value of the selected text field is "2"
-        When the user selects the text field with X3 field name: "XQPTD1_BCICMS"
+        Then the user selects the text field with name: "Base ICMS"
         And the value of the selected text field is "100.0000"
-        When the user selects the text field with X3 field name: "XQPTD1_VLICMSDV"
+        Then the user selects the text field with name: "ICMS payable value"
         And the value of the selected text field is "10.0000"
         And the user clicks the "Close" main action button on the right panel
         Given the user clicks the "Save" main action button on the right panel
