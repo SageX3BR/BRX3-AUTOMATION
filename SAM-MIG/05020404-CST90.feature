@@ -117,11 +117,11 @@ Feature:05020404-CST90
         Then the "Purchase return ALL : Full entry" screen is displayed
         #Filling the Invoice header information
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "BR050" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "BR006" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
+        And the user selects the text field with name: "Fiscal operation"
         And the user writes "57" to the selected text field
         Then the user hits tab
         #Filter with the order created above
@@ -135,25 +135,25 @@ Feature:05020404-CST90
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR006" of the picking list panel
         Then the user checks the selected picking list panel item
-        And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
+        And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: 05020404-08 Lines
-        Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALL1_PTDLIN"
-        And the user selects cell with X3 field name: "WE7ALL1_XQCFOP" of selected row
+        Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALLXQ0_PTDLIN"
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQVARCFOP" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQVARCFOP" of selected row
         And the user adds the text <XQVARCFOP> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQORIGEMICMS" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS" of selected row
         And the user adds the text <XQORIGEMICMS> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTICMS" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTICMS" of selected row
         And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTIPI" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTIPI" of selected row
         And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTPIS" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTPIS" of selected row
         And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTCOF" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTCOF" of selected row
         Then the user adds the text <XQCSTCOF> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCENQ" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCENQ" of selected row
         And the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
             | LIN    | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
@@ -170,12 +170,13 @@ Feature:05020404-CST90
     Scenario Outline: 05020404-10 Tax Detail - Check Calculated Values
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         When the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_BFCPST"
+        And the user selects the text field with X3 field name: "WE7PTDXQ_BFCPST"
         And the value of the selected text field is <BFCPST>
-        And the user selects the text field with X3 field name: "XQPTD1_ALQFCPST"
+        And the user selects the text field with X3 field name: "WE7PTDXQ_ALQFCPST"
         And the value of the selected text field is <ALQFCPST>
-        And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
+        And the user selects the text field with X3 field name: "WE7PTDXQ_VLFCPST"
         And the value of the selected text field is <VLFCPST>
+
         Examples:
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
             | "1"    | "766.41" | "2.0000" | "15.33" |
@@ -183,13 +184,12 @@ Feature:05020404-CST90
 
     Scenario: 05020404-11 Resume - Check Calculated Values / Transmit to Sefaz and Validation
         Given the user clicks the Close page action icon on the header panel
-        When the user clicks the "Legal data" action button on the header drop down
-        Then the "Purchasing Legal data" screen is displayed
-        When the user selects the text field with X3 field name: "XQPLD2_TOTBASEFCPST"
+        And the user waits 2 seconds
+        Given the user clicks the "Tax Summary" tab selected by title
+        Then the user selects the text field with name: "FCP Calc. base"
         And the value of the selected text field is "1,600.99"
-        And the user selects the text field with X3 field name: "XQPLD2_TOTICMSFCPST"
+        Then the user selects the text field with name: "ICMS FCP-ST value"
         And the value of the selected text field is "32.02"
-        Then the user clicks the Close page action icon on the header panel
         #Sefaz
         When the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears
