@@ -190,7 +190,6 @@ Feature:05020407-CST900
         And the value of the selected text field is "1,564.08"
         Then the user selects the text field with name: "ICMS FCP-ST value"
         And the value of the selected text field is "31.29"
-        Then the user clicks the Close page action icon on the header panel
         #Sefaz
         When the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears

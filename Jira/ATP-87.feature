@@ -62,6 +62,7 @@ Feature: ATP-87
 
     Scenario: 005. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel
+        And the user waits 3 seconds
         And a confirmation dialog appears with the message "Record has been created"
 
     Scenario: 006. Verificar Cálculo de Impostos
