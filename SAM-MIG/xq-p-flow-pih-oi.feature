@@ -111,11 +111,8 @@ Feature:xq-flow-pih-oi
 
     #Informing Importing declaration (DI Data)  ITEM 1
     Scenario: Inform DI Data
-
-
-        Given the user clicks the "more_vertical" button in the header
-        And the user clicks the "DI Data" secondary action button on the right panel
-        And the "Import declaration" screen is displayed
+        Given the user clicks the "DI Data" action button on the header drop down
+        Then the "Import declaration" screen is displayed
 
 
 
@@ -152,7 +149,7 @@ Feature:xq-flow-pih-oi
             | "1"    | "1234567890" | "123ABC" | "4.21"  | "8.32"    | "7.36"    | "9.12" | "3.25"   | "Porto de Paranagua" | "PR"     |
             | "2 "   | "1234567890" | "ABC123" | "2.03"  | "4.65"    | "8.12"    | "7.65" | "12.95"  | "Porto de Santos"    | "SP"     |
 
-    Scenario: Inform DI Data Additions
+    #Scenario: Inform DI Data Additions
     # Given the user waits (1) seconds
 
     Scenario Outline: Inform DI Data Additions
@@ -196,8 +193,7 @@ Feature:xq-flow-pih-oi
         And the user clicks the Close page action icon on the header panel
         # And a dialog box appears
         # And the user clicks the "No" opinion in the alert box
-        Given the user clicks the "more_vertical" button in the header
-        And the user clicks the "SEFAZ" secondary action button on the right panel
+        Given the user clicks the "SEFAZ" action button on the header drop down
         Then a log panel appears
         And the user selects the main log panel of the page
         # #And the user waits 20 seconds
