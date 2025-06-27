@@ -31,7 +31,7 @@ Feature:05010201-CST10
         Then the "Sales order ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SOH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SALFCY"
         And the user writes "BR050" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SOH0_SOHTYP"
         And the user writes "BRSON" to the selected text field and hits tab key

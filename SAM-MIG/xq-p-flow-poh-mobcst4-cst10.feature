@@ -32,7 +32,7 @@ Feature:xq-p-flow-poh-mobcst4-cst10
         Then the "Purchase order ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "POH0_POHFCY"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "POH0_BPSNUM"
         And the user writes "BR001" to the selected text field and hits tab key

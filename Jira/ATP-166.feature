@@ -78,7 +78,7 @@ Feature: ATP-166
         Then the "Delivery ALL : Full entry" screen is displayed
 
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SDH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SDH0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key

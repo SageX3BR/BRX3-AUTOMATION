@@ -26,7 +26,7 @@ Feature:xq-p-flow-pho-CFOP-suggestion
         And the user clicks on the selected cell
         Then the "Purchase order ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "POH0_POHFCY"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "POH0_BPSNUM"
         And the user writes "BR005" to the selected text field and hits tab key
@@ -60,7 +60,7 @@ Feature:xq-p-flow-pho-CFOP-suggestion
     Scenario: 3. CFOP suggestion checking
         Given the user clicks the "Cancel" main action button on the right panel
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "POH0_POHFCY"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR014" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "POH0_BPSNUM"
         And the user writes "BR005" to the selected text field and hits tab key
@@ -93,7 +93,7 @@ Feature:xq-p-flow-pho-CFOP-suggestion
     Scenario: 4. CFOP suggestion by function
         Given the user clicks the "Cancel" main action button on the right panel
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "POH0_POHFCY"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "POH0_BPSNUM"
         And the user writes "BR005" to the selected text field and hits tab key

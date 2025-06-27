@@ -43,7 +43,7 @@ Feature:xq-s-flow-soh-modbcst-cst30
         Then the "Sales order ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SOH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SOH0_SOHTYP"
         And the user writes "BRSON" to the selected text field and hits tab key
@@ -121,7 +121,7 @@ Feature:xq-s-flow-soh-modbcst-cst30
 
     Scenario: Modalidade 5
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SOH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SOH0_SOHTYP"
         And the user writes "BRSON" to the selected text field and hits tab key
@@ -200,7 +200,7 @@ Feature:xq-s-flow-soh-modbcst-cst30
 
     Scenario: Modalidade 6
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SOH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "SOH0_SOHTYP"
         And the user writes "BRSON" to the selected text field and hits tab key
