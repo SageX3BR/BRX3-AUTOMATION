@@ -28,9 +28,9 @@ Feature:xq-p-flow-pho-CFOP-suggestion
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR013" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_BPSNUM"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_BPSNUM"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_XQCODOPF"
         Then the user writes "53" to the selected text field and hits tab key
 
     Scenario Outline: Mandatory CFOP 2 Lines
@@ -62,9 +62,9 @@ Feature:xq-p-flow-pho-CFOP-suggestion
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR014" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_BPSNUM"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_BPSNUM"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_XQCODOPF"
         And the user writes "54" to the selected text field
         And the user hits tab
         Then the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
@@ -95,9 +95,9 @@ Feature:xq-p-flow-pho-CFOP-suggestion
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR013" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_BPSNUM"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_BPSNUM"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_XQCODOPF"
         Then the user writes "55" to the selected text field and hits tab key
 
     Scenario Outline: Suggestion CFOP Checking By function - Line 1 Fiscal Operation - Line 2 CFOP Suggestion

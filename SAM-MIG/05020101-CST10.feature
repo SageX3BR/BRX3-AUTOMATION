@@ -27,9 +27,9 @@ Feature:05020101-CST10
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR050" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_BPSNUM"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_BPSNUM"
         And the user writes "BR006" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_XQCODOPF"
         And the user writes "51" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"

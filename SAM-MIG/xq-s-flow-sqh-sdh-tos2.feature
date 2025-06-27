@@ -106,7 +106,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales order ALL : Full entry" screen is displayed
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOH_NUM"
     #--------------------------------------------------------------------------------
     #Creation of the invoice
@@ -123,14 +123,14 @@ Feature: xq-s-flow-sqh-sdh-tos2
 
     Scenario: 7.Create and Store Doc Number
 
-        Given the user selects the text field with X3 field name: "SIH0_NUM"
+        Given the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
     Scenario: 8. Create and Store Doc Number
 
@@ -204,7 +204,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears

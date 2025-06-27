@@ -76,7 +76,7 @@ Feature: ATP-102
     #O Valor Esperado é 5.00, pois na RTAX está marcado para não deduzir do Total da NF
 
     Scenario: 5. Num. Doc.
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHNUM"
         Then the user clicks the Close page action icon on the header panel
 
@@ -88,15 +88,15 @@ Feature: ATP-102
         Then the "Delivery ALL : Full entry" screen is displayed
 
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0__STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SDHTYP"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
+        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
 
@@ -129,7 +129,7 @@ Feature: ATP-102
     #O Valor Esperado é 5.00, pois na RTAX está marcado para não deduzir do Total da NF
 
     Scenario: 10. Num. Doc.
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
         Then the user clicks the "Validation" button in the header
         And a dialog box appears
@@ -143,13 +143,13 @@ Feature: ATP-102
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
         And the user writes "BRNFC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSIH0_CODOPF"
+        And the user selects the text field with X3 field name: "XQWK5ALLXQ0_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
 

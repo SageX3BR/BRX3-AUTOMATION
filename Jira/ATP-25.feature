@@ -49,8 +49,8 @@ Feature: ATP-25
 
 
     Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "XQWK5ALLXQ0_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "XQWK5ALLXQ0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
     #Filling my industrialize
 
@@ -95,9 +95,9 @@ Feature: ATP-25
         Then the user clicks the "SEFAZ" action button on the header drop down
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
-        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
         And the user clicks the Close page action icon on the header panel
 
@@ -131,7 +131,7 @@ Feature: ATP-25
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         And the user selects the text field with name: "Sales site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
         And the user clicks the "Post" button in the header
         Then a log panel appears
@@ -140,7 +140,7 @@ Feature: ATP-25
         Then the user clicks the Close page action icon on the header panel
         #tempo para esperar o job da contabilização
         When the user waits 115 seconds
-        Given the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        Given the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         #And the value of the selected text field is "Denegated Invoice"
         And the value of the selected text field is "Nota Denegada"
         And the user waits 2 seconds

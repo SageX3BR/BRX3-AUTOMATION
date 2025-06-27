@@ -61,8 +61,8 @@ Feature: xq-s-flow-sih-al2
 
 
     Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "XQWK5ALLXQ0_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "XQWK5ALLXQ0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
     #Filling my industrialize
 

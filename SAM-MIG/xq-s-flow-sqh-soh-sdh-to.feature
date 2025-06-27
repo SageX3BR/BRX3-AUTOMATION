@@ -138,7 +138,7 @@ Feature: xq-s-flow-sqh-soh-sdh-to
     Scenario: Check the data in the Management
 
         Given the user clicks the "Management" tab selected by title
-        And the user selects the text field with X3 field name: "SDH0_BPCINV"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCINV"
         And the value of the selected text field is "BR004"
 
     Scenario: SEFAZ
@@ -146,7 +146,7 @@ Feature: xq-s-flow-sqh-soh-sdh-to
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Close page" main action button on the right panel
         #Fechando SOH para conseguir fazer Logout

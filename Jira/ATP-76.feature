@@ -57,12 +57,12 @@ Feature: ATP-76
     Scenario: 4. Create document
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM"
         Then the user clicks the "SEFAZ" action button on the header drop down
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears

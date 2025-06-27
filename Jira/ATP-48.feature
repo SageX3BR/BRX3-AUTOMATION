@@ -49,8 +49,8 @@ Feature: ATP-48
 
 
     Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "XQWK5ALLXQ0_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "XQWK5ALLXQ0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
@@ -88,9 +88,9 @@ Feature: ATP-48
         Then the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
-        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the "Post" button in the header
         Given the user selects the main data table of the page
