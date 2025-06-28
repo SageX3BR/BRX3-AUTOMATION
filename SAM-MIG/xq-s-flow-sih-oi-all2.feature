@@ -42,16 +42,16 @@ Feature: xq-s-flow-sih-oi-all2
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "102" to the selected text field and hits tab key
         #Exportação
-        And the user selects the text field with X3 field name: "XQSIH0_UFEMBARQUE"
+        And the user selects the text field with X3 field name: "XQWK5ALLXQ0_UFEMBARQUE"
         And the user writes "PR" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSIH0_LOCEMBARQUE"
+        And the user selects the text field with X3 field name: "XQWK5ALLXQ0_LOCEMBARQUE"
         And the user writes "Porto de Paranagua" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSIH0_DESLOCDESP"
+        And the user selects the text field with X3 field name: "XQWK5ALLXQ0_DESLOCDESP"
         And the user writes "Parangua" to the selected text field and hits tab key
 
     Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "XQWK5ALLXQ0_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "XQWK5ALLXQ0_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
 
 

@@ -137,7 +137,7 @@ Feature: ATP-56
         And the user selects the main log panel of the page
         And the selected log panel includes the message "Código: 100 - Autorizado."
         And the user clicks the "Close page" main action button on the right panel
-        Given the user selects the text field with X3 field name: "SIH0_NUM"
+        Given the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         Then the user stores the value of the selected text field with the key: "SIH_NUM"
         And the user clicks the Close page action icon on the header panel
 

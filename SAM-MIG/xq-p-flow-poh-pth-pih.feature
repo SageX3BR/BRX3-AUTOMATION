@@ -71,7 +71,7 @@ Feature:xq-p-flow-poh-pth-pih
     Scenario: 2.1. Create and Store Doc Number
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: " WE3ALLXQ0_POHNUM"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_POHNUM"
         And the user stores the value of the selected text field with the key: "PoDocumentNo"
         Then the user clicks the Close page action icon on the header panel
 

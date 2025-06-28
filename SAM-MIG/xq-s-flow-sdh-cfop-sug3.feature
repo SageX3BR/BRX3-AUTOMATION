@@ -31,7 +31,7 @@ Feature: xq-s-flow-sdh-cfop-sug3
         And the user writes "BR014" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_CODOPF"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_CODOPF"
         And the user writes "64" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"

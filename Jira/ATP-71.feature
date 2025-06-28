@@ -36,7 +36,7 @@ Feature: ATP-71
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_CODOPF"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_CODOPF"
         And the user writes "125" to the selected text field and hits tab key
         And the user hits escape
         And the user clicks the "Lines" tab selected by title
@@ -65,7 +65,7 @@ Feature: ATP-71
         When the user clicks the "SEFAZ" action button on the header drop down
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_NFESTATUS"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         Then the user clicks the "Validation" button in the header
         Then the user clicks the "Ok" opinion in the alert box

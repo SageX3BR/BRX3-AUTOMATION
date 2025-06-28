@@ -33,7 +33,7 @@ Feature: ATP-144
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_CODOPF"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_CODOPF"
         And the user writes "125" to the selected text field and hits tab key
         And the user hits escape
         And the user clicks the "Lines" tab selected by title
