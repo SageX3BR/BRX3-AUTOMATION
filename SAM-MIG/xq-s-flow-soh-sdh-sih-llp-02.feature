@@ -63,11 +63,11 @@ Feature: xq-s-flow-soh-sdh-sih-llp-02
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "102" to the selected text field
         #And the user clicks the "General Data" tab selected by title
-        And the user selects the text field with X3 field name: "XQSOH0_UFEMBARQUE"
+        And the user selects the text field with X3 field name: "XQWK2ALLXQ0_UFEMBARQUE"
         And the user writes "PR" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSOH0_LOCEMBARQUE"
+        And the user selects the text field with X3 field name: "XQWK2ALLXQ0_LOCEMBARQUE"
         And the user writes "Paranaguá" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSOH0_DESLOCDESP"
+        And the user selects the text field with X3 field name: "XQWK2ALLXQ0_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
         And the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK2ALL1_BPCINV"
@@ -101,7 +101,7 @@ Feature: xq-s-flow-soh-sdh-sih-llp-02
 
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOH_NUM"
         And the user clicks the Close page action icon on the header panel
 

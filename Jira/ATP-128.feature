@@ -59,7 +59,7 @@ Feature: ATP-128
     Scenario: 004. CREATE GESSOH MANUAL
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SOH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_XQCODOPF"
         And the value of the selected text field is "120"
         And the user clicks the Close page action icon on the header panel
         And the user waits 3 seconds
@@ -119,7 +119,7 @@ Feature: ATP-128
         And the user adds the stored text with key "DOCSOH" in selected cell and hits tab key
         And the user selects cell with column header: "Order no." and row number: 1
         And the user clicks on the selected cell
-        And the user selects the text field with X3 field name: "SOH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_XQCODOPF"
         And the value of the selected text field is "100"
         And the user clicks the Close page action icon on the header panel
 

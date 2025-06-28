@@ -106,7 +106,7 @@ Feature: xq-s-flow-sqh-sdh-tos2
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales order ALL : Full entry" screen is displayed
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOH_NUM"
     #--------------------------------------------------------------------------------
     #Creation of the invoice

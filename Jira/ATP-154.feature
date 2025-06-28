@@ -56,7 +56,7 @@ Feature: ATP-154
         When the user clicks the "Tax Summary" tab selected by title
         And the user selects the text field with name: "Products total value"
         And the value of the selected text field is "1,100.00"
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHNUM"
         And the user clicks the "Close page" main action button on the right panel
 

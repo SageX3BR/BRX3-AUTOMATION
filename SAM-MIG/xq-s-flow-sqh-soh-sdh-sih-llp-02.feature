@@ -115,7 +115,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         And an alert box with the text containing "Replace data of the Exports block?" appears
         And the user clicks the "Yes" opinion in the alert box
         Then the "Sales order ALL : Full entry" screen is displayed
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOH_NUM"
         Then the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel

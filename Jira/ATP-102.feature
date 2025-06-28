@@ -76,7 +76,7 @@ Feature: ATP-102
     #O Valor Esperado é 5.00, pois na RTAX está marcado para não deduzir do Total da NF
 
     Scenario: 5. Num. Doc.
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHNUM"
         Then the user clicks the Close page action icon on the header panel
 
