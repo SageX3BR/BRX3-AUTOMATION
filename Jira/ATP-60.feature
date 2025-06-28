@@ -60,12 +60,12 @@ Feature: ATP-60
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         Given the user clicks the "Validation" button in the header
         When a dialog box appears
         Then the user clicks the "Ok" opinion in the alert box
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM"
         And the user clicks the "Close page" main action button on the right panel
 

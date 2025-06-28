@@ -52,7 +52,7 @@ Feature:ATP-35
         And a confirmation dialog appears with the message "Record has been created"
         When the user clicks the "Validation" button in the header
         And the user clicks the "Ok" option in the alert box
-        Then the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        Then the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
         And the user clicks the Close page action icon on the header panel
 

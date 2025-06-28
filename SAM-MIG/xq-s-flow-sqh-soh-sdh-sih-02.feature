@@ -150,7 +150,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-02
 
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM07"
         And the user clicks the "Validation" button in the header
         And a dialog box appears

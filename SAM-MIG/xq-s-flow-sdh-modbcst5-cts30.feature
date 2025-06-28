@@ -45,15 +45,15 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
         Then the "Delivery ALL : Full entry" screen is displayed
         #Filling the Invoice header information
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SDH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SDHTYP"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
+        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_CODOPF"
         And the user writes "125" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
@@ -108,7 +108,7 @@ Feature: xq-s-flow-sdh-modbcst5-cts30
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "XQWK4ALLXQ0_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         Then the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

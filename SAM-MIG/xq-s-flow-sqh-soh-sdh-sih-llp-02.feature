@@ -61,11 +61,11 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "102" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSQH0_UFEMBARQUE"
+        And the user selects the text field with X3 field name: "XQWK1ALLXQ0_UFEMBARQUE"
         And the user writes "PR" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSQH0_LOCEMBARQUE"
+        And the user selects the text field with X3 field name: "XQWK1ALLXQ0_LOCEMBARQUE"
         And the user writes "Paranaguá" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSQH0_DESLOCDESP"
+        And the user selects the text field with X3 field name: "XQWK1ALLXQ0_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
         And the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK1ALL1_BPAADD"
@@ -99,7 +99,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
 
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        # And the user selects the text field with X3 field name: "SQH0_SQHNUM"
+        # And the user selects the text field with X3 field name: "WK1ALLXQ0_SQHNUM"
         # And the user stores the value of the selected text field with the key: "SQH_NUM"
         # Then the user clicks the Close page action icon on the header panel
 
@@ -161,7 +161,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
 
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM09"
         And the user clicks the "Validation" button in the header
         And a dialog box appears

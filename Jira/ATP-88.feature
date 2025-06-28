@@ -75,7 +75,7 @@ Feature: ATP-88
         And the user writes "[F:XQSDH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM"
         Then the user clicks the Close page action icon on the header panel
         Then the user clicks the Close page action icon on the header panel
