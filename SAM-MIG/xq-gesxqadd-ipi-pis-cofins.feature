@@ -32,7 +32,7 @@ Feature: xq-gesxqadd-ipi-pis-cofins
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQWK5ALLXQ0_CODOPF"
+        And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
         And the user clicks the "Lines" tab selected by title

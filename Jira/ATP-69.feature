@@ -75,11 +75,11 @@ Feature: ATP-69
     Scenario: 7. Tax Detail
         Given the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
-        And the user selects the text field with X3 field name: "XQPTD1_BCICMSST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_BCICMSST"
         And the value of the selected text field is "15024.3900"
-        And the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_VLICMSST"
         And the value of the selected text field is "2,704.39"
-        And the user selects the text field with X3 field name: "XQPTD1_VLFINICMS"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_VLFINICMS"
         And the value of the selected text field is "1,504.39"
         Then the user clicks the Close page action icon on the header panel
 

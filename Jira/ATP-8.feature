@@ -28,7 +28,7 @@ Feature: ATP-8
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQWK5ALLXQ0_CODOPF"
+        And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
         And the user writes "200" to the selected text field and hits tab key
         And the user hits escape
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"

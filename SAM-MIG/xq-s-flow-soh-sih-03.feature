@@ -138,8 +138,8 @@ Feature: xq-s-flow-soh-sih-03
         And the user clicks the "Yes" opinion in the alert box
 
     Scenario: 5. Process Id
-        Given the user selects the fixed data table for x3 field name: "XQWK5ALLXQ0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQWK5ALLXQ0_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "WK5ALLXQ3_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "WK5ALLXQ3_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
 
     Scenario: 6. Create document

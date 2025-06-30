@@ -69,7 +69,7 @@ Feature: ATP-165
     Scenario: 6. Tax Detail
         Given the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
-        And the user selects the text field with X3 field name: "XQPTD1_VLFINICMS"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_VLFINICMS"
         And the value of the selected text field is "312.00"
         Then the user clicks the Close page action icon on the header panel
         And the user waits 5 seconds

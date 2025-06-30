@@ -174,8 +174,8 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-01
         And the user clicks on the selected cell
 
     Scenario: 10. Process Id
-        Given the user selects the fixed data table for x3 field name: "XQWK5ALLXQ0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQWK5ALLXQ0_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "WK5ALLXQ3_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "WK5ALLXQ3_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
 
     Scenario: 11. Create document
