@@ -64,9 +64,9 @@ Feature:ATP-35
         Then the "Customer return ALL : Full entry" screen is displayed
         #Header
         Given the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SRH0_STOFCY"
+        And the user selects the text field with X3 field name: " WK6ALLXQ0_STOFCY"
         And the user writes "FR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SRH0_BPCORD"
+        And the user selects the text field with X3 field name: " WK6ALLXQ0_BPCORD"
         And the user writes "FR001" to the selected text field and hits tab key
 
         When the user clicks the "Selection criteria" action button on the header drop down
