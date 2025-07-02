@@ -113,7 +113,7 @@ Feature:05020303-CST70
     Scenario Outline: 05020303-05 Tax Detail - Check Calculated Values
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         When the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE6PTDXQ_BFCPST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_BFCPST"
         And the value of the selected text field is <BFCPST>
         And the user selects the text field with X3 field name: "WE3PTDXQ_ALQFCPST"
         And the value of the selected text field is <ALQFCPST>

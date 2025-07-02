@@ -108,11 +108,11 @@ Feature:05010503-CST70
         And the user selects the item with the stored text with key "SDHNUM" and with the text containing "BR050" of the picking list panel
         And the user checks the selected picking list panel item
 
-        And the user selects the text field with X3 field name: "WK6ALLXQ_CODOPF"
+        And the user selects the text field with X3 field name: "WK6ALLXQ3_CODOPF"
         And the user writes "46" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "WK6ALLXQ_DTEMI"
+        And the user selects the date field with X3 field name: "WK6ALLXQ3_DTEMI"
         And the user writes today to the selected date field
-        And the user selects the date field with X3 field name: "WK6ALLXQ_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK6ALLXQ3_DTSAIENT"
         And the user writes today to the selected date field
 
         And the user clicks the "Lines" tab selected by title
