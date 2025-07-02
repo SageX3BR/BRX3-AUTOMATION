@@ -76,9 +76,9 @@ Feature: ATP-76
         And the user clicks on the selected cell
         Then the "Customer return ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: " WK6ALLXQ0_STOFCY"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: " WK6ALLXQ0_BPCORD"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
@@ -141,7 +141,7 @@ Feature: ATP-76
         And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: " WK6ALLXQ0_SRHNUM"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_SRHNUM"
         And the user stores the value of the selected text field with the key: "SRHNUM"
         Then the user clicks the Close page action icon on the header panel
 

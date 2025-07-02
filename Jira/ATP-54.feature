@@ -98,9 +98,9 @@ Feature: ATP-54
         And the user clicks on the selected cell
         Then the "Customer return ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: " WK6ALLXQ0_STOFCY"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: " WK6ALLXQ0_BPCORD"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
 
     Scenario: 7. Picking GESSDH

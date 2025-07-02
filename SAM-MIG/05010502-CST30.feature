@@ -94,9 +94,9 @@ Feature:05010502-CST30
         Then the "Customer return ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: " WK6ALLXQ0_STOFCY"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_STOFCY"
         And the user writes "BR050" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: " WK6ALLXQ0_BPCORD"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_BPCORD"
         And the user writes "BR150" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
