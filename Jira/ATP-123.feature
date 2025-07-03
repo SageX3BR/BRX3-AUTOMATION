@@ -130,7 +130,7 @@ Feature: ATP-123
 
     Scenario: 9. Validação Resumo
         Given the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPTH2_TTAFRMM"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_TTAFRMM"
         And the value of the selected text field is "100.00"
 
     Scenario: 10. Validação Tax Detail

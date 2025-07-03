@@ -115,9 +115,9 @@ Feature:xq-p-flow-pth-pnh-modbcst6-cst10
     Scenario: Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         # And the user clicks the "Resume" tab selected by title
-        # When the user selects the text field with X3 field name: "XQPTH2_TOTBASEFCPST"
+        # When the user selects the text field with X3 field name: "WE6ALLXQ_TOTBASEFCPST"
         # And the value of the selected text field is "8,837.5900"
-        # And the user selects the text field with X3 field name: "XQPTH2_TOTICMSFCPST"
+        # And the user selects the text field with X3 field name: "WE6ALLXQ_TOTICMSFCPST"
         # And the value of the selected text field is "176.7600"
         Then the user clicks the Close page action icon on the header panel
 

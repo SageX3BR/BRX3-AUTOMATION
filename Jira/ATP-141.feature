@@ -103,11 +103,11 @@ Feature: ATP-141
         And the user selects the item "BMS103 Shipped 6 UN Already Returned 0" of the level 2 on the picking list panel
         #And the user selects the item with the stored text with key "SDH_NUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "XQSRL1_CODOPF"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_CODOPF"
         And the user writes "141" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "XQSRL1_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK7ALLXQ3_DTSAIENT"
         When the user writes a generated date in the selected date field using the value "T+1"
-        And the user selects the text field with X3 field name: "XQSRL1_HRSAIENT"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_HRSAIENT"
         Then the user writes "10:00:00" to the selected text field and hits tab key
         And the user clicks the "Lines (tax)" tab selected by title
 

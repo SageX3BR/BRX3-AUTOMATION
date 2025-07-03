@@ -160,11 +160,11 @@ Feature: xq-p-flow-poh-pth-ef-02
 
     Scenario: 12. Check Values Invoice Elements
         Given the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPTH2_TTDESC"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_TTDESC"
         And the value of the selected text field is "7.52"
-        Then the user selects the text field with X3 field name: "XQPTH2_TTFRETE"
+        Then the user selects the text field with X3 field name: "WE6ALLXQ_TTFRETE"
         And the value of the selected text field is "3.03"
-        Then the user selects the text field with X3 field name: "XQPTH2_TTSEGURO"
+        Then the user selects the text field with X3 field name: "WE6ALLXQ_TTSEGURO"
         And the value of the selected text field is "1.74"
         And the user clicks the Close page action icon on the header panel
 

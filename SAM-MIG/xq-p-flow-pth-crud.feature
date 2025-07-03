@@ -119,7 +119,7 @@ Feature: xq-p-flow-pth-crud
     Scenario: 8. Resume
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPTH2_TTICMSST"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_TTICMSST"
         And the value of the selected text field is "212.74"
         Then the user clicks the Close page action icon on the header panel
 

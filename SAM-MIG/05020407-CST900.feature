@@ -100,9 +100,9 @@ Feature:05020407-CST900
     Scenario: 05020407-06 Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
-        When the user selects the text field with X3 field name: "XQPTH2_TOTBASEFCPST"
+        When the user selects the text field with X3 field name: "WE6ALLXQ_TOTBASEFCPST"
         And the value of the selected text field is "1,564.08"
-        And the user selects the text field with X3 field name: "XQPTH2_TOTICMSFCPST"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_TOTICMSFCPST"
         And the value of the selected text field is "31.29"
         Then the user clicks the Close page action icon on the header panel
 

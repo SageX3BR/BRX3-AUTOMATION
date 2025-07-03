@@ -87,11 +87,11 @@ Feature: ATP-129
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Ship-to"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSRL1_CODOPF"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_CODOPF"
         And the user writes "141" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "XQSRL1_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK7ALLXQ3_DTSAIENT"
         When the user writes a generated date in the selected date field using the value "T+1"
-        And the user selects the text field with X3 field name: "XQSRL1_HRSAIENT"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_HRSAIENT"
         Then the user writes "10:00:00" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with name: "Delivery no."
