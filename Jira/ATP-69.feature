@@ -79,7 +79,7 @@ Feature: ATP-69
         And the value of the selected text field is "15024.3900"
         And the user selects the text field with X3 field name: "WE6PTDXQ_VLICMSST"
         And the value of the selected text field is "2,704.39"
-        And the user selects the text field with X3 field name: "WE6PTDXQ__VLFINICMS"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_VLFINICMS"
         And the value of the selected text field is "1,504.39"
         Then the user clicks the Close page action icon on the header panel
 

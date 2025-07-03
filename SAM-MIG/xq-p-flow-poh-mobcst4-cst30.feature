@@ -85,7 +85,7 @@ Feature:xq-p-flow-poh-mobcst4-cst30
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         When the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE6PTDXQ_MDBCICMSST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_MDBCICMSST"
         And the value of the selected text field is <MDBCICMSST>
 
         Examples:

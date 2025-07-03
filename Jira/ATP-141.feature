@@ -122,7 +122,7 @@ Feature: ATP-141
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSRL2_TOTMERCA"
+        And the user selects the text field with X3 field name: "WK7ALLXQ_TOTMERCA"
         And the value of the selected text field is "26.28"
         And the user waits 3 seconds
 
@@ -136,7 +136,7 @@ Feature: ATP-141
         Given the user clicks the "Save" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been modified"
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSRL2_TOTMERCA"
+        And the user selects the text field with X3 field name: "WK7ALLXQ_TOTMERCA"
         And the value of the selected text field is "13.14"
 
     Scenario: 010. Logout

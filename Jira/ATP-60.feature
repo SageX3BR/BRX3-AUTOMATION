@@ -90,7 +90,7 @@ Feature: ATP-60
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SDH_NUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "XQSRS1_CODOPF"
+        And the user selects the text field with X3 field name: "WK8ALLXQ3_CODOPF"
         And the user writes "142" to the selected text field and hits tab key
         And the user clicks the "Lines (tax)" tab selected by title
 
@@ -116,7 +116,7 @@ Feature: ATP-60
         And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "XQSRS1_CHAVENFE"
+        And the user selects the text field with X3 field name: "WK8ALLXQ3_CHAVENFE"
         And the user stores the value of the selected text field with the key: "CHAVE_NFE"
 
     Scenario: 8. Attachments
