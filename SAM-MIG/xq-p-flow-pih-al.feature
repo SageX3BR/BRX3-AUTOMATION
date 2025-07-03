@@ -120,7 +120,7 @@ Feature: xq-p-flow-pih-al
 
     Scenario: 9. Resume
         Given the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "XQPIH2_TTICMSST"
+        And the user selects the text field with X3 field name: "WE8ALLXQ_TTICMSST"
         And the value of the selected text field is "252.39"
         Then the user clicks the Close page action icon on the header panel
 

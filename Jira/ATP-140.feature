@@ -85,9 +85,9 @@ Feature: ATP-140
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         Given the user clicks the "Resume" tab selected by title
-        Then the user selects the text field with X3 field name: "XQPIH2_TTSERVICO"
+        Then the user selects the text field with X3 field name: "WE8ALLXQ_TTSERVICO"
         And the value of the selected text field is "1,000.00"
-        Then the user selects the text field with X3 field name: "XQPIH2_TTNFE"
+        Then the user selects the text field with X3 field name: "WE8ALLXQ_TTNFE"
         And the value of the selected text field is "1,000.00"
         And the user waits 5 seconds
 
