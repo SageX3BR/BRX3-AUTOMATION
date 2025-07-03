@@ -106,11 +106,11 @@ Feature: xq-p-flow-pih-al
         Given the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE6PTDXQ_VLICMSST"
+        And the user selects the text field with X3 field name: "WE8PTDXQ_VLICMSST"
         And the value of the selected text field is <VLICMSST>
         And the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE6PTDXQ_VLICMSST"
+        And the user selects the text field with X3 field name: "WE8PTDXQ_VLICMSST"
         And the value of the selected text field is <VLICMSST>
 
         Examples:
