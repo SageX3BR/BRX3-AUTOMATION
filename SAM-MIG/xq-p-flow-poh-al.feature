@@ -78,11 +78,11 @@ Feature: xq-p-flow-poh-al
     Scenario Outline: 6. Tax Detail
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE3PTDXQ_VLICMSST"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_VLICMSST"
         And the value of the selected text field is <VLICMSST>
         And the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE3PTDXQ_VLICMSST"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_VLICMSST"
         And the value of the selected text field is <VLICMSST>
 
         Examples:

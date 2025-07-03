@@ -152,10 +152,10 @@ Feature: ATP-54
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "NF-e Summary" tab selected by title
-        #Then the user selects the text field with X3 field name: "XQSRH2_TOTMERCA"
+        #Then the user selects the text field with X3 field name: "WK6ALLXQ_TOTMERCA"
         Then the user selects the text field with name: "Products total value"
         And the value of the selected text field is "190.57"
-        #Then the user selects the text field with X3 field name: "XQSRH2_TOTNF"
+        #Then the user selects the text field with X3 field name: "WK6ALLXQ_TOTNF"
         Then the user selects the text field with name: "Invoice total value"
         And the value of the selected text field is "209.63"
 

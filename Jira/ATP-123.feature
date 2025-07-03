@@ -138,15 +138,15 @@ Feature: ATP-123
         Then the "Tax detail" screen is displayed
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes "1" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE3PTDXQ_RTAFRMM"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_RTAFRMM"
         And the value of the selected text field is "50.00"
-        And the user selects the text field with X3 field name: "WE3PTDXQ_FRETE"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_FRETE"
         And the value of the selected text field is ""
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes "2" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE3PTDXQ_RTAFRMM"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_RTAFRMM"
         And the value of the selected text field is "50.00"
-        And the user selects the text field with X3 field name: "WE3PTDXQ_FRETE"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_FRETE"
         And the value of the selected text field is ""
         Given the user clicks the Close page action icon on the header panel
         Then the user clicks the "Cancel" main action button on the right panel

@@ -171,9 +171,9 @@ Feature:05010503-CST70
 
     Scenario: 05010503-10 Resume - Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title
-        When the user selects the text field with X3 field name: "XQSRH2_TOTBASEFCPST"
+        When the user selects the text field with X3 field name: "WK6ALLXQ_TOTBASEFCPST"
         And the value of the selected text field is "4,495.85"
-        And the user selects the text field with X3 field name: "XQSRH2_TOTICMSFCPST"
+        And the user selects the text field with X3 field name: "WK6ALLXQ_TOTICMSFCPST"
         And the value of the selected text field is "89.92"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears

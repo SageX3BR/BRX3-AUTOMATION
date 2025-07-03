@@ -88,10 +88,10 @@ Feature: ATP-169
         Given the user clicks the "Tax detail" action button on the header drop down
         When the "Tax detail" screen is displayed
         Then the user selects the text field with name: "IPI base"
-        #Then the user selects the text field with X3 field name: "WE3PTDXQ_BCIPI"
+        #Then the user selects the text field with X3 field name: "WE6PTDXQ_BCIPI"
         And the user writes "500.00" to the selected text field and hits tab key
         Then the user selects the text field with name: "IPI return value"
-        #Then the user selects the text field with X3 field name: "WE3PTDXQ_VLIPIDEVOL"
+        #Then the user selects the text field with X3 field name: "WE6PTDXQ_VLIPIDEVOL"
         And the user writes "51.00" to the selected text field and hits tab key
         And the user clicks the "OK" action button on the header drop down
         Given the user clicks the "Close" main action button on the right panel
