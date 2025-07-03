@@ -64,11 +64,11 @@ Feature: xq-s-flow-soh-sih-03
         And the user clicks the Close page action icon on the header panel
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "102" to the selected text field
-        And the user selects the text field with X3 field name: "XQWK2ALLXQ0_UFEMBARQUE"
+        And the user selects the text field with X3 field name: "WK2ALLXQ3_UFEMBARQUE"
         And the user writes "PR" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQWK2ALLXQ0_LOCEMBARQUE"
+        And the user selects the text field with X3 field name: "WK2ALLXQ3_LOCEMBARQUE"
         And the user writes "Paranaguá" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQWK2ALLXQ0_DESLOCDESP"
+        And the user selects the text field with X3 field name: "WK2ALLXQ3_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
         And the user clicks the "Management" tab selected by title
         And the user selects the text field with X3 field name: "WK2ALL1_BPCINV"
