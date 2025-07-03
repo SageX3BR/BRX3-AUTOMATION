@@ -123,14 +123,14 @@ Feature: xq-s-flow-sqh-sdh-tos2
 
     Scenario: 7.Create and Store Doc Number
 
-        Given the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        Given the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHDocumentNo"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
     Scenario: 8. Create and Store Doc Number
 

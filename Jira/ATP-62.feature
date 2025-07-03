@@ -89,7 +89,7 @@ Feature: ATP-62
     Scenario: 6.Create invoice
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user stores the value of the selected text field with the key: "FATURA"
         And the user clicks the "Close" main action button on the right panel
 
@@ -135,7 +135,7 @@ Feature: ATP-62
         And the user writes "BRNFC" to the selected text field
         And the user selects the text field with name: "Invoice no."
         And the user writes the stored text with key "FATURA" in the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQNUMNFE"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_XQNUMNFE"
         And the user stores the value of the selected text field with the key: "NFE_NUM"
 
     Scenario: 10.Invoice attachement

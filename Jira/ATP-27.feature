@@ -88,9 +88,9 @@ Feature: ATP-27
         Then the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the "Post" button in the header
         Given the user selects the main data table of the page
@@ -126,7 +126,7 @@ Feature: ATP-27
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         And the user selects the text field with name: "Sales site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user writes the stored text with key "SIHNUM" in the selected text field and hits tab key
 
     Scenario: Check Open Items

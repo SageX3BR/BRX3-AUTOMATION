@@ -19,7 +19,7 @@ Feature:ATP-32
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Sales site"
         And the user writes "NA021" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_BPCINV"
         And the user writes "NA006" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
@@ -37,7 +37,7 @@ Feature:ATP-32
     Scenario: 4. Create document
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIH_NUMBER"
         Then the user clicks the Close page action icon on the header panel
 
@@ -66,7 +66,7 @@ Feature:ATP-32
         And the user clicks on the selected cell
         And the user selects the text field with name: "Sales site"
         And the user writes "NA021" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user writes the stored text with key "SIH_NUMBER" in the selected text field and hits tab key
         And the user clicks the "Delete" main action button on the right panel
         Then the "Code cancellation" screen is displayed
