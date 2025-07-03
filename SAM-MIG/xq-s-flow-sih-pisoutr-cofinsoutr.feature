@@ -99,7 +99,7 @@ Feature: xq-s-flow-sih-pisOutr-cofinsOutr
         Then the user clicks the "SEFAZ" action button on the header drop down
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5INVCAXQ0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
 
     Scenario: Logout
