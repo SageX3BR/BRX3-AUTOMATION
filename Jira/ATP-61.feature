@@ -25,11 +25,11 @@ Feature: ATP-61
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_SIVTYP"
         And the user writes "BRNFC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
@@ -63,7 +63,7 @@ Feature: ATP-61
     Scenario: 4. Document Creation
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user stores the value of the selected text field with the key: "NFE_NUM2"
         And the user clicks the "Close" main action button on the right panel
 
@@ -87,15 +87,15 @@ Feature: ATP-61
         And the user selects cell with text: "ALL Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_SIVTYP"
         And the user writes "BRNFC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user writes the stored text with key "NFE_NUM2" in the selected text field and hits enter key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQNUMNFE"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_XQNUMNFE"
         And the user stores the value of the selected text field with the key: "NFE_NUM"
 
 

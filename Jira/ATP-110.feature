@@ -75,7 +75,7 @@ Feature: ATP-110
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
         And the user clicks the "Post" button in the header
         Then the user clicks the Close page action icon on the header panel

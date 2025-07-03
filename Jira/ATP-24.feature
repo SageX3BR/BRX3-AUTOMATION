@@ -24,11 +24,11 @@ Feature: ATP-24
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_SIVTYP"
         And the user writes "BRNFC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_BPCINV"
         And the user writes "TE001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
@@ -64,7 +64,7 @@ Feature: ATP-24
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
 
     Scenario: 6. Logout

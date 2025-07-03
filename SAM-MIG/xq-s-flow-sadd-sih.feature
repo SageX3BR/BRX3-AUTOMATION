@@ -31,11 +31,11 @@ Feature:xq-s-flow-sadd-sih
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_SIVTYP"
         And the user writes "BRNFC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
@@ -80,11 +80,11 @@ Feature:xq-s-flow-sadd-sih
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5INVCAXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the Close page action icon on the header panel
 
