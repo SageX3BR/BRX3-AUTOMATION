@@ -72,7 +72,7 @@ Feature:05020106-CST202
         When the user writes <CURLIG> to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE3PTDXQ_BFCPST"
         And the value of the selected text field is <BFCPST>
-        And the user selects the text field with X3 field name: "WWE3PTDXQ_ALQFCPST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_ALQFCPST"
         And the value of the selected text field is <ALQFCPST>
         And the user selects the text field with X3 field name: "WE3PTDXQ_VLFCPST"
         And the value of the selected text field is <VLFCPST>
