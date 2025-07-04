@@ -72,7 +72,7 @@ Feature: ATP-63
         And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "WE6ALLXQ_NUMNFE"
+        And the user selects the text field with X3 field name: "WE8ALLXQ3_NUMNFE"
         And the user stores the value of the selected text field with the key: "NFE_NUM"
 
     Scenario: 7. Attachments
