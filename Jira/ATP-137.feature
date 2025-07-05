@@ -107,7 +107,7 @@ Feature: ATP-137
         And the user clicks the "No" opinion in the alert box
         And the user clicks the "No" opinion in the alert box
         And the user waits 3 seconds
-        And the user selects the date field with X3 field name: "WE6ALLXQ_DTSAIENT"
+        And the user selects the date field with X3 field name: "WE6ALLXQ3_DTSAIENT"
         And the user writes today to the selected date field
         And the user hits tab
         And the user hits tab

@@ -80,9 +80,9 @@ Feature: ATP-53
         Then the "Sales invoice AAL : Full entry credit" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITCNO_CRISIHNUM"
@@ -93,7 +93,7 @@ Feature: ATP-53
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SIHNUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_CODOPF"
         And the user writes "105" to the selected text field and hits tab key
     Scenario: Process Id
         Given the user selects the fixed data table for x3 field name: "WK5ALLXQ3_ARRAY_NBREF"
@@ -225,9 +225,9 @@ Feature: ATP-53
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
         When the user selects the data table with x3 field name: "XQNFELOG1_ARRAY_NBLIG"
-        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
+        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "104" in column with header: "SEFAZ Ret. Code"
         #Then the user clicks on the selected row
-        Then the user selects row that has the text "103" in column with header: "SEFAZ Ret. Code"
+        Then the user selects row that has the text "104" in column with header: "SEFAZ Ret. Code"
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"

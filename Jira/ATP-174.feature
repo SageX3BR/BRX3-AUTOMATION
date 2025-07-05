@@ -97,8 +97,8 @@ Feature: ATP-174
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
         When the user selects the data table with x3 field name: "XQNFELOG1_ARRAY_NBLIG"
-        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
-        Then the user selects row that has the text "103" in column with header: "SEFAZ Ret. Code"
+        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "104" in column with header: "SEFAZ Ret. Code"
+        Then the user selects row that has the text "104" in column with header: "SEFAZ Ret. Code"
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
