@@ -62,7 +62,7 @@ Feature: ATP-168
         #And the user clicks the "Allocation" action button on the header drop down
         #And the "Order allocations" screen is displayed
         #And the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "DOC01"
         And the user waits 3 seconds
 
@@ -106,7 +106,7 @@ Feature: ATP-168
         #And the "Order allocations" screen is displayed
         #And the user clicks the Close page action icon on the header panel
 
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "DOC02"
         And the user clicks the "Close page" main action button on the right panel
 

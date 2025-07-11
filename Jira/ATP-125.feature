@@ -82,7 +82,7 @@ Feature: ATP-125
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "902" to the selected text field and hits tab key
         And the user stores the generated value with length 5 with the key "ALEATORIO"
-        And the user selects the text field with X3 field name: "WE6ALLXQ_NUMNFE"
+        And the user selects the text field with X3 field name: "WE6ALLXQ3_NUMNFE"
         And the user writes the stored text with key "ALEATORIO" in the selected text field and hits tab key
         And the user selects the text field with name: "Serial number"
         And the user writes "1" to the selected text field and hits tab key

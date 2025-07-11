@@ -72,7 +72,7 @@ Feature: xq-p-flow-poh-pth-imp-txac
     Scenario: 4. Create and Store Doc Number POH
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "POH0_POHNUM"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_POHNUM"
         And the user stores the value of the selected text field with the key: "PoDocumentNo"
         Then the user clicks the Close page action icon on the header panel
 
@@ -162,7 +162,7 @@ Feature: xq-p-flow-poh-pth-imp-txac
 
     Scenario: 9. Resume
         Given the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPTH2_TTDESPACES"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_TTDESPACES"
         And the value of the selected text field is "17.60"
         Then the user clicks the Close page action icon on the header panel
 

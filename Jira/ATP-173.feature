@@ -57,7 +57,7 @@ Feature: ATP-173
         And a log panel appears
         Then the user clicks the Close page action icon on the header panel
         And the user waits 3 seconds
-        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
 
     Scenario: 5. Logout

@@ -23,13 +23,13 @@ Feature: ATP-53
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
         And the user writes "BRNFC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSIH0_CODOPF"
+        And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
         And the user clicks the "Lines" tab selected by title
@@ -64,11 +64,11 @@ Feature: ATP-53
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
         Then the user clicks the Close page action icon on the header panel
 
@@ -80,9 +80,9 @@ Feature: ATP-53
         Then the "Sales invoice AAL : Full entry credit" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITCNO_CRISIHNUM"
@@ -93,11 +93,11 @@ Feature: ATP-53
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SIHNUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "XQSIH0_CODOPF"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_CODOPF"
         And the user writes "105" to the selected text field and hits tab key
     Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "WK5ALLXQ3_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "WK5ALLXQ3_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5AAL4_ARRAY_NBLIG"
@@ -189,7 +189,7 @@ Feature: ATP-53
         And the user writes "[F:XQSIH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUMC"
 
 
@@ -225,9 +225,9 @@ Feature: ATP-53
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
         When the user selects the data table with x3 field name: "XQNFELOG1_ARRAY_NBLIG"
-        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
+        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "104" in column with header: "SEFAZ Ret. Code"
         #Then the user clicks on the selected row
-        Then the user selects row that has the text "103" in column with header: "SEFAZ Ret. Code"
+        Then the user selects row that has the text "104" in column with header: "SEFAZ Ret. Code"
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"

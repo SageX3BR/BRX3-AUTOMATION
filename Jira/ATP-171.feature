@@ -119,7 +119,7 @@ Feature: ATP-171
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
         And the user waits 3 seconds
-        #And the user selects the text field with X3 field name: "WE8ALLXQ_CHAVENFE"
+        #And the user selects the text field with X3 field name: "WE8ALLXQ3_CHAVENFE"
         And the user selects the text field with name: "NF-e Access key"
         And the user stores the value of the selected text field with the key: "CHAVE"
         And the user clicks the "Close page" main action button on the right panel
