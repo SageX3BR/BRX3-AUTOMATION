@@ -89,7 +89,7 @@ Feature: xq-s-flow-gessdh
         Examples:
             | LIN | ITMREF   | QTY  | GROPRI   | XQCFOP |
             | 1   | "BMS099" | "13" | "152,96" | "6949" |
-            | 2   | "BMS102" | "28" | "230.05" | "6949" |
+            | 2   | "BMS099" | "28" | "230.05" | "6949" |
 
     Scenario: Create document
 

@@ -119,10 +119,10 @@ Feature: xq-s-flow-soh-sdh-sih-llp-01
         And the user checks the selected picking list panel item
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
+        And the user hits enter
 
 
     Scenario: Create document
-
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
