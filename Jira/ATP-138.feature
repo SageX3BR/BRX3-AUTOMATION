@@ -127,7 +127,7 @@ Feature: ATP-138
     Scenario: 9. Criar Novo Orçamento (GESSQH), Sair da Função, Retornar e criar Encomenda
         And the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SQH0_SQHNUM"
+        And the user selects the text field with X3 field name: "WK1ALLXQ0_SQHNUM"
         And the user stores the value of the selected text field with the key: "SQHNUM"
         Then the user clicks the Close page action icon on the header panel
         And the user waits 5 seconds

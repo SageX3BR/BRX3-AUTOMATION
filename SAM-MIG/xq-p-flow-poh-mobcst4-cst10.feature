@@ -32,11 +32,11 @@ Feature:xq-p-flow-poh-mobcst4-cst10
         Then the "Purchase order ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "POH0_POHFCY"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_BPSNUM"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_BPSNUM"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_XQCODOPF"
         And the user writes "110" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
@@ -85,7 +85,7 @@ Feature:xq-p-flow-poh-mobcst4-cst10
     Scenario Outline: Tax Detail - Check Calculated Values
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         When the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_MDBCICMSST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_MDBCICMSST"
         And the value of the selected text field is <MDBCICMSST>
 
         Examples:

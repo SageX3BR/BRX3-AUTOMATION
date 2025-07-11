@@ -104,11 +104,11 @@ Feature: xq-p-flow-pth-crud
     Scenario Outline: 7. Tax Detail
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_VLICMSST"
         And the value of the selected text field is <VLICMSST>
         And the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_VLICMSST"
         And the value of the selected text field is <VLICMSST>
 
         Examples:
@@ -119,7 +119,7 @@ Feature: xq-p-flow-pth-crud
     Scenario: 8. Resume
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPTH2_TTICMSST"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_TTICMSST"
         And the value of the selected text field is "212.74"
         Then the user clicks the Close page action icon on the header panel
 

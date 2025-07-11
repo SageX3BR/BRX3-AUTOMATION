@@ -62,6 +62,7 @@ Feature: ATP-87
 
     Scenario: 005. Document Creation and validation
         Given the user clicks the "Create" main action button on the right panel
+        And the user waits 3 seconds
         And a confirmation dialog appears with the message "Record has been created"
 
     Scenario: 006. Verificar Cálculo de Impostos
@@ -86,7 +87,7 @@ Feature: ATP-87
         And the user writes "[F:XQSIH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIH_NUM"
         Then the user clicks the Close page action icon on the header panel
         And the user waits 5 seconds
@@ -102,8 +103,8 @@ Feature: ATP-87
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
         When the user selects the data table with x3 field name: "XQNFELOG1_ARRAY_NBLIG"
-        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
-        Then the user selects row that has the text "103" in column with header: "SEFAZ Ret. Code"
+        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "104" in column with header: "SEFAZ Ret. Code"
+        Then the user selects row that has the text "104" in column with header: "SEFAZ Ret. Code"
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"

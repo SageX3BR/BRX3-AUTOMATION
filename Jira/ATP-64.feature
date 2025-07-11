@@ -80,11 +80,11 @@ Feature: ATP-64
         Then the "Purchase return ALL : Full entry" screen is displayed
         #Filling the Invoice header information
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
+        And the user selects the text field with name: "Fiscal operation"
         And the user writes "130" to the selected text field
         Then the user hits tab
         #Filter with the order created above
@@ -99,23 +99,23 @@ Feature: ATP-64
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR001" of the picking list panel
         Then the user checks the selected picking list panel item
-        And the user selects the data table with x3 field name: "WE7ALL1_ARRAY_NBLIG"
+        And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: 7.Lines
-        Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALL1_PTDLIN"
-        And the user selects cell with X3 field name: "WE7ALL1_XQCFOP" of selected row
+        Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALLXQ0_PTDLIN"
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQORIGEMICMS" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS" of selected row
         And the user adds the text <XQORIGEMICMS> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTICMS" of selected row
-        And the user adds the text <XQCSTICMS> in selected cell and hits tab key
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTIPI" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTICMS" of selected row
+        And the user adds the text <XQCSTICMS> in selected cell
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTIPI" of selected row
         And the user adds the text <XQCSTIPI> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTPIS" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTPIS" of selected row
         And the user adds the text <XQCSTPIS> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCSTCOF" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCSTCOF" of selected row
         Then the user adds the text <XQCSTCOF> in selected cell
-        And the user selects cell with X3 field name: "WE7ALL1_XQCENQ" of selected row
+        And the user selects cell with X3 field name: "WE7ALLXQ0_XQCENQ" of selected row
         And the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
             | LIN    | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
@@ -148,13 +148,13 @@ Feature: ATP-64
         And the user clicks on the selected cell
         Then the "Sales invoice ALL : Full entry invoice" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
         And the user writes "BRNFC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SIH0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSIH0_CODOPF"
+        And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
         And the user clicks the "Lines" tab selected by title
@@ -191,9 +191,9 @@ Feature: ATP-64
         When the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
-        And the user selects the text field with X3 field name: "SIH0_XQNUMNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQNUMNFE"
         And the user stores the value of the selected text field with the key: "NFE_NUM"
 
     Scenario: 13. Attachments

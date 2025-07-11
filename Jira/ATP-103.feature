@@ -25,15 +25,15 @@ Feature: ATP-103
         Then the "Delivery ALL : Full entry" screen is displayed
 
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SDH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SDHTYP"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
         When the user clicks the "Lines" tab selected by title
@@ -75,7 +75,7 @@ Feature: ATP-103
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         And a log panel appears
@@ -83,7 +83,7 @@ Feature: ATP-103
         And the selected log panel includes the message "Document creation "
         And the user clicks the "Close page" main action button on the right panel
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
         And the user clicks the "Close page" main action button on the right panel
 
@@ -94,9 +94,9 @@ Feature: ATP-103
         And the user clicks on the selected cell
         Then the "Customer return ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SRH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SRH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
 
     Scenario: 7. Picking GESSDH
@@ -108,15 +108,15 @@ Feature: ATP-103
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SDHNUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "WK6ALLXQ_CODOPF"
+        And the user selects the text field with X3 field name: "WK6ALLXQ3_CODOPF"
 
     Scenario: 8. OPF and Lines
         And the user writes "105" to the selected text field and hits tab key
         And the user clicks the "Ok" opinion in the alert box
         And the user clicks the "Ok" opinion in the alert box
-        And the user selects the date field with X3 field name: "WK6ALLXQ_DTEMI"
+        And the user selects the date field with X3 field name: "WK6ALLXQ3_DTEMI"
         And the user writes today to the selected date field
-        And the user selects the date field with X3 field name: "WK6ALLXQ_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK6ALLXQ3_DTSAIENT"
         And the user writes today to the selected date field
         And the user clicks the "Lines (tax)" tab selected by title
         And the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"

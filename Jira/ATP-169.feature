@@ -67,11 +67,11 @@ Feature: ATP-169
         And the user clicks on the selected cell
         Then the "Purchase return ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WE7ALL1_PNHFCY"
+        And the user selects the text field with name: "Return site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_BPSNUM"
+        And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE7ALL1_XQCODOPF"
+        And the user selects the text field with name: "Fiscal operation"
         And the user writes "130" to the selected text field
         Then the user hits tab
         When the user clicks the "Selection criteria" action button on the header drop down
@@ -87,9 +87,11 @@ Feature: ATP-169
     Scenario: 07. Tax Detail
         Given the user clicks the "Tax detail" action button on the header drop down
         When the "Tax detail" screen is displayed
-        Then the user selects the text field with X3 field name: "XQPTD1_BCIPI"
+        Then the user selects the text field with name: "IPI base"
+        #Then the user selects the text field with X3 field name: "WE6PTDXQ_BCIPI"
         And the user writes "500.00" to the selected text field and hits tab key
-        Then the user selects the text field with X3 field name: "XQPTD1_VLIPIDEVOL"
+        Then the user selects the text field with name: "IPI return value"
+        #Then the user selects the text field with X3 field name: "WE6PTDXQ_VLIPIDEVOL"
         And the user writes "51.00" to the selected text field and hits tab key
         And the user clicks the "OK" action button on the header drop down
         Given the user clicks the "Close" main action button on the right panel
@@ -98,27 +100,21 @@ Feature: ATP-169
         And the user waits 3 seconds
         Given the user clicks the "Tax detail" action button on the header drop down
         When the "Tax detail" screen is displayed
-        Then the user selects the text field with X3 field name: "XQPTD1_BCIPI"
+        Then the user selects the text field with name: "IPI base"
         And the user writes "500.00" to the selected text field and hits tab key
-        Then the user selects the text field with X3 field name: "XQPTD1_VLIPIDEVOL"
+        Then the user selects the text field with name: "IPI return value"
         And the user writes "50.00" to the selected text field and hits tab key
         And the user clicks the "OK" action button on the header drop down
         Given the user clicks the "Close" main action button on the right panel
         Given the user clicks the "Save" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been modified"
 
-    Scenario: 08. Legal Data
-        Given the user clicks the "Legal data" action button on the header drop down
-        When the "Purchasing Legal data" screen is displayed
-        #Then the user selects the text field with X3 field name: "XQPLD2_TTBCIPI"
+    Scenario: 08. Tax Summary
+        Given the user clicks the "Tax Summary" tab selected by title
         Then the user selects the text field with name: "IPI base calc"
         And the value of the selected text field is "500.00"
-        #Then the user selects the text field with X3 field name: "XQPLD2_TTVLIPIDEVOL"
         Then the user selects the text field with name: "Total IPI devolução"
         And the value of the selected text field is "50.00"
-        #O Valor final precisa ser alterado para 50.00
-        Given the user clicks the "Close" main action button on the right panel
-        Given the user clicks the "Save" main action button on the right panel
 
     Scenario: 09. Logout
         And the user clicks the Close page action icon on the header panel

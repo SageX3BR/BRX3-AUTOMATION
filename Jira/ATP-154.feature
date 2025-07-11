@@ -56,7 +56,7 @@ Feature: ATP-154
         When the user clicks the "Tax Summary" tab selected by title
         And the user selects the text field with name: "Products total value"
         And the value of the selected text field is "1,100.00"
-        And the user selects the text field with X3 field name: "SOH0_SOHNUM"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHNUM"
         And the user clicks the "Close page" main action button on the right panel
 
@@ -67,15 +67,15 @@ Feature: ATP-154
         And the user clicks on the selected cell
         Then the "Delivery ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SDH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SDHTYP"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR005" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCINV"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCINV"
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "100" to the selected text field and hits tab key
