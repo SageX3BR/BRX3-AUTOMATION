@@ -26,7 +26,7 @@ Feature: ATP-97
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5AALXQ0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
@@ -101,13 +101,13 @@ Feature: ATP-97
         And the user clicks on the selected cell
         Then the "Sales invoice AAL : Full entry credit" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SALFCY"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_SIVTYP"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_SIVTYP"
         And the user writes "BRNDC" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_BPCINV"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WK5ALLXQ3_CODOPF"
+        And the user selects the text field with X3 field name: "WK5AALXQ3_CODOPF"
         And the user writes "105" to the selected text field and hits tab key
         And the user hits escape
 

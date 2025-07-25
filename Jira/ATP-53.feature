@@ -93,11 +93,11 @@ Feature: ATP-53
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SIHNUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "WK5AALXQ0_CODOPF"
+        And the user selects the text field with X3 field name: "WK5AALXQ3_CODOPF"
         And the user writes "105" to the selected text field and hits tab key
     Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "WK5ALLXQ3_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "WK5ALLXQ3_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "WK5AALXQ3_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "WK5AALXQ3_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5AAL4_ARRAY_NBLIG"
@@ -189,7 +189,7 @@ Feature: ATP-53
         And the user writes "[F:XQSIH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
+        And the user selects the text field with X3 field name: "WK5AALXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUMC"
 
 

@@ -8,9 +8,9 @@
 #- Created by : Gustavo Albanus
 #- Created date : 16/10/2023
 #- Updated by : Gustavo Albanus
-#- Updated date : 24/07/2024
+#- Updated date : 24/07/2025
 #- Status : Done
-#- Ajustes Efetuados: Ajustado a Variação da CFOP nas linhas
+#- Ajustes Efetuados: Reescrito o final do Cenário com a Rejeição Esperada
 ##########################################################################
 
 Feature: ATP-142
@@ -120,12 +120,8 @@ Feature: ATP-142
         And a confirmation dialog appears with the message "Record has been created"
         Then the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
-        Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with name: "NF-e number"
-        Then the value of the selected text field matches the stored text with key "CONTADOR"
-        Then the user clicks the "Legal data" action button on the header drop down
-        And the user selects the text field with name: "NF-e Access key"
-        Then the value of the selected text field matches the stored text with key "CHAVE01"
+        And the user selects the main log panel of the page
+        And the selected log panel includes the message "Rejeição: Duplicidade de NF-e com diferença na Chave de Acesso"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
         And the user waits 5 seconds
