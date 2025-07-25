@@ -104,7 +104,7 @@ Feature: xq-s-crud-sqh-print
     Scenario: 2.1. Create and Store Doc Number
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SQH0_SQHNUM"
+        And the user selects the text field with X3 field name: "WK1ALLXQ0_SQHNUM"
         And the user stores the value of the selected text field with the key: "SQHDocumentNo"
         Then the user clicks the Close page action icon on the header panel
 
@@ -135,7 +135,7 @@ Feature: xq-s-crud-sqh-print
         Then the "Sales quote ALL : Full entry" screen is displayed
         When the user selects the text field with name: "Sales site"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SQH0_SQHNUM"
+        And the user selects the text field with X3 field name: "WK1ALLXQ0_SQHNUM"
         And the user writes the stored text with key "SQHDocumentNo" in the selected text field and hits tab key
         Then the user clicks the "Delete" main action button on the right panel
         #Garantir que o documento será cancelado clickando "OK" nas telas de confirmação

@@ -113,11 +113,11 @@ Feature:05020303-CST70
     Scenario Outline: 05020303-05 Tax Detail - Check Calculated Values
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         When the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_BFCPST"
+        And the user selects the text field with X3 field name: "WE8PTDXQ_BFCPST"
         And the value of the selected text field is <BFCPST>
-        And the user selects the text field with X3 field name: "XQPTD1_ALQFCPST"
+        And the user selects the text field with X3 field name: "WE8PTDXQ_ALQFCPST"
         And the value of the selected text field is <ALQFCPST>
-        And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
+        And the user selects the text field with X3 field name: "WE8PTDXQ_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
@@ -127,9 +127,9 @@ Feature:05020303-CST70
     Scenario: 05020303-06 Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
-        When the user selects the text field with X3 field name: "XQPIH2_TOTBASEFCPST"
+        When the user selects the text field with X3 field name: "WE8ALLXQ_TOTBASEFCPST"
         And the value of the selected text field is "712.19"
-        And the user selects the text field with X3 field name: "XQPIH2_TOTICMSFCPST"
+        And the user selects the text field with X3 field name: "WE8ALLXQ_TOTICMSFCPST"
         And the value of the selected text field is "14.25"
 
     Scenario: 05020303-07 Logout

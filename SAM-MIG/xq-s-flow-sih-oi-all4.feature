@@ -43,11 +43,11 @@ Feature: xq-s-flow-sih-oi-all4
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "201" to the selected text field and hits tab key
         #IMPORTAÇÃO
-        And the user selects the text field with X3 field name: "XQSIH0_UFEMBARQUE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ3_UFEMBARQUE"
         And the user writes "SP" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSIH0_LOCEMBARQUE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ3_LOCEMBARQUE"
         And the user writes "Porto de Santos" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSIH0_DESLOCDESP"
+        And the user selects the text field with X3 field name: "WK5ALLXQ3_DESLOCDESP"
         And the user writes "Santos" to the selected text field and hits tab key
 
         And the user clicks the "Management" tab selected by title

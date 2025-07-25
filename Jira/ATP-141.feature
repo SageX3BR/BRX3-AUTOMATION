@@ -66,12 +66,12 @@ Feature: ATP-141
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         Given the user clicks the "Validation" button in the header
         When a dialog box appears
         Then the user clicks the "Ok" opinion in the alert box
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM"
 
     Scenario: 005. Validation Tax
@@ -103,11 +103,11 @@ Feature: ATP-141
         And the user selects the item "BMS103 Shipped 6 UN Already Returned 0" of the level 2 on the picking list panel
         #And the user selects the item with the stored text with key "SDH_NUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "XQSRL1_CODOPF"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_CODOPF"
         And the user writes "141" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "XQSRL1_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK7ALLXQ3_DTSAIENT"
         When the user writes a generated date in the selected date field using the value "T+1"
-        And the user selects the text field with X3 field name: "XQSRL1_HRSAIENT"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_HRSAIENT"
         Then the user writes "10:00:00" to the selected text field and hits tab key
         And the user clicks the "Lines (tax)" tab selected by title
 
@@ -122,7 +122,7 @@ Feature: ATP-141
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSRL2_TOTMERCA"
+        And the user selects the text field with X3 field name: "WK7ALLXQ_TOTMERCA"
         And the value of the selected text field is "26.28"
         And the user waits 3 seconds
 
@@ -136,7 +136,7 @@ Feature: ATP-141
         Given the user clicks the "Save" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been modified"
         When the user clicks the "NF-e Summary" tab selected by title
-        And the user selects the text field with X3 field name: "XQSRL2_TOTMERCA"
+        And the user selects the text field with X3 field name: "WK7ALLXQ_TOTMERCA"
         And the value of the selected text field is "13.14"
 
     Scenario: 010. Logout

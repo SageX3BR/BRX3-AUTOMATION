@@ -99,7 +99,7 @@ Feature: xq-s-flow-gessdh
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
@@ -132,11 +132,11 @@ Feature: xq-s-flow-gessdh
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "121" to the selected text field
         #And the user clicks the "General Data" tab selected by title
-        And the user selects the text field with X3 field name: "XQSDH0_UFEMBARQUE"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_UFEMBARQUE"
         And the user writes "PR" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_LOCEMBARQUE"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_LOCEMBARQUE"
         And the user writes "Paranaguá" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_DESLOCDESP"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_DESLOCDESP"
         And the user writes "Port" to the selected text field and hits tab key
         And the user hits tab
         And the user hits tab
@@ -187,7 +187,7 @@ Feature: xq-s-flow-gessdh
         ##And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And a dialog box appears

@@ -50,7 +50,7 @@ Feature:ATP-34
         And a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "Post" button in the header
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_NUM"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_NUM"
         And the user stores the value of the selected text field with the key: "SIHNUM"
 
 

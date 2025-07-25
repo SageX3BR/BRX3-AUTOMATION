@@ -81,7 +81,7 @@ Feature:  xq-s-flow-sih-pick-sdh-01
 
         And the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM02"
         And the user clicks the "Validation" button in the header
         And a dialog box appears
@@ -115,8 +115,8 @@ Feature:  xq-s-flow-sih-pick-sdh-01
         And the user clicks on the selected cell
 
     Scenario: Process Id
-        Given the user selects the fixed data table for x3 field name: "XQSIH0_ARRAY_NBREF"
-        And the user selects last editable cell with X3 field name: "XQSIH0_IDENTPROC"
+        Given the user selects the fixed data table for x3 field name: "WK5ALLXQ3_ARRAY_NBREF"
+        And the user selects last editable cell with X3 field name: "WK5ALLXQ3_IDENTPROC"
         And the user adds the text "1" in selected cell and hits tab key
 
     Scenario: Create document
@@ -128,7 +128,7 @@ Feature:  xq-s-flow-sih-pick-sdh-01
         #And the user waits 10 seconds
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "SIH0_XQSTATUSNFE"
+        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Post" button in the header
         Then a log panel appears

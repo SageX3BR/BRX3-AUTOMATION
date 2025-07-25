@@ -130,7 +130,7 @@ Feature: ATP-123
 
     Scenario: 9. Validação Resumo
         Given the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPTH2_TTAFRMM"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_TTAFRMM"
         And the value of the selected text field is "100.00"
 
     Scenario: 10. Validação Tax Detail
@@ -138,15 +138,15 @@ Feature: ATP-123
         Then the "Tax detail" screen is displayed
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes "1" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_RTAFRMM"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_RTAFRMM"
         And the value of the selected text field is "50.00"
-        And the user selects the text field with X3 field name: "XQPTD1_FRETE"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_FRETE"
         And the value of the selected text field is ""
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes "2" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_RTAFRMM"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_RTAFRMM"
         And the value of the selected text field is "50.00"
-        And the user selects the text field with X3 field name: "XQPTD1_FRETE"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_FRETE"
         And the value of the selected text field is ""
         Given the user clicks the Close page action icon on the header panel
         Then the user clicks the "Cancel" main action button on the right panel

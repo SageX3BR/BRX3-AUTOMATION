@@ -26,17 +26,17 @@ Feature: ATP-71
         And the user clicks on the selected cell
         Then the "Delivery ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SDH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SDHTYP"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCINV"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCINV"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_CODOPF"
         And the user writes "125" to the selected text field and hits tab key
         And the user hits escape
         And the user clicks the "Lines" tab selected by title
@@ -65,11 +65,11 @@ Feature: ATP-71
         When the user clicks the "SEFAZ" action button on the header drop down
         Then a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         Then the user clicks the "Validation" button in the header
         Then the user clicks the "Ok" opinion in the alert box
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM"
         #And the user selects the text field with X3 field name: "XQSDH1_TOTMERCA"
         And the user selects the text field with name: "Products total value"
@@ -83,9 +83,9 @@ Feature: ATP-71
         And the user clicks on the selected cell
         Then the "Customer return ALL : Full entry" screen is displayed
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SRH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SRH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
 
     #Picking
@@ -102,7 +102,7 @@ Feature: ATP-71
 
 
     Scenario:8. Complete the document
-        Given the user selects the text field with X3 field name: "WK6ALLXQ_CODOPF"
+        Given the user selects the text field with X3 field name: "WK6ALLXQ3_CODOPF"
         And the user writes "140" to the selected text field and hits tab key
         And the user clicks the "Lines (tax)" tab selected by title
         Given the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"
