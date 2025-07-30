@@ -42,7 +42,7 @@ Feature: ATP-140
         When the user selects the text field with name: "Serial number"
         And the user writes "1" to the selected text field and hits tab key
         When the user selects the text field with name: "NF-e Access key"
-        And the user writes "35170364555626000147550770000000441000000446" to the selected text field and hits tab key
+        And the user writes "35250735074116000150556500002000151842951740" to the selected text field and hits tab key
         When the user selects the text field with name: "NF-e number"
         And the user stores the value of the selected text field with the key: "NUMBER"
 
@@ -85,9 +85,9 @@ Feature: ATP-140
         Given the user clicks the "Create" main action button on the right panel
         Then a confirmation dialog appears with the message "Record has been created"
         Given the user clicks the "Resume" tab selected by title
-        Then the user selects the text field with X3 field name: "XQPIH2_TTSERVICO"
+        Then the user selects the text field with X3 field name: "WE8ALLXQ_TTSERVICO"
         And the value of the selected text field is "1,000.00"
-        Then the user selects the text field with X3 field name: "XQPIH2_TTNFE"
+        Then the user selects the text field with X3 field name: "WE8ALLXQ_TTNFE"
         And the value of the selected text field is "1,000.00"
         And the user waits 5 seconds
 

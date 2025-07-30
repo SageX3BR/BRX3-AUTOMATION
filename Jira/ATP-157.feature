@@ -87,7 +87,7 @@ Feature: ATP-157
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
         And the user selects first row of the selected data table
-        And the user opens "Popup view" function on toolbox of the selected row
+        Then the user opens "Popup view" function on toolbox of the selected row
         And the user selects the text field with name: "Weight"
         And the user writes "280.00" to the selected text field and hits tab key
         And the user clicks the Close page action icon on the header panel
