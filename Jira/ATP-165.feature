@@ -69,7 +69,7 @@ Feature: ATP-165
     Scenario: 6. Tax Detail
         Given the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
-        And the user selects the text field with X3 field name: "XQPTD1_VLFINICMS"
+        And the user selects the text field with X3 field name: "WE6PTDXQ_VLFINICMS"
         And the value of the selected text field is "312.00"
         Then the user clicks the Close page action icon on the header panel
         And the user waits 5 seconds
@@ -90,15 +90,15 @@ Feature: ATP-165
         Then the "Delivery ALL : Full entry" screen is displayed
 
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SDH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SDHTYP"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR002" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_CODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user hits escape
 

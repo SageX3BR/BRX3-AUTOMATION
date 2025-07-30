@@ -58,12 +58,12 @@ Feature: ATP-52
     Scenario: 4. Create document
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM10"
         When the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         Then the user clicks the "Validation" button in the header
         And a dialog box appears
@@ -78,9 +78,9 @@ Feature: ATP-52
         Then the "Customer return ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SRH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_STOFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SRH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
@@ -91,11 +91,11 @@ Feature: ATP-52
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SDH_NUM10" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "WK6ALLXQ_CODOPF"
+        And the user selects the text field with X3 field name: "WK6ALLXQ3_CODOPF"
         And the user writes "140" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "WK6ALLXQ_DTEMI"
+        And the user selects the date field with X3 field name: "WK6ALLXQ3_DTEMI"
         And the user writes today to the selected date field
-        And the user selects the date field with X3 field name: "WK6ALLXQ_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK6ALLXQ3_DTSAIENT"
         And the user writes today to the selected date field
         And the user clicks the "Lines (tax)" tab selected by title
         And the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"
@@ -155,7 +155,7 @@ Feature: ATP-52
         And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "SRH0_SRHNUM"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_SRHNUM"
         And the user stores the value of the selected text field with the key: "SRH_NUM"
         Then the user clicks the Close page action icon on the header panel
 
@@ -169,8 +169,8 @@ Feature: ATP-52
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
         When the user selects the data table with x3 field name: "XQNFELOG1_ARRAY_NBLIG"
-        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "103" in column with header: "SEFAZ Ret. Code"
-        Then the user selects row that has the text "103" in column with header: "SEFAZ Ret. Code"
+        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "104" in column with header: "SEFAZ Ret. Code"
+        Then the user selects row that has the text "104" in column with header: "SEFAZ Ret. Code"
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"

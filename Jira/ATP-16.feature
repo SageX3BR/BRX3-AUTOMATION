@@ -78,7 +78,7 @@ Feature: ATP-16
 
     Scenario: 4. Validation Taxes
         When the user clicks the "Resume" tab selected by title
-        Then the user selects the text field with X3 field name: "XQPTH2_TTIPI"
+        Then the user selects the text field with X3 field name: "WE6ALLXQ_TTIPI"
         And the value of the selected text field is "300.00"
         Then the user clicks the Close page action icon on the header panel
 

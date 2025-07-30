@@ -46,7 +46,7 @@ Feature:ATP-36
     Scenario: 04. Document Creation and BR Add-on field and button disabled check
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-        #Then the user selects the text field with X3 field name: "SOH0_XQCODOPF"
+        #Then the user selects the text field with X3 field name: "WK2ALLXQ0_XQCODOPF"
         #And the text field with name: "Fiscal operation" is hidden
         Then the value of the "Total value of the order" text field is ""
         And the user opens the header drop down

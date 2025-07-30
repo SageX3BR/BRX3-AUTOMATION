@@ -25,11 +25,11 @@ Feature:05020101-CST10
         Then the "Purchase order ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "POH0_POHFCY"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_POHFCY"
         And the user writes "BR050" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_BPSNUM"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_BPSNUM"
         And the user writes "BR006" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "POH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WE3ALLXQ0_XQCODOPF"
         And the user writes "51" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE3ALL2_ARRAY_NBLIG"
@@ -67,11 +67,11 @@ Feature:05020101-CST10
     Scenario Outline: 05020101-05 Tax Detail - Check Calculated Values
         Given the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         When the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_BFCPST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_BFCPST"
         And the value of the selected text field is <BFCPST>
-        And the user selects the text field with X3 field name: "XQPTD1_ALQFCPST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_ALQFCPST"
         And the value of the selected text field is <ALQFCPST>
-        And the user selects the text field with X3 field name: "XQPTD1_VLFCPST"
+        And the user selects the text field with X3 field name: "WE3PTDXQ_VLFCPST"
         And the value of the selected text field is <VLFCPST>
         Examples:
             | CURLIG | BFCPST     | ALQFCPST | VLFCPST |

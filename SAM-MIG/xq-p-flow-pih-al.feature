@@ -106,11 +106,11 @@ Feature: xq-p-flow-pih-al
         Given the user clicks the "Resume" tab selected by title
         And the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
+        And the user selects the text field with X3 field name: "WE8PTDXQ_VLICMSST"
         And the value of the selected text field is <VLICMSST>
         And the user selects the text field with X3 field name: "XQPTD0_CURLIG"
         And the user writes <CURLIG> to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQPTD1_VLICMSST"
+        And the user selects the text field with X3 field name: "WE8PTDXQ_VLICMSST"
         And the value of the selected text field is <VLICMSST>
 
         Examples:
@@ -120,7 +120,7 @@ Feature: xq-p-flow-pih-al
 
     Scenario: 9. Resume
         Given the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "XQPIH2_TTICMSST"
+        And the user selects the text field with X3 field name: "WE8ALLXQ_TTICMSST"
         And the value of the selected text field is "252.39"
         Then the user clicks the Close page action icon on the header panel
 

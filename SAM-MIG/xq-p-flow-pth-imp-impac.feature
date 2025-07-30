@@ -181,7 +181,7 @@ Feature: xq-p-flow-pth-imp-impac
 
     Scenario: 9. Resume
         Given the user clicks the "Resume" tab selected by title
-        And the user selects the text field with X3 field name: "XQPTH2_TTDESPACES"
+        And the user selects the text field with X3 field name: "WE6ALLXQ_TTDESPACES"
         And the value of the selected text field is "32.41"
         Then the user clicks the Close page action icon on the header panel
 

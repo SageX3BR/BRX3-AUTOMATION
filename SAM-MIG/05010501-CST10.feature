@@ -31,15 +31,15 @@ Feature:05010501-CST10
         Then the "Delivery ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SDH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
         And the user writes "BR050" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SDHTYP"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SALFCY"
         And the user writes "BR050" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SDH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
         And the user writes "BR150" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "XQSDH0_CODOPF"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_CODOPF"
         And the user writes "47" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
@@ -78,11 +78,11 @@ Feature:05010501-CST10
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         And the user clicks the "Validation" button in the header
         And the user clicks the "Ok" opinion in the alert box
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
         Then the user clicks the Close page action icon on the header panel
 
@@ -94,9 +94,9 @@ Feature:05010501-CST10
         Then the "Customer return ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SRH0_STOFCY"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_STOFCY"
         And the user writes "BR050" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SRH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_BPCORD"
         And the user writes "BR150" to the selected text field and hits tab key
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
@@ -108,11 +108,11 @@ Feature:05010501-CST10
         And the user selects the item with the stored text with key "SDHNUM" and with the text containing "BR050" of the picking list panel
         And the user checks the selected picking list panel item
 
-        And the user selects the text field with X3 field name: "WK6ALLXQ_CODOPF"
+        And the user selects the text field with X3 field name: "WK6ALLXQ3_CODOPF"
         And the user writes "46" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "WK6ALLXQ_DTEMI"
+        And the user selects the date field with X3 field name: "WK6ALLXQ3_DTEMI"
         And the user writes today to the selected date field
-        And the user selects the date field with X3 field name: "WK6ALLXQ_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK6ALLXQ3_DTSAIENT"
         And the user writes today to the selected date field
 
         And the user clicks the "Lines" tab selected by title
@@ -171,9 +171,9 @@ Feature:05010501-CST10
 
     Scenario: 05010501-10 Resume - Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title
-        When the user selects the text field with X3 field name: "XQSRH2_TOTBASEFCPST"
+        When the user selects the text field with X3 field name: "WK6ALLXQ_TOTBASEFCPST"
         And the value of the selected text field is "4,495.85"
-        And the user selects the text field with X3 field name: "XQSRH2_TOTICMSFCPST"
+        And the user selects the text field with X3 field name: "WK6ALLXQ_TOTICMSFCPST"
         And the value of the selected text field is "89.92"
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears

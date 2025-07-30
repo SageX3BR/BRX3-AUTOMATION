@@ -65,12 +65,12 @@ Feature: ATP-59
         Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "XQSDH0_NFESTATUS"
+        And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
         Given the user clicks the "Validation" button in the header
         When a dialog box appears
         Then the user clicks the "Ok" opinion in the alert box
-        And the user selects the text field with X3 field name: "SDH0_SDHNUM"
+        And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM"
         And the user clicks the "Close page" main action button on the right panel
 
@@ -95,11 +95,11 @@ Feature: ATP-59
         And the user selects the main picking list panel of the screen
         And the user selects the item with the stored text with key "SDH_NUM" and with the text containing "BR001" of the picking list panel
         And the user checks the selected picking list panel item
-        And the user selects the text field with X3 field name: "XQSRL1_CODOPF"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_CODOPF"
         And the user writes "159" to the selected text field and hits tab key
-        And the user selects the date field with X3 field name: "XQSRL1_DTSAIENT"
+        And the user selects the date field with X3 field name: "WK7ALLXQ3_DTSAIENT"
         When the user writes a generated date in the selected date field using the value "T+1"
-        And the user selects the text field with X3 field name: "XQSRL1_HRSAIENT"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_HRSAIENT"
         Then the user writes "10:00:00" to the selected text field and hits tab key
         And the user clicks the "Lines (tax)" tab selected by title
 
@@ -125,7 +125,7 @@ Feature: ATP-59
         And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "XQSRL1_NUMNFE"
+        And the user selects the text field with X3 field name: "WK7ALLXQ3_NUMNFE"
         And the user stores the value of the selected text field with the key: "NFE_NUM"
 
     Scenario: 8. Attachments

@@ -43,13 +43,13 @@ Feature:xq-s-flow-soh-modbcst-cst30
         Then the "Sales order ALL : Full entry" screen is displayed
         #Header
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SOH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_SOHTYP"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHTYP"
         And the user writes "BRSON" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_XQCODOPF"
         And the user writes "100" to the selected text field and hits tab key
         # And the user clicks the "Calc. memory On/Off" action button on the header drop down
         # And the user clicks the "Ok" opinion in the alert box
@@ -121,13 +121,13 @@ Feature:xq-s-flow-soh-modbcst-cst30
 
     Scenario: Modalidade 5
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SOH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_SOHTYP"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHTYP"
         And the user writes "BRSON" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_XQCODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"
@@ -200,13 +200,13 @@ Feature:xq-s-flow-soh-modbcst-cst30
 
     Scenario: Modalidade 6
         When the user clicks the "New" main action button on the right panel
-        And the user selects the text field with X3 field name: "SOH0_SALFCY"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SALFCY"
         And the user writes "BR011" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_SOHTYP"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHTYP"
         And the user writes "BRSON" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_BPCORD"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_BPCORD"
         And the user writes "BR001" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "SOH0_XQCODOPF"
+        And the user selects the text field with X3 field name: "WK2ALLXQ0_XQCODOPF"
         And the user writes "100" to the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK2ALL4_ARRAY_NBLIG"

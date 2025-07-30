@@ -70,7 +70,7 @@ Feature: ATP-9
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         # Validação da Sugestão
-        Then the user selects the text field with X3 field name: "XQSOH0_MUNPRESTDES"
+        Then the user selects the text field with X3 field name: "WK2ALLXQ3_MUNPRESTDES"
         And the value of the selected text field is "São Paulo"
 
         Then the user clicks the "Invoice" action button on the header drop down
