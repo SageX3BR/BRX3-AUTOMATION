@@ -36,8 +36,8 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: Mandatory CFOP 2 Lines
-        When the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
+        Given the user selects editable table row number: <LIN>
+        Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
         And the user adds the text <QTYUOM> in selected cell
