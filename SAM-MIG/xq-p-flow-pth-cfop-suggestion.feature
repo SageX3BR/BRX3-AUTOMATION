@@ -71,6 +71,7 @@ Feature:xq-p-flow-pth-CFOP-suggestion
         When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Suggestion CFOP Checking By function - Line 1 Fiscal Operation - Line 2 CFOP Suggestion
+
         And the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell

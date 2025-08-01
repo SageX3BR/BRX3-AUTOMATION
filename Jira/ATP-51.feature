@@ -60,6 +60,7 @@ Feature: ATP-51
         Given the user clicks the "Save" main action button on the right panel
         When the user clicks the "Yes" option in the alert box
 
+        Given the user selects the data table of section: "Lines"
         Given the user selects editable table row number: 2
         And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text "BMS001" in selected cell and hits tab key
