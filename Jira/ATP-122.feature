@@ -8,9 +8,9 @@
 # - Created by : Gustavo Albanus
 # - Created date : 08/03/2023
 # - Updated by : Gustavo Albanus
-# - Updated date : 24/07/2024
+# - Updated date : 25/08/2025
 # - Status : Done
-# - Ajustes Efetuados: No Picking clicar em Next e gerar os números aleatórios da NFe e Serie
+# - Ajustes Efetuados: Criado o Fornecedor BR009 por causa do Picking
 ###########################################################################
 
 Feature: ATP-122
@@ -30,7 +30,7 @@ Feature: ATP-122
         And the user selects the text field with name: "Invoice type"
         And the user writes "BRNFF" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR003" to the selected text field and hits tab key
+        And the user writes "BR009" to the selected text field and hits tab key
 
     Scenario: 3. General data
         Given the user clicks the "General data" tab selected by title
@@ -104,19 +104,19 @@ Feature: ATP-122
         And the user selects the text field with name: "Invoice type"
         And the user writes "BRNCF" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR003" to the selected text field and hits tab key
+        And the user writes "BR009" to the selected text field and hits tab key
 
     Scenario: 9. Picking
         Given the user clicks the "Invoice selection" link on the left panel
         Given the user selects the data table of left panel
-        When the user clicks the "Next" button in the right top bar of the selected data table
-        When the user clicks the "Next" button in the right top bar of the selected data table
-        When the user clicks the "Next" button in the right top bar of the selected data table
-        When the user clicks the "Next" button in the right top bar of the selected data table
+        #When the user clicks the "Next" button in the right top bar of the selected data table
+        #When the user clicks the "Next" button in the right top bar of the selected data table
+        #When the user clicks the "Next" button in the right top bar of the selected data table
+        #When the user clicks the "Next" button in the right top bar of the selected data table
         When the user selects the main picking list panel of the screen
         #Then the user clicks the "Expand all" button in the left top bar of the selected picking list
         When the user clicks the "Maximize" button in the right top bar of the selected picking list
-        And the user selects the item with the stored text with key "NUM_PIH" and with the text containing "BR003" of the picking list panel
+        And the user selects the item with the stored text with key "NUM_PIH" and with the text containing "BR009" of the picking list panel
         And the user checks the selected picking list panel item
         And the user clicks the "Yes" opinion in the alert box
         And the user clicks the "Yes" opinion in the alert box
