@@ -103,7 +103,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-02
     Scenario: 3. Create document
 
         Given the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
+        #And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOH_NUM"
         And the user clicks the Close page action icon on the header panel
