@@ -7,7 +7,8 @@
 # - Created by : Jonatas Hille
 # - Created date : 26/05/2020
 # - Updated by : Fausto A Neto
-# - Updated date : 18/10/2024
+# - Updated date : 05/09/2025
+# - Description: modificado cenário de Outline para corrigir problema de navegação
 # - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
@@ -33,10 +34,10 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "56" to the selected text field
         Then the user hits tab
-        And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: Mandatory CFOP 2 Lines
-        Given the user selects editable table row number: <LIN>
+        Given the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
+        When the user selects editable table row number: <LIN>
         Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
