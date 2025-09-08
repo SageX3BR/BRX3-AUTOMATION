@@ -8,7 +8,8 @@
 # - Created by : Carla Cury
 # - Created date : 02/06/2022
 # - Updated by : Fausto A Neto
-# - Updated date : 05/08/2024
+# - Updated date : 05/09/2025
+# - Description: adicionado cenário de Outline para corrigir problema de navegação
 # - Status : IN PROGRESS
 ###########################################################################
 
@@ -30,13 +31,13 @@ Feature: ATP-51
         And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
-        And the user writes "130" to the selected text field and hits tab key
-        #        And the user hits escape
-        #        And the user clicks the "Lines" tab selected by title
-        Then the user selects the fixed data table for x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
+        Then the user writes "130" to the selected text field and hits tab key
+    #        And the user hits escape
+    #        And the user clicks the "Lines" tab selected by title
 
     Scenario Outline: 3. PNH lines
-        Given the user selects editable table row number: <LIN>
+        Given the user selects the fixed data table for x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
+        Then the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
@@ -57,9 +58,9 @@ Feature: ATP-51
         And the user adds the text <XQCSTCOF> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell
-        And the user hits enter
+        Then the user hits enter
         Given the user clicks the "Save" main action button on the right panel
-        When the user clicks the "Yes" option in the alert box
+        Then the user clicks the "Yes" option in the alert box
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQOICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |

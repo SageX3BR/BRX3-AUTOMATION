@@ -59,20 +59,28 @@ Feature:xq-p-flow-pth-CFOP-suggestion
     #CFOP suggestion checking
     #--------------------------------------------------------------------------------
     Scenario: 3. CFOP suggestion checking
+
         Given the user clicks the "Cancel" main action button on the right panel
-        When the user clicks the "New" main action button on the right panel
+        And the user clicks the Close page action icon on the header panel
+        Given the user opens the "GESPTH" function
+        When the user selects the data table in the popup
+        And the user selects cell with text: "ALL     Full entry" and column header: ""
+        And the user clicks on the selected cell
+        Then the "Purchase receipt ALL : Full entry" screen is displayed
+
+        Given the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR014" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         Then the user writes "54" to the selected text field and hits tab key
-        Given the user clicks the "Lines" tab selected by title
-        When the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
+        And the user clicks the "Lines" tab selected by title
+        And the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
 
     Scenario Outline: Suggestion CFOP Checking By function - Line 1 Fiscal Operation - Line 2 CFOP Suggestion
 
-        And the user selects editable table row number: <LIN>
+        Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WE6ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
@@ -93,7 +101,14 @@ Feature:xq-p-flow-pth-CFOP-suggestion
     #--------------------------------------------------------------------------------
     Scenario: 4. CFOP suggestion by function
         Given the user clicks the "Cancel" main action button on the right panel
-        When the user clicks the "New" main action button on the right panel
+        And the user clicks the Close page action icon on the header panel
+        Given the user opens the "GESPTH" function
+        When the user selects the data table in the popup
+        And the user selects cell with text: "ALL     Full entry" and column header: ""
+        And the user clicks on the selected cell
+        Then the "Purchase receipt ALL : Full entry" screen is displayed
+
+        Given the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
