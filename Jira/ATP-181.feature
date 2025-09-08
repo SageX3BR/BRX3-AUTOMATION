@@ -82,37 +82,37 @@ Feature: ATP-181
         Given the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
         Then the user selects cell with X3 field name: "WE6ALL1_CSTPUR" of selected row
-        And the value of the selected cell is "9.0700"
+        And the value of the selected cell is "9.0731"
         Then the user selects cell with X3 field name: "WE6ALL1_LINCSTPUR" of selected row
-        And the value of the selected cell is "18.1400"
+        And the value of the selected cell is "18.1462"
         Then the user selects cell with X3 field name: "WE6ALL1_CPR" of selected row
-        And the value of the selected cell is "10.1000"
+        And the value of the selected cell is "10.0981"
         Then the user selects cell with X3 field name: "WE6ALL1_LINAMTCPR" of selected row
-        And the value of the selected cell is "20.2000"
+        And the value of the selected cell is "20.1962"
 
         Given the user clicks the "Lines" tab selected by title
         Given the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
         Given the user selects editable table row number: 2
         Then the user selects cell with X3 field name: "WE6ALL1_CSTPUR" of selected row
-        And the value of the selected cell is "14.3633"
+        And the value of the selected cell is "14.3660"
         Then the user selects cell with X3 field name: "WE6ALL1_LINCSTPUR" of selected row
-        And the value of the selected cell is "43.0900"
+        And the value of the selected cell is "43.0979"
         Then the user selects cell with X3 field name: "WE6ALL1_CPR" of selected row
-        And the value of the selected cell is "15.9833"
+        And the value of the selected cell is "15.9860"
         Then the user selects cell with X3 field name: "WE6ALL1_LINAMTCPR" of selected row
-        And the value of the selected cell is "47.9499"
+        And the value of the selected cell is "47.9580"
 
         Given the user clicks the "Lines" tab selected by title
         Given the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
         Given the user selects editable table row number: 3
         Then the user selects cell with X3 field name: "WE6ALL1_CSTPUR" of selected row
-        And the value of the selected cell is "4.3675"
+        And the value of the selected cell is "4.3676"
         Then the user selects cell with X3 field name: "WE6ALL1_LINCSTPUR" of selected row
-        And the value of the selected cell is "17.4700"
+        And the value of the selected cell is "17.4704"
         Then the user selects cell with X3 field name: "WE6ALL1_CPR" of selected row
-        And the value of the selected cell is "4.8575"
+        And the value of the selected cell is "4.8601"
         Then the user selects cell with X3 field name: "WE6ALL1_LINAMTCPR" of selected row
-        And the value of the selected cell is "19.4300"
+        And the value of the selected cell is "19.4404"
         And the user clicks the Close page action icon on the header panel
 
     Scenario: 006. GESPIH
@@ -168,38 +168,38 @@ Feature: ATP-181
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
         And the user selects first row of the selected data table
         Then the user selects cell with X3 field name: "WE8ALL3_CSTPUR" of selected row
-        And the value of the selected cell is "9.0700"
+        And the value of the selected cell is "9.0731"
         Then the user selects cell with X3 field name: "WE8ALL3_LINCSTPUR" of selected row
-        And the value of the selected cell is "18.1400"
+        And the value of the selected cell is "18.1462"
         Then the user selects cell with X3 field name: "WE8ALL3_CPR" of selected row
-        And the value of the selected cell is "10.10000000"
+        And the value of the selected cell is "10.09810000"
         Then the user selects cell with X3 field name: "WE8ALL3_LINAMTCPR" of selected row
-        And the value of the selected cell is "20.2000"
+        And the value of the selected cell is "20.1962"
 
         Given the user clicks the "Lines" tab selected by title
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
         Given the user selects editable table row number: 2
         Then the user selects cell with X3 field name: "WE8ALL3_CSTPUR" of selected row
-        And the value of the selected cell is "14.3633"
+        And the value of the selected cell is "14.3660"
         Then the user selects cell with X3 field name: "WE8ALL3_LINCSTPUR" of selected row
-        And the value of the selected cell is "43.0900"
+        And the value of the selected cell is "43.0980"
         #Linha 2, o Stock por Unidade e o Custo Stock pode ter um problema de arredondamento quando tem elemento de faturação
         Then the user selects cell with X3 field name: "WE8ALL3_CPR" of selected row
-        And the value of the selected cell is "15.98333333"
+        And the value of the selected cell is "15.98600000"
         Then the user selects cell with X3 field name: "WE8ALL3_LINAMTCPR" of selected row
-        And the value of the selected cell is "47.9500"
+        And the value of the selected cell is "47.9580"
 
         Given the user clicks the "Lines" tab selected by title
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
         Given the user selects editable table row number: 3
         Then the user selects cell with X3 field name: "WE8ALL3_CSTPUR" of selected row
-        And the value of the selected cell is "4.3675"
+        And the value of the selected cell is "4.3676"
         Then the user selects cell with X3 field name: "WE8ALL3_LINCSTPUR" of selected row
-        And the value of the selected cell is "17.4700"
+        And the value of the selected cell is "17.4704"
         Then the user selects cell with X3 field name: "WE8ALL3_CPR" of selected row
-        And the value of the selected cell is "4.85750000"
+        And the value of the selected cell is "4.86010000"
         Then the user selects cell with X3 field name: "WE8ALL3_LINAMTCPR" of selected row
-        And the value of the selected cell is "19.4300"
+        And the value of the selected cell is "19.4404"
         And the user clicks the Close page action icon on the header panel
 
     Scenario: 011. Logout

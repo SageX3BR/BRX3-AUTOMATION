@@ -96,9 +96,11 @@ Feature: ATP-147
         And the value of the selected text field is "100.00"
         Then the user selects the text field with name: "Total IPI devolução"
         And the value of the selected text field is "7.00"
-        Then the user selects the text field with name: "PIS value"
+        #Then the user selects the text field with name: "PIS value"
+        Then the user selects the text field with X3 field name: "WE7ALLXQ_TTPIS"
         And the value of the selected text field is "5.00"
-        Then the user selects the text field with name: "COFINS value"
+        #Then the user selects the text field with name: "COFINS value"
+        Then the user selects the text field with X3 field name: "WE7ALLXQ_TTCOF"
         And the value of the selected text field is "4.00"
         Then the user clicks the Close page action icon on the header panel
 
