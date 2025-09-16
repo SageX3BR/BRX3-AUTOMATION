@@ -6,8 +6,9 @@
 # - Jira: NA
 # - Created by : Jonatas Hille
 # - Created date : 19/05/2020
-# - Updated by : Jonatas Hille
-# - Updated date : 31/12/2021
+# - Updated by : Fausto A Neto
+# - Updated date : 05/09/2025
+# - Description: modificado cenário de Outline para corrigir problema de navegação
 # - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
 
