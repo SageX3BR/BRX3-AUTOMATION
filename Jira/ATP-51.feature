@@ -8,7 +8,7 @@
 # - Created by : Carla Cury
 # - Created date : 02/06/2022
 # - Updated by : Fausto A Neto
-# - Updated date : 05/09/2025
+# - Updated date : 16/09/2025
 # - Description: adicionado cenário de Outline para corrigir problema de navegação
 # - Status : IN PROGRESS
 ###########################################################################
@@ -31,14 +31,13 @@ Feature: ATP-51
         And the user selects the text field with name: "Supplier"
         And the user writes "BR001" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
-        Then the user writes "130" to the selected text field and hits tab key
-    #        And the user hits escape
-    #        And the user clicks the "Lines" tab selected by title
+        Then the user writes "130" to the selected text field
+        And the user hits tab
+        And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: 3. PNH lines
-        Given the user selects the fixed data table for x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
-        Then the user selects editable table row number: <LIN>
-        And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
+        Given the user selects editable table row number: <LIN>
+        Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
         And the user adds the text <QTY> in selected cell
@@ -67,63 +66,7 @@ Feature: ATP-51
             | 1   | "BMS001" | "5" | "100"  | "6201" | "0"     | "60"      | "50"     | "01"     | "01"     | "999"  |
             | 2   | "BMS001" | "5" | "100"  | "6201" | "0"     | "60"      | "50"     | "01"     | "01"     | "999"  |
 
-
-    #Then the user hits tab
-    #Given the user selects the data table of section: "Lines"
-
-    #Given the user selects editable table row number: 1
-    # And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
-    # And the user adds the text "BMS001" in selected cell and hits tab key
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
-    # And the user adds the text "5" in selected cell and hits tab key
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
-    # And the user adds the text "100" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
-    # And the user adds the text "6201" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
-    # And the user adds the text "0" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
-    # And the user adds the text "60" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
-    # And the user adds the text "50" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
-    # And the user adds the text "01" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
-    # And the user adds the text "01" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-    # And the user adds the text "999" in selected cell and hits enter key
-
-    # Given the user clicks the "Save" main action button on the right panel
-    # When the user clicks the "Yes" option in the alert box
-
-    # Given the user selects the data table of section: "Lines"
-    # Given the user selects editable table row number: 2
-    # And the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
-    # And the user adds the text "BMS001" in selected cell and hits tab key
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
-    # And the user adds the text "5" in selected cell and hits tab key
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
-    # And the user adds the text "100" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
-    # And the user adds the text "6201" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
-    # And the user adds the text "0" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
-    # And the user adds the text "60" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
-    # And the user adds the text "50" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
-    # And the user adds the text "01" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
-    # And the user adds the text "01" in selected cell
-    # And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-    # And the user adds the text "999" in selected cell and hits enter key
-
-    # Given the user clicks the "Save" main action button on the right panel
-    # When the user clicks the "Yes" option in the alert box
-
-
-    Scenario: 6. Create / Addition ICMS base
+    Scenario: 4. Create / Addition ICMS base
 
         Given the user clicks the "Referenced docs." action button on the header drop down
         And the user selects the data table in the popup
@@ -157,7 +100,7 @@ Feature: ATP-51
         Given the user clicks the "Save" main action button on the right panel
 
 
-    Scenario: 6. Check Values after creation
+    Scenario: 5. Check Values after creation
 
         When the user clicks the "Tax detail" action button on the header drop down
         Then the user selects the text field with X3 field name: "XQPTD0_CURLIG"
@@ -169,6 +112,6 @@ Feature: ATP-51
         And the user clicks the "Close" main action button on the right panel
         Given the user clicks the "Save" main action button on the right panel
 
-    Scenario: 8. Logout
+    Scenario: 6. Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system

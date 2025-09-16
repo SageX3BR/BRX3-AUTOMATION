@@ -7,7 +7,7 @@
 # - Created by : Jonatas Hille
 # - Created date : 26/05/2020
 # - Updated by : Fausto A Neto
-# - Updated date : 05/09/2025
+# - Updated date : 15/09/2025
 # - Description: modificado cenário de Outline para corrigir problema de navegação
 # - Status : [X]Automated []Work In Progress []Broken
 ###########################################################################
@@ -25,19 +25,19 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
-        Then the "Purchase return ALL : Full entry" screen is displayed
-        When the user clicks the "New" main action button on the right panel
+        When the "Purchase return ALL : Full entry" screen is displayed
+        Then the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Return site"
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
         And the user writes "BR005" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "56" to the selected text field
-        Then the user hits tab
+        Given the user hits tab
+        Then the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
     Scenario Outline: Mandatory CFOP 2 Lines
-        Given the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
-        When the user selects editable table row number: <LIN>
+        Given the user selects editable table row number: <LIN>
         Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
@@ -72,7 +72,14 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
     #--------------------------------------------------------------------------------
     Scenario: 3. CFOP suggestion checking
         Given the user clicks the "Cancel" main action button on the right panel
-        When the user clicks the "New" main action button on the right panel
+        And the user clicks the Close page action icon on the header panel
+        When the user opens the "GESPNH" function
+        And the user selects the data table in the popup
+        And the user selects cell with text: "ALL     Full entry" and column header: ""
+        And the user clicks on the selected cell
+        Then the "Purchase return ALL : Full entry" screen is displayed
+
+        Given the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Return site"
         And the user writes "BR014" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
@@ -115,7 +122,14 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
     #--------------------------------------------------------------------------------
     Scenario: 4. CFOP suggestion by function
         Given the user clicks the "Cancel" main action button on the right panel
-        When the user clicks the "New" main action button on the right panel
+        And the user clicks the Close page action icon on the header panel
+        When the user opens the "GESPNH" function
+        And the user selects the data table in the popup
+        And the user selects cell with text: "ALL     Full entry" and column header: ""
+        And the user clicks on the selected cell
+        Then the "Purchase return ALL : Full entry" screen is displayed
+
+        Given the user clicks the "New" main action button on the right panel
         And the user selects the text field with name: "Return site"
         And the user writes "BR013" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
