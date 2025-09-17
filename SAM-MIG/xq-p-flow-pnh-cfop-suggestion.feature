@@ -111,6 +111,9 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user adds the text <XQCSTCOF> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
+        And the user waits (5) seconds
+        And the user hits tab
+
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
             | 1   | "BMS001" | "12"   | "3.69"  | "5202" | "0"          | "00"      | "49"     | "01"     | "01"     | "999"  |
@@ -161,6 +164,9 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user adds the text <XQCSTCOF> in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
         Then the user adds the text <XQCENQ> in selected cell and hits enter key
+        And the user waits (5) seconds
+        And the user hits tab
+
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
             | 1   | "BMS001" | "12"   | "3.69"  | "5553" | "0"          | "00"      | "49"     | "01"     | "01"     | "999"  |

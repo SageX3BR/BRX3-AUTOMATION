@@ -60,6 +60,8 @@ Feature: ATP-51
         Then the user hits enter
         Given the user clicks the "Save" main action button on the right panel
         Then the user clicks the "Yes" option in the alert box
+        And the user waits (5) seconds
+        And the user hits tab
 
         Examples:
             | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQOICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
