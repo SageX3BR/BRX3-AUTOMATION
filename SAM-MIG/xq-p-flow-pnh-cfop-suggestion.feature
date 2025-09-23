@@ -36,36 +36,89 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         Given the user hits tab
         Then the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
-    Scenario Outline: Mandatory CFOP 2 Lines
-        Given the user selects editable table row number: <LIN>
+    # Scenario Outline: Mandatory CFOP 2 Lines
+    #     Given the user selects editable table row number: <LIN>
+    #     Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
+    #     And the user adds the text <ITMREF> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
+    #     And the user adds the text <QTYUOM> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
+    #     And the user adds the text <GROPRI> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
+    #     And the user adds the text "" in selected cell and hits tab key
+    #     And an alert box with the text "Mandatory field" appears
+    #     And the user clicks the "Ok" opinion in the alert box
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
+    #     And the user adds the text <XQCFOP> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
+    #     And the user adds the text <XQORIGEMICMS> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
+    #     And the user adds the text <XQCSTICMS> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
+    #     And the user adds the text <XQCSTIPI> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
+    #     And the user adds the text <XQCSTPIS> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
+    #     And the user adds the text <XQCSTCOF> in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
+    #     Then the user adds the text <XQCENQ> in selected cell and hits enter key
+    #     Examples:
+    #       | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
+    #        | 1   | "BMS001" | "12"   | "3.69"  | "5202" | "0"          | "41"      | "49"     | "01"     | "01"     | "999"  |
+    #        | 2   | "BMS002" | "6"    | "12.95" | "5202" | "0"          | "41"      | "49"     | "01"     | "01"     | "999"  |
+
+    Scenario: Mandatory CFOP - 2 Lines
+        Given the user selects editable table row number: 1
         Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
-        And the user adds the text <ITMREF> in selected cell
+        And the user adds the text "BMS001" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
-        And the user adds the text <QTYUOM> in selected cell
+        And the user adds the text "12" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
-        And the user adds the text <GROPRI> in selected cell
+        And the user adds the text "3.69" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
         And the user adds the text "" in selected cell and hits tab key
         And an alert box with the text "Mandatory field" appears
         And the user clicks the "Ok" opinion in the alert box
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell
+        And the user adds the text "5202" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
-        And the user adds the text <XQORIGEMICMS> in selected cell
+        And the user adds the text "0" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell
+        And the user adds the text "41" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
-        And the user adds the text <XQCSTIPI> in selected cell
+        And the user adds the text "49" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
-        And the user adds the text <XQCSTPIS> in selected cell
+        And the user adds the text "01" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
-        And the user adds the text <XQCSTCOF> in selected cell
+        And the user adds the text "01" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-        Then the user adds the text <XQCENQ> in selected cell and hits enter key
-        Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI  | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
-            | 1   | "BMS001" | "12"   | "3.69"  | "5202" | "0"          | "41"      | "49"     | "01"     | "01"     | "999"  |
-            | 2   | "BMS002" | "6"    | "12.95" | "5202" | "0"          | "41"      | "49"     | "01"     | "01"     | "999"  |
+        Then the user adds the text "999" in selected cell and hits enter key
+
+        Given the user selects editable table row number: 2
+        Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
+        And the user adds the text "BMS002" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
+        And the user adds the text "6" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
+        And the user adds the text "12.95" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
+        And the user adds the text "" in selected cell and hits tab key
+        And an alert box with the text "Mandatory field" appears
+        And the user clicks the "Ok" opinion in the alert box
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
+        And the user adds the text "5202" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
+        And the user adds the text "0" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
+        And the user adds the text "41" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
+        And the user adds the text "49" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
+        And the user adds the text "01" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
+        And the user adds the text "01" in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
+        Then the user adds the text "999" in selected cell and hits enter key
 
     #--------------------------------------------------------------------------------
     #CFOP suggestion checking
