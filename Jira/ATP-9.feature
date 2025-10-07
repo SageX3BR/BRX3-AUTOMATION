@@ -8,9 +8,9 @@
 # - Created by : Diogo Nascimento
 # - Created date : 12/05/2022
 # - Updated by : Gustavo Albanus
-# - Updated date : 01/04/2025
+# - Updated date : 02/10/2025
 # - Status : Done
-# - Correção: Ajustado a validação do Município para depois de criado o documento
+# - Correção: Ajustado o Campo do Local de Prest. Serv.
 ###########################################################################
 #PREREQUISITES
 ###########################################################################
@@ -70,8 +70,8 @@ Feature: ATP-9
         Given the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         # Validação da Sugestão
-        Then the user selects the text field with X3 field name: "WK2ALLXQ3_MUNPRESTDES"
-        And the value of the selected text field is "São Paulo"
+        Then the user selects the text field with X3 field name: "WK2ALLXQ3_LOCPRESTSERV"
+        And the value of the selected text field is "SP"
 
         Then the user clicks the "Invoice" action button on the header drop down
 
@@ -87,8 +87,8 @@ Feature: ATP-9
 
         # Validação da Sugestão
         Then the user clicks the "Legal data" action button on the header drop down
-        Then the user selects the text field with X3 field name: "XQLDATANFSE_MUNPRESTDES"
-        And the value of the selected text field is "São Paulo"
+        Then the user selects the text field with X3 field name: "XQLDATANFSE_LOCPRESTSERV"
+        And the value of the selected text field is "SP"
         And the user clicks the Close page action icon on the header panel
 
         Then the user clicks the "Cancel" main action button on the right panel
