@@ -79,9 +79,9 @@ Feature: ATP-191
         And the user selects the text field with name: "Valor CBS"
         And the value of the selected text field is "8.10"
         And the user selects the text field with name: "Valor IBS Mun."
-        And the value of the selected text field is "11.70"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Valor IBS Est."
-        And the value of the selected text field is "11.25"
+        And the value of the selected text field is "0.90"
         And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
         And the user clicks the "Close page" main action button on the right panel
@@ -148,9 +148,9 @@ Feature: ATP-191
         And the user selects the text field with name: "Valor CBS"
         And the value of the selected text field is "8.10"
         And the user selects the text field with name: "Valor IBS Mun."
-        And the value of the selected text field is "11.70"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Valor IBS Est."
-        And the value of the selected text field is "11.25"
+        And the value of the selected text field is "0.90"
 
     Scenario: 009. Transmissão SEFAZ SRH
         And the user clicks the "SEFAZ" action button on the header drop down
@@ -186,8 +186,7 @@ Feature: ATP-191
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         And the value of the selected text field contains "<vIS>9.00</vIS>"
-        And the value of the selected text field contains "<vIBSUF>11.25</vIBSUF>"
-        And the value of the selected text field contains "<vIBSMun>11.70</vIBSMun>"
+        And the value of the selected text field contains "<vIBSUF>0.90</vIBSUF>"
         And the value of the selected text field contains "<vCBS>8.10</vCBS>"
 
     Scenario: 011. Logout

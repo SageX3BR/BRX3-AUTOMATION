@@ -182,9 +182,8 @@ Feature: ATP-182
         And the value of the selected text field is "100.00"
         And the user selects the text field with name: "Total discount"
         And the value of the selected text field is "20.00"
-        ######BUG IDENTIFICADO NA SDH#######
         And the user selects the text field with name: "Total shipment value"
-        And the value of the selected text field is "1,100.00"
+        And the value of the selected text field is "1,080.00"
         And the user selects the text field with name: "ICMS base total"
         And the value of the selected text field is "1,080.00"
         And the user selects the text field with name: "Operation ICMS value"

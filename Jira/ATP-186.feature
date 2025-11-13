@@ -76,11 +76,11 @@ Feature: ATP-186
         And the user selects the text field with name: "Base cálculo IBS Mun."
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor IBS Mun."
-        And the value of the selected text field is "13.00"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo IBS Est."
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor IBS Est."
-        And the value of the selected text field is "12.50"
+        And the value of the selected text field is "1.00"
         And the user selects the text field with X3 field name: "WK2ALLXQ0_SOHNUM"
         And the user stores the value of the selected text field with the key: "SOHNUM"
         Then the user clicks the Close page action icon on the header panel
@@ -133,11 +133,11 @@ Feature: ATP-186
         And the user selects the text field with name: "Base cálculo IBS Mun."
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor IBS Mun."
-        And the value of the selected text field is "13.00"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo IBS Est."
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor IBS Est."
-        And the value of the selected text field is "12.50"
+        And the value of the selected text field is "1.00"
         And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
         Then the user clicks the "Validation" button in the header
@@ -188,11 +188,11 @@ Feature: ATP-186
         And the user selects the text field with name: "Base cálculo IBS Mun."
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor IBS Mun."
-        And the value of the selected text field is "13.00"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo IBS Est."
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor IBS Est."
-        And the value of the selected text field is "12.50"
+        And the value of the selected text field is "1.00"
 
     Scenario: 014. Transmissão SEFAZ
         Given the user clicks the "SEFAZ" action button on the header drop down
@@ -225,8 +225,7 @@ Feature: ATP-186
         And the value of the selected text field contains "<vIS>10.00</vIS>"
         And the value of the selected text field contains "<CST>000</CST>"
         And the value of the selected text field contains "<cClassTrib>000001</cClassTrib>"
-        And the value of the selected text field contains "<vIBSUF>12.50</vIBSUF>"
-        And the value of the selected text field contains "<vIBSMun>13.00</vIBSMun>"
+        And the value of the selected text field contains "<vIBSUF>1.00</vIBSUF>"
         And the value of the selected text field contains "<vCBS>9.00</vCBS>"
         And the value of the selected text field contains "<vBCIBSCBS>1000.00</vBCIBSCBS>"
 
