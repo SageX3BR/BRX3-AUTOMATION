@@ -127,11 +127,10 @@ Feature: ATP-97
     Scenario: 9. Edit Line
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK5AAL4_ARRAY_NBLIG"
-        When the user selects editable table row number: 1
+        And the user selects first row of the selected data table
         And the user opens "Popup view" function on toolbox of the selected row
         And the user selects the text field with name: "Invoiced qty."
-        #And the user selects the text field with X3 field name: "WK5AAL4_QTY"
-        And the user writes "5" to the selected text field and hits tab key
+        And the user writes "5" to the selected text field and hits enter key
         And the user clicks the Close page action icon on the header panel
 
     Scenario: 10. Creation

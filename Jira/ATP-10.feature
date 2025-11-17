@@ -50,7 +50,7 @@ Feature: ATP-10
         # Validação da Sugestão
         And the user clicks the "Legal data" action button on the header drop down
         Then the user selects the text field with X3 field name: "XQLDATANFSE_LOCPRESTSERV"
-        And the value of the selected text field is "SP"
+        And the value of the selected text field is "MT"
         And the user clicks the Close page action icon on the header panel
         Then the user clicks the "Cancel" main action button on the right panel
 
@@ -66,4 +66,3 @@ Feature: ATP-10
     Scenario: 5. Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-

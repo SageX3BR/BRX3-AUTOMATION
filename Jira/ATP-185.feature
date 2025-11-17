@@ -58,11 +58,15 @@ Feature: ATP-185
         And the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTCBS"
+        And the user adds the text <XQCSTCBS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCCTCBS"
+        And the user adds the text <XQCCTCBS> in selected cell
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQVARCFOP | XQCENQ |
-            | 1   | "BMS009" | "1" | "47.90" | "6415" | ""        | "108"  |
+            | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQVARCFOP | XQCENQ | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS009" | "1" | "47.90" | "6415" | ""        | "108"  | "000"    | "000001" |
 
     Scenario: 004. Create document
         Given the user clicks the "Create" main action button on the right panel

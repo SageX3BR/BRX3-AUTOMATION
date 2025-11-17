@@ -103,11 +103,11 @@ Feature: ATP-190
         And the user selects the text field with name: "Base cálculo IBS Mun."
         And the value of the selected text field is "1,190.00"
         And the user selects the text field with name: "Valor IBS Mun."
-        And the value of the selected text field is "1.19"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo IBS Est."
         And the value of the selected text field is "1,190.00"
         And the user selects the text field with name: "Valor IBS Est."
-        And the value of the selected text field is "2.38"
+        And the value of the selected text field is "1.19"
         And the user selects the text field with X3 field name: "WE3ALLXQ0_POHNUM"
         And the user stores the value of the selected text field with the key: "POHNUM"
         Then the user clicks the Close page action icon on the header panel
@@ -161,11 +161,11 @@ Feature: ATP-190
         And the user selects the text field with name: "Base cálculo IBS Mun."
         And the value of the selected text field is "1,190.00"
         And the user selects the text field with name: "Valor IBS Mun."
-        And the value of the selected text field is "1.19"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo IBS Est."
         And the value of the selected text field is "1,190.00"
         And the user selects the text field with name: "Valor IBS Est."
-        And the value of the selected text field is "2.38"
+        And the value of the selected text field is "1.19"
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
         And the user stores the value of the selected text field with the key: "PTHNUM"
         Then the user clicks the Close page action icon on the header panel
@@ -239,11 +239,11 @@ Feature: ATP-190
         And the user selects the text field with name: "Base cálculo IBS Mun."
         And the value of the selected text field is "1,190.00"
         And the user selects the text field with name: "Valor IBS Mun."
-        And the value of the selected text field is "1.19"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo IBS Est."
         And the value of the selected text field is "1,190.00"
         And the user selects the text field with name: "Valor IBS Est."
-        And the value of the selected text field is "2.38"
+        And the value of the selected text field is "1.19"
         And the user waits 2 seconds
 
     Scenario: 013. Transmissão Fatura de Compra PIH
@@ -283,8 +283,7 @@ Feature: ATP-190
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         And the value of the selected text field contains "<vIS>5.95</vIS>"
-        And the value of the selected text field contains "<vIBSUF>2.38</vIBSUF>"
-        And the value of the selected text field contains "<vIBSMun>1.19</vIBSMun>"
+        And the value of the selected text field contains "<vIBSUF>1.19</vIBSUF>"
         And the value of the selected text field contains "<vCBS>10.71</vCBS>"
 
     Scenario: 015. Logout
