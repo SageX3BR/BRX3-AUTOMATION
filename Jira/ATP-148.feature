@@ -46,14 +46,16 @@ Feature: ATP-148
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQSTISS"
         And the user adds the text <XQSTISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQEXISS"
-        Then the user adds the text <XQEXISS> in selected cell and hits enter key
+        Then the user adds the text <XQEXISS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODINDOP"
+        Then the user adds the text <XQCODINDOP> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI      | XQSTISS | XQEXISS |
-            | 1   | "SER005" | "1" | "28140.99"  | "1"     | "1"     |
-            | 2   | "SER005" | "1" | "37521.32"  | "1"     | "1"     |
-            | 3   | "SER005" | "1" | "9380.33"   | "1"     | "1"     |
-            | 4   | "SER005" | "1" | "112563.94" | "1"     | "1"     |
+            | LIN | ITMREF   | QTY | GROPRI      | XQSTISS | XQEXISS | XQCODINDOP |
+            | 1   | "SER005" | "1" | "28140.99"  | "1"     | "1"     | "100301"   |
+            | 2   | "SER005" | "1" | "37521.32"  | "1"     | "1"     | "100301"   |
+            | 3   | "SER005" | "1" | "9380.33"   | "1"     | "1"     | "100301"   |
+            | 4   | "SER005" | "1" | "112563.94" | "1"     | "1"     | "100301"   |
 
     Scenario: 003. Create
         Given the user clicks the "Create" main action button on the right panel
@@ -62,7 +64,7 @@ Feature: ATP-148
     Scenario: 004. Verificar Cálculo de Impostos
         Given the user clicks the "NF-e Summary" tab selected by title
         And the user selects the text field with name: "ISS value"
-        And the value of the selected text field is "3,752.13"
+        And the value of the selected text field is "5,440.59"
 
     Scenario: 005. Transmissão NFS-e
         Given the user clicks the "Transmit RPS" action button on the header drop down
@@ -89,10 +91,11 @@ Feature: ATP-148
         And the user clicks on the selected cell
         And the user opens "NFS-e Log" function on toolbox of the selected row
         And the user selects the data table of section: "NFS-e Log"
-        And the user selects first row of the selected data table
+        #And the user selects first row of the selected data table
+        And the user selects editable table row number: 7
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains "ValISS": "3752.13"
+        And the value of the selected text field contains "ValISS": "5440.59"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
 
