@@ -55,11 +55,13 @@ Feature: ATP-78
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQSTISS"
         And the user adds the text <XQSTISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQEXISS"
-        Then the user adds the text <XQEXISS> in selected cell and hits enter key
+        Then the user adds the text <XQEXISS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODINDOP"
+        Then the user adds the text <XQCODINDOP> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI    | XQSTISS | XQEXISS | DISCRGVAL1 |
-            | 1   | "SER017" | "1" | "2000.00" | "1"     | "1"     | "50.00"    |
+            | LIN | ITMREF   | QTY | GROPRI    | XQSTISS | XQEXISS | DISCRGVAL1 | XQCODINDOP |
+            | 1   | "SER017" | "1" | "2000.00" | "1"     | "1"     | "50.00"    | "100301"   |
 
     Scenario: 3. Create
         Given the user clicks the "Create" main action button on the right panel
@@ -82,7 +84,7 @@ Feature: ATP-78
         And the user selects the text field with name: "INSS value"
         And the value of the selected text field is "50.00"
         And the user selects the text field with name: "ISS RF value"
-        And the value of the selected text field is "50.00"
+        And the value of the selected text field is "29.00"
     # And the user clicks the "Create" main action button on the right panel
     # And a confirmation dialog appears with the message "Record has been created"
 
@@ -112,7 +114,8 @@ Feature: ATP-78
         And the user clicks on the selected cell
         And the user opens "NFS-e Log" function on toolbox of the selected row
         And the user selects the data table of section: "NFS-e Log"
-        And the user selects first row of the selected data table
+        #And the user selects first row of the selected data table
+        And the user selects editable table row number: 7
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
         And the value of the selected text field contains "ValDescIncond": "1000"
