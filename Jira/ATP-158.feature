@@ -81,14 +81,15 @@ Feature: ATP-158
         And the user selects the text field with name: "INSS value"
         And the value of the selected text field is "173.00"
         And the user selects the text field with name: "ISS RF value"
-        And the value of the selected text field is "100.00"
+        And the value of the selected text field is "58.00"
 
     Scenario: 005. Validar os Vencimentos
         And the user clicks the "Open items" button in the header
         Given the user selects the data table in the popup
         When the user selects first row of the selected data table
         And the user selects cell with header: "Amount" of selected row
-        And the value of the selected cell is "1,186.00"
+        And the value of the selected cell is "1,228.00"
+        #Serviços - PIS/COFINS/CSLL/IRRF/INSS/ISS
         Given the user clicks the Close page action icon on the header panel
 
     Scenario: 009. Logout
