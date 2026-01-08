@@ -1,14 +1,15 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code: ATP-180 - NFSe Exportação as propriedades devem estar “TomaUF” = EX e “TomacMun“ = 9999999
-# - Jira: X3DEV-8174
+# - Test code: ATP-180 - NFSe Exportação para São paulo as propriedades Não devem constar no JSON
+# - OBS: NÃO DEVE TER “TomaUF” = EX e “TomacMun“ = 9999999 e Deve Ter ItemcMunIncidencia e cMunIncidencia
+# - Jira: X3DEV-8174 / X3DEV-10087
 # - Created by: Gustavo Albanus
 # - Created date: 21/08/2025
-# - Updated by:
-# - Updated date:
+# - Updated by: Gustavo Albanus
+# - Updated date: 05/01/2026
 # - Status: Done
-# - Parametrizações:
+# - Parametrizações: SER011 / RTAX 1025
 ###########################################################################
 
 Feature: ATP-180
@@ -37,6 +38,9 @@ Feature: ATP-180
         And the user writes "SP" to the selected text field
         And the user selects the text field with name: "Departure loc. description"
         And the user writes "SP" to the selected text field
+        And the user selects the drop down list with name: "Modo de prestação"
+        And the user clicks on "Transfronteiriço" option of the selected drop down list
+        And the user hits tab
         And the user selects the text field with name: "Sold-to"
         And the user writes "NA012" to the selected text field
         And the user selects the text field with name: "Tax rule"
@@ -51,7 +55,7 @@ Feature: ATP-180
     Scenario: 003. Inserir Linha de Serviço
         Given the user selects editable table row number: 1
         And the user selects last fixed cell with X3 field name: "WK5ALL4_ITMREF"
-        And the user adds the text "SER001" in selected cell
+        And the user adds the text "SER011" in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_QTY"
         And the user adds the text "1" in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_GROPRI"
@@ -59,7 +63,9 @@ Feature: ATP-180
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQSTISS"
         And the user adds the text "1" in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQEXISS"
-        Then the user adds the text "1" in selected cell and hits enter key
+        Then the user adds the text "1" in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODINDOP"
+        Then the user adds the text "100301" in selected cell and hits enter key
         And the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         And the user waits 1 seconds
@@ -90,11 +96,12 @@ Feature: ATP-180
         And the user clicks on the selected cell
         And the user opens "NFS-e Log" function on toolbox of the selected row
         And the user selects the data table of section: "NFS-e Log"
-        And the user selects first row of the selected data table
+        #And the user selects first row of the selected data table
+        And the user selects editable table row number: 7
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains ""TomaUF": "EX"
-        And the value of the selected text field contains ""TomacMun": "9999999"
+        And the value of the selected text field contains "ItemcMunIncidencia": "3550308"
+        And the value of the selected text field contains "cMunIncidencia": "3550308"
         And the user clicks the Close page action icon on the header panel
         #Fechando janela aberta antes do log.
         And the user clicks the Close page action icon on the header panel
