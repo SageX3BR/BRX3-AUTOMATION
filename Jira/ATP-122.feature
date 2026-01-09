@@ -109,8 +109,8 @@ Feature: ATP-122
     Scenario: 9. Picking
         Given the user clicks the "Invoice selection" link on the left panel
         Given the user selects the data table of left panel
-        #When the user clicks the "Next" button in the right top bar of the selected data table
-        #When the user clicks the "Next" button in the right top bar of the selected data table
+        When the user clicks the "Next" button in the right top bar of the selected data table
+        When the user clicks the "Next" button in the right top bar of the selected data table
         #When the user clicks the "Next" button in the right top bar of the selected data table
         #When the user clicks the "Next" button in the right top bar of the selected data table
         When the user selects the main picking list panel of the screen

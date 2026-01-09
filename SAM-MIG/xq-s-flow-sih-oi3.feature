@@ -69,14 +69,15 @@ Feature: xq-s-flow-sih-oi3
         And the user clicks the "Open items" action button on the header drop down
         And the user selects the fixed data table for x3 field name: "BPCDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPCDUD_AMTCUR" and row number: (1)
-        And the value of the selected cell is "54.23"
+        And the value of the selected cell is "56.16"
+        #Invoice Total - Retenções
         Given the user clicks the "OK" action button on the header drop down
 
     Scenario: Check Calculated Values
         Given the user clicks the "Valuation" tab selected by title
         And the user selects the fixed data table for x3 field name: "SIHV_ARRAY_NBFOOT"
         When the user selects the fixed cell with X3 field name: "SIHV_XFATI" and row number: (1)
-        Then the value of the selected cell is "-37.24"
+        Then the value of the selected cell is "-35.31"
         Given the user clicks the "NF-e Summary" tab selected by title
         And the user selects the text field with name: "Invoice total value"
         And the value of the selected text field is "91.47"
