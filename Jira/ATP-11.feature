@@ -62,9 +62,9 @@ Feature: ATP-11
         And the user selects the text field with name: "COFINS value"
         And the value of the selected text field is "15.20"
         And the user selects the text field with name: "PIS RF value"
-        And the value of the selected text field is "13.50"
+        And the value of the selected text field is "1.30"
         And the user selects the text field with name: "COFINS RF value"
-        And the value of the selected text field is "16.00"
+        And the value of the selected text field is "6.00"
 
     Scenario: 6. Transmissão NFS-e
         Given the user clicks the "Transmit RPS" action button on the header drop down
