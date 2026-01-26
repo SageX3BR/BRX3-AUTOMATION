@@ -34,10 +34,12 @@ Feature: ATP-73
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQORIGEMICMS"
         And the user adds the text <XQORIGEMICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCODBF"
+        And the user adds the text <XQCODBF> in selected cell
         Then the user hits enter
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI | XQCFOP | XQORIGEMICMS | XQCSTICMS |
-            | 1   | "BMS001" | "30"   | "100"  | "2101" | "0"          | "40"      |
+            | LIN | ITMREF   | QTYUOM | GROPRI | XQCFOP | XQORIGEMICMS | XQCSTICMS | XQCODBF    |
+            | 1   | "BMS001" | "30"   | "100"  | "2101" | "0"          | "40"      | "SP099090" |
 
     Scenario: 4. PTH Creation / SEFAZ / Posting
         When the user clicks the "Create" main action button on the right panel
@@ -149,6 +151,8 @@ Feature: ATP-73
         When the "Tax detail" screen is displayed
         Then the user selects the text field with X3 field name: "XQSTD1_CSTICMS"
         And the user writes "41" to the selected text field and hits tab key
+        Then the user selects the text field with X3 field name: "XQSTD1_XQCODBF"
+        And the user writes "SP099090" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSTD1_XQCENQ"
         And the user writes "301" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "XQSTD1_CSTIPI"

@@ -45,18 +45,14 @@ Feature: ATP-186
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTIS"
-        And the user adds the text <XQCSTIS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCCTIS"
-        And the user adds the text <XQCCTIS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTCBS"
         And the user adds the text <XQCSTCBS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCCTCBS"
         And the user adds the text <XQCCTCBS> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI    | XQCFOP | XQCSTIS | XQCCTIS  | XQCSTCBS | XQCCTCBS |
-            | 1   | "BMS001" | "1" | "1000.00" | "6102" | "000"   | "000001" | "000"    | "000001" |
+            | LIN | ITMREF   | QTY | GROPRI    | XQCFOP | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS001" | "1" | "1000.00" | "6102" | "000"    | "000001" |
 
     Scenario: 004. CRIAR ENCOMENDA DE VENDA
         And the user clicks the "Create" main action button on the right panel
@@ -66,9 +62,9 @@ Feature: ATP-186
     Scenario: 005. Validação Impostos Encomenda SOH
         When the user clicks the "Tax Summary" tab selected by title
         Then the user selects the text field with name: "Base cálculo IS"
-        And the value of the selected text field is "1,000.00"
+        And the value of the selected text field is ""
         Then the user selects the text field with name: "Valor IS"
-        And the value of the selected text field is "10.00"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo CBS"
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor CBS"
@@ -123,9 +119,9 @@ Feature: ATP-186
     Scenario: 009. Validação Impostos Expedição SDH
         When the user clicks the "Tax Summary" tab selected by title
         Then the user selects the text field with name: "Base cálculo IS"
-        And the value of the selected text field is "1,000.00"
+        And the value of the selected text field is ""
         Then the user selects the text field with name: "Valor IS"
-        And the value of the selected text field is "10.00"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo CBS"
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor CBS"
@@ -178,9 +174,9 @@ Feature: ATP-186
     Scenario: 013. Validação Impostos Fatura de Venda SIH
         When the user clicks the "NF-e Summary" tab selected by title
         Then the user selects the text field with name: "Base cálculo IS"
-        And the value of the selected text field is "1,000.00"
+        And the value of the selected text field is ""
         Then the user selects the text field with name: "Valor IS"
-        And the value of the selected text field is "10.00"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Base cálculo CBS"
         And the value of the selected text field is "1,000.00"
         And the user selects the text field with name: "Valor CBS"
@@ -221,11 +217,9 @@ Feature: ATP-186
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
-        And the value of the selected text field contains "<vBCIS>1000.00</vBCIS>"
-        And the value of the selected text field contains "<vIS>10.00</vIS>"
         And the value of the selected text field contains "<CST>000</CST>"
         And the value of the selected text field contains "<cClassTrib>000001</cClassTrib>"
-        And the value of the selected text field contains "<vIBSUF>1.00</vIBSUF>"
+        And the value of the selected text field contains "<vIBS>1.00</vIBS>"
         And the value of the selected text field contains "<vCBS>9.00</vCBS>"
         And the value of the selected text field contains "<vBCIBSCBS>1000.00</vBCIBSCBS>"
 
