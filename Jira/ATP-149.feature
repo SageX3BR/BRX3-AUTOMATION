@@ -54,12 +54,14 @@ Feature: ATP-149
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
         And the user adds the text <XQCSTICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODBF"
+        And the user adds the text <XQCODBF> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell
         And the user hits enter
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "1" | "10.00" | "6102" | ""        | "0"     | "90"      | "999"  |
+            | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF    | XQCENQ |
+            | 1   | "BMS001" | "1" | "10.00" | "6102" | ""        | "0"     | "90"      | "SP099000" | "999"  |
 
     Scenario: 003. Document Creation
         When the user clicks the "Create" main action button on the right panel
