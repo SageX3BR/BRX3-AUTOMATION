@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 01/06/2020
-# - Updated by : Jonatas Hille
-# - Updated date : 01/06/2020
+# - Updated by : Gustavo Albanus
+# - Updated date : 03/02/2026
 # - Status : Automated
 ###########################################################################
 
@@ -55,12 +55,14 @@ Feature:05010203-CST70
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
         # #And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCODBF"
+        And the user adds the text <XQCODBF> in selected cell
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCSTICMS |
-            | 1   | "BMS001" | "14" | "98.54" | "70"      |
-            | 2   | "BMS002" | "16" | "98.52" | "70"      |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCSTICMS | XQCODBF    |
+            | 1   | "BMS001" | "14" | "98.54" | "70"      | "SP099090" |
+            | 2   | "BMS002" | "16" | "98.52" | "70"      | "SP099090" |
 
     Scenario: 05010203-04 Create
         #Create
