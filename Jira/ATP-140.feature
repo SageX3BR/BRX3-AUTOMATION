@@ -42,7 +42,7 @@ Feature: ATP-140
         When the user selects the text field with name: "Serial number"
         And the user writes "1" to the selected text field and hits tab key
         When the user selects the text field with name: "NF-e Access key"
-        And the user writes "35170364555626000147550770000000441000000446" to the selected text field and hits tab key
+        And the user writes "35250735074116000150556500002000151842951740" to the selected text field and hits tab key
         When the user selects the text field with name: "NF-e number"
         And the user stores the value of the selected text field with the key: "NUMBER"
 

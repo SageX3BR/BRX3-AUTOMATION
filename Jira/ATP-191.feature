@@ -1,129 +1,123 @@
 ###########################################################################
 # Header
 # -------------------------------------------------------------------------
-# - Test code:05010503-CST70
-# - Description: Validate FCP_ST fields and calculation for CST 70
-# - Jira: NA
-# - Legislation: BR addon
-# - Created by : Jonatas Hille
-# - Created date : 01/06/2020
-# - Updated by : Gustavo Albanus
-# - Updated date : 03/02/2026
-# - Status : Automated
+# - Test code: ATP-191 - Reforma Tributaria - Devolução Cliente SDH > SRH
+# - OBS: Este cenário Transmite a SDH Remessa, SRH com Picking e Valida as Tags do XML
+# - Jira: X3DEV-8318
+# - Created by: Gustavo Albanus
+# - Created date: 18/09/2025
+# - Updated by:
+# - Updated date:
+# - Status: Done
+# - Parametrizações:
 ###########################################################################
 
-Feature:05010503-CST70
+Feature: ATP-191
 
-    #--------------------------------------------------------------------------------
-    #X3 Login Scenario
-    #--------------------------------------------------------------------------------
-    Scenario: 05010503-01 Login scenario
+    Scenario: 001.Login scenario
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
 
-    #--------------------------------------------------------------------------------
-    #Validate FCP_ST fields and calculation - ICMS CST-70
-    #--------------------------------------------------------------------------------
-    Scenario: 05010503-02 FCP_ST fields and calculation - ICMS CST-70
+    Scenario: 002. EXPEDIÇÃO SDH
         Given the user opens the "GESSDH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Delivery ALL : Full entry" screen is displayed
-        #Header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WK4ALLXQ0_STOFCY"
-        And the user writes "BR050" to the selected text field and hits tab key
+        And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHTYP"
         And the user writes "BRSDH" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK4ALLXQ0_SALFCY"
-        And the user writes "BR050" to the selected text field and hits tab key
+        And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK4ALLXQ0_BPCORD"
-        And the user writes "BR150" to the selected text field and hits tab key
+        And the user writes "BR016" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK4ALLXQ3_CODOPF"
-        And the user writes "47" to the selected text field and hits tab key
+        And the user writes "125" to the selected text field and hits tab key
+        And the user hits escape
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WK4ALL1_ARRAY_NBLIG"
 
-    #Lines
-    Scenario Outline: 05010503-03 Add Lines
+    Scenario Outline: 003.Linhas
         Given the user selects editable table row number: <LIN>
         And the user selects last fixed cell with X3 field name: "WK4ALL1_ITMREF"
         And the user adds the text <ITMREF> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_GROPRI"
-        # #And the user waits 1 seconds
         And the user adds the text <GROPRI> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
-        # #And the user waits 1 seconds
-        And the user adds the text <XQCSTICMS> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCODBF"
-        And the user adds the text <XQCODBF> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
+        And the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTIS"
+        And the user adds the text <XQCSTIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCCTIS"
+        And the user adds the text <XQCCTIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTCBS"
+        And the user adds the text <XQCSTCBS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCCTCBS"
+        And the user adds the text <XQCCTCBS> in selected cell
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCSTICMS | XQCODBF    |
-            | 1   | "BMS001" | "14" | "98.54" | "70"      | "SP099090" |
-            | 2   | "BMS002" | "16" | "98.52" | "70"      | "SP099090" |
+            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQCSTIS | XQCCTIS  | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS001" | "1" | "900.00" | "6110" | "000"   | "000001" | "000"    | "000001" |
 
-    Scenario: 05010503-04 Create
-        #Create
+    Scenario: 004. Criar SDH, Transmitir e Validar os Impostos
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-
-    Scenario: 05010503-05 Resume - Check Calculated Values
-        Given the user clicks the "Tax Summary" tab selected by title
-        When the user selects the text field with name: "FCP-ST Calc. base"
-        And the value of the selected text field is "4,495.85"
-        And the user selects the text field with name: "ICMS FCP-ST value"
-        And the value of the selected text field is "89.92"
-        And the user clicks the "SEFAZ" action button on the header drop down
+        Given the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         And the user selects the text field with X3 field name: "WK4ALLXQ3_NFESTATUS"
         And the value of the selected text field is "Authorized invoice"
-        And the user clicks the "Validation" button in the header
+        Then the user clicks the "Validation" button in the header
+        And a dialog box appears
         And the user clicks the "Ok" opinion in the alert box
+        And the user clicks the "Tax Summary" tab selected by title
+        Then the user selects the text field with name: "Valor IS"
+        And the value of the selected text field is "9.00"
+        And the user selects the text field with name: "Valor CBS"
+        And the value of the selected text field is "8.10"
+        And the user selects the text field with name: "Valor IBS Mun."
+        And the value of the selected text field is ""
+        And the user selects the text field with name: "Valor IBS Est."
+        And the value of the selected text field is "0.90"
         And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDHNUM"
-        Then the user clicks the Close page action icon on the header panel
+        And the user clicks the "Close page" main action button on the right panel
 
-    Scenario: 05010503-06 Create Return
+    Scenario: 005. GESSRH
         Given the user opens the "GESSRH" function
         And the user selects the data table in the popup
         And the user selects cell with text: "ALL     Full entry" and column header: ""
         And the user clicks on the selected cell
         Then the "Customer return ALL : Full entry" screen is displayed
-        #Header
         When the user clicks the "New" main action button on the right panel
         And the user selects the text field with X3 field name: "WK6ALLXQ0_STOFCY"
-        And the user writes "BR050" to the selected text field and hits tab key
+        And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WK6ALLXQ0_BPCORD"
-        And the user writes "BR150" to the selected text field and hits tab key
+        And the user writes "BR016" to the selected text field and hits tab key
+
+    Scenario: 006. Picking GESSDH
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITSRH_CRISDHNUM"
         And the user writes the stored text with key "SDHNUM" in the selected text field and hits tab key
         And the user clicks the "OK" main action button on the right panel
-        #Picking the order / All items
         And the user clicks the "Delivery selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "SDHNUM" and with the text containing "BR050" of the picking list panel
+        And the user selects the item with the stored text with key "SDHNUM" and with the text containing "BR016" of the picking list panel
         And the user checks the selected picking list panel item
-
         And the user selects the text field with X3 field name: "WK6ALLXQ3_CODOPF"
-        And the user writes "46" to the selected text field and hits tab key
+        And the user writes "140" to the selected text field and hits tab key
         And the user selects the date field with X3 field name: "WK6ALLXQ3_DTEMI"
         And the user writes today to the selected date field
         And the user selects the date field with X3 field name: "WK6ALLXQ3_DTSAIENT"
         And the user writes today to the selected date field
-
-        And the user clicks the "Lines" tab selected by title
+        And the user clicks the "Lines (tax)" tab selected by title
         And the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"
         Then the user selects first row of the selected data table
 
-
-    #Lines
-    Scenario Outline: 05010503-07 Add Lines
+    Scenario Outline: 007. Add Lines
         Given the user selects cell with X3 field name: "XQSRH3_CFOP" of selected row
         And the user adds the text <CFOP> in selected cell
         And the user selects cell with X3 field name: "XQSRH3_VARCFOP" of selected row
@@ -132,8 +126,6 @@ Feature:05010503-CST70
         And the user adds the text <OICMS> in selected cell
         And the user selects cell with X3 field name: "XQSRH3_CSTICMS" of selected row
         And the user adds the text <CSTICMS> in selected cell
-        And the user selects cell with X3 field name: "XQSRH3_XQCENQ" of selected row
-        And the user adds the text <XQCENQ> in selected cell
         And the user selects cell with X3 field name: "XQSRH3_CSTIPI" of selected row
         And the user adds the text <CSTIPI> in selected cell
         And the user selects cell with X3 field name: "XQSRH3_CSTPIS" of selected row
@@ -144,39 +136,23 @@ Feature:05010503-CST70
         Then the user selects table row that is below the currently selected row
 
         Examples:
-            | CFOP   | VARCFOP | OICMS | CSTICMS | XQCENQ | CSTIPI | CSTPIS | CSTCOF |
-            | "2414" | "5"     | "0"   | "70"    | "999"  | "01"   | "01"   | "01"   |
-            | "2414" | "5"     | "0"   | "70"    | "999"  | "01"   | "01"   | "01"   |
+            | CFOP   | VARCFOP | OICMS | CSTICMS | CSTIPI | CSTPIS | CSTCOF |
+            | "2901" | ""      | "0"   | "90"    | "99"   | "99"   | "99"   |
 
-    Scenario: 05010503-08 Return Creation
-        #Create
+    Scenario: 008. Return Creation
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
-        And the user clicks the "Lines" tab selected by title
-        And the user selects the fixed data table for x3 field name: "XQSRH3_ARRAY_PRODLIG"
-        Then the user selects first row of the selected data table
+        And the user clicks the "NF-e Summary" tab selected by title
+        Then the user selects the text field with name: "Valor IS"
+        And the value of the selected text field is "9.00"
+        And the user selects the text field with name: "Valor CBS"
+        And the value of the selected text field is "8.10"
+        And the user selects the text field with name: "Valor IBS Mun."
+        And the value of the selected text field is ""
+        And the user selects the text field with name: "Valor IBS Est."
+        And the value of the selected text field is "0.90"
 
-    Scenario Outline: 05010503-09 Add Lines
-        Given the user selects cell with X3 field name: "XQSRH3_BCFCPST" of selected row
-        And the value of the selected cell contains <BCFCPST>
-        And the user selects cell with X3 field name: "XQSRH3_VLICMSFCPST" of selected row
-        And the value of the selected cell contains <VLICMSFCPST>
-        And the user selects cell with X3 field name: "XQSRH3_ALIQFCPST" of selected row
-        And the value of the selected cell contains <ALIQFCPST>
-        And the user hits enter
-        Then the user selects table row that is below the currently selected row
-
-        Examples:
-            | BCFCPST    | VLICMSFCPST | ALIQFCPST |
-            | "2,098.29" | "41.97"     | "2.00"    |
-            | "2,397.56" | "47.95"     | "2.00"    |
-
-    Scenario: 05010503-10 Resume - Check Calculated Values
-        Given the user clicks the "NF-e Summary" tab selected by title
-        When the user selects the text field with X3 field name: "WK6ALLXQ_TOTBASEFCPST"
-        And the value of the selected text field is "4,495.85"
-        And the user selects the text field with X3 field name: "WK6ALLXQ_TOTICMSFCPST"
-        And the value of the selected text field is "89.92"
+    Scenario: 009. Transmissão SEFAZ SRH
         And the user clicks the "SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
@@ -189,7 +165,31 @@ Feature:05010503-CST70
         And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        Then the user clicks the Close page action icon on the header panel
+        And the user selects the text field with X3 field name: "WK6ALLXQ0_SRHNUM"
+        And the user stores the value of the selected text field with the key: "SRHNUM"
+        And the user clicks the "Close page" main action button on the right panel
 
-        #Logout
-        Then the user logs-out from the system
+    Scenario: 010. Validar Tags no XML
+        Given the user opens the "XQCONSNFE" function
+        And the "NF-e Monitoring" screen is displayed
+        When the user selects the text field with X3 field name: "XQNFEMNT0_NUMDOC"
+        And the user writes the stored text with key "SRHNUM" in the selected text field and hits tab key
+        And the user clicks the "Search" button in the header
+        And the user waits 3 seconds
+        Then the user selects the data table with x3 field name: "XQNFEMNT1_ARRAY_NBLIG"
+        And the user selects first row of the selected data table
+        Given the user opens "NF-e log" function on toolbox of the selected row
+        When the user selects the data table with x3 field name: "XQNFELOG1_ARRAY_NBLIG"
+        #And the user selects row by multiple criteria that has the text "NFe Authorization" in column with header: "Event" and the text "104" in column with header: "SEFAZ Ret. Code"
+        Then the user selects row that has the text "104" in column with header: "SEFAZ Ret. Code"
+        And the user selects cell with header: "Event" of selected row
+        And the user clicks on the selected cell
+        And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
+        And the value of the selected text field contains "<vIS>9.00</vIS>"
+        And the value of the selected text field contains "<vIBSUF>0.90</vIBSUF>"
+        And the value of the selected text field contains "<vCBS>8.10</vCBS>"
+
+    Scenario: 011. Logout
+        Then the user clicks the Close page action icon on the header panel
+        And the user clicks the Close page action icon on the header panel
+        And the user logs-out from the system

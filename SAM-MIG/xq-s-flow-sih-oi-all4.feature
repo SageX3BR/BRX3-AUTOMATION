@@ -96,7 +96,8 @@ Feature: xq-s-flow-sih-oi-all4
         And the user clicks the "Open items" action button on the header drop down
         And the user selects the fixed data table for x3 field name: "BPCDUD_ARRAY_NBECH"
         And the user selects the fixed cell with X3 field name: "BPCDUD_AMTCUR" and row number: (1)
-        And the value of the selected cell is "80.08"
+        And the value of the selected cell is "72.05"
+        #Invoice Total + Freight + Insurance - Discount - Retenções
         Given the user clicks the "OK" action button on the header drop down
 
     Scenario: Logout

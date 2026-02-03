@@ -86,7 +86,7 @@ Feature: ATP-125
         And the user writes the stored text with key "ALEATORIO" in the selected text field and hits tab key
         And the user selects the text field with name: "Serial number"
         And the user writes "1" to the selected text field and hits tab key
-        And the user selects the text field with X3 field name: "WE6ALLXQ_CHAVENFE"
+        And the user selects the text field with X3 field name: "WE6ALLXQ3_CHAVENFE"
         And the user writes the stored text with key "CHAVE" in the selected text field and hits tab key
         And the user clicks the "Lines" tab selected by title
         Then the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"

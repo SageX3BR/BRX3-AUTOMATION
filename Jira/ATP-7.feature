@@ -46,11 +46,14 @@ Feature: ATP-7
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQSTISS"
         And the user adds the text <XQSTISS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQEXISS"
-        Then the user adds the text <XQEXISS> in selected cell and hits enter key
+        Then the user adds the text <XQEXISS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODINDOP"
+        Then the user adds the text <XQCODINDOP> in selected cell and hits enter key
+
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI    | XQSTISS | XQEXISS |
-            | 1   | "SER017" | "1" | "2000.00" | "1"     | "1"     |
+            | LIN | ITMREF   | QTY | GROPRI    | XQSTISS | XQEXISS | XQCODINDOP |
+            | 1   | "SER017" | "1" | "2000.00" | "1"     | "1"     | "100301"   |
 
     Scenario: 3. Create
         Given the user clicks the "Create" main action button on the right panel
@@ -62,16 +65,20 @@ Feature: ATP-7
         And the value of the selected text field is "33.00"
         And the user selects the text field with name: "COFINS value"
         And the value of the selected text field is "152.00"
+        And the user selects the text field with name: "PIS RF value"
+        And the value of the selected text field is "13.00"
+        And the user selects the text field with name: "COFINS RF value"
+        And the value of the selected text field is "60.00"
         And the user selects the text field with name: "CSLL value"
-        And the value of the selected text field is "200.00"
+        And the value of the selected text field is "20.00"
         And the user selects the text field with name: "IRRF value"
-        And the value of the selected text field is "200.00"
+        And the value of the selected text field is "300.00"
         And the user selects the text field with name: "IRPJ value"
-        And the value of the selected text field is "33.00"
+        And the value of the selected text field is "200.00"
         And the user selects the text field with name: "INSS value"
         And the value of the selected text field is "100.00"
         And the user selects the text field with name: "ISS RF value"
-        And the value of the selected text field is "100.00"
+        And the value of the selected text field is "58.00"
 
     Scenario: 4. Transmissão NFS-e
         Given the user clicks the "Transmit RPS" action button on the header drop down

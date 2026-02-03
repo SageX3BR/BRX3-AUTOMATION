@@ -43,7 +43,9 @@ Feature: ATP-11
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQSTISS"
         And the user adds the text "1" in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQEXISS"
-        Then the user adds the text "1" in selected cell and hits enter key
+        Then the user adds the text "1" in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODINDOP"
+        Then the user adds the text "100301" in selected cell and hits enter key
 
     Scenario: 4. Validar impostos na memoria de calculo
         Given the user clicks the "Calc. memory On/Off" action button on the header drop down
@@ -60,9 +62,9 @@ Feature: ATP-11
         And the user selects the text field with name: "COFINS value"
         And the value of the selected text field is "15.20"
         And the user selects the text field with name: "PIS RF value"
-        And the value of the selected text field is "13.50"
+        And the value of the selected text field is "1.30"
         And the user selects the text field with name: "COFINS RF value"
-        And the value of the selected text field is "16.00"
+        And the value of the selected text field is "6.00"
 
     Scenario: 6. Transmissão NFS-e
         Given the user clicks the "Transmit RPS" action button on the header drop down

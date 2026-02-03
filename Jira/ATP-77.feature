@@ -121,7 +121,7 @@ Feature: ATP-77
         And the user writes "[F:XQSRH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        And the user selects the text field with X3 field name: "SRS0_SRHNUM"
+        And the user selects the text field with X3 field name: "WK8ALLXQ0_SRHNUM"
         And the user stores the value of the selected text field with the key: "SRS_NUM"
 
     Scenario: 8.GESXQSADD Creation
@@ -178,7 +178,6 @@ Feature: ATP-77
         And the user writes "[F:XQSADI]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
-        Then the user clicks the "Close page" main action button on the right panel
 
     Scenario: Logout
         And the user clicks the Close page action icon on the header panel

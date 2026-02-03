@@ -10,7 +10,8 @@
 # - Created by : Gustavo Albanus
 # - Created date : 05/02/2022
 # - Updated by : Fausto A Neto
-# - Updated date : 27/10/2022
+# - Updated date : 29/07/2025
+# - Description : Comentada a linha 132, alert box não está sendo exibida no processo
 # - Status : Automated
 ###########################################################################
 
@@ -128,7 +129,7 @@ Feature: xq-gesxqadd-ipi-pis-cofins
         And the user writes a generated date in the selected date field using the value "T+1"
         And the user clicks the "Create" main action button on the right panel
         Given the user clicks the "SEFAZ" action button on the header drop down
-        Then the user clicks the "No" opinion in the alert box
+        #Then the user clicks the "No" opinion in the alert box
         When a log panel appears
         And the user clicks the "Close page" main action button on the right panel
         #Verificar status da nota (6 = Autorizada)

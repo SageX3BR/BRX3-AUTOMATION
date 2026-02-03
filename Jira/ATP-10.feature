@@ -45,14 +45,17 @@ Feature: ATP-10
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQSTISS"
         And the user adds the text "1" in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQEXISS"
-        Then the user adds the text "1" in selected cell and hits enter key
+        Then the user adds the text "1" in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODINDOP"
+        Then the user adds the text "100301" in selected cell and hits enter key
         And the user clicks the "Create" main action button on the right panel
         # Validação da Sugestão
         And the user clicks the "Legal data" action button on the header drop down
-        Then the user selects the text field with X3 field name: "XQLDATANFSE_MUNPRESTDES"
-        And the value of the selected text field is "São Paulo"
+        Then the user selects the text field with X3 field name: "XQLDATANFSE_LOCPRESTSERV"
+        And the value of the selected text field is "SP"
         And the user clicks the Close page action icon on the header panel
         Then the user clicks the "Cancel" main action button on the right panel
+        And the user waits 2 seconds
 
     Scenario: 4. Transmissão NFS-e
         Given the user clicks the "Transmit RPS" action button on the header drop down
@@ -66,4 +69,3 @@ Feature: ATP-10
     Scenario: 5. Logout
         And the user clicks the Close page action icon on the header panel
         And the user logs-out from the system
-

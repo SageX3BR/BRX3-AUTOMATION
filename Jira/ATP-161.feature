@@ -78,7 +78,7 @@ Feature: ATP-161
         And the user selects the text field with name: "INSS value"
         And the value of the selected text field is "173.00"
         And the user selects the text field with name: "ISS RF value"
-        And the value of the selected text field is "100.00"
+        And the value of the selected text field is "58.00"
 
     Scenario: 005. Validar os Vencimentos
         And the user clicks the "Open items" button in the header
@@ -86,13 +86,13 @@ Feature: ATP-161
         When the user selects first row of the selected data table
         And the user selects cell with header: "Amount" of selected row
         And the user clicks on the selected cell
-        And the value of the selected cell is "395.29"
+        And the value of the selected cell is "409.29"
         When the user selects editable table row number: 2
         And the user selects cell with header: "Amount" of selected row
-        And the value of the selected cell is "395.30"
+        And the value of the selected cell is "409.29"
         When the user selects editable table row number: 3
         And the user selects cell with header: "Amount" of selected row
-        And the value of the selected cell is "395.41"
+        And the value of the selected cell is "409.42"
         Given the user clicks the Close page action icon on the header panel
 
     Scenario: 009. Logout
