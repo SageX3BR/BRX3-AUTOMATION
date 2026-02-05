@@ -6,8 +6,8 @@
 # - Jira: X3DEV-4551
 # - Created by : Gustavo Albanus
 # - Created date : 08/02/2024
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 04/02/2026
 # - Status : Done
 ###########################################################################
 
@@ -48,14 +48,16 @@ Feature: ATP-152
         And the user adds the text <XQCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQVARCFOP"
         And the user adds the text <XQVARCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTICMS"
+        And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCODBF"
         And the user adds the text <XQCODBF> in selected cell
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQVARCFOP | XQCODBF    |
-            | 1   | "BMS110" | "1" | "100.00" | "6102" | "3"       | "SP000202" |
-            | 2   | "BMS111" | "1" | "200.00" | "6102" | "3"       | "SP000206" |
+            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQVARCFOP | XQCSTICMS | XQCODBF    |
+            | 1   | "BMS110" | "1" | "100.00" | "6102" | "3"       | "90"      | "SP099090" |
+            | 2   | "BMS111" | "1" | "200.00" | "6102" | "3"       | "90"      | "SP099090" |
 
     Scenario: 3. Document Creation
         When the user clicks the "Create" main action button on the right panel
@@ -89,8 +91,7 @@ Feature: ATP-152
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         #Verificando os valores dos impostos editados manualmente no Scenario outline 6.
-        And the value of the selected text field contains "<cBenef>SP000202</cBenef>"
-        And the value of the selected text field contains "<cBenef>SP000206</cBenef>"
+        And the value of the selected text field contains "<cBenef>SP099090</cBenef>"
         Then the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
 
