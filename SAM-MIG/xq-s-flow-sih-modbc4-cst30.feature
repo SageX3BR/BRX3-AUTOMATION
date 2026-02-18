@@ -104,9 +104,9 @@ Feature: xq-s-flow-sih-modbc4-cst30
         # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF |
-            | 1   | "BMS001" | "12" | "3.69"  | "6101" | "4"       | "4"       | "0"     | "30"      | ""      |
-            | 2   | "BMS001" | "29" | "12.96" | "6101" | "4"       | "4"       | "0"     | "30"      | ""      |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF    |
+            | 1   | "BMS001" | "12" | "3.69"  | "6101" | "4"       | "4"       | "0"     | "30"      | "SP099090" |
+            | 2   | "BMS001" | "29" | "12.96" | "6101" | "4"       | "4"       | "0"     | "30"      | "SP099090" |
 
     Scenario: Create document
 
