@@ -52,10 +52,12 @@ Feature: ATP-95
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK2ALL4_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell and hits enter key
+        And the user adds the text <XQCSTICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK2ALL4_XQCODBF"
+        And the user adds the text <XQCODBF> in selected cell and hits enter key
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI    | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
-            | 1   | "BMS001" | "1" | "1500.00" | "6102" | ""        | "0"     | "51"      |
+            | LIN | ITMREF   | QTY | GROPRI    | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF    |
+            | 1   | "BMS001" | "1" | "1500.00" | "6102" | ""        | "0"     | "51"      | "SP099090" |
 
 
     Scenario: 3. Create SOH and Validation of Taxes
