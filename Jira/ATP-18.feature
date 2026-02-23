@@ -6,8 +6,8 @@
 # - Jira: X3DEV-256
 # - Created by : Gustavo Albanus
 # - Created date : 13/05/2022
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 20/02/2026
 # - Status : Done
 ###########################################################################
 
@@ -54,10 +54,14 @@ Feature: ATP-18
         And the user adds the text <XQCSTICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK5ALL4_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCSTCBS"
+        And the user adds the text <XQCSTCBS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK5ALL4_XQCCTCBS"
+        And the user adds the text <XQCCTCBS> in selected cell
         And the user hits enter
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "1" | "0.25" | "6102" | ""        | "0"     | "90"      | "999"  |
+            | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCENQ | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS001" | "1" | "0.25" | "6102" | "12"      | "0"     | "00"      | "999"  | "410"    | "410999" |
 
     Scenario: 3. Document Creation
         When the user clicks the "Create" main action button on the right panel
@@ -79,7 +83,7 @@ Feature: ATP-18
         And the user selects the text field with name: "PIS value"
         And the value of the selected text field is ""
         And the user selects the text field with name: "COFINS value"
-        And the value of the selected text field is "0.01"
+        And the value of the selected text field is "0.02"
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: 6. Logout

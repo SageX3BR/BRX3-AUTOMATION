@@ -136,7 +136,7 @@ Feature: ATP-94
         And the user selects the text field with X3 field name: "WE8ALLXQ3_SERNFE"
         And the user writes "1" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE8ALLXQ3_CHAVENFE"
-        And the user writes "35250935074116000150550080000000111445631276" to the selected text field and hits tab key
+        And the user writes "35251244021095000103550010005873681633831258" to the selected text field and hits tab key
 
     Scenario: 11. Management - PIH CTE
         Given the user clicks the "Management" tab selected by title
@@ -176,7 +176,8 @@ Feature: ATP-94
 
     Scenario: 13. Edit Line CTE
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        When the user selects editable table row number: 2
+        #When the user selects editable table row number: 2
+        And the user selects last row of the selected data table
         And the user opens "Popup view" function on toolbox of the selected row
         And the user selects the drop down list with name: "Source"
         And the user clicks on "Miscellaneous" option of the selected drop down list
