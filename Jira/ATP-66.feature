@@ -121,7 +121,7 @@ Feature: ATP-66
         When a confirmation dialog appears with the message "Record has been created"
 
     Scenario: 10.Transmission
-        Given the user clicks the "SEFAZ" action button on the header drop down
+        Given the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears
         And the user clicks the "Close page" main action button on the right panel
     #Verificar status da nota (6 = Autorizada)

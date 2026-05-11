@@ -56,7 +56,7 @@ Feature: xq-p-flow-pih-imp02
         And the user writes "111" to the selected text field and hits tab key
         And the user selects the drop down list with name: "Unique DI"
         And the user clicks on "Yes" option of the selected drop down list
-        And the user selects the text field with name: "DI Number"
+        And the user selects the text field with name: "DI/DUIMP Number"
         And the user writes "1234567890" to the selected text field and hits tab key
         And the user selects the date field with name: "Registry date"
         And the user writes today to the selected date field
