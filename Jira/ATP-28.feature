@@ -72,7 +72,7 @@ Feature: ATP-28
     Scenario: 4.Invoice
         Then the user clicks the "Invoice" button in the header
         #Send to RPS and verify if authorized
-        Then the user clicks the "Transmit" action button on the header drop down
+        Then the user clicks the "Transmit RPS" action button on the header drop down
         ##And the user waits 30 seconds
         Then a log panel appears
         And the user selects the main log panel of the page
