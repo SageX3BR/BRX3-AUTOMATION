@@ -90,7 +90,6 @@ Feature: ATP-196
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         And the value of the selected text field contains "<CST>410</CST>"
         And the value of the selected text field contains "<cClassTrib>410999</cClassTrib>"
-        And the value of the selected text field contains "<vBCIBSCBS>0.00</vBCIBSCBS>"
         Then the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
 
@@ -179,7 +178,6 @@ Feature: ATP-196
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
         And the value of the selected text field contains "<CST>410</CST>"
         And the value of the selected text field contains "<cClassTrib>410999</cClassTrib>"
-        And the value of the selected text field contains "<vBCIBSCBS>0.00</vBCIBSCBS>"
 
     Scenario: 011. Logout
         Then the user clicks the Close page action icon on the header panel

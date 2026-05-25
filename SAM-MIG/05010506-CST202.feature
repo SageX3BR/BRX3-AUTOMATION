@@ -168,9 +168,9 @@ Feature:05010506-CST202
         Then the user selects table row that is below the currently selected row
 
         Examples:
-            | BCFCPST    | VLICMSFCPST | ALIQFCPST |
-            | "2,098.29" | "41.97"     | "2.00"    |
-            | "2,397.56" | "47.95"     | "2.00"    |
+            | BCFCPST   | VLICMSFCPST | ALIQFCPST |
+            | "2098.29" | "41.97"     | "2.00"    |
+            | "2397.56" | "47.95"     | "2.00"    |
 
     Scenario: 05010506-10 Resume - Check Calculated Values
         Given the user clicks the "NF-e Summary" tab selected by title
