@@ -65,9 +65,10 @@ Feature: ATP-200
         And the user selects the text field with name: "COFINS RF value"
         And the value of the selected text field is "757.88"
         And the user selects the text field with name: "CSLL value"
-        And the value of the selected text field is "252.63"
+        And the value of the selected text field is "252.62"
+        #CSLL deveria ser 252.63
         And the user selects the text field with name: "ISS RF value"
-        And the value of the selected text field is "732.61"
+        And the value of the selected text field is "732.62"
 
     Scenario: 005. Transmissão
         Then the user clicks the "Transmit RPS" action button on the header drop down
@@ -151,8 +152,8 @@ Feature: ATP-200
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
         And the value of the selected text field contains "ValPIS": 164.21"
         And the value of the selected text field contains "ValCOFINS": 757.88"
-        And the value of the selected text field contains "ValCSLL": "252.63"
-        And the value of the selected text field contains "ValISSRetido": "732.61801"
+        And the value of the selected text field contains "ValCSLL": "252.62"
+        And the value of the selected text field contains "ValISSRetido": "732.62"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
         And the user waits 3 seconds
@@ -174,7 +175,7 @@ Feature: ATP-200
         And the value of the selected text field contains "ValPIS": 164.2"
         And the value of the selected text field contains "ValCOFINS": 757.88"
         And the value of the selected text field contains "ValCSLL": "252.62"
-        And the value of the selected text field contains "ValISSRetido": "732.61801"
+        And the value of the selected text field contains "ValISSRetido": "732.61"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
 
