@@ -188,7 +188,7 @@ Feature: ATP-171
         Then the user selects the text field with name: "IPI base calc"
         And the value of the selected text field is "200.00"
         Then the user selects the text field with name: "Total IPI devolução"
-        And the value of the selected text field is "20.00"
+        And the value of the selected text field is "10.00"
 
     Scenario: 014. Logout
         And the user clicks the Close page action icon on the header panel

@@ -47,6 +47,9 @@ Feature:ATP-40
         Given the user clicks the "Management" tab selected by title
         When the user selects the text field with name: "Supplier doc no."
         And the user writes the stored text with key "DOCSUP029" in the selected text field and hits tab key
+        And the user selects the text field with name: "1099 box"
+        And the user writes "8" to the selected text field and hits tab key
+        And the user hits escape
 
     Scenario Outline: 03. Add Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"

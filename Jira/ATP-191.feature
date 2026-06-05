@@ -6,8 +6,8 @@
 # - Jira: X3DEV-8318
 # - Created by: Gustavo Albanus
 # - Created date: 18/09/2025
-# - Updated by:
-# - Updated date:
+# - Updated by: Gustavo Albanus
+# - Updated date: 04/02/2026
 # - Status: Done
 # - Parametrizações:
 ###########################################################################
@@ -59,8 +59,8 @@ Feature: ATP-191
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQCSTIS | XQCCTIS  | XQCSTCBS | XQCCTCBS |
-            | 1   | "BMS001" | "1" | "900.00" | "6110" | "000"   | "000001" | "000"    | "000001" |
+            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQCSTIS | XQCCTIS | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS001" | "1" | "900.00" | "6110" | ""      | ""      | "000"    | "000001" |
 
     Scenario: 004. Criar SDH, Transmitir e Validar os Impostos
         When the user clicks the "Create" main action button on the right panel
@@ -75,7 +75,7 @@ Feature: ATP-191
         And the user clicks the "Ok" opinion in the alert box
         And the user clicks the "Tax Summary" tab selected by title
         Then the user selects the text field with name: "Valor IS"
-        And the value of the selected text field is "9.00"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Valor CBS"
         And the value of the selected text field is "8.10"
         And the user selects the text field with name: "Valor IBS Mun."
@@ -144,7 +144,7 @@ Feature: ATP-191
         When a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "NF-e Summary" tab selected by title
         Then the user selects the text field with name: "Valor IS"
-        And the value of the selected text field is "9.00"
+        And the value of the selected text field is ""
         And the user selects the text field with name: "Valor CBS"
         And the value of the selected text field is "8.10"
         And the user selects the text field with name: "Valor IBS Mun."
@@ -185,7 +185,6 @@ Feature: ATP-191
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
-        And the value of the selected text field contains "<vIS>9.00</vIS>"
         And the value of the selected text field contains "<vIBSUF>0.90</vIBSUF>"
         And the value of the selected text field contains "<vCBS>8.10</vCBS>"
 

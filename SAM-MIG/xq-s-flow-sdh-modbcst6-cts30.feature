@@ -74,12 +74,14 @@ Feature: xq-s-flow-sdh-modbcst6-cts30
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
         And the user adds the text <XQOICMS> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
-        And the user adds the text <XQCSTICMS> in selected cell and hits enter key
+        And the user adds the text <XQCSTICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCODBF"
+        And the user adds the text <XQCODBF> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS |
-            | 1   | "BMS001" | "12" | "3.69"  | "6103" | "6"       | "0"     | "30"      |
-            | 2   | "BMS001" | "29" | "12.96" | "6103" | "6"       | "0"     | "30"      |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCFOP | XQVARCFOP | XQOICMS | XQCSTICMS | XQCODBF    |
+            | 1   | "BMS001" | "12" | "3.69"  | "6103" | "6"       | "0"     | "30"      | "SP099090" |
+            | 2   | "BMS001" | "29" | "12.96" | "6103" | "6"       | "0"     | "30"      | "SP099090" |
 
     Scenario: Create document
 

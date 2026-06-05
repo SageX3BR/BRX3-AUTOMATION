@@ -7,8 +7,8 @@
 # - Legislation: BR addon
 # - Created by : Jonatas Hille
 # - Created date : 01/06/2020
-# - Updated by : Jonatas Hille
-# - Updated date : 01/06/2020
+# - Updated by : Gustavo Albanus
+# - Updated date : 05/02/2026
 # - Status : Automated
 ###########################################################################
 
@@ -57,14 +57,16 @@ Feature:05010306-CST202
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCSTICMS"
         # #And the user waits 1 seconds
         And the user adds the text <XQCSTICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCODBF"
+        And the user adds the text <XQCODBF> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCENQ"
         And the user adds the text <XQCENQ> in selected cell
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI  | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "14" | "98.54" | "202"     | "301"  |
-            | 2   | "BMS002" | "16" | "98.52" | "202"     | "301"  |
+            | LIN | ITMREF   | QTY  | GROPRI  | XQCSTICMS | XQCODBF    | XQCENQ |
+            | 1   | "BMS001" | "14" | "98.54" | "202"     | "SP099090" | "301"  |
+            | 2   | "BMS002" | "16" | "98.52" | "202"     | "SP099090" | "301"  |
 
     Scenario: 05010306-04 Create
         #Create

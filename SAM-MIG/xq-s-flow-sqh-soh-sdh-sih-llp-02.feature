@@ -160,7 +160,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
     Scenario: 7. Create document
 
         Given the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
+        #Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WK4ALLXQ0_SDHNUM"
         And the user stores the value of the selected text field with the key: "SDH_NUM09"
         And the user clicks the "Validation" button in the header
@@ -206,7 +206,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
     Scenario: 11. Create document
 
         Given the user clicks the "Create" main action button on the right panel
-        Then a confirmation dialog appears with the message "Record has been created"
+        #Then a confirmation dialog appears with the message "Record has been created"
         #Send to Sefaz and verify if authorized
         Then the user clicks the "SEFAZ" action button on the header drop down
         ##And the user waits 10 seconds

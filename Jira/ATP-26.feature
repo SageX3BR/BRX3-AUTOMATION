@@ -6,8 +6,8 @@
 # - Legislation: BR addon
 # - Created by : Gustavo Albanus
 # - Created date : 02/06/2022
-# - Updated by :
-# - Updated date :
+# - Updated by : Gustavo Albanus
+# - Updated date : 05/02/2026
 # - Status : Done
 ###########################################################################
 
@@ -57,14 +57,21 @@ Feature: ATP-26
         And the user writes "SER019" to the selected text field and hits enter key
         And the user clicks the "Invoice" button in the header
 
-    Scenario: 3. GESSIH - Editar a Linha, Transmissão e Validação
+    Scenario Outline: 3. GESSIH - Editar a Linha
         Given the user clicks the "Lines" tab selected by title
         And the user selects the fixed data table for x3 field name: "WK5ALL4_ARRAY_NBLIG"
         And the user selects first row of the selected data table
-        Then the user opens "Popup view" function on toolbox of the selected row
-        And the user selects the text field with name: "Cód. ind. operação"
-        And the user writes "100301" to the selected text field and hits tab key
-        And the user clicks the Close page action icon on the header panel
+        Given the user selects cell with X3 field name: "WK5ALL4_XQCODINDOP" of selected row
+        And the user adds the text <XQCODINDOP> in selected cell
+        Given the user selects cell with X3 field name: "WK5ALL4_XQSTISS" of selected row
+        And the user adds the text <XQSTISS> in selected cell
+        And the user hits enter
+
+        Examples:
+            | XQSTISS | XQCODINDOP |
+            | "1"     | "100301"   |
+
+    Scenario: 4. Transmissão e Validação
         Given the user clicks the "Save" main action button on the right panel
         When the user clicks the "Transmit RPS" action button on the header drop down
         And a log panel appears
@@ -77,5 +84,5 @@ Feature: ATP-26
         #Adicionado para fechar a função de contratos antes de sair
         And the user clicks the Close page action icon on the header panel
 
-    Scenario: 4. Logout
+    Scenario: 5. Logout
         And the user logs-out from the system
