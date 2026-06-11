@@ -93,6 +93,7 @@ Feature: ATP-51
         Given the user hits enter
         When the user clicks the "Save" main action button on the right panel
         Then the user clicks the "Yes" option in the alert box
+        And the user waits 2 seconds
 
         Given the user selects editable table row number: 2
         Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
@@ -118,6 +119,7 @@ Feature: ATP-51
         Given the user hits enter
         When the user clicks the "Save" main action button on the right panel
         Then the user clicks the "Yes" option in the alert box
+        And the user waits 2 seconds
 
     Scenario: 4. Create / Addition ICMS base
 

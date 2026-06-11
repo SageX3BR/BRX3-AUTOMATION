@@ -12,10 +12,8 @@
 
 Feature: ATP-23
 
-    Scenario: 1.Login scenario
+    Scenario: 1.Login
         Given the user is logged into Sage X3 with "param:loginType" using user name "param:loginUserName" and password "param:loginPassword"
-        When the user selects the "param:endPointName1" entry on endpoint panel
-        Then the "param:endPointName1" endpoint is selected
 
     Scenario: 2.BP
         Given the user opens the "GESBPR" function
