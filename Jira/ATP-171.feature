@@ -154,6 +154,7 @@ Feature: ATP-171
         Given the user selects row that has the text <LIN> in column with X3 field name: "WE7ALLXQ0_PTDLIN"
         And the user selects cell with X3 field name: "WE7ALLXQ0_XQCFOP" of selected row
         And the user adds the text <XQCFOP> in selected cell and hits enter key
+        And the user waits 5 seconds
         Examples:
             | LIN    | XQCFOP |
             | "1000" | "6201" |
