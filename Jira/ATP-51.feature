@@ -89,7 +89,7 @@ Feature: ATP-51
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text "01" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-        And the user adds the text "999" in selected cell
+        And the user adds the text "999" in selected cell and hits tab key
         Given the user hits enter
         When the user clicks the "Save" main action button on the right panel
         Then the user clicks the "Yes" option in the alert box
@@ -115,7 +115,7 @@ Feature: ATP-51
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text "01" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-        And the user adds the text "999" in selected cell
+        And the user adds the text "999" in selected cell and hits tab key
         Given the user hits enter
         When the user clicks the "Save" main action button on the right panel
         Then the user clicks the "Yes" option in the alert box

@@ -92,7 +92,8 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text "01" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-        Then the user adds the text "999" in selected cell and hits enter key
+        Then the user adds the text "999" in selected cell and hits tab key
+        And the user hits enter
 
         Given the user selects editable table row number: 2
         Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
@@ -118,7 +119,8 @@ Feature:xq-p-flow-pnh-CFOP-suggestion
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
         And the user adds the text "01" in selected cell
         And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-        Then the user adds the text "999" in selected cell and hits enter key
+        Then the user adds the text "999" in selected cell and hits tab key
+        And the user hits enter
 
     #--------------------------------------------------------------------------------
     #CFOP suggestion checking

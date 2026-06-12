@@ -91,8 +91,8 @@ Feature: ATP-148
         And the user clicks on the selected cell
         And the user opens "NFS-e Log" function on toolbox of the selected row
         And the user selects the data table of section: "NFS-e Log"
-        #And the user selects first row of the selected data table
-        And the user selects editable table row number: 7
+        And the user selects first row of the selected data table
+        #And the user selects editable table row number: 7
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
         And the value of the selected text field contains "ValISS": "5440.59"
