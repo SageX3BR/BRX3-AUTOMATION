@@ -47,16 +47,19 @@ Feature: ATP-177
         And the user selects last editable cell with X3 field name: "WK4ALL1_QTY"
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_GROPRI"
-        And the user adds the text <GROPRI> in selected cell
+        And the user adds the text <GROPRI> in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
+        And the user adds the text <XQCFOP> in selected cell and hits tab key
         And the user hits enter
+        And the user waits 2 seconds
 
         Examples:
-            | LIN | ITMREF   | QTY  | GROPRI    |
-            | 1   | "BMS001" | "1"  | "7.9885"  |
-            | 1   | "BMS001" | "3"  | "1.9171"  |
-            | 1   | "BMS001" | "5"  | "16.3231" |
-            | 1   | "BMS001" | "7"  | "9.5176"  |
-            | 1   | "BMS001" | "11" | "3.2977"  |
+            | LIN | ITMREF   | QTY  | GROPRI    | XQCFOP |
+            | 1   | "BMS001" | "1"  | "7.9885"  | "6102" |
+            | 1   | "BMS001" | "3"  | "1.9171"  | "6102" |
+            | 1   | "BMS001" | "5"  | "16.3231" | "6102" |
+            | 1   | "BMS001" | "7"  | "9.5176"  | "6102" |
+            | 1   | "BMS001" | "11" | "3.2977"  | "6102" |
 
     Scenario: 004. Create GESSDH and Validation of Taxes
         When the user clicks the "Create" main action button on the right panel
