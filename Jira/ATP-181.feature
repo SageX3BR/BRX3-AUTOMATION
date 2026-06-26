@@ -41,7 +41,9 @@ Feature: ATP-181
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
         And the user adds the text "2" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
-        And the user adds the text "7.9231" in selected cell
+        And the user adds the text "7.9231" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
+        And the user adds the text "2102" in selected cell
         And the user hits enter
 
         Given the user selects editable table row number: 2
@@ -50,7 +52,9 @@ Feature: ATP-181
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
         And the user adds the text "3" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
-        And the user adds the text "12.5393" in selected cell
+        And the user adds the text "12.5393" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
+        And the user adds the text "2102" in selected cell
         And the user hits enter
 
         Given the user selects editable table row number: 3
@@ -59,7 +63,9 @@ Feature: ATP-181
         And the user selects last editable cell with X3 field name: "WE6ALL1_QTYUOM"
         And the user adds the text "4" in selected cell and hits tab key
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
-        And the user adds the text "3.8126" in selected cell
+        And the user adds the text "3.8126" in selected cell and hits tab key
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
+        And the user adds the text "2102" in selected cell
         And the user hits enter
 
     Scenario: 004. Elementos de Faturação Frete + Desconto
@@ -78,6 +84,7 @@ Feature: ATP-181
 
     Scenario: 005. Validação Custos PTH
         #No Card ATP-181 do JIRA tem a lógica do que o X3 está considerando para composição do Custo Stock
+        And the user hits tab
         Given the user clicks the "Lines" tab selected by title
         Given the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
@@ -90,6 +97,7 @@ Feature: ATP-181
         Then the user selects cell with X3 field name: "WE6ALL1_LINAMTCPR" of selected row
         And the value of the selected cell is "20.1962"
 
+        And the user hits tab
         Given the user clicks the "Lines" tab selected by title
         Given the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
         Given the user selects editable table row number: 2
@@ -102,6 +110,7 @@ Feature: ATP-181
         Then the user selects cell with X3 field name: "WE6ALL1_LINAMTCPR" of selected row
         And the value of the selected cell is "47.9580"
 
+        And the user hits tab
         Given the user clicks the "Lines" tab selected by title
         Given the user selects the fixed data table for x3 field name: "WE6ALL1_ARRAY_NBLIG"
         Given the user selects editable table row number: 3
