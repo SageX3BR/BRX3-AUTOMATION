@@ -46,11 +46,21 @@ Feature: ATP-169
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_VAT1"
-        And the user adds the text <VAT1> in selected cell and hits enter key
+        And the user adds the text <VAT1> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
+        And the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIS"
+        And the user adds the text <XQCSTIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCCTIS"
+        And the user adds the text <XQCCTIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCBS"
+        And the user adds the text <XQCSTCBS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCCTCBS"
+        And the user adds the text <XQCCTCBS> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI   | VAT1  |
-            | 1   | "BMS001" | "1"    | "200.00" | "BRL" |
+            | LIN | ITMREF   | QTYUOM | GROPRI   | VAT1  | XQCFOP | XQCSTIS | XQCCTIS  | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS001" | "1"    | "200.00" | "BRL" | "2102" | "000"   | "000001" | "000"    | "000001" |
 
     Scenario: 5. Creation
         Given the user clicks the "Create" main action button on the right panel
