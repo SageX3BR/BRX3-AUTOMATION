@@ -64,8 +64,7 @@ Feature: ATP-142
         And the user selects the text field with name: "NF-e Access key"
         And the user stores the value of the selected text field with the key: "CHAVE01"
         And the user clicks the Close page action icon on the header panel
-        And the user clicks the Close page action icon on the header panel
-        And the user waits 5 seconds
+        And the user waits 3 seconds
 
     Scenario: 005. MODCPT
         Given the user opens the "MODCPT" function
@@ -77,9 +76,9 @@ Feature: ATP-142
         And the user writes the stored text with key "CONTADOR" in the selected text field
         And the user hits tab
         Given the user clicks the "Save" main action button on the right panel
-        And the user waits 5 seconds
+        And the user waits 2 seconds
         And the user clicks the Close page action icon on the header panel
-
+        And the user hits escape
 
     Scenario: 006. GESSIH
         Given the user opens the "GESSIH" function
@@ -124,7 +123,7 @@ Feature: ATP-142
         And the selected log panel includes the message "Rejeição: Duplicidade de NF-e com diferença na Chave de Acesso"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
-        And the user waits 5 seconds
+        And the user waits 2 seconds
 
     Scenario: 009. Logout
         And the user logs-out from the system
