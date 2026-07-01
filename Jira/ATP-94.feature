@@ -66,12 +66,20 @@ Feature: ATP-94
         And the user selects the text field with X3 field name: "WE8ALL3_NETPRI"
         And the user writes <NETPRI> to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE8ALL3_XQCFOP"
-        And the user writes <XQCFOP> to the selected text field and hits enter key
+        And the user writes <XQCFOP> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQCSTIS"
+        And the user writes <XQCSTIS> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQCCTIS"
+        And the user writes <XQCCTIS> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQCSTCBS"
+        And the user writes <XQCSTCBS> to the selected text field and hits tab key
+        And the user selects the text field with X3 field name: "WE8ALL3_XQCCTCBS"
+        And the user writes <XQCCTCBS> to the selected text field and hits enter key
         And the user clicks the Close page action icon on the header panel
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | NETPRI | XQCFOP |
-            | 1   | "BMS001" | "1"    | "1000" | "2102" |
+            | LIN | ITMREF   | QTYUOM | NETPRI | XQCFOP | XQCSTIS | XQCCTIS  | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS001" | "1"    | "1000" | "2102" | "000"   | "000001" | "000"    | "000001" |
 
     Scenario: 6. Control
         Given the user clicks the "Control" tab selected by title

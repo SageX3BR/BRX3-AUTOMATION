@@ -47,11 +47,19 @@ Feature: ATP-70
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQVARCFOP"
         Then the user adds the text <XQVARCFOP> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTICMS"
-        Then the user adds the text <XQCSTICMS> in selected cell and hits enter key
+        Then the user adds the text <XQCSTICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIS"
+        Then the user adds the text <XQCSTIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCCTIS"
+        Then the user adds the text <XQCCTIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCBS"
+        Then the user adds the text <XQCSTCBS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCCTCBS"
+        Then the user adds the text <XQCCTCBS> in selected cell and hits enter key
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI    | XQCFOP | XQVARCFOP | XQCSTICMS |
-            | 1   | "BMS001" | "10"   | "1000.00" | "2101" | "11"      | "10"      |
+            | LIN | ITMREF   | QTYUOM | GROPRI    | XQCFOP | XQVARCFOP | XQCSTICMS | XQCSTIS | XQCCTIS  | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS001" | "10"   | "1000.00" | "2101" | "11"      | "10"      | "000"   | "000001" | "000"    | "000001" |
 
 
     Scenario: 4. Creation

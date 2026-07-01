@@ -68,6 +68,7 @@ Feature: xq-p-crud-gespoh
     Scenario: 4.Update the order
         And the user selects the text field with name: "Internal reference"
         And the user writes "1" to the selected text field and hits tab key
+        And the user waits 2 seconds
         And the user clicks the "Save" main action button on the right panel
         And the user clicks the "Yes" opinion in the alert box
         Then a confirmation dialog appears with the message "Record has been modified"
