@@ -8,8 +8,8 @@
 # - Created by : Carla Cury
 # - Created date : 02/06/2022
 # - Updated by : Fausto A Neto
-# - Updated date : 16/09/2025
-# - Description: adicionado cenário de Outline para corrigir problema de navegação
+# - Updated date : 01/07/202
+# - Description: novos ajustes no cenário Outline para corrigir problema de navegação
 # - Status : IN PROGRESS
 ###########################################################################
 
@@ -35,91 +35,92 @@ Feature: ATP-51
         And the user hits tab
         And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
-    # Scenario Outline: 3. PNH lines
-    #     Given the user selects editable table row number: <LIN>
+    Scenario Outline: 3. PNH lines
+        Given the user selects editable table row number: <LIN>
+        Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
+        And the user adds the text <ITMREF> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
+        And the user adds the text <QTY> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
+        And the user adds the text <GROPRI> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
+        And the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
+        And the user adds the text <XQOICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
+        And the user adds the text <XQCSTICMS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
+        And the user adds the text <XQCSTIPI> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
+        And the user adds the text <XQCSTPIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
+        And the user adds the text <XQCSTCOF> in selected cell
+        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
+        And the user adds the text <XQCENQ> in selected cell
+        Then the user hits enter
+        Given the user clicks the "Save" main action button on the right panel
+        Then the user clicks the "Yes" option in the alert box
+        And the user waits 2 seconds
+        And the user hits tab
+        And the user hits enter
+
+        Examples:
+            | LIN | ITMREF   | QTY | GROPRI  | XQCFOP | XQOICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
+            | 1   | "BMS001" | "5" | "100"   | "6201" | "0"     | "60"      | "50"     | "01"     | "01"     | "999"  |
+            | 2   | "BMS001" | "5" | "95.89" | "6201" | "0"     | "60"      | "50"     | "01"     | "01"     | "999"  |
+
+    # Scenario: 3. PNH lines
+    #     Given the user selects editable table row number: 1
     #     Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
-    #     And the user adds the text <ITMREF> in selected cell
+    #     And the user adds the text "BMS001" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
-    #     And the user adds the text <QTY> in selected cell
+    #     And the user adds the text "5" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
-    #     And the user adds the text <GROPRI> in selected cell
+    #     And the user adds the text "100" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
-    #     And the user adds the text <XQCFOP> in selected cell
+    #     And the user adds the text "6201" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
-    #     And the user adds the text <XQOICMS> in selected cell
+    #     And the user adds the text "0" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
-    #     And the user adds the text <XQCSTICMS> in selected cell
+    #     And the user adds the text "60" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
-    #     And the user adds the text <XQCSTIPI> in selected cell
+    #     And the user adds the text "50" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
-    #     And the user adds the text <XQCSTPIS> in selected cell
+    #     And the user adds the text "01" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
-    #     And the user adds the text <XQCSTCOF> in selected cell
+    #     And the user adds the text "01" in selected cell
     #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-    #     And the user adds the text <XQCENQ> in selected cell
-    #     Then the user hits enter
-    #     Given the user clicks the "Save" main action button on the right panel
+    #     And the user adds the text "999" in selected cell and hits tab key
+    #     Given the user hits enter
+    #     When the user clicks the "Save" main action button on the right panel
     #     Then the user clicks the "Yes" option in the alert box
-    #     And the user waits (5) seconds
-    #     And the user hits tab
+    #     And the user waits 2 seconds
 
-    #     Examples:
-    #         | LIN | ITMREF   | QTY | GROPRI | XQCFOP | XQOICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
-    #         | 1   | "BMS001" | "5" | "100"  | "6201" | "0"     | "60"      | "50"     | "01"     | "01"     | "999"  |
-    #         | 2   | "BMS001" | "5" | "100"  | "6201" | "0"     | "60"      | "50"     | "01"     | "01"     | "999"  |
-
-    Scenario: 3. PNH lines
-        Given the user selects editable table row number: 1
-        Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
-        And the user adds the text "BMS001" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
-        And the user adds the text "5" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
-        And the user adds the text "100" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
-        And the user adds the text "6201" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
-        And the user adds the text "0" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
-        And the user adds the text "60" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
-        And the user adds the text "50" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
-        And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
-        And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-        And the user adds the text "999" in selected cell and hits tab key
-        Given the user hits enter
-        When the user clicks the "Save" main action button on the right panel
-        Then the user clicks the "Yes" option in the alert box
-        And the user waits 2 seconds
-
-        Given the user selects editable table row number: 2
-        Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
-        And the user adds the text "BMS001" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
-        And the user adds the text "6" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
-        And the user adds the text "95.89" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
-        And the user adds the text "6201" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
-        And the user adds the text "0" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
-        And the user adds the text "60" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
-        And the user adds the text "50" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
-        And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
-        And the user adds the text "01" in selected cell
-        And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
-        And the user adds the text "999" in selected cell and hits tab key
-        Given the user hits enter
-        When the user clicks the "Save" main action button on the right panel
-        Then the user clicks the "Yes" option in the alert box
-        And the user waits 2 seconds
+    #     Given the user selects editable table row number: 2
+    #     Then the user selects last fixed cell with X3 field name: "WE7ALLXQ0_ITMREF"
+    #     And the user adds the text "BMS001" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_QTYUOM"
+    #     And the user adds the text "6" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_GROPRI"
+    #     And the user adds the text "95.89" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCFOP"
+    #     And the user adds the text "6201" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQORIGEMICMS"
+    #     And the user adds the text "0" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTICMS"
+    #     And the user adds the text "60" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTIPI"
+    #     And the user adds the text "50" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTPIS"
+    #     And the user adds the text "01" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCSTCOF"
+    #     And the user adds the text "01" in selected cell
+    #     And the user selects last editable cell with X3 field name: "WE7ALLXQ0_XQCENQ"
+    #     And the user adds the text "999" in selected cell and hits tab key
+    #     Given the user hits enter
+    #     When the user clicks the "Save" main action button on the right panel
+    #     Then the user clicks the "Yes" option in the alert box
+    #     And the user waits 2 seconds
 
     Scenario: 4. Create / Addition ICMS base
 
