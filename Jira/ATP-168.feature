@@ -96,8 +96,12 @@ Feature: ATP-168
 
     Scenario: 005. Create SOH COPY
         When the user clicks the "Tax Summary" tab selected by title
+        And the user waits 5 seconds
         Given the user selects the text field with X3 field name: "WK2ALLXQ_OBSADIC"
-        Then the user writes "X3 É UM SISTEMA BEM LEGAL" to the selected text area
+        Then the user writes "O X3 É UM SISTEMA BEM LEGAL" to the selected text area
+        #Foi necessário colocar 2 vezes a mesma etapa pois ele não estava conseguindo escrever as observações sem sair da função
+        Given the user selects the text field with X3 field name: "WK2ALLXQ_OBSADIC"
+        Then the user writes "O X3 É UM SISTEMA BEM LEGAL" to the selected text area
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WK2ALL1_ALLSTA"
@@ -160,7 +164,8 @@ Feature: ATP-168
         Then the value of the selected text area contains
             """
             TESTE DE CONCATENAR AS OBSERVAÇÕES CONFORME O TICKET X3DEV-5434
-            X3 É UM SISTEMA BEM LEGAL
+            O X3 É UM SISTEMA BEM LEGAL
+
             """
         And the user clicks the "Close page" main action button on the right panel
 

@@ -51,14 +51,22 @@ Feature: xq-p-flow-pth-pnh
         And the user selects last editable cell with X3 field name: "WE6ALL1_GROPRI"
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WE6ALL1_XQCFOP"
-        And the user adds the text <XQCFOP> in selected cell and hits enter key
+        And the user adds the text <XQCFOP> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTIS"
+        Then the user adds the text <XQCSTIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCCTIS"
+        Then the user adds the text <XQCCTIS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCSTCBS"
+        Then the user adds the text <XQCSTCBS> in selected cell
+        And the user selects last editable cell with X3 field name: "WE6ALL1_XQCCTCBS"
+        Then the user adds the text <XQCCTCBS> in selected cell and hits enter key
 
         #And the user clicks the "OK" button in the header
 
         Examples:
-            | LIN | ITMREF   | QTYUOM | GROPRI | XQCFOP |
-            | 1   | "BMS099" | "1"    | "100"  | "2152" |
-            | 2   | "BMS102" | "2"    | "200"  | "2152" |
+            | LIN | ITMREF   | QTYUOM | GROPRI | XQCFOP | XQCSTIS | XQCCTIS  | XQCSTCBS | XQCCTCBS |
+            | 1   | "BMS099" | "1"    | "100"  | "2152" | "410"   | "410999" | "410"    | "410999" |
+            | 2   | "BMS102" | "2"    | "200"  | "2152" | "410"   | "410999" | "410"    | "410999" |
 
     Scenario: Create
         When the user clicks the "Create" main action button on the right panel

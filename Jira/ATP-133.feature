@@ -52,6 +52,7 @@ Feature: ATP-133
         When the user sets the check box to unticked
         Then the selected check box is not checked
         When the user clicks the "OK" button in the header
+        And the user waits 90 seconds
         And a log panel appears
         And the user selects the main log panel of the page
         And the selected log panel includes the message "item.txt file has been sucessfully created"
