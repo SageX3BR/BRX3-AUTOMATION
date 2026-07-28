@@ -67,7 +67,8 @@ Feature: ATP-106
 
     Scenario Outline: 5. Add Lines
         Given the user selects the fixed data table for x3 field name: "WE8ALL3_ARRAY_NBLIG"
-        And the user selects last row of the selected data table
+        #And the user selects last row of the selected data table
+        And the user selects first row of the selected data table
         And the user opens "Popup view" function on toolbox of the selected row
         And the user selects the drop down list with name: "Source"
         And the user clicks on "Miscellaneous" option of the selected drop down list
