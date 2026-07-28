@@ -52,13 +52,17 @@ Feature: ATP-21
         And the user writes "email@axisx3.com" to the selected text field and hits tab key
         And the user selects the text field with name: "Other email 5"
         And the user writes "email@axisx3.com" to the selected text field and hits tab key
-        And the user selects the text field with name: "Receives DANFE"
-        And the user writes "" to the selected text field and hits tab key
-        And the user selects the text field with name: "Receives XML"
-        And the user writes "" to the selected text field and hits tab key
+        Given the user selects the check box with name: "Receives DANFE"
+        When the user sets the check box to unticked
+        Then the selected check box is not checked
+        Given the user selects the check box with name: "Receives XML"
+        When the user sets the check box to unticked
+        Then the selected check box is not checked
         And the user hits escape
-        And the user selects the text field with name: "Receives Bankslip"
-        And the user writes "" to the selected text field
+        Given the user selects the check box with name: "Receives Bankslip"
+        When the user sets the check box to unticked
+        Then the selected check box is not checked
+
 
     Scenario: 4.Save
         Given the user clicks the "Save" main action button on the right panel

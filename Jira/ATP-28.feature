@@ -43,14 +43,16 @@ Feature: ATP-28
         Given the user selects the drop down list with name: "Category"
         When the user clicks on "Main" option of the selected drop down list
         Then the value of the selected drop down list is "Maintenance"
-        And the user selects the text field with name: "All skills"
-        And the user writes "" to the selected text field and hits tab key
+        Given the user selects the check box with name: "All skills"
+        When the user sets the check box to unticked
+        Then the selected check box is not checked
         And the user selects the text field with name: "Duration"
         And the user writes "12" to the selected text field and hits tab key
         Given the user selects the drop down list with name: "Unit"
         When the user clicks on "months" option of the selected drop down list
-        And the user selects the text field with name: "Automatic renewal"
-        And the user writes "" to the selected text field and hits tab key
+        Given the user selects the check box with name: "Automatic renewal"
+        When the user sets the check box to unticked
+        Then the selected check box is not checked
         And the user selects the text field with name: "Annual royalty base"
         And the user writes "5000.00" to the selected text field and hits tab key
         And the user selects the text field with name: "Advance notice of cancellation"

@@ -32,6 +32,7 @@ Feature: ATP-180
         And the user writes "NA012" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "201" to the selected text field
+        And the user hits tab
         And the user selects the text field with name: "Departure state"
         And the user writes "SP" to the selected text field
         And the user selects the text field with name: "Departure location"
