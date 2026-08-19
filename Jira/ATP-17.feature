@@ -15,7 +15,7 @@ Feature:ATP-17
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
         When the user clicks the "General Data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "113" to the selected text field and hits tab key
@@ -61,6 +61,14 @@ Feature:ATP-17
         And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "func ZUTIL.ZUPDATE_NFE(PTHNUM,"52260197523216000173550010000611321000285010")" to the selected text field and hits enter key
+        And the value of the "Result" text field is "0"
+        Then the user clicks the Close page action icon on the header panel
         Then the user clicks the Close page action icon on the header panel
     #PNH Creation
     Scenario: Creating Purchase Return PNH
@@ -73,7 +81,7 @@ Feature:ATP-17
         And the user selects the text field with name: "Return site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "130" to the selected text field
         Then the user hits tab
@@ -84,7 +92,7 @@ Feature:ATP-17
         And the user clicks the "OK" main action button on the right panel
         When the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR001" of the picking list panel
+        And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR199" of the picking list panel
         Then the user checks the selected picking list panel item
         And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
     #Lines
