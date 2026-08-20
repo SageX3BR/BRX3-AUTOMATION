@@ -28,7 +28,7 @@ Feature: ATP-15
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
 
         When the user clicks the "General Data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
@@ -81,6 +81,14 @@ Feature: ATP-15
         When the user clicks the "Resume" tab selected by title
         Then the user selects the text field with X3 field name: "WE6ALLXQ_TTIPI"
         And the value of the selected text field is "300.00"
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "func ZUTIL.ZUPDATE_NFE(PTHNUM,"52260197523216000173550010000611321000285010")" to the selected text field and hits enter key
+        And the value of the "Result" text field is "0"
+        Then the user clicks the Close page action icon on the header panel
         Then the user clicks the Close page action icon on the header panel
 
 
@@ -95,7 +103,7 @@ Feature: ATP-15
         And the user selects the text field with name: "Return site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "130" to the selected text field
         Then the user hits tab
