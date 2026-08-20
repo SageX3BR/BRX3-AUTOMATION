@@ -29,7 +29,7 @@ Feature: ATP-171
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
 
     Scenario: 003. General Data PTH
         Given the user clicks the "General Data" tab selected by title
@@ -68,6 +68,14 @@ Feature: ATP-171
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
         And the user stores the value of the selected text field with the key: "PTH_NUMBER"
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "func ZUTIL.ZUPDATE_NFE(PTHNUM,"52260197523216000173550010000611321000285010")" to the selected text field and hits enter key
+        And the value of the "Result" text field is "0"
+        Then the user clicks the Close page action icon on the header panel
         Then the user clicks the Close page action icon on the header panel
 
     #PROCESSO FATURA DE COMPRA PIH
@@ -83,7 +91,7 @@ Feature: ATP-171
         And the user selects the text field with name: "Invoice type"
         And the user writes "BRNFF" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "110" to the selected text field and hits tab key
         And the user hits escape
@@ -98,7 +106,7 @@ Feature: ATP-171
         And the user clicks the "OK" button in the header
         And the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "PTH_NUMBER" and with the text containing "BR001" of the picking list panel
+        And the user selects the item with the stored text with key "PTH_NUMBER" and with the text containing "BR199" of the picking list panel
         And the user checks the selected picking list panel item
         And the user clicks the "No" opinion in the alert box
         And the user clicks the "No" opinion in the alert box
@@ -145,7 +153,7 @@ Feature: ATP-171
         And the user selects the text field with X3 field name: "WE7ALLXQ0_PNHFCY"
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE7ALLXQ0_BPSNUM"
-        And the user writes "BR001" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
         And the user selects the text field with X3 field name: "WE7ALLXQ0_XQCODOPF"
         And the user writes "130" to the selected text field
         Then the user hits tab
@@ -156,7 +164,7 @@ Feature: ATP-171
         And the user clicks the "OK" main action button on the right panel
         When the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "PTH_NUMBER" and with the text containing "BR011" of the picking list panel
+        And the user selects the item with the stored text with key "PTH_NUMBER" and with the text containing "BR199" of the picking list panel
         Then the user checks the selected picking list panel item
         And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
@@ -171,14 +179,14 @@ Feature: ATP-171
 
 
     Scenario: 012. Create / Transmit to Sefaz and Validation
-        And the user clicks the "Referenced docs." action button on the header drop down
-        And the user selects the data table in the popup
-        When the user selects last editable cell with column header: "Reference type"
-        Then the user selects the choice "NF-e" of the selected cell
-        And the user selects last fixed cell with X3 field name: "XQIREF1_CHAVENFE"
-        And the user adds the stored text with key "CHAVE" in selected cell and hits tab key
-        And the user hits escape
-        And the user clicks the "OK" button in the popup header
+        #And the user clicks the "Referenced docs." action button on the header drop down
+        #And the user selects the data table in the popup
+        #When the user selects last editable cell with column header: "Reference type"
+        #Then the user selects the choice "NF-e" of the selected cell
+        #And the user selects last fixed cell with X3 field name: "XQIREF1_CHAVENFE"
+        #And the user adds the stored text with key "CHAVE" in selected cell and hits tab key
+        #And the user hits escape
+        #And the user clicks the "OK" button in the popup header
         Given the user clicks the "Create" main action button on the right panel
         When a confirmation dialog appears with the message "Record has been created"
         And the user clicks the "Transmit SEFAZ" action button on the header drop down

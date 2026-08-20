@@ -108,11 +108,13 @@ Feature: ATP-53
         And the user edits text to <XQCFOP> for cell with X3 field name: "WK5AAL4_XQCFOP" of selected row
         And the user edits text to <XQOICMS> for cell with X3 field name: "WK5AAL4_XQOICMS" of selected row
         And the user edits text to <XQCSTICMS> for cell with X3 field name: "WK5AAL4_XQCSTICMS" of selected row
+        And the user edits text to <XQCSTCBS> for cell with X3 field name: "WK5AAL4_XQCSTCBS" of selected row
+        And the user edits text to <XQCCTCBS> for cell with X3 field name: "WK5AAL4_XQCCTCBS" of selected row
         Then the user hits enter
         # Alterando os valores dos impostos entre as linhas, exemplo: ICMS de 1.33 e 0.34 para 1.30 e 0.37
         Examples:
-            | LIN | QTY | XQCFOP | XQOICMS | XQCSTICMS |
-            | 1   | "1" | "2201" | "0"     | "00"      |
+            | LIN | QTY | XQCFOP | XQOICMS | XQCSTICMS | XQCSTCBS | XQCCTCBS |
+            | 1   | "1" | "2201" | "0"     | "00"      | "410"    | "410999" |
 
 
     # DADO a criação de uma nota de crédito (SIH)
