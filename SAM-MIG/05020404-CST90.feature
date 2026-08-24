@@ -28,7 +28,7 @@ Feature:05020404-CST90
         And the user selects the text field with name: "Receiving site"
         And the user writes "BR050" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR006" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
         #General Tab
         When the user clicks the "General Data" tab selected by title
         And the user selects the text field with name: "Fiscal operation"
@@ -56,8 +56,8 @@ Feature:05020404-CST90
 
         Examples:
             | LIN | ITMREF   | QTYUOM | GROPRI   | XQCFOP | XQVARCFOP | XQCSTICMS | XQCENQ |
-            | 1   | "BMS001" | "5"    | "115.25" | "1102" | "1"       | "90"      | "999"  |
-            | 2   | "BMS002" | "5"    | "125.50" | "1102" | "1"       | "90"      | "999"  |
+            | 1   | "BMS001" | "5"    | "115.25" | "2102" | "1"       | "90"      | "999"  |
+            | 2   | "BMS002" | "5"    | "125.50" | "2102" | "1"       | "90"      | "999"  |
 
     Scenario: 05020404-04 Create/Sefas/Validation
         #Create and Send to Sefaz
@@ -78,6 +78,14 @@ Feature:05020404-CST90
         And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
         Then the user clicks the Close page action icon on the header panel
+        When the user opens the header drop down
+        And the user opens the "Diagnosis..." section on the right panel
+        And the user clicks the "Calculator" secondary action button on the right panel
+        And the "Calculator" screen is displayed
+        And the user selects the text field with name: "Calculation:"
+        And the user writes "func ZUTIL.ZUPDATE_NFE(PTHNUM,"52260197523216000173550010000611321000285010")" to the selected text field and hits enter key
+        And the value of the "Result" text field is "0"
+        Then the user clicks the Close page action icon on the header panel
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
@@ -93,16 +101,16 @@ Feature:05020404-CST90
         And the value of the selected text field is <VLFCPST>
         Examples:
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
-            | "1"    | "766.41" | "2.0000" | "15.33" |
-            | "2"    | "834.58" | "2.0000" | "16.69" |
+            | "1"    | "822.49" | "2.0000" | "16.45" |
+            | "2"    | "895.64" | "2.0000" | "17.91" |
 
     Scenario: 05020404-06 Resume - Check Calculated Values
         Given the user clicks the Close page action icon on the header panel
         And the user clicks the "Resume" tab selected by title
         When the user selects the text field with X3 field name: "WE6ALLXQ_TOTBASEFCPST"
-        And the value of the selected text field is "1,600.99"
+        And the value of the selected text field is "1,718.13"
         And the user selects the text field with X3 field name: "WE6ALLXQ_TOTICMSFCPST"
-        And the value of the selected text field is "32.02"
+        And the value of the selected text field is "34.36"
         Then the user clicks the Close page action icon on the header panel
 
     #-------------------------------------------------------------------------------------
@@ -120,7 +128,7 @@ Feature:05020404-CST90
         And the user selects the text field with name: "Return site"
         And the user writes "BR050" to the selected text field and hits tab key
         And the user selects the text field with name: "Supplier"
-        And the user writes "BR006" to the selected text field and hits tab key
+        And the user writes "BR199" to the selected text field and hits tab key
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "57" to the selected text field
         Then the user hits tab
@@ -133,7 +141,7 @@ Feature:05020404-CST90
         #Picking the receipt number
         When the user clicks the "Receipt selection" link on the left panel
         And the user selects the main picking list panel of the screen
-        And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR006" of the picking list panel
+        And the user selects the item with the stored text with key "DOCPTH" and with the text containing "BR199" of the picking list panel
         Then the user checks the selected picking list panel item
         And the user selects the data table with x3 field name: "WE7ALLXQ0_ARRAY_NBLIG"
 
@@ -157,8 +165,8 @@ Feature:05020404-CST90
         And the user adds the text <XQCENQ> in selected cell and hits enter key
         Examples:
             | LIN    | XQCFOP | XQVARCFOP | XQORIGEMICMS | XQCSTICMS | XQCSTIPI | XQCSTPIS | XQCSTCOF | XQCENQ |
-            | "1000" | "5202" | "1"       | "0"          | "90"      | "51"     | "50"     | "50"     | "999"  |
-            | "2000" | "5202" | "1"       | "0"          | "90"      | "51"     | "50"     | "50"     | "999"  |
+            | "1000" | "6202" | "1"       | "0"          | "90"      | "51"     | "50"     | "50"     | "999"  |
+            | "2000" | "6202" | "1"       | "0"          | "90"      | "51"     | "50"     | "50"     | "999"  |
 
     Scenario: 05020404-09 Create return
         Given the user clicks the "Create" main action button on the right panel
@@ -179,17 +187,17 @@ Feature:05020404-CST90
 
         Examples:
             | CURLIG | BFCPST   | ALQFCPST | VLFCPST |
-            | "1"    | "766.41" | "2.0000" | "15.33" |
-            | "2"    | "834.58" | "2.0000" | "16.69" |
+            | "1"    | "822.49" | "2.0000" | "16.45" |
+            | "2"    | "895.64" | "2.0000" | "17.91" |
 
     Scenario: 05020404-11 Resume - Check Calculated Values / Transmit to Sefaz and Validation
         Given the user clicks the Close page action icon on the header panel
         And the user waits 2 seconds
         Given the user clicks the "Tax Summary" tab selected by title
         Then the user selects the text field with name: "FCP Calc. base"
-        And the value of the selected text field is "1,600.99"
+        And the value of the selected text field is "1,718.13"
         Then the user selects the text field with name: "ICMS FCP-ST value"
-        And the value of the selected text field is "32.02"
+        And the value of the selected text field is "34.36"
         #Sefaz
         When the user clicks the "Transmit SEFAZ" action button on the header drop down
         And a log panel appears

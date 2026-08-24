@@ -92,6 +92,7 @@ Feature: ATP-65
         And the user opens the "Diagnosis..." section on the right panel
         And the user clicks the "Calculator" secondary action button on the right panel
         And the "Calculator" screen is displayed
+        And the user waits 2 seconds
         And the user selects the text field with name: "Calculation:"
         And the user writes "[F:XQPIH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
