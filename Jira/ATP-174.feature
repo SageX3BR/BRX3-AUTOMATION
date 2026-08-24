@@ -78,6 +78,7 @@ Feature: ATP-174
         And the user opens the "Diagnosis..." section on the right panel
         And the user clicks the "Calculator" secondary action button on the right panel
         And the "Calculator" screen is displayed
+        And the user waits 2 seconds
         And the user selects the text field with name: "Calculation:"
         And the user writes "[F:XQSIH]NFESTATUS" to the selected text field and hits enter key
         And the value of the "Result" text field is "6"
@@ -93,6 +94,7 @@ Feature: ATP-174
         When the user selects the text field with X3 field name: "XQNFEMNT0_NUMDOC"
         And the user writes the stored text with key "SIH_NUM" in the selected text field and hits tab key
         And the user clicks the "Search" button in the header
+        And the user waits 2 seconds
         Then the user selects the data table with x3 field name: "XQNFEMNT1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
