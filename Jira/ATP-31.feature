@@ -32,6 +32,9 @@ Feature:ATP-31
 
     Scenario: 5. Creation
         Given the user clicks the "Create" main action button on the right panel
+        #Alert box: Question
+        Then an alert box with the text "Deseja alterar a situação do documento de 00 - Documento Regular para 01 - Documento regular extemporâneo" appears
+        And the user clicks the "No" opinion in the alert box
         Then a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
         And the user stores the value of the selected text field with the key: "NUMERO_DA_PTH"

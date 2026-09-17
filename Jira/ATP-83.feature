@@ -169,6 +169,10 @@ Feature: ATP-83
         #Create the purchases receipt
         Then the user clicks the "Create" main action button on the right panel
 
+        #Alert box: Question
+        Then an alert box with the text "Deseja alterar a situação do documento de 00 - Documento Regular para 01 - Documento regular extemporâneo" appears
+        And the user clicks the "No" opinion in the alert box
+
         #Save the purchase receipt reference in a stored value
         And the user selects the text field with name: "Receipt"
         Then the user stores the value of the selected text field with the key: "ENV_ATPPTHNUM01"

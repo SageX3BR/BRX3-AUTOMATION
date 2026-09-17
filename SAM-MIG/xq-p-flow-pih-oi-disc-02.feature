@@ -142,6 +142,8 @@ Feature: xq-p-flow-pih-oi-disc-02
         And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 1
         Then the user adds the text "23.69" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 1
+        Then the user adds the text "23.69" in selected cell and hits enter key
 
     Scenario: 17. Creation
         Given the user clicks the "Create" main action button on the right panel
