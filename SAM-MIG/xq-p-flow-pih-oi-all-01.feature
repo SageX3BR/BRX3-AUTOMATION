@@ -99,10 +99,16 @@ Feature: xq-p-flow-pih-oi-all-01
         And the user selects the fixed data table for x3 field name: "WE8ALL4_ARRAY_NBFAC"
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 1
         And the user adds the text "15.75" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 1
+        And the user adds the text "15.75" in selected cell and hits enter key
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 5
+        And the user adds the text "5.75" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 5
         And the user adds the text "5.75" in selected cell and hits enter key
         And the user selects the fixed cell with X3 field name: "WE8ALL4_INVDTAAMT" and row number: 2
         Then the user adds the text "39.99" in selected cell and hits enter key
+        And the user selects the fixed cell with X3 field name: "WE8ALL4_INVORDAMT" and row number: 2
+        And the user adds the text "39.99" in selected cell and hits enter key
 
     Scenario: 7. Creation
         Given the user clicks the "Create" main action button on the right panel

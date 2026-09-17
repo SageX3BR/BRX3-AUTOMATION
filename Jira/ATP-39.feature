@@ -45,6 +45,9 @@ Feature:ATP-39
 
     Scenario: 04. Document Creation
         When the user clicks the "Create" main action button on the right panel
+        #Alert box: Question
+        Then an alert box with the text "Deseja alterar a situação do documento de 00 - Documento Regular para 01 - Documento regular extemporâneo" appears
+        And the user clicks the "No" opinion in the alert box
         And a confirmation dialog appears with the message "Record has been created"
 
     Scenario: 05. Check Fiscal Operation field disabled
