@@ -114,7 +114,7 @@ Feature: ATP-53
         # Alterando os valores dos impostos entre as linhas, exemplo: ICMS de 1.33 e 0.34 para 1.30 e 0.37
         Examples:
             | LIN | QTY | XQCFOP | XQOICMS | XQCSTICMS | XQCSTCBS | XQCCTCBS |
-            | 1   | "1" | "2201" | "0"     | "00"      | "410"    | "410999" |
+            | 1   | "1" | "2201" | "0"     | "00"      | "000"    | "000001" |
 
 
     # DADO a criação de uma nota de crédito (SIH)

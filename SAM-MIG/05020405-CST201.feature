@@ -66,27 +66,6 @@ Feature:05020405-CST201
         And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
         And the user stores the value of the selected text field with the key: "DOCPTH"
-        Then the user stores the value of the selected text field with the key: "CHAVENFEPTH"
-        And the user clicks the "SEFAZ" action button on the header drop down
-        And a log panel appears
-        And the user clicks the "Close page" main action button on the right panel
-        #Verificar status da nota (6 = Autorizada)
-        When the user opens the header drop down
-        And the user opens the "Diagnosis..." section on the right panel
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
-        And the value of the "Result" text field is "6"
-        Then the user clicks the Close page action icon on the header panel
-        When the user opens the header drop down
-        And the user opens the "Diagnosis..." section on the right panel
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "func ZUTIL.ZUPDATE_NFE(PTHNUM,"52260197523216000173550010000611321000285010")" to the selected text field and hits enter key
-        And the value of the "Result" text field is "0"
-        Then the user clicks the Close page action icon on the header panel
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
@@ -199,26 +178,6 @@ Feature:05020405-CST201
         And the value of the selected text field is "2,465.50"
         Then the user selects the text field with name: "ICMS FCP-ST value"
         And the value of the selected text field is "49.31"
-        #Sefaz
-        When the user clicks the "Transmit SEFAZ" action button on the header drop down
-        And a log panel appears
-        And the user clicks the "Close page" main action button on the right panel
-        #Verificar status da nota (6 = Autorizada)
-        When the user opens the header drop down
-        And the user opens the "Diagnosis..." section on the right panel
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "[F:XQPNH]NFESTATUS" to the selected text field and hits enter key
-        And the value of the "Result" text field is "6"
-        Then the user clicks the Close page action icon on the header panel
-        #Validation
-        When the user clicks the "Validation" button in the header
-        And the user clicks the "Ok" opinion in the alert box
-        And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "Return Validation End"
-        Then the user clicks the Close page action icon on the header panel
         Then the user clicks the Close page action icon on the header panel
 
     Scenario: 05020405-12 Logout

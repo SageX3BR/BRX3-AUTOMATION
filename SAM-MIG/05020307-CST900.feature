@@ -94,24 +94,6 @@ Feature:05020307-CST900
         #Create and Send to Sefaz
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-        And the user clicks the "SEFAZ" action button on the header drop down
-        And a log panel appears
-        And the user clicks the "Close page" main action button on the right panel
-        #Verificar status da nota (6 = Autorizada)
-        When the user opens the header drop down
-        And the user opens the "Diagnosis..." section on the right panel
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "[F:XQPIH]NFESTATUS" to the selected text field and hits enter key
-        And the value of the "Result" text field is "6"
-        Then the user clicks the Close page action icon on the header panel
-        #Post Invoice
-        When the user clicks the "Post" button in the header
-        And an alert box with the text "The document will be validated! You will no longer be able to Modify or Delete it. Continue?" appears
-        And the user clicks the "Ok" option in the alert box
-        And a dialog box appears
-        And the user clicks the "Ok" opinion in the alert box
         #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed

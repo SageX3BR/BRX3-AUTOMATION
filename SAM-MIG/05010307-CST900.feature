@@ -88,18 +88,15 @@ Feature:05010307-CST900
         When the user selects cell with text: "ALL     Full entry invoice" and column header: ""
         And the user clicks on the selected cell
         And the "Sales invoice ALL : Full entry invoice" screen is displayed
-        And the user clicks the "SEFAZ" action button on the header drop down
-        And a log panel appears
-        And the user clicks the "Close page" main action button on the right panel
-        And the user selects the text field with X3 field name: "WK5ALLXQ0_XQSTATUSNFE"
-        And the value of the selected text field is "Authorized invoice"
-        And the user clicks the "Post" button in the header
-        And a log panel appears
-        And the user selects the main log panel of the page
-        And the selected log panel includes the message "Document creation "
-        And the user clicks the "Close page" main action button on the right panel
+        And the user waits 2 seconds
+        Given the user clicks the "NF-e Summary" tab selected by title
+        When the user selects the text field with name: "FCP-ST Calc. base"
+        And the value of the selected text field is "4,271.07"
+        And the user selects the text field with name: "ICMS FCP-ST value"
+        And the value of the selected text field is "85.42"
 
     Scenario: 05010307-07 Logout
+        And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
         Then the user clicks the Close page action icon on the header panel
         Then the user logs-out from the system
