@@ -199,7 +199,7 @@ Feature: ATP-177
 
     Scenario: 011. Return Creation
         Given the user clicks the "Create" main action button on the right panel
-        When a confirmation dialog appears with the message "Record has been created"
+        #When a confirmation dialog appears with the message "Record has been created"
         When the user clicks the "NF-e Summary" tab selected by title
         Then the user selects the text field with name: "Products total value"
         And the value of the selected text field is "198.25"

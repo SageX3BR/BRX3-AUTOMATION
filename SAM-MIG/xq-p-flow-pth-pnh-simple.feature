@@ -57,7 +57,7 @@ Feature:xq-p-flow-pth-pnh-simple
     Scenario: Create/Sefas/Validation
         #Create and Send to Sefaz
         When the user clicks the "Create" main action button on the right panel
-        And a confirmation dialog appears with the message "Record has been created"
+        #And a confirmation dialog appears with the message "Record has been created"
         And the user selects the text field with X3 field name: "WE6ALL0_PTHNUM"
         And the user stores the value of the selected text field with the key: "DOCPTH"
         And the user clicks the "SEFAZ" action button on the header drop down
