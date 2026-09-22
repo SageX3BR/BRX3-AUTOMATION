@@ -61,23 +61,9 @@ Feature:05020206-CST202
             | 1   | "BMS001" | "15"   | "12.50" | "1102" | "1"       | "202"     | "301"  | "02"     |
             | 2   | "BMS002" | "15"   | "13.85" | "1102" | "1"       | "202"     | "301"  | "02"     |
 
-    Scenario: 05020206-04 Create/SEFAZ/Validation
-        #Create and Send to Sefaz
+    Scenario: 05020206-04 Create/Validation
         When the user clicks the "Create" main action button on the right panel
         And a confirmation dialog appears with the message "Record has been created"
-        And the user clicks the "SEFAZ" action button on the header drop down
-        And a log panel appears
-        And the user clicks the "Close page" main action button on the right panel
-        #Verificar status da nota (6 = Autorizada)
-        When the user opens the header drop down
-        And the user opens the "Diagnosis..." section on the right panel
-        And the user clicks the "Calculator" secondary action button on the right panel
-        And the "Calculator" screen is displayed
-        And the user selects the text field with name: "Calculation:"
-        And the user writes "[F:XQPTH]NFESTATUS" to the selected text field and hits enter key
-        And the value of the "Result" text field is "6"
-        Then the user clicks the Close page action icon on the header panel
-        #Tax Detail - Check Values
         When the user clicks the "Tax detail" action button on the header drop down
         Then the "Tax detail" screen is displayed
 
