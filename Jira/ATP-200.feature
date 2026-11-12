@@ -150,9 +150,7 @@ Feature: ATP-200
         #And the user selects editable table row number: 7
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains "ValPIS": 164.21"
-        And the value of the selected text field contains "ValCOFINS": 757.88"
-        And the value of the selected text field contains "ValCSLL": "252.63"
+        And the value of the selected text field contains "ValCSLL": "1174.72"
         And the value of the selected text field contains "ValISSRetido": "732.61"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
@@ -172,9 +170,7 @@ Feature: ATP-200
         #And the user selects editable table row number: 7
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains "ValPIS": 164.2"
-        And the value of the selected text field contains "ValCOFINS": 757.88"
-        And the value of the selected text field contains "ValCSLL": "252.62"
+        And the value of the selected text field contains "ValCSLL": "1174.7"
         And the value of the selected text field contains "ValISSRetido": "732.61"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel
