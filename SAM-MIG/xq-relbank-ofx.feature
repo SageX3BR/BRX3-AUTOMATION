@@ -25,6 +25,7 @@ Feature:xq-relbank-ofx
     And the user selects the text field with X3 field name: "RELBAN_LEG"
     And the user writes "BRA" to the selected text field
     And the user clicks the "OK" button in the header
+    And the user waits 15 seconds
     And a log panel appears
     And the user selects the main log panel of the page
     And the selected log panel includes the message "1100 Statement import lines"

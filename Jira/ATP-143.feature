@@ -87,7 +87,7 @@ Feature: ATP-143
         #And the user selects editable table row number: 7
         And the user opens "Request data" function on toolbox of the selected row
         And the user selects the text field with X3 field name: "XQRPSJSON_JSON"
-        And the value of the selected text field contains "Discriminacao": "Instalação software Office "
+        And the value of the selected text field contains "Discriminacao": "Instalação software Office"
         And the value of the selected text field contains "NFSOutrasinformacoes": "TESTE DE DUPLICAÇÃO DAS OBSERVAÇÕES X3DEV-3723!CHR13!"
         And the user clicks the Close page action icon on the header panel
         And the user clicks the Close page action icon on the header panel

@@ -45,7 +45,8 @@ Feature: ATP-58
         And the user adds the text <QTY> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell
         And the user hits enter
 
         # #And the user waits (3) seconds
@@ -53,9 +54,9 @@ Feature: ATP-58
         # And the user clicks the "Yes" opinion in the alert box
 
         Examples:
-            | LIN | ITMREF   | QTY | XQCFOP |
-            | 1   | "BMS001" | "1" | "6901" |
-            | 2   | "BMS002" | "2" | "6901" |
+            | LIN | ITMREF   | QTY | XQCFOP | XQVARCFOP |
+            | 1   | "BMS001" | "1" | "6901" | "2"       |
+            | 2   | "BMS002" | "2" | "6901" | "2"       |
 
     Scenario: 4. Create document
 

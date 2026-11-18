@@ -47,13 +47,14 @@ Feature: ATP-52
         And the user adds the text <GROPRI> in selected cell
         And the user selects last editable cell with X3 field name: "WK4ALL1_XQCFOP"
         And the user adds the text <XQCFOP> in selected cell
-        And the user selects last editable cell with X3 field name: "WK4ALL1_XQOICMS"
+        And the user selects last editable cell with X3 field name: "WK4ALL1_XQVARCFOP"
+        And the user adds the text <XQVARCFOP> in selected cell
         And the user hits enter
 
         Examples:
-            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP |
-            | 1   | "BMS001" | "1" | "19.20"  | "6901" |
-            | 2   | "BMS002" | "2" | "2.3333" | "6901" |
+            | LIN | ITMREF   | QTY | GROPRI   | XQCFOP | XQVARCFOP |
+            | 1   | "BMS001" | "1" | "19.20"  | "6901" | "2"       |
+            | 2   | "BMS002" | "2" | "2.3333" | "6901" | "2"       |
 
     Scenario: 4. Create document
         Given the user clicks the "Create" main action button on the right panel
@@ -165,6 +166,7 @@ Feature: ATP-52
         When the user selects the text field with X3 field name: "XQNFEMNT0_NUMDOC"
         And the user writes the stored text with key "SRH_NUM" in the selected text field and hits tab key
         And the user clicks the "Search" button in the header
+        And the user waits 3 seconds
         Then the user selects the data table with x3 field name: "XQNFEMNT1_ARRAY_NBLIG"
         And the user selects first row of the selected data table
         Given the user opens "NF-e log" function on toolbox of the selected row
@@ -174,15 +176,14 @@ Feature: ATP-52
         And the user selects cell with header: "Event" of selected row
         And the user clicks on the selected cell
         And the user selects the text field with X3 field name: "XQNFELOG1_NFEXMLT"
-        #Verificando os valores dos impostos editados manualmente no Scenario outline 6.
         And the value of the selected text field contains "<vICMS>1.30</vICMS>"
         And the value of the selected text field contains "<vICMS>0.37</vICMS>"
         And the value of the selected text field contains "<vIPI>1.90</vIPI>"
         And the value of the selected text field contains "<vIPI>0.49</vIPI>"
-        And the value of the selected text field contains "<vPIS>0.10</vPIS>"
         And the value of the selected text field contains "<vPIS>0.05</vPIS>"
+        And the value of the selected text field contains "<vPIS>0.15</vPIS>"
         And the value of the selected text field contains "<vCOFINS>0.50</vCOFINS>"
-        And the value of the selected text field contains "vCOFINS>0.17</vCOFINS>"
+        And the value of the selected text field contains "<vCOFINS>0.17</vCOFINS>"
 
     Scenario: 9. Logout
         Then the user clicks the Close page action icon on the header panel
