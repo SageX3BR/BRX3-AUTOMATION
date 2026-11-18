@@ -57,7 +57,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         And the user writes "SQN" to the selected text field and hits tab key
         And the user selects the text field with name: "Customer"
         And the user writes "PT006" to the selected text field and hits tab key
-        And the user clicks the Close page action icon on the header panel
+        #And the user clicks the Close page action icon on the header panel
         And the user selects the text field with name: "Fiscal operation"
         #alert
         And the user writes "102" to the selected text field and hits tab key
@@ -141,7 +141,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         And the user writes "BRSDH" to the selected text field and hits tab key
         And the user selects the text field with name: "Ship-to"
         And the user writes "PT006" to the selected text field and hits tab key
-        And the user clicks the Close page action icon on the header panel
+        #And the user clicks the Close page action icon on the header panel
         And the user clicks the "Selection criteria" action button on the header drop down
         And the user selects the text field with X3 field name: "SCRITSDH_CRISOHNUM"
         And the user writes the stored text with key "SOH_NUM" in the selected text field and hits tab key
@@ -185,7 +185,7 @@ Feature: xq-s-flow-sqh-soh-sdh-sih-llp-02
         And the user writes "BR011" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "PT006" to the selected text field and hits tab key
-        And the user clicks the Close page action icon on the header panel
+    #And the user clicks the Close page action icon on the header panel
 
     Scenario: 9. Left List
 
