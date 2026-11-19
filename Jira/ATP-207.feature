@@ -31,7 +31,7 @@ Feature: ATP-207
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "PT006" to the selected text field and hits tab key
-        And the user clicks the Close page action icon on the header panel
+        #And the user clicks the Close page action icon on the header panel
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "102" to the selected text field and hits tab key
         #IMPORTAÇÃO
