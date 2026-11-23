@@ -38,7 +38,7 @@ Feature: xq-s-flow-sih-oi4
         And the user writes "BRNFC" to the selected text field and hits tab key
         And the user selects the text field with name: "Bill-to customer"
         And the user writes "PT006" to the selected text field and hits tab key
-        And the user clicks the "OK" action button on the header drop down
+        #And the user clicks the "OK" action button on the header drop down
         And the user selects the text field with name: "Fiscal operation"
         And the user writes "201" to the selected text field and hits tab key
         # #IMPORTAÇÃO
